@@ -1,94 +1,73 @@
 /*
-	Forty by HTML5 UP
+	Editorial by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* Spotlights */
+/* Features */
 
-	.spotlights > section:after {
+	.features:after {
+		clear: both;
 		content: '';
 		display: block;
+	}
+
+	.features article {
+		float: left;
+	}
+
+		.features article:after {
+			clear: both;
+			content: '';
+			display: block;
+		}
+
+		.features article .icon {
+			float: left;
+		}
+
+/* Posts */
+
+	.posts:after {
 		clear: both;
-	}
-
-	.spotlights > section > .image {
-		float: left;
-	}
-
-	.spotlights > section > .content {
-		float: left;
-	}
-
-/* Tiles */
-
-	.tiles:after {
 		content: '';
 		display: block;
-		clear: both;
 	}
 
-	.tiles article {
-		padding: 8em 4em 6em 4em ;
+	.posts article {
 		float: left;
-		height: auto;
-		max-height: none;
-		min-height: 0;
 	}
 
-/* Header */
+/* Main */
 
-	#header .logo {
+	#main {
+		padding-left: 24em;
+	}
+
+/* Sidebar */
+
+	#sidebar {
 		position: absolute;
 		top: 0;
 		left: 0;
-	}
-
-	#header nav {
-		position: absolute;
-		top: 0;
-		right: 0;
+		min-height: 100%;
+		width: 24em;
 	}
 
 /* Banner */
 
-	#banner {
-		padding: 7em 0 4em 0 ;
-		background-attachment: scroll;
-		height: auto;
-		max-height: none;
-		min-height: 0;
-	}
-
-		#banner > .inner .content {
-			display: block;
-		}
-
-			#banner > .inner .content > * {
-				margin-left: 0;
-				margin: 0 0 2em 0;
-			}
-
-		#banner.major {
-			height: auto;
-			max-height: none;
-			min-height: 0;
-		}
-
-/* Contact */
-
-	#contact:after {
+	#banner:after {
+		clear: both;
 		content: '';
 		display: block;
-		clear: both;
 	}
 
-	#contact > .inner > * {
+	#banner .content {
 		float: left;
+		padding-right: 4em;
 	}
 
-/* Menu */
-
-	#menu .inner {
-		margin: 0 auto;
+	#banner .image {
+		float: left;
+		margin-left: 0;
 	}

@@ -4,112 +4,81 @@
 @import 'libs/skel';
 
 /*
-	Forty by HTML5 UP
+	Editorial by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* Spotlights */
+/* Features */
 
-	.spotlights {
-		> section {
-			&:after {
-				content: '';
-				display: block;
-				clear: both;
-			}
-
-			> .image {
-				float: left;
-			}
-
-			> .content {
-				float: left;
-			}
-		}
-	}
-
-/* Tiles */
-
-	.tiles {
+	.features {
 		&:after {
+			clear: both;
 			content: '';
 			display: block;
-			clear: both;
 		}
 
 		article {
-			@include padding(8em, 4em);
 			float: left;
-			height: auto;
-			max-height: none;
-			min-height: 0;
+
+			&:after {
+				clear: both;
+				content: '';
+				display: block;
+			}
+
+			.icon {
+				float: left;
+			}
 		}
 	}
 
-/* Header */
+/* Posts */
 
-	#header {
-		.logo {
-			position: absolute;
-			top: 0;
-			left: 0;
+	.posts {
+		&:after {
+			clear: both;
+			content: '';
+			display: block;
 		}
 
-		nav {
-			position: absolute;
-			top: 0;
-			right: 0;
+		article {
+			float: left;
 		}
+	}
+
+/* Main */
+
+	#main {
+		padding-left: _size(sidebar-width-alt);
+	}
+
+/* Sidebar */
+
+	#sidebar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		min-height: 100%;
+		width: _size(sidebar-width-alt);
 	}
 
 /* Banner */
 
 	#banner {
-		@include padding(6em, 0, (1em, 0, 0, 0));
-		background-attachment: scroll;
-		height: auto;
-		max-height: none;
-		min-height: 0;
-
-		> .inner {
-			.content {
-				display: block;
-
-				> * {
-					margin-left: 0;
-					margin: 0 0 _size(element-margin) 0;
-				}
-			}
-		}
-
-		&.major {
-			height: auto;
-			max-height: none;
-			min-height: 0;
-		}
-	}
-
-/* Contact */
-
-	#contact {
 		&:after {
+			clear: both;
 			content: '';
 			display: block;
-			clear: both;
 		}
 
-		> .inner {
-			> * {
-				float: left;
-			}
+		.content {
+			float: left;
+			padding-right: (_size(element-margin) * 2);
 		}
-	}
 
-/* Menu */
-
-	#menu {
-		.inner {
-			margin: 0 auto;
+		.image {
+			float: left;
+			margin-left: 0;
 		}
 	}
