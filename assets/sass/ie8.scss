@@ -4,25 +4,94 @@
 @import 'libs/skel';
 
 /*
-	Editorial by HTML5 UP
+	Striped by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* Button */
-
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
-		border: solid 2px _palette(accent);
+	form {
+		input[type="text"],
+		input[type="email"],
+		input[type="password"],
+		select,
+		textarea {
+			position: relative;
+			box-shadow: none !important;
+			-ms-behavior: url('assets/js/ie/PIE.htc');
+		}
 	}
 
-/* Posts */
+	input[type="button"],
+	input[type="submit"],
+	input[type="reset"],
+	button,
+	.button {
+		position: relative;
+		box-shadow: none !important;
+		-ms-behavior: url('assets/js/ie/PIE.htc');
+	}
 
-	.posts {
-		article {
-			width: 40%;
+	.pagination {
+		.pages {
+			a {
+				position: relative;
+				box-shadow: none !important;
+				-ms-behavior: url('assets/js/ie/PIE.htc');
+			}
 		}
+	}
+
+	.box {
+		&.calendar {
+			td {
+				a, span {
+					position: relative;
+					box-shadow: none !important;
+					-ms-behavior: url('assets/js/ie/PIE.htc');
+				}
+			}
+		}
+
+		&.text-style1 {
+			.inner {
+				position: relative;
+				box-shadow: none !important;
+				-ms-behavior: url('assets/js/ie/PIE.htc');
+			}
+		}
+	}
+
+	#nav {
+		li {
+			a {
+				position: relative;
+				box-shadow: none !important;
+				-ms-behavior: url('assets/js/ie/PIE.htc');
+			}
+		}
+	}
+
+	.box {
+		&.post {
+			.info {
+				box-shadow: none !important;
+				-ms-behavior: url('assets/js/ie/PIE.htc');
+
+				.stats {
+					li {
+						a {
+							position: relative;
+							box-shadow: none !important;
+							-ms-behavior: url('assets/js/ie/PIE.htc');
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#logo {
+		position: relative;
+		box-shadow: none !important;
+		-ms-behavior: url('assets/js/ie/PIE.htc');
 	}
