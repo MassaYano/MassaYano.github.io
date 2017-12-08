@@ -1,5 +1,15 @@
 theme: jekyll-theme-hacker
-title: [MasaYano]
-description: [Homepage]
+title: MasaYano
+description: Homepage
 show_downloads: true
 google_analytics:
+
+github_username: MassaYano
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-hacker
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
