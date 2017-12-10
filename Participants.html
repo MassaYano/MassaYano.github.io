@@ -164,10 +164,8 @@
 
 							<li>＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊</li>
 
-							<li>テスト14</li>
-
 							<h2 id="apply" lang="ja" charset="euc-jp"><font size="4">実験の応募</font></h2>
-							<form action="https://formspree.io/yanomasa813@gmail.com?subject=実験の応募" method="POST">
+							<form action="https://formspree.io/yanomasa813@gmail.com" method="POST">
 									<label for="name">お名前:</label>
 									<input type="text" id="name" placeholder="お名前" name="name" />
 
@@ -187,6 +185,38 @@
 									<input type="radio" name="participantpool" value="yes">はい
 									<input type="radio" name="participantpool" value="no">いいえ
 									<input type="radio" name="participantpool" value="registered">既に登録済み
+									</br>
+							    <input type="submit" value="Send">
+							</form>
+
+							<h2 id="apply" lang="ja" charset="euc-jp"><font size="4">実験参加者プールへの登録</font></h2>
+							<form action="https://formspree.io/yanomasa813@gmail.com" method="POST">
+									<label for="name">お名前:</label>
+									<input type="text" id="name" placeholder="お名前" name="name" />
+
+									<label for="name2">ふりがな:</label>
+									<input type="text" id="name2" placeholder="ふりがな" name="name2" />
+
+									<label for="mail">メールアドレス:</label>
+									<input type="email" id="mail" placeholder="◯◯@gmail.comなど" name="email" />
+
+									<label for="affiliation">学部名（文学部のひとは研究室名）:</label>
+									<input type="text" id="affiliation" placeholder="◯◯学部" name="affiliation" />
+
+									<label for="yr">学年:</label>
+									<input type="text" id="yr" placeholder="学部◯◯年" name="yr" />
+
+									<label for="radio">性別:</label></br>
+									<input type="radio" name="gender" value="female">女性
+									<input type="radio" name="gender" value="male">男性
+
+									<label for="radio">利き手:</label></br>
+									<input type="radio" name="handedness" value="right">右利き
+									<input type="radio" name="handedness" value="left">左利き
+
+									<label for="msg">電話番号（任意）:</label>
+									<textarea id="msg" placeholder="080..." name="msg"></textarea>
+
 									</br>
 							    <input type="submit" value="Send">
 							</form>
