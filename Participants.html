@@ -164,7 +164,7 @@
 
 							<li>＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊</li>
 
-							<li>テスト9</li>
+							<li>テスト10</li>
 
 							<h2 id="apply" lang="ja" charset="euc-jp"><font size="4">実験の応募</font></h2>
 							<form action="https://formspree.io/yanomasa813@gmail.com" method="POST">
@@ -172,16 +172,21 @@
 									<input type="text" id="name" placeholder="お名前" name="name" />
 
 									<label for="name2">ふりがな:</label>
-									<input type="text" id="name2" placeholder="ふりがな" name="name" />
+									<input type="text" id="name2" placeholder="ふりがな" name="name2" />
 
 									<label for="mail">メールアドレス:</label>
 									<input type="email" id="mail" placeholder="◯◯@gmail.comなど" name="email" />
 
 									<label for="affiliation">学部名（文学部のひとは研究室名）:</label>
-									<input type="text" id="affiliation" placeholder="◯◯学部" name="user_email" />
+									<input type="text" id="affiliation" placeholder="◯◯学部" name="affiliation" />
 
 									<label for="msg">希望日時:</label>
-									<textarea id="msg" placeholder="希望日時" name="user_message"></textarea>
+									<textarea id="msg" placeholder="希望日時" name="msg"></textarea>
+
+									<label for="radio">実験参加者プールへの登録を希望しますか？:</label></br>
+									<input type="radio" name="participantpool" value="yes">はい
+									<input type="radio" name="participantpool" value="no">いいえ
+									<input type="radio" name="participantpool" value="registered">既に登録済み
 
 							    <input type="submit" value="Send">
 							</form>
@@ -197,7 +202,7 @@
 							    </div>
 									<div>
 											<label for="mail">学部名（文学部のひとは研究室名）:</label>
-											<input type="text" id="affiliation" placeholder="◯◯学部" name="user_email" />
+											<input type="text" id="affiliation" placeholder="◯◯学部" name="affiliation" />
 									</div>
 							    <div>
 							        <label for="msg">希望日時:</label>
