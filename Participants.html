@@ -69,7 +69,7 @@
 							<li>【<strong>謝礼</strong>】2,500円のQUOカード（<a href="http://www.quocard.com/member/">コンビニ・ファミレス</a>などで使えます）</li>
 							<li>【<strong>場所</strong>】</li>
 
-							<li>【<strong>応募方法</strong>】<a href="https://massayano.github.io/Participants.html#exp">応募フォーム</a>で以下の情報を送って下さい。</li>
+							<li>【<strong>応募方法</strong>】<a href="https://massayano.github.io/Participants.html#exp">応募フォーム</a>で以下の情報を送って下さい。後日、実験担当者から日程のご連絡を致します。</li>
 
 							<li>・お名前（ふりがな）</li>
 							<li>・メールアドレス</li>
@@ -124,7 +124,7 @@
 							<li>＊脳波実験室に取りに来て下さい。</li></p>
 
 							<li>【<strong>応募方法</strong>】</li>
-							<li><a href="https://massayano.github.io/Participants.html#exp">応募フォーム</a>からご応募ください</li></p>
+							<li><a href="https://massayano.github.io/Participants.html#exp">応募フォーム</a>からご応募ください。後日、実験担当者から日程のご連絡を致します。</li></p>
 
 							<li>＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊</li>
 
@@ -140,7 +140,7 @@
 							<li>【<strong>所要時間</strong>】40分程度</li>
 							<li>【<strong>謝礼</strong>】現金1000円</li>
 							<li>【<strong>場所</strong>】</li>
-							<li>【<strong>応募方法</strong>】<a href="https://massayano.github.io/Participants.html#exp">応募フォーム</a>で以下の情報を送って下さい。</li>
+							<li>【<strong>応募方法</strong>】<a href="https://massayano.github.io/Participants.html#exp">応募フォーム</a>で以下の情報を送って下さい。後日、実験担当者から日程のご連絡を致します。</li>
 
 							<li>・お名前（ふりがな）</li>
 							<li>・メールアドレス</li>
@@ -161,61 +161,65 @@
 
 							<h2 id="exp" lang="ja" charset="euc-jp"><font size="4">実験の応募</font></h2>
 							<form action="https://formspree.io/yanomasa813@gmail.com" method="POST">
-									<label for="name">　お名前:</label>
+									<label for="name">　お名前：</label>
 									<input type="text" id="name" placeholder="お名前" name="name" required="required" />
 
-									<label for="name2">よみがな:</label>
+									<label for="name2">よみがな：</label>
 									<input type="text" id="name2" placeholder="よみがな" name="name2" required="required" />
 
-									<label for="mail">メールアドレス:</label>
+									<label for="mail">メールアドレス：</label>
 									<input type="email" id="mail" placeholder="◯◯@gmail.comなど" name="email" required="required" />
 
-									<label for="affiliation">学部名（文学部のひとは研究室名）:</label>
+									<label for="affiliation">学部名（文学部のひとは研究室名）：</label>
 									<input type="text" id="affiliation" placeholder="◯◯学部" name="affiliation" required="required"/>
 
-									<label for="msg">希望日時:</label>
+									<label for="msg">希望日時：</label>
 									<textarea id="msg" placeholder="希望日時" name="msg" rows="3" required="required">第1希望：
 第2希望：
 第3希望：</textarea>
 
-									<label for="radio"><a href="https://massayano.github.io/Participants.html#pool">実験参加者プール</a>への登録を希望しますか？:</label></br>
+									<label for="radio"><a href="https://massayano.github.io/Participants.html#pool">実験参加者プール</a>への登録を希望しますか？：</label></br>
 									<input type="radio" name="participantpool" value="yes" required="required">はい
 									<input type="radio" name="participantpool" value="no" required="required">いいえ
 									<input type="radio" name="participantpool" value="registered" required="required">既に登録済み
 									</br>
+
+									<label for="inquiry">実験前に聞いておいたいことがあれば、以下に記入して下さい。</label>
+									<textarea id="inquiry" name="msg" rows="3"></textarea>
+
 							    <input type="submit" value="Send">
 							</form>
 
 							<h2 id="poolmail" lang="ja" charset="euc-jp"><font size="4">実験参加者プールへの登録</font></h2>
 							<form action="https://formspree.io/yanomasa813@gmail.com" method="POST">
-									<label for="name">　お名前:</label>
+									<label for="name">　お名前：</label>
 									<input type="text" id="name" placeholder="お名前" name="name" required="required" />
 
-									<label for="name2">よみがな:</label>
+									<label for="name2">よみがな：</label>
 									<input type="text" id="name2" placeholder="よみがな" name="name2" required="required" />
 
-									<label for="mail">メールアドレス:</label>
+									<label for="mail">メールアドレス：</label>
 									<input type="email" id="mail" placeholder="◯◯@gmail.comなど" name="email" required="required" />
 
-									<label for="affiliation">学部名（文学部のひとは研究室名）:</label>
+									<label for="affiliation">学部名（文学部のひとは研究室名）：</label>
 									<input type="text" id="affiliation" placeholder="◯◯学部" name="affiliation" required="required"/>
 
-									<label for="yr">学年:</label>
+									<label for="yr">学年：</label>
 									<input type="text" id="yr" placeholder="学部◯◯年" name="yr" required="required"/>
 
-									<label for="radio">性別:</label></br>
+									<label for="radio">性別：</label></br>
 									<input type="radio" name="gender" value="female" required="required">女性
 									<input type="radio" name="gender" value="male" required="required">男性
 									</br>
 
-									<label for="radio">利き手:</label></br>
+									<label for="radio">利き手：</label></br>
 									<input type="radio" name="handedness" value="right" required="required">右利き
 									<input type="radio" name="handedness" value="left" required="required">左利き
 									<input type="radio" name="handedness" value="both" required="required">両利き
 									</br>
 
-									<label for="msg">電話番号（任意）:</label>
-									<textarea id="msg" placeholder="080..." name="msg"></textarea>
+									<label for="msg">電話番号（任意）：</label>
+									<textarea id="msg" placeholder="080-" name="msg"></textarea>
 
 									</br>
 							    <input type="submit" value="Send">
