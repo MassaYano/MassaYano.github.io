@@ -1,0 +1,15 @@
+.map{
+    width:600px;
+    margin:0 auto;
+}
+    .map iframe{
+        height:400px;
+    }
+@media only screen and (max-width: 768px) {
+    .map{
+        width:95%;
+    }
+        .map iframe{
+            height:250px;
+        }
+}
