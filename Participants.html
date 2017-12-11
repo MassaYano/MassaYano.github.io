@@ -163,26 +163,26 @@
 							<h2 id="exp" lang="ja" charset="euc-jp"><font size="4">実験の応募</font></h2>
 							<form action="https://formspree.io/yanomasa813@gmail.com" method="POST">
 									<label for="name">　お名前:</label>
-									<input type="text" id="name" placeholder="お名前" name="name" />
+									<input type="text" id="name" placeholder="お名前" name="name" required="required" />
 
 									<label for="name2">よみがな:</label>
-									<input type="text" id="name2" placeholder="よみがな" name="name2" />
+									<input type="text" id="name2" placeholder="よみがな" name="name2" required="required" />
 
 									<label for="mail">メールアドレス:</label>
-									<input type="email" id="mail" placeholder="◯◯@gmail.comなど" name="email" />
+									<input type="email" id="mail" placeholder="◯◯@gmail.comなど" name="email" required="required" />
 
 									<label for="affiliation">学部名（文学部のひとは研究室名）:</label>
-									<input type="text" id="affiliation" placeholder="◯◯学部" name="affiliation" />
+									<input type="text" id="affiliation" placeholder="◯◯学部" name="affiliation" required="required"/>
 
 									<label for="msg">希望日時:</label>
-									<textarea id="msg" placeholder="希望日時" name="msg" rows="4">第1希望：
+									<textarea id="msg" placeholder="希望日時" name="msg" rows="3" required="required">第1希望：
 第2希望：
 第3希望：</textarea>
 
-									<label for="radio">実験参加者プールへの登録を希望しますか？:</label></br>
-									<input type="radio" name="participantpool" value="yes">はい
-									<input type="radio" name="participantpool" value="no">いいえ
-									<input type="radio" name="participantpool" value="registered">既に登録済み
+									<label for="radio"><a href="https://massayano.github.io/Participants.html#pool">実験参加者プール</a>への登録を希望しますか？:</label></br>
+									<input type="radio" name="participantpool" value="yes" required="required">はい
+									<input type="radio" name="participantpool" value="no" required="required">いいえ
+									<input type="radio" name="participantpool" value="registered" required="required">既に登録済み
 									</br>
 							    <input type="submit" value="Send">
 							</form>
