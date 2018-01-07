@@ -18,11 +18,64 @@
 		<!-- Content -->
 		<div id="content">
 		<p><font size="6" color="black">目次</font></p>
-		<li>執筆中				100均LEDでレスポンスボックス自作</li>
+		<li>2018/01/07	100均LEDでレスポンスボックス自作 [<a href="https://massayano.github.io/Blog.html#RB">link</a>]</li>
 		<li>2017/12/30	学振PDでアメリカの大学へ [<a href="https://massayano.github.io/Blog.html#JSPS">link</a>]</li>
 
-
 		<!-- Post -->
+		<article class="box post post-excerpt"><header><h1 id="RB"><font size="6", color="black">100均LEDでレスポンスボックス自作（2018/01/07）</font></h1></header></article>
+
+		<p>脳波・行動実験などで使用できるレスポンスボックスの自作方法を紹介します。</p>
+
+		<b>なぜ自作するのか？</b></br>
+		脳波実験などでは、実験者が操作する刺激呈示用パソコンからVGAケーブル等でモニターにつなぎその映像を実験参加者に呈示することが多いと思います。このようなケースでは、実験参加者は、実験刺激を呈示するパソコンのキーボードから離れた位置におり、キーボードを押せないので、<a href="https://cedrus.com/rb_series/">Cedrus製Response Box</a>などを購入してレスポンスを記録することになります。
+		しかし、Cedrus製のレスポンスは高く（RB0740は2017年7月時点で8万円程度 [<a href="http://www.unipos.net/find/product_item.php?id=33">ユニポス</a>]）、若手研究者（特に研究費がない院生）には手が出しにくいです。また、高齢者や子どもなどを対象とする実験では、Cedrus製のレスポンスボックスだとボタンがやや小さく押しにくかったり、タスクに関係ないボタンがあるために参加者が混乱したりするという意見がありました。そこで、実験参加者フレンドリーなレスポンスボックスを安く作る方法を考えました。</p>
+
+		<p>以下で紹介する方法は、ゲームコントローラーに接続さえできればボタンの大きさ・個数は自由に決められます。</p>
+
+		<div style="margin-left: 1em; text-indent: -1em;text-align: justify;">
+		<b>用意するもの</b>：
+		<li>USBコネクタでパソコンに接続できるゲームコントローラー（<a href="https://www.amazon.co.jp/gp/product/B000FO600A/ref=oh_aui_detailpage_o04_s00?ie=UTF8&amp;psc=1">エレコムゲームパッド</a>だと1000円前後、たまに700円くらいになる...）</li>
+		<li>ダイソーLEDライトまたはボタンとして使用したいもの（参考：<a href="https://www.marutsu.co.jp/RatedList.jsp?goodsClassCode1=15&amp;goodsClassCode2=0012&amp;goodsClassCode3=0024">マルツオンライン</a>）</li>
+		<li>ハンダ</li>
+		<li>半田ごて</li>
+		<li>プラスドライバー</li>
+		<li>コード</li>
+	  <li>ハサミ</li></p>
+	  </div>
+
+		<p>さっそく作業に取り掛かります。まず、ゲームコントローラーを開いて、以下のような状態にします。</p>
+
+		<img src="/images/RB1.jpg" border="0" width="250" height="250">
+		<img src="/images/RB2.jpg" border="0" width="250" height="250"></p>
+
+		<p>このゲームコントローラーでは数字がついているところが使える場所です。右４つに１、２、３、４、真ん中に９、１０と小さく書いてあります。それ以外の番号は上側についている４つのボタンです。今回は右４つと１０番を使用しました。</p>
+
+		<p>コードを２本準備し、丸い部分の片側に一本ずつはんだ付けします。この時、はんだが、反対側までつかないように気をつけて下さい。</p>
+
+		<p><img src="/images/RB3.jpg" border="0" width="250" height="250"></p>
+
+		<p>これでコントロラー側の準備は終わりです。</p>
+
+		<p>先ほどはんだ付けをしたコードの反対側をボタンにつけていきます。今回は、ボタンとしてダイソーで購入したLEDライトを使います（高齢者・子どもの実験用に使用するので大きめのものを使用）。LEDライトのカバーをプラスドライバーで外し、スイッチの部分についているコードを切ります。</p>
+
+		<img src="/images/RB4.jpg" border="0" width="250" height="250">
+		<img src="/images/RB5.jpg" border="0" width="250" height="250"></p>
+
+		<p>スイッチ部分を取り出します。このスイッチは、押すとオンの状態のままになってしまうので、ボタンとして使用するために留め金を外します。取り外すのは、バネの反対側にある「コ」のような形をしたものです。撮影のために完全に上のカバー部分を外していますが、カバーを外すとバネが取れやすくなるので、カバーを半開きの状態にしてマイナスドライバーでうまく取り出す良いです。</p>
+
+		<p><img src="/images/RB6.jpg" border="0" width="250" height="250">
+		<img src="/images/RB7.jpg" border="0" width="250" height="250"></p>
+
+		<p>先ほど片側をコントロラーに付けたコードの反対側をはんだで付け、スイッチをLEDライトに戻しカバーを付けます。カバーを付ける際に、コードがじゃまになるので、カバーの下の方に隙間を空けてそこから出すと良いです（これは好み）</p>
+
+		<p><img src="/images/RB8.jpg" border="0" width="250" height="250"></p>
+
+		<p>これで完成です。</p>
+
+		<p><img src="/images/RB9.jpg" border="0" width="250" height="250"></p>
+
+		<p>脳波実験などで使用している<a href="https://www.neurobs.com">Presentation（Neurobehavioral Systems）</a>であれば、コントロラーのUSBをパソコンに接続しSettings > Game Pad（たしか笑）で動作確認ができます。動作確認のとき、ボタンのリリースではなく、ボタン押しが反応として記録されていることを確認しておいた方が良いです。それの方法だと<a href="https://joytokey.net/ja/">JoyToKey</a>というソフトで、ゲームコントローラーのボタン押しをキーボードに置き換えることができます。あんまりちゃんと確認してないですが（文処理の脳波実験は通常ミリ秒単位での反応時間の正確さは必要ないので）、<a href="https://en.wikipedia.org/wiki/Eriksen_flanker_task">Flanker Task</a>を自分でやってみた限りでは、キーボード vs. Cedrusのレスポンスボックス vs. 自作レスポンスボックスで差はありませんでした。</p>
+
 		<article class="box post post-excerpt"><header><h1 id="JSPS"><font size="6", color="black">学振PDでアメリカの大学へ（2017/12/30）</font></h1></header></article>
 		<p>受入研究機関・時期などによって異なる部分もありますので参考程度に...</p>
 
