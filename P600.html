@@ -26,9 +26,9 @@
 		<!-- Content -->
 			<div id="content">
 							<!--Facebook-->
-							27<p>
+							29<p>
 
-							<div id="shareBtn" class="btn btn-success clearfix">Share1</div>
+							<!--<div id="shareBtn" class="btn btn-success clearfix">Share1</div>
 
 							<script>
 							document.getElementById('shareBtn').onclick = function() {
@@ -37,8 +37,20 @@
 									hashtag: '#P600',
 							    display: 'popup',
 							    href: 'https://massayano.github.io/P600.html',
-									picture: 'https://massayano.github.io/images/facebook.png',
-							  				}, function(response){});
+									}, function(response){});
+											}
+							</script>-->
+
+							<div id="fb-share-button" class="fb-share-button" data-layout="button" data-size="small"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://massayano.github.io/P600.html"></a></div>
+
+							<script>
+							document.getElementById('fb-share-button').onclick = function() {
+								FB.ui({
+									method: 'share',
+									hashtag: '#P600',
+									display: 'popup',
+									href: 'https://massayano.github.io/P600.html',
+									}, function(response){});
 											}
 							</script>
 
