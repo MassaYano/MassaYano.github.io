@@ -25,12 +25,23 @@
 
 		<!-- Content -->
 		<div id="content">
-						<!--Facebook-->
-						<div class="fb-share-button" data-href="https://massayano.github.io/Workshop.html" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://massayano.github.io/Workshop.html"></a></div></p>
-						<!--Twitter-->
-						<a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-lang="en" data-text=" "></a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script></p>
-						<!--Line-->
-						<div class="line-it-button" data-lang="ja" data-type="share-c" data-url="https://massayano.github.io/Workshop.html" style="display: none;"></div><script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+			<!--Facebook-->
+				<div id="shareBtn" class="btn btn-success clearfix" style="display: inline-block; _display: inline;"><img src="https://massayano.github.io/images/facebook.png" border="0" width="64" height="23"></div>
+				<script>
+				document.getElementById('shareBtn').onclick = function() {
+					FB.ui({
+						method: 'share',
+						hashtag: '#公開ワークショップ',
+						display: 'popup',
+						href: 'https://massayano.github.io/Workshop.html',
+						}, function(response){});
+								}
+				</script>
+				<!--<div class="fb-share-button" data-href="https://massayano.github.io/P600.html" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://massayano.github.io/P600.html"></a></div>-->
+			<!--Twitter-->
+				<a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="公開ワークショップ" data-count="none" data-lang="en" data-text=" "></a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+			<!--Line-->
+				<div class="line-it-button" data-lang="ja" data-type="share-a" data-url="https://massayano.github.io/Workshop.html" style="display: none;"></div><script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
 
 			<!-- Post -->
 
