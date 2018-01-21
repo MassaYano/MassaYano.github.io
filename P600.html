@@ -26,11 +26,33 @@
 		<!-- Content -->
 			<div id="content">
 							<!--Facebook-->
-							23<p>
+							24<p>
 
-							<div id="shareBtn" class="btn btn-success clearfix">Share</div>
+							<script>
+								shareOnFB: function() {
+								    var img = "https://massayano.github.io/images/facebook.png";
+								    var link = 'https://massayano.github.io/P600.html';
 
-							<!--<div id="shareBtn" class="btn btn-success clearfix">Share1</div>-->
+								    // Open FB share popup
+								    FB.ui({
+								        method: 'share_open_graph',
+								        action_type: 'og.shares',
+								        action_properties: JSON.stringify({
+								            object: {
+								                'og:url': link,
+								                'og:title': title,
+								                'og:description': desc,
+								                'og:image': img
+								            }
+								        })
+								    },
+								    function (response) {
+								        // Action after response
+								    });
+							</script>
+
+							<!--
+							<div id="shareBtn" class="btn btn-success clearfix">Share1</div>
 
 							<script>
 							document.getElementById('shareBtn').onclick = function() {
@@ -43,6 +65,7 @@
 							  }, function(response){});
 							}
 							</script>
+							-->
 
 							<div class="fb-share-button" data-href="https://massayano.github.io/P600.html" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://massayano.github.io/P600.html"></a></div></p>
 							<!--Twitter-->
