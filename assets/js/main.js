@@ -61,7 +61,7 @@
 						'<a href="#sidebar" class="toggle"></a>' +
 						'<span class="title">' + $('#logo').html() + '</span>' +
 					'</div>'
-				)
+				)a
 					.appendTo($body);
 
 			// Sidebar
