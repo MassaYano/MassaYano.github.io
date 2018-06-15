@@ -1,0 +1,3 @@
+word,sound,pract_trial.thisRepN,pract_trial.thisTrialN,pract_trial.thisN,pract_trial.thisIndex,rating1.response,rating1.rt,participant,gender,frameRate,expName,L1,date,
+cloud,sound/cloud.wav,0,0,0,0,3,4.355,,,60.05933902285354,rating,,2018_Jun_15_1224,
+clout,sound/clout.wav,0,1,1,1,4,1.604,,,60.05933902285354,rating,,2018_Jun_15_1224,
