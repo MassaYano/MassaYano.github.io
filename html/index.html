@@ -1137,47 +1137,6 @@
             return psychoJS.NEXT;
         }
         
-        function StartLoopBegin(thisScheduler) {
-          // set up handler to look after randomisation of conditions etc
-          try {
-            Start = new psychoJS.data.TrialHandler({nReps:1, method:'sequential',
-              extraInfo:expInfo, originPath:undefined,
-              trialList:psychoJS.data.importConditions('Instruction.xlsx'),
-              seed:undefined, name:'Start'});
-            thisExp.addLoop(Start); // add the loop to the experiment
-            thisStart = Start.trialList[Start.trialSequence[0]]; // so we can initialise stimuli with some values
-            // abbreviate parameter names if possible (e.g. rgb=thisStart.rgb)
-            abbrevNames(thisStart);
-            // Schedule each of the trials in the list to occur
-            for (var i = 0; i < Start.trialSequence.length; ++i) {
-              thisStart = Start.trialList[Start.trialSequence[i]];
-              thisScheduler.add(abbrevNames(thisStart));
-              thisScheduler.add(InstructionRoutineBegin);
-              thisScheduler.add(InstructionRoutineEachFrame);
-              thisScheduler.add(InstructionRoutineEnd);
-              thisScheduler.add(recordLoopIteration(Start));
-            }
-          } catch (exception) {
-            console.log(exception);
-          }
-        
-          return psychoJS.NEXT;
-        }
-        
-        function StartLoopEnd() {
-          // get names of stimulus parameters
-          if (psychoJS.isEmpty(Start.trialList)) { // XXX equiv of : in ([], [None], None)
-            params = [];
-          }
-          else {
-            params = Object.keys(Start.trialList[0]);
-          }
-        
-          // save data for this loop
-          thisExp.loopEnded(Start);
-          return psychoJS.NEXT;
-          }
-        
         function run() {
           // init psychoJS and set up OpenGL Canvas
           setupWin();
@@ -1211,10 +1170,9 @@
           // flowScheduler gets run if the participants presses OK
           flowScheduler.add(updateInfo); // add timeStamp
           flowScheduler.add(experimentInit);
-          StartLoopScheduler = new psychoJS.Scheduler();
-          flowScheduler.add(StartLoopBegin, StartLoopScheduler);
-          flowScheduler.add(StartLoopScheduler);
-          flowScheduler.add(StartLoopEnd);
+          flowScheduler.add(InstructionRoutineBegin);
+          flowScheduler.add(InstructionRoutineEachFrame);
+          flowScheduler.add(InstructionRoutineEnd);
           flowScheduler.add(quitPsychoJS);
           
           // quit if user presses Cancel in dialog box:
