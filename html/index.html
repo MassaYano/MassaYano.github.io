@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>XiaExp [PsychoPy]</title>
+    <title>YanoExp [PsychoPy]</title>
     <meta charset="UTF-8">
     <link href="js/vendors//jquery-ui-1.11.4.base/jquery-ui.min.css" rel="stylesheet">
 
@@ -54,7 +54,7 @@
         
           // An ExperimentHandler isn't essential but helps with data saving
           thisExp = new psychoJS.data.ExperimentHandler({
-              name: 'XiaExp',
+              name: u'YanoExp',
               version: '',
               extraInfo: expInfo,
               runtimeInfo: undefined,  // not yet supported by psychoJS
@@ -98,10 +98,10 @@
         function setupWin() {
           // Start Code - component code to be run before the window creation
           // Setup the Window
-          win = new psychoJS.visual.Window({size:[1920, 1080],
+          win = new psychoJS.visual.Window({size:[2560, 1440],
               fullscr:true, screen:1.0,
               allowGUI:false, allowStencil:false,
-              monitor:'testMonitor',
+              monitor:u'testMonitor',
               color:[0,0,0], colorSpace:'rgb',
               blendMode:'avg',
               units:'use prefs'
