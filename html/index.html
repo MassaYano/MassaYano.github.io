@@ -54,7 +54,7 @@
         
           // An ExperimentHandler isn't essential but helps with data saving
           thisExp = new psychoJS.data.ExperimentHandler({
-              name: u'untitled',
+              name: 'untitled',
               version: '',
               extraInfo: expInfo,
               runtimeInfo: undefined,  // not yet supported by psychoJS
@@ -114,10 +114,10 @@
           // Initialize components for Routine "trial"
           trialClock = new psychoJS.core.Clock();
           text = new psychoJS.visual.TextStim({win : win, name : 'text',
-              text : u'Welcome',
-              font : u'Arial',
+              text : 'Welcome',
+              font : 'Arial',
               pos : [0, 0], height : 0.1, wrapWidth : undefined, ori:0, 
-              color : u'white', colorSpace:'rgb', opacity : 1,
+              color : 'white', colorSpace:'rgb', opacity : 1,
               depth : 0.0 
           });
           
@@ -181,7 +181,7 @@
             psychoJS.event.clearEvents({eventType:'keyboard'});
           }
           if (key_resp_2.status == psychoJS.STARTED) {
-            theseKeys = psychoJS.event.getKeys({keyList:['y', 'n', 'left', 'right', 'space']});
+            theseKeys = psychoJS.event.getKeys({keyList:['Space']});
             
             // check for quit:
             if ("escape" in theseKeys) {
