@@ -114,7 +114,7 @@
           // Initialize components for Routine "trial"
           trialClock = new psychoJS.core.Clock();
           Inst = new psychoJS.visual.TextStim({win : win, name : 'Inst',
-              text : u'Welcome',
+              text : 'default text',
               font : u'Meiryo',
               pos : [0, 0], height : 0.1, wrapWidth : undefined, ori:0, 
               color : u'white', colorSpace:'rgb', opacity : 1,
@@ -133,11 +133,12 @@
           t = 0;
           trialClock.reset(); // clock
           frameN = -1;
-          routineTimer.add(3.000000);
           // update component parameters for each repeat
+          Next = new psychoJS.event.BuilderKeyResponse();
           // keep track of which components have finished
           trialComponents = [];
           trialComponents.push(Inst);
+          trialComponents.push(Next);
           for(var i = 0; i < trialComponents.length; ++i) {
             thisComponent = trialComponents[i];
             if ('status' in thisComponent) {
@@ -168,6 +169,34 @@
           if (Inst.status === psychoJS.STARTED && t >= frameRemains) {
             Inst.setAutoDraw(false);
           }
+          if (Inst.status == STARTED){ // only update if being drawn
+            Inst.setText(u'Welcome');
+          }
+          
+          // *Next* updates
+          if (t >= 3 && Next.status === psychoJS.NOT_STARTED) {
+            // keep track of start time/frame for later
+            Next.tStart = t;  // (not accounting for frame time here)
+            Next.frameNStart = frameN;  // exact frame index
+            Next.status = psychoJS.STARTED;
+            // keyboard checking is just starting
+            Next.clock.reset();  // now t=0
+            psychoJS.event.clearEvents({eventType:'keyboard'});
+          }
+          if (Next.status == psychoJS.STARTED) {
+            theseKeys = psychoJS.event.getKeys({keyList:['Space']});
+            
+            // check for quit:
+            if ("escape" in theseKeys) {
+                endExpNow = true;
+            }
+            if (theseKeys.length > 0) {  // at least one key was pressed
+              Next.keys = theseKeys[theseKeys.length-1]  // just the last key pressed
+              Next.rt = Next.clock.getTime();
+              // a response ends the routine
+              continueRoutine = false;
+            }
+          }
           
           // check if the Routine should terminate
           if (!continueRoutine) {  // a component has requested a forced-end of Routine
@@ -187,7 +216,7 @@
           }
           
           // refresh the screen if continuing
-          if (continueRoutine && routineTimer.getTime() > 0) {
+          if (continueRoutine) {
             return psychoJS.FLIP_REPEAT;
           }
           else {
@@ -203,6 +232,16 @@
               thisComponent.setAutoDraw(false);
             }
           }
+          // check responses
+          if (['', [], undefined].indexOf(Next.keys) >= 0) {    // No response was made
+              Next.keys = undefined;
+          }
+          thisExp.addData('Next.keys',Next.keys);
+          if (Next.keys != undefined) {  // we had a response
+              thisExp.addData('Next.rt', Next.rt)
+          }
+          // the Routine "trial" was not non-slip safe, so reset the non-slip timer
+          routineTimer.reset();
           return psychoJS.NEXT;
         }
         
