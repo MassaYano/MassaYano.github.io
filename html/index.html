@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>YanoExp2 [PsychoPy]</title>
+    <title>Nback1 [PsychoPy]</title>
     <meta charset="UTF-8">
     <link href="js/vendors//jquery-ui-1.11.4.base/jquery-ui.min.css" rel="stylesheet">
 
@@ -49,12 +49,12 @@
       // wait until document is ready:
       $(document).ready(function() {
         psychoJS.debug = true; //false;
-
+        
         function setupExperiment() {
-
+        
           // An ExperimentHandler isn't essential but helps with data saving
           thisExp = new psychoJS.data.ExperimentHandler({
-              name: u'YanoExp',
+              name: u'Nback1',
               version: '',
               extraInfo: expInfo,
               runtimeInfo: undefined,  // not yet supported by psychoJS
@@ -63,26 +63,26 @@
               saveWideText: true,
               saveTo: 'EXPERIMENT_SERVER',
               /*dataFileName=filename*/});
-
+        
           // setup resource manager:
           psychoJS.resourceManager.set({
                                 win:win, downloadFrom:'EXPERIMENT_SERVER', projectId:undefined,
                                 projectStatus:'PUBLIC', clock:new psychoJS.core.Clock()
                                 });
-
+        
           endExpNow = false; // flag for 'escape' or other condition => quit the exp
-
+        
           // logging:
           psychoJS.logging.console.setLevel(psychoJS.logging.EXP);
           psychoJS.logging.server.set({'level':psychoJS.logging.EXP, 'saveTo':'EXPERIMENT_SERVER', 'experimentInfo': expInfo});
-
+        
           return psychoJS.NEXT;
         }
-
+        
         function updateInfo() {
           expInfo['date'] = psychoJS.data.getDateStr();  // add a simple timestamp
           expInfo['expName'] = expName;
-
+        
           // store frame rate of monitor if we can measure it successfully
           expInfo['frameRate'] = win.getActualFrameRate();
           if (expInfo['frameRate'] != undefined) {
@@ -91,14 +91,14 @@
           else {
               frameDur = 1.0/60.0; // couldn't get a reliable measure so guess
           }
-
+        
           return psychoJS.NEXT;
         }
-
+        
         function setupWin() {
           // Start Code - component code to be run before the window creation
           // Setup the Window
-          win = new psychoJS.visual.Window({size:[2560, 1440],
+          win = new psychoJS.visual.Window({size:[1366, 768],
               fullscr:true, screen:1.0,
               allowGUI:false, allowStencil:false,
               monitor:u'testMonitor',
@@ -108,301 +108,74 @@
               });
           return psychoJS.NEXT;
         }
-
+        
         function experimentInit() {
-
-          // Initialize components for Routine "Instruction"
-          InstructionClock = new psychoJS.core.Clock();
-          InstructionText1 = new psychoJS.visual.TextStim({win : win, name : 'InstructionText1',
-              text : 'default text',
-              font : u'Arial',
-              pos : [0, 0], height : 0.1, wrapWidth : undefined, ori:0,
-              color : u'black', colorSpace:'rgb', opacity : 1,
-              depth : 0.0
+          
+          // Initialize components for Routine "trial"
+          trialClock = new psychoJS.core.Clock();
+          Inst = new psychoJS.visual.TextStim({win : win, name : 'Inst',
+              text : u'Welcome',
+              font : u'Meiryo',
+              pos : [0, 0], height : 0.1, wrapWidth : undefined, ori:0, 
+              color : u'white', colorSpace:'rgb', opacity : 1,
+              depth : 0.0 
           });
-
+          
           // Create some handy timers
           globalClock = new psychoJS.core.Clock();  // to track the time since experiment started
           routineTimer = new psychoJS.core.CountdownTimer();  // to track time remaining of each (non-slip) routine
-
+          
           return psychoJS.NEXT;
         }
-
-        function ITIRoutineBegin() {
-          //------Prepare to start Routine 'ITI'-------
+        
+        function trialRoutineBegin() {
+          //------Prepare to start Routine 'trial'-------
           t = 0;
-          ITIClock.reset(); // clock
-          frameN = -1;
-          routineTimer.add(2.000000);
-          // update component parameters for each repeat
-          ITIRes = new psychoJS.event.BuilderKeyResponse();
-          // keep track of which components have finished
-          ITIComponents = [];
-          ITIComponents.push(ITItxt);
-          ITIComponents.push(ITIRes);
-          for(var i = 0; i < ITIComponents.length; ++i) {
-            thisComponent = ITIComponents[i];
-            if ('status' in thisComponent) {
-              thisComponent.status = psychoJS.NOT_STARTED;
-            }
-          }
-
-          return psychoJS.NEXT;
-        }
-
-        function ITIRoutineEachFrame() {
-          //------Loop for each frame of Routine 'ITI'-------
-          continueRoutine = true;
-           // until we're told otherwise
-          // get current time
-          t = ITIClock.getTime();
-          frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-          // update/draw components on each frame
-
-          // *ITItxt* updates
-          if (t >= 0.0 && ITItxt.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            ITItxt.tStart = t;  // (not accounting for frame time here)
-            ITItxt.frameNStart = frameN;  // exact frame index
-            ITItxt.setAutoDraw(true);
-          }
-          frameRemains = 0.0 + 2 - frameDur * 0.75;  // most of one frame period left
-          if (ITItxt.status === psychoJS.STARTED && t >= frameRemains) {
-            ITItxt.setAutoDraw(false);
-          }
-
-          // *ITIRes* updates
-          if (t >= 0.0 && ITIRes.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            ITIRes.tStart = t;  // (not accounting for frame time here)
-            ITIRes.frameNStart = frameN;  // exact frame index
-            ITIRes.status = psychoJS.STARTED;
-            // keyboard checking is just starting
-            ITIRes.clock.reset();  // now t=0
-            psychoJS.event.clearEvents({eventType:'keyboard'});
-          }
-          frameRemains = 0.0 + 2 - frameDur * 0.75;  // most of one frame period left
-          if (ITIRes.status === psychoJS.STARTED && t >= frameRemains) {
-            ITIRes.status = psychoJS.STOPPED;
-          if (ITIRes.status == psychoJS.STARTED) {
-            theseKeys = psychoJS.event.getKeys({keyList:['y', 'n', 'left', 'right', 'space']});
-
-            // check for quit:
-            if ("escape" in theseKeys) {
-                endExpNow = true;
-            }
-            if (theseKeys.length > 0) {  // at least one key was pressed
-              ITIRes.keys = theseKeys[theseKeys.length-1]  // just the last key pressed
-              ITIRes.rt = ITIRes.clock.getTime();
-              // a response ends the routine
-              continueRoutine = false;
-            }
-          }
-
-          // check if the Routine should terminate
-          if (!continueRoutine) {  // a component has requested a forced-end of Routine
-            return psychoJS.NEXT;
-          }
-          continueRoutine = false;// reverts to True if at least one component still running
-          for(var i = 0; i < ITIComponents.length; ++i) {
-            thisComponent = ITIComponents[i];
-            if ('status' in thisComponent && thisComponent.status != psychoJS.FINISHED) {
-              continueRoutine = true;
-              break;
-            }
-          }
-          // check for quit (the Esc key)
-          if (endExpNow || psychoJS.event.getKeys({keyList:['escape']}).length > 0) {
-            psychoJS.core.quit('The <Escape> key was pressed. Goodbye!');
-          }
-
-          // refresh the screen if continuing
-          if (continueRoutine && routineTimer.getTime() > 0) {
-            return psychoJS.FLIP_REPEAT;
-          }
-          else {
-            return psychoJS.NEXT;
-          }
-        }
-
-        function ITIRoutineEnd() {
-          //------Ending Routine 'ITI'-------
-          for (var i = 0; i < ITIComponents.length; ++i) {
-            thisComponent = ITIComponents[i];
-            if ("setAutoDraw" in thisComponent) {
-              thisComponent.setAutoDraw(false);
-            }
-          }
-          // check responses
-          if (['', [], undefined].indexOf(ITIRes.keys) >= 0) {    // No response was made
-              ITIRes.keys = undefined;
-          }
-          thisExp.addData('ITIRes.keys',ITIRes.keys);
-          if (ITIRes.keys != undefined) {  // we had a response
-              thisExp.addData('ITIRes.rt', ITIRes.rt)
-          }
-          return psychoJS.NEXT;
-        }
-
-        function rest2RoutineBegin() {
-          //------Prepare to start Routine 'rest2'-------
-          t = 0;
-          rest2Clock.reset(); // clock
-          frameN = -1;
-          // update component parameters for each repeat
-          RestRes2 = new psychoJS.event.BuilderKeyResponse();
-          // keep track of which components have finished
-          rest2Components = [];
-          rest2Components.push(Resttext2);
-          rest2Components.push(RestRes2);
-          for(var i = 0; i < rest2Components.length; ++i) {
-            thisComponent = rest2Components[i];
-            if ('status' in thisComponent) {
-              thisComponent.status = psychoJS.NOT_STARTED;
-            }
-          }
-
-          return psychoJS.NEXT;
-        }
-
-        function rest2RoutineEachFrame() {
-          //------Loop for each frame of Routine 'rest2'-------
-          continueRoutine = true;
-           // until we're told otherwise
-          // get current time
-          t = rest2Clock.getTime();
-          frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-          // update/draw components on each frame
-
-          // *Resttext2* updates
-          if (t >= 0.0 && Resttext2.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            Resttext2.tStart = t;  // (not accounting for frame time here)
-            Resttext2.frameNStart = frameN;  // exact frame index
-            Resttext2.setAutoDraw(true);
-          }
-
-          // *RestRes2* updates
-          if ((RestRes2>5) && RestRes2.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            RestRes2.tStart = t;  // (not accounting for frame time here)
-            RestRes2.frameNStart = frameN;  // exact frame index
-            RestRes2.status = psychoJS.STARTED;
-            // keyboard checking is just starting
-            RestRes2.clock.reset();  // now t=0
-            psychoJS.event.clearEvents({eventType:'keyboard'});
-          }
-          if (RestRes2.status == psychoJS.STARTED) {
-            theseKeys = psychoJS.event.getKeys({keyList:['y', 'n', 'left', 'right', 'space']});
-
-            // check for quit:
-            if ("escape" in theseKeys) {
-                endExpNow = true;
-            }
-            if (theseKeys.length > 0) {  // at least one key was pressed
-              RestRes2.keys = theseKeys[theseKeys.length-1]  // just the last key pressed
-              RestRes2.rt = RestRes2.clock.getTime();
-              // a response ends the routine
-              continueRoutine = false;
-            }
-          }
-
-          // check if the Routine should terminate
-          if (!continueRoutine) {  // a component has requested a forced-end of Routine
-            return psychoJS.NEXT;
-          }
-          continueRoutine = false;// reverts to True if at least one component still running
-          for(var i = 0; i < rest2Components.length; ++i) {
-            thisComponent = rest2Components[i];
-            if ('status' in thisComponent && thisComponent.status != psychoJS.FINISHED) {
-              continueRoutine = true;
-              break;
-            }
-          }
-          // check for quit (the Esc key)
-          if (endExpNow || psychoJS.event.getKeys({keyList:['escape']}).length > 0) {
-            psychoJS.core.quit('The <Escape> key was pressed. Goodbye!');
-          }
-
-          // refresh the screen if continuing
-          if (continueRoutine) {
-            return psychoJS.FLIP_REPEAT;
-          }
-          else {
-            return psychoJS.NEXT;
-          }
-        }
-
-        function rest2RoutineEnd() {
-          //------Ending Routine 'rest2'-------
-          for (var i = 0; i < rest2Components.length; ++i) {
-            thisComponent = rest2Components[i];
-            if ("setAutoDraw" in thisComponent) {
-              thisComponent.setAutoDraw(false);
-            }
-          }
-          // check responses
-          if (['', [], undefined].indexOf(RestRes2.keys) >= 0) {    // No response was made
-              RestRes2.keys = undefined;
-          }
-          thisExp.addData('RestRes2.keys',RestRes2.keys);
-          if (RestRes2.keys != undefined) {  // we had a response
-              thisExp.addData('RestRes2.rt', RestRes2.rt)
-          }
-          // the Routine "rest2" was not non-slip safe, so reset the non-slip timer
-          routineTimer.reset();
-          return psychoJS.NEXT;
-        }
-
-        function InstructionRoutineBegin() {
-          //------Prepare to start Routine 'Instruction'-------
-          t = 0;
-          InstructionClock.reset(); // clock
+          trialClock.reset(); // clock
           frameN = -1;
           routineTimer.add(3.000000);
           // update component parameters for each repeat
-          InstructionText1.setText(u'Welcome');
           // keep track of which components have finished
-          InstructionComponents = [];
-          InstructionComponents.push(InstructionText1);
-          for(var i = 0; i < InstructionComponents.length; ++i) {
-            thisComponent = InstructionComponents[i];
+          trialComponents = [];
+          trialComponents.push(Inst);
+          for(var i = 0; i < trialComponents.length; ++i) {
+            thisComponent = trialComponents[i];
             if ('status' in thisComponent) {
               thisComponent.status = psychoJS.NOT_STARTED;
             }
           }
-
+          
           return psychoJS.NEXT;
         }
-
-        function InstructionRoutineEachFrame() {
-          //------Loop for each frame of Routine 'Instruction'-------
+        
+        function trialRoutineEachFrame() {
+          //------Loop for each frame of Routine 'trial'-------
           continueRoutine = true;
            // until we're told otherwise
           // get current time
-          t = InstructionClock.getTime();
+          t = trialClock.getTime();
           frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
           // update/draw components on each frame
-
-          // *InstructionText1* updates
-          if (t >= 0.0 && InstructionText1.status === psychoJS.NOT_STARTED) {
+          
+          // *Inst* updates
+          if (t >= 0.0 && Inst.status === psychoJS.NOT_STARTED) {
             // keep track of start time/frame for later
-            InstructionText1.tStart = t;  // (not accounting for frame time here)
-            InstructionText1.frameNStart = frameN;  // exact frame index
-            InstructionText1.setAutoDraw(true);
+            Inst.tStart = t;  // (not accounting for frame time here)
+            Inst.frameNStart = frameN;  // exact frame index
+            Inst.setAutoDraw(true);
           }
           frameRemains = 0.0 + 3 - frameDur * 0.75;  // most of one frame period left
-          if (InstructionText1.status === psychoJS.STARTED && t >= frameRemains) {
-            InstructionText1.setAutoDraw(false);
+          if (Inst.status === psychoJS.STARTED && t >= frameRemains) {
+            Inst.setAutoDraw(false);
           }
-
+          
           // check if the Routine should terminate
           if (!continueRoutine) {  // a component has requested a forced-end of Routine
             return psychoJS.NEXT;
           }
           continueRoutine = false;// reverts to True if at least one component still running
-          for(var i = 0; i < InstructionComponents.length; ++i) {
-            thisComponent = InstructionComponents[i];
+          for(var i = 0; i < trialComponents.length; ++i) {
+            thisComponent = trialComponents[i];
             if ('status' in thisComponent && thisComponent.status != psychoJS.FINISHED) {
               continueRoutine = true;
               break;
@@ -412,7 +185,7 @@
           if (endExpNow || psychoJS.event.getKeys({keyList:['escape']}).length > 0) {
             psychoJS.core.quit('The <Escape> key was pressed. Goodbye!');
           }
-
+          
           // refresh the screen if continuing
           if (continueRoutine && routineTimer.getTime() > 0) {
             return psychoJS.FLIP_REPEAT;
@@ -421,730 +194,74 @@
             return psychoJS.NEXT;
           }
         }
-
-        function InstructionRoutineEnd() {
-          //------Ending Routine 'Instruction'-------
-          for (var i = 0; i < InstructionComponents.length; ++i) {
-            thisComponent = InstructionComponents[i];
+        
+        function trialRoutineEnd() {
+          //------Ending Routine 'trial'-------
+          for (var i = 0; i < trialComponents.length; ++i) {
+            thisComponent = trialComponents[i];
             if ("setAutoDraw" in thisComponent) {
               thisComponent.setAutoDraw(false);
             }
           }
           return psychoJS.NEXT;
         }
-
-        function restRoutineBegin() {
-          //------Prepare to start Routine 'rest'-------
-          t = 0;
-          restClock.reset(); // clock
-          frameN = -1;
-          // update component parameters for each repeat
-          RestRes = new psychoJS.event.BuilderKeyResponse();
-          // keep track of which components have finished
-          restComponents = [];
-          restComponents.push(Resttext);
-          restComponents.push(RestRes);
-          for(var i = 0; i < restComponents.length; ++i) {
-            thisComponent = restComponents[i];
-            if ('status' in thisComponent) {
-              thisComponent.status = psychoJS.NOT_STARTED;
-            }
-          }
-
-          return psychoJS.NEXT;
-        }
-
-        function restRoutineEachFrame() {
-          //------Loop for each frame of Routine 'rest'-------
-          continueRoutine = true;
-           // until we're told otherwise
-          // get current time
-          t = restClock.getTime();
-          frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-          // update/draw components on each frame
-
-          // *Resttext* updates
-          if (t >= 0.0 && Resttext.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            Resttext.tStart = t;  // (not accounting for frame time here)
-            Resttext.frameNStart = frameN;  // exact frame index
-            Resttext.setAutoDraw(true);
-          }
-
-          // *RestRes* updates
-          if ((RestRes>5) && RestRes.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            RestRes.tStart = t;  // (not accounting for frame time here)
-            RestRes.frameNStart = frameN;  // exact frame index
-            RestRes.status = psychoJS.STARTED;
-            // keyboard checking is just starting
-            RestRes.clock.reset();  // now t=0
-            psychoJS.event.clearEvents({eventType:'keyboard'});
-          }
-          if (RestRes.status == psychoJS.STARTED) {
-            theseKeys = psychoJS.event.getKeys({keyList:['y', 'n', 'left', 'right', 'space']});
-
-            // check for quit:
-            if ("escape" in theseKeys) {
-                endExpNow = true;
-            }
-            if (theseKeys.length > 0) {  // at least one key was pressed
-              RestRes.keys = theseKeys[theseKeys.length-1]  // just the last key pressed
-              RestRes.rt = RestRes.clock.getTime();
-              // a response ends the routine
-              continueRoutine = false;
-            }
-          }
-
-          // check if the Routine should terminate
-          if (!continueRoutine) {  // a component has requested a forced-end of Routine
-            return psychoJS.NEXT;
-          }
-          continueRoutine = false;// reverts to True if at least one component still running
-          for(var i = 0; i < restComponents.length; ++i) {
-            thisComponent = restComponents[i];
-            if ('status' in thisComponent && thisComponent.status != psychoJS.FINISHED) {
-              continueRoutine = true;
-              break;
-            }
-          }
-          // check for quit (the Esc key)
-          if (endExpNow || psychoJS.event.getKeys({keyList:['escape']}).length > 0) {
-            psychoJS.core.quit('The <Escape> key was pressed. Goodbye!');
-          }
-
-          // refresh the screen if continuing
-          if (continueRoutine) {
-            return psychoJS.FLIP_REPEAT;
-          }
-          else {
-            return psychoJS.NEXT;
-          }
-        }
-
-        function restRoutineEnd() {
-          //------Ending Routine 'rest'-------
-          for (var i = 0; i < restComponents.length; ++i) {
-            thisComponent = restComponents[i];
-            if ("setAutoDraw" in thisComponent) {
-              thisComponent.setAutoDraw(false);
-            }
-          }
-          // check responses
-          if (['', [], undefined].indexOf(RestRes.keys) >= 0) {    // No response was made
-              RestRes.keys = undefined;
-          }
-          thisExp.addData('RestRes.keys',RestRes.keys);
-          if (RestRes.keys != undefined) {  // we had a response
-              thisExp.addData('RestRes.rt', RestRes.rt)
-          }
-          // the Routine "rest" was not non-slip safe, so reset the non-slip timer
-          routineTimer.reset();
-          return psychoJS.NEXT;
-        }
-
-        function ThankYouRoutineBegin() {
-          //------Prepare to start Routine 'ThankYou'-------
-          t = 0;
-          ThankYouClock.reset(); // clock
-          frameN = -1;
-          // update component parameters for each repeat
-          ThankYoutext.setText(instruction);
-          ThankYouRes = new psychoJS.event.BuilderKeyResponse();
-          // keep track of which components have finished
-          ThankYouComponents = [];
-          ThankYouComponents.push(ThankYoutext);
-          ThankYouComponents.push(ThankYouRes);
-          for(var i = 0; i < ThankYouComponents.length; ++i) {
-            thisComponent = ThankYouComponents[i];
-            if ('status' in thisComponent) {
-              thisComponent.status = psychoJS.NOT_STARTED;
-            }
-          }
-
-          return psychoJS.NEXT;
-        }
-
-        function ThankYouRoutineEachFrame() {
-          //------Loop for each frame of Routine 'ThankYou'-------
-          continueRoutine = true;
-           // until we're told otherwise
-          // get current time
-          t = ThankYouClock.getTime();
-          frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-          // update/draw components on each frame
-
-          // *ThankYoutext* updates
-          if (t >= 0.0 && ThankYoutext.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            ThankYoutext.tStart = t;  // (not accounting for frame time here)
-            ThankYoutext.frameNStart = frameN;  // exact frame index
-            ThankYoutext.setAutoDraw(true);
-          }
-
-          // *ThankYouRes* updates
-          if (t >= 0.0 && ThankYouRes.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            ThankYouRes.tStart = t;  // (not accounting for frame time here)
-            ThankYouRes.frameNStart = frameN;  // exact frame index
-            ThankYouRes.status = psychoJS.STARTED;
-            // keyboard checking is just starting
-            ThankYouRes.clock.reset();  // now t=0
-            psychoJS.event.clearEvents({eventType:'keyboard'});
-          }
-          if (ThankYouRes.status == psychoJS.STARTED) {
-            theseKeys = psychoJS.event.getKeys({keyList:['y', 'n', 'left', 'right', 'space']});
-
-            // check for quit:
-            if ("escape" in theseKeys) {
-                endExpNow = true;
-            }
-            if (theseKeys.length > 0) {  // at least one key was pressed
-              ThankYouRes.keys = theseKeys[theseKeys.length-1]  // just the last key pressed
-              ThankYouRes.rt = ThankYouRes.clock.getTime();
-              // a response ends the routine
-              continueRoutine = false;
-            }
-          }
-
-          // check if the Routine should terminate
-          if (!continueRoutine) {  // a component has requested a forced-end of Routine
-            return psychoJS.NEXT;
-          }
-          continueRoutine = false;// reverts to True if at least one component still running
-          for(var i = 0; i < ThankYouComponents.length; ++i) {
-            thisComponent = ThankYouComponents[i];
-            if ('status' in thisComponent && thisComponent.status != psychoJS.FINISHED) {
-              continueRoutine = true;
-              break;
-            }
-          }
-          // check for quit (the Esc key)
-          if (endExpNow || psychoJS.event.getKeys({keyList:['escape']}).length > 0) {
-            psychoJS.core.quit('The <Escape> key was pressed. Goodbye!');
-          }
-
-          // refresh the screen if continuing
-          if (continueRoutine) {
-            return psychoJS.FLIP_REPEAT;
-          }
-          else {
-            return psychoJS.NEXT;
-          }
-        }
-
-        function ThankYouRoutineEnd() {
-          //------Ending Routine 'ThankYou'-------
-          for (var i = 0; i < ThankYouComponents.length; ++i) {
-            thisComponent = ThankYouComponents[i];
-            if ("setAutoDraw" in thisComponent) {
-              thisComponent.setAutoDraw(false);
-            }
-          }
-          // check responses
-          if (['', [], undefined].indexOf(ThankYouRes.keys) >= 0) {    // No response was made
-              ThankYouRes.keys = undefined;
-          }
-          thisExp.addData('ThankYouRes.keys',ThankYouRes.keys);
-          if (ThankYouRes.keys != undefined) {  // we had a response
-              thisExp.addData('ThankYouRes.rt', ThankYouRes.rt)
-          }
-          // the Routine "ThankYou" was not non-slip safe, so reset the non-slip timer
-          routineTimer.reset();
-          return psychoJS.NEXT;
-        }
-
-        function ExpTrialRoutineBegin() {
-          //------Prepare to start Routine 'ExpTrial'-------
-          t = 0;
-          ExpTrialClock.reset(); // clock
-          frameN = -1;
-          // update component parameters for each repeat
-          FixationRes2 = new psychoJS.event.BuilderKeyResponse();
-          ExpStimuli.setText(stimuli);
-          ExpRes = new psychoJS.event.BuilderKeyResponse();
-          // keep track of which components have finished
-          ExpTrialComponents = [];
-          ExpTrialComponents.push(FixationText2);
-          ExpTrialComponents.push(FixationRes2);
-          ExpTrialComponents.push(ExpStimuli);
-          ExpTrialComponents.push(ExpRes);
-          for(var i = 0; i < ExpTrialComponents.length; ++i) {
-            thisComponent = ExpTrialComponents[i];
-            if ('status' in thisComponent) {
-              thisComponent.status = psychoJS.NOT_STARTED;
-            }
-          }
-
-          return psychoJS.NEXT;
-        }
-
-        function ExpTrialRoutineEachFrame() {
-          //------Loop for each frame of Routine 'ExpTrial'-------
-          continueRoutine = true;
-           // until we're told otherwise
-          // get current time
-          t = ExpTrialClock.getTime();
-          frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-          // update/draw components on each frame
-
-          // *FixationText2* updates
-          if (t >= 0.0 && FixationText2.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            FixationText2.tStart = t;  // (not accounting for frame time here)
-            FixationText2.frameNStart = frameN;  // exact frame index
-            FixationText2.setAutoDraw(true);
-          }
-          frameRemains = 0.0 + 1.0 - frameDur * 0.75;  // most of one frame period left
-          if (FixationText2.status === psychoJS.STARTED && t >= frameRemains) {
-            FixationText2.setAutoDraw(false);
-          }
-
-          // *FixationRes2* updates
-          if (t >= 0.0 && FixationRes2.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            FixationRes2.tStart = t;  // (not accounting for frame time here)
-            FixationRes2.frameNStart = frameN;  // exact frame index
-            FixationRes2.status = psychoJS.STARTED;
-            // keyboard checking is just starting
-            FixationRes2.clock.reset();  // now t=0
-            psychoJS.event.clearEvents({eventType:'keyboard'});
-          }
-          frameRemains = 0.0 + 1 - frameDur * 0.75;  // most of one frame period left
-          if (FixationRes2.status === psychoJS.STARTED && t >= frameRemains) {
-            FixationRes2.status = psychoJS.STOPPED;
-          if (FixationRes2.status == psychoJS.STARTED) {
-            theseKeys = psychoJS.event.getKeys({keyList:['y', 'n', 'left', 'right', 'space']});
-
-            // check for quit:
-            if ("escape" in theseKeys) {
-                endExpNow = true;
-            }
-            if (theseKeys.length > 0) {  // at least one key was pressed
-              FixationRes2.keys = theseKeys[theseKeys.length-1]  // just the last key pressed
-              FixationRes2.rt = FixationRes2.clock.getTime();
-              // a response ends the routine
-              continueRoutine = false;
-            }
-          }
-
-          // *ExpStimuli* updates
-          if (t >= 1 && ExpStimuli.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            ExpStimuli.tStart = t;  // (not accounting for frame time here)
-            ExpStimuli.frameNStart = frameN;  // exact frame index
-            ExpStimuli.setAutoDraw(true);
-          }
-
-          // *ExpRes* updates
-          if (t >= 1 && ExpRes.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            ExpRes.tStart = t;  // (not accounting for frame time here)
-            ExpRes.frameNStart = frameN;  // exact frame index
-            ExpRes.status = psychoJS.STARTED;
-            // keyboard checking is just starting
-            ExpRes.clock.reset();  // now t=0
-            psychoJS.event.clearEvents({eventType:'keyboard'});
-          }
-          if (ExpRes.status == psychoJS.STARTED) {
-            theseKeys = psychoJS.event.getKeys({keyList:['f', 'j']});
-
-            // check for quit:
-            if ("escape" in theseKeys) {
-                endExpNow = true;
-            }
-            if (theseKeys.length > 0) {  // at least one key was pressed
-              ExpRes.keys = theseKeys[theseKeys.length-1]  // just the last key pressed
-              ExpRes.rt = ExpRes.clock.getTime();
-              // a response ends the routine
-              continueRoutine = false;
-            }
-          }
-
-          // check if the Routine should terminate
-          if (!continueRoutine) {  // a component has requested a forced-end of Routine
-            return psychoJS.NEXT;
-          }
-          continueRoutine = false;// reverts to True if at least one component still running
-          for(var i = 0; i < ExpTrialComponents.length; ++i) {
-            thisComponent = ExpTrialComponents[i];
-            if ('status' in thisComponent && thisComponent.status != psychoJS.FINISHED) {
-              continueRoutine = true;
-              break;
-            }
-          }
-          // check for quit (the Esc key)
-          if (endExpNow || psychoJS.event.getKeys({keyList:['escape']}).length > 0) {
-            psychoJS.core.quit('The <Escape> key was pressed. Goodbye!');
-          }
-
-          // refresh the screen if continuing
-          if (continueRoutine) {
-            return psychoJS.FLIP_REPEAT;
-          }
-          else {
-            return psychoJS.NEXT;
-          }
-        }
-
-        function ExpTrialRoutineEnd() {
-          //------Ending Routine 'ExpTrial'-------
-          for (var i = 0; i < ExpTrialComponents.length; ++i) {
-            thisComponent = ExpTrialComponents[i];
-            if ("setAutoDraw" in thisComponent) {
-              thisComponent.setAutoDraw(false);
-            }
-          }
-          // check responses
-          if (['', [], undefined].indexOf(FixationRes2.keys) >= 0) {    // No response was made
-              FixationRes2.keys = undefined;
-          }
-          thisExp.addData('FixationRes2.keys',FixationRes2.keys);
-          if (FixationRes2.keys != undefined) {  // we had a response
-              thisExp.addData('FixationRes2.rt', FixationRes2.rt)
-          }
-          // check responses
-          if (['', [], undefined].indexOf(ExpRes.keys) >= 0) {    // No response was made
-              ExpRes.keys = undefined;
-          }
-          thisExp.addData('ExpRes.keys',ExpRes.keys);
-          if (ExpRes.keys != undefined) {  // we had a response
-              thisExp.addData('ExpRes.rt', ExpRes.rt)
-          }
-          // the Routine "ExpTrial" was not non-slip safe, so reset the non-slip timer
-          routineTimer.reset();
-          return psychoJS.NEXT;
-        }
-
-        function PracticeTrialRoutineBegin() {
-          //------Prepare to start Routine 'PracticeTrial'-------
-          t = 0;
-          PracticeTrialClock.reset(); // clock
-          frameN = -1;
-          // update component parameters for each repeat
-          FixationRes = new psychoJS.event.BuilderKeyResponse();
-          PracticeStimuli.setText(stimuli);
-          PracticeRes = new psychoJS.event.BuilderKeyResponse();
-          // keep track of which components have finished
-          PracticeTrialComponents = [];
-          PracticeTrialComponents.push(FixationText);
-          PracticeTrialComponents.push(FixationRes);
-          PracticeTrialComponents.push(PracticeStimuli);
-          PracticeTrialComponents.push(PracticeRes);
-          for(var i = 0; i < PracticeTrialComponents.length; ++i) {
-            thisComponent = PracticeTrialComponents[i];
-            if ('status' in thisComponent) {
-              thisComponent.status = psychoJS.NOT_STARTED;
-            }
-          }
-
-          return psychoJS.NEXT;
-        }
-
-        function PracticeTrialRoutineEachFrame() {
-          //------Loop for each frame of Routine 'PracticeTrial'-------
-          continueRoutine = true;
-           // until we're told otherwise
-          // get current time
-          t = PracticeTrialClock.getTime();
-          frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-          // update/draw components on each frame
-
-          // *FixationText* updates
-          if (t >= 0.0 && FixationText.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            FixationText.tStart = t;  // (not accounting for frame time here)
-            FixationText.frameNStart = frameN;  // exact frame index
-            FixationText.setAutoDraw(true);
-          }
-          frameRemains = 0.0 + 1.0 - frameDur * 0.75;  // most of one frame period left
-          if (FixationText.status === psychoJS.STARTED && t >= frameRemains) {
-            FixationText.setAutoDraw(false);
-          }
-
-          // *FixationRes* updates
-          if (t >= 0.0 && FixationRes.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            FixationRes.tStart = t;  // (not accounting for frame time here)
-            FixationRes.frameNStart = frameN;  // exact frame index
-            FixationRes.status = psychoJS.STARTED;
-            // keyboard checking is just starting
-            FixationRes.clock.reset();  // now t=0
-            psychoJS.event.clearEvents({eventType:'keyboard'});
-          }
-          frameRemains = 0.0 + 1 - frameDur * 0.75;  // most of one frame period left
-          if (FixationRes.status === psychoJS.STARTED && t >= frameRemains) {
-            FixationRes.status = psychoJS.STOPPED;
-          if (FixationRes.status == psychoJS.STARTED) {
-            theseKeys = psychoJS.event.getKeys({keyList:['y', 'n', 'left', 'right', 'space']});
-
-            // check for quit:
-            if ("escape" in theseKeys) {
-                endExpNow = true;
-            }
-            if (theseKeys.length > 0) {  // at least one key was pressed
-              FixationRes.keys = theseKeys[theseKeys.length-1]  // just the last key pressed
-              FixationRes.rt = FixationRes.clock.getTime();
-              // a response ends the routine
-              continueRoutine = false;
-            }
-          }
-
-          // *PracticeStimuli* updates
-          if (t >= 1 && PracticeStimuli.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            PracticeStimuli.tStart = t;  // (not accounting for frame time here)
-            PracticeStimuli.frameNStart = frameN;  // exact frame index
-            PracticeStimuli.setAutoDraw(true);
-          }
-
-          // *PracticeRes* updates
-          if (t >= 1 && PracticeRes.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            PracticeRes.tStart = t;  // (not accounting for frame time here)
-            PracticeRes.frameNStart = frameN;  // exact frame index
-            PracticeRes.status = psychoJS.STARTED;
-            // keyboard checking is just starting
-            PracticeRes.clock.reset();  // now t=0
-            psychoJS.event.clearEvents({eventType:'keyboard'});
-          }
-          if (PracticeRes.status == psychoJS.STARTED) {
-            theseKeys = psychoJS.event.getKeys({keyList:['f', 'j']});
-
-            // check for quit:
-            if ("escape" in theseKeys) {
-                endExpNow = true;
-            }
-            if (theseKeys.length > 0) {  // at least one key was pressed
-              PracticeRes.keys = theseKeys[theseKeys.length-1]  // just the last key pressed
-              PracticeRes.rt = PracticeRes.clock.getTime();
-              // a response ends the routine
-              continueRoutine = false;
-            }
-          }
-
-          // check if the Routine should terminate
-          if (!continueRoutine) {  // a component has requested a forced-end of Routine
-            return psychoJS.NEXT;
-          }
-          continueRoutine = false;// reverts to True if at least one component still running
-          for(var i = 0; i < PracticeTrialComponents.length; ++i) {
-            thisComponent = PracticeTrialComponents[i];
-            if ('status' in thisComponent && thisComponent.status != psychoJS.FINISHED) {
-              continueRoutine = true;
-              break;
-            }
-          }
-          // check for quit (the Esc key)
-          if (endExpNow || psychoJS.event.getKeys({keyList:['escape']}).length > 0) {
-            psychoJS.core.quit('The <Escape> key was pressed. Goodbye!');
-          }
-
-          // refresh the screen if continuing
-          if (continueRoutine) {
-            return psychoJS.FLIP_REPEAT;
-          }
-          else {
-            return psychoJS.NEXT;
-          }
-        }
-
-        function PracticeTrialRoutineEnd() {
-          //------Ending Routine 'PracticeTrial'-------
-          for (var i = 0; i < PracticeTrialComponents.length; ++i) {
-            thisComponent = PracticeTrialComponents[i];
-            if ("setAutoDraw" in thisComponent) {
-              thisComponent.setAutoDraw(false);
-            }
-          }
-          // check responses
-          if (['', [], undefined].indexOf(FixationRes.keys) >= 0) {    // No response was made
-              FixationRes.keys = undefined;
-          }
-          thisExp.addData('FixationRes.keys',FixationRes.keys);
-          if (FixationRes.keys != undefined) {  // we had a response
-              thisExp.addData('FixationRes.rt', FixationRes.rt)
-          }
-          // check responses
-          if (['', [], undefined].indexOf(PracticeRes.keys) >= 0) {    // No response was made
-              PracticeRes.keys = undefined;
-          }
-          thisExp.addData('PracticeRes.keys',PracticeRes.keys);
-          if (PracticeRes.keys != undefined) {  // we had a response
-              thisExp.addData('PracticeRes.rt', PracticeRes.rt)
-          }
-          // the Routine "PracticeTrial" was not non-slip safe, so reset the non-slip timer
-          routineTimer.reset();
-          return psychoJS.NEXT;
-        }
-
-        function Instruction2RoutineBegin() {
-          //------Prepare to start Routine 'Instruction2'-------
-          t = 0;
-          Instruction2Clock.reset(); // clock
-          frameN = -1;
-          // update component parameters for each repeat
-          InstructionText2.setText(instruction);
-          KeyPress2 = new psychoJS.event.BuilderKeyResponse();
-          // keep track of which components have finished
-          Instruction2Components = [];
-          Instruction2Components.push(InstructionText2);
-          Instruction2Components.push(KeyPress2);
-          for(var i = 0; i < Instruction2Components.length; ++i) {
-            thisComponent = Instruction2Components[i];
-            if ('status' in thisComponent) {
-              thisComponent.status = psychoJS.NOT_STARTED;
-            }
-          }
-
-          return psychoJS.NEXT;
-        }
-
-        function Instruction2RoutineEachFrame() {
-          //------Loop for each frame of Routine 'Instruction2'-------
-          continueRoutine = true;
-           // until we're told otherwise
-          // get current time
-          t = Instruction2Clock.getTime();
-          frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
-          // update/draw components on each frame
-
-          // *InstructionText2* updates
-          if (t >= 0.0 && InstructionText2.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            InstructionText2.tStart = t;  // (not accounting for frame time here)
-            InstructionText2.frameNStart = frameN;  // exact frame index
-            InstructionText2.setAutoDraw(true);
-          }
-
-          // *KeyPress2* updates
-          if (t >= 0.0 && KeyPress2.status === psychoJS.NOT_STARTED) {
-            // keep track of start time/frame for later
-            KeyPress2.tStart = t;  // (not accounting for frame time here)
-            KeyPress2.frameNStart = frameN;  // exact frame index
-            KeyPress2.status = psychoJS.STARTED;
-            // keyboard checking is just starting
-            KeyPress2.clock.reset();  // now t=0
-            psychoJS.event.clearEvents({eventType:'keyboard'});
-          }
-          if (KeyPress2.status == psychoJS.STARTED) {
-            theseKeys = psychoJS.event.getKeys({keyList:['y', 'n', 'left', 'right', 'space']});
-
-            // check for quit:
-            if ("escape" in theseKeys) {
-                endExpNow = true;
-            }
-            if (theseKeys.length > 0) {  // at least one key was pressed
-              KeyPress2.keys = theseKeys[theseKeys.length-1]  // just the last key pressed
-              KeyPress2.rt = KeyPress2.clock.getTime();
-              // a response ends the routine
-              continueRoutine = false;
-            }
-          }
-
-          // check if the Routine should terminate
-          if (!continueRoutine) {  // a component has requested a forced-end of Routine
-            return psychoJS.NEXT;
-          }
-          continueRoutine = false;// reverts to True if at least one component still running
-          for(var i = 0; i < Instruction2Components.length; ++i) {
-            thisComponent = Instruction2Components[i];
-            if ('status' in thisComponent && thisComponent.status != psychoJS.FINISHED) {
-              continueRoutine = true;
-              break;
-            }
-          }
-          // check for quit (the Esc key)
-          if (endExpNow || psychoJS.event.getKeys({keyList:['escape']}).length > 0) {
-            psychoJS.core.quit('The <Escape> key was pressed. Goodbye!');
-          }
-
-          // refresh the screen if continuing
-          if (continueRoutine) {
-            return psychoJS.FLIP_REPEAT;
-          }
-          else {
-            return psychoJS.NEXT;
-          }
-        }
-
-        function Instruction2RoutineEnd() {
-          //------Ending Routine 'Instruction2'-------
-          for (var i = 0; i < Instruction2Components.length; ++i) {
-            thisComponent = Instruction2Components[i];
-            if ("setAutoDraw" in thisComponent) {
-              thisComponent.setAutoDraw(false);
-            }
-          }
-          // check responses
-          if (['', [], undefined].indexOf(KeyPress2.keys) >= 0) {    // No response was made
-              KeyPress2.keys = undefined;
-          }
-          thisExp.addData('KeyPress2.keys',KeyPress2.keys);
-          if (KeyPress2.keys != undefined) {  // we had a response
-              thisExp.addData('KeyPress2.rt', KeyPress2.rt)
-          }
-          // the Routine "Instruction2" was not non-slip safe, so reset the non-slip timer
-          routineTimer.reset();
-          return psychoJS.NEXT;
-        }
-
+        
         function registerResources() {
             psychoJS.resourceManager.scheduleRegistration(resourceScheduler);
-
+        
             return psychoJS.NEXT;
         }
-
+        
         function downloadResources() {
             psychoJS.resourceManager.scheduleDownload(resourceScheduler);
-
+        
             return psychoJS.NEXT;
         }
-
+        
         function run() {
           // init psychoJS and set up OpenGL Canvas
           setupWin();
           psychoJS.init(win);
-
+          
           // main scheduler
           scheduler = new psychoJS.Scheduler();
-
+          
           // Store info about the experiment session
           expName = 'stroop';  // from the Builder filename that created this script
           expInfo = {'participant':'', 'session':'01'};
-
+          
           // set up experiment
           scheduler.add(setupExperiment);
           scheduler.add(psychoJS.setupCallbacks);
-
+          
           // register all available resources and download them
           resourceScheduler = new psychoJS.Scheduler();
           resourceScheduler.add(registerResources);
           resourceScheduler.add(downloadResources);
           // asynchronous approach: the resource scheduler is run in parallel to the main one
           scheduler.add(function() { resourceScheduler.start(win); });
-
+          
           // dialog box
           scheduler.add(psychoJS.gui.DlgFromDict({dictionary:expInfo, title:expName}));
-
+          
           flowScheduler = new psychoJS.Scheduler();
           dialogCancelScheduler = new psychoJS.Scheduler();
           scheduler.addConditionalBranches(function() { return psychoJS.gui.dialogComponent.button === 'OK'; }, flowScheduler, dialogCancelScheduler);
-
+          
           // flowScheduler gets run if the participants presses OK
           flowScheduler.add(updateInfo); // add timeStamp
           flowScheduler.add(experimentInit);
-          flowScheduler.add(InstructionRoutineBegin);
-          flowScheduler.add(InstructionRoutineEachFrame);
-          flowScheduler.add(InstructionRoutineEnd);
+          flowScheduler.add(trialRoutineBegin);
+          flowScheduler.add(trialRoutineEachFrame);
+          flowScheduler.add(trialRoutineEnd);
           flowScheduler.add(quitPsychoJS);
-
+          
           // quit if user presses Cancel in dialog box:
           dialogCancelScheduler.add(quitPsychoJS);
-
+          
           scheduler.start(win);
         }
-
+        
         function abbrevNames(thisTrial) {
           return function () {
             // abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
@@ -1156,7 +273,7 @@
             return psychoJS.NEXT;
           };
         }
-
+        
         function recordLoopIteration(currentLoop) {
           return function () {
             currentLoop.updateAttributesAtBegin();
@@ -1164,7 +281,7 @@
             return psychoJS.NEXT;
           }
         }
-
+        
         function quitPsychoJS() {
             thisExp.save();
             win.close()
