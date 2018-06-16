@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>Nback1 [PsychoPy]</title>
+    <title>Nback2 [PsychoPy]</title>
     <meta charset="UTF-8">
     <link href="js/vendors//jquery-ui-1.11.4.base/jquery-ui.min.css" rel="stylesheet">
 
@@ -49,9 +49,9 @@
       // wait until document is ready:
       $(document).ready(function() {
         psychoJS.debug = true; //false;
-        
+
         function setupExperiment() {
-        
+
           // An ExperimentHandler isn't essential but helps with data saving
           thisExp = new psychoJS.data.ExperimentHandler({
               name: u'Nback1',
@@ -63,26 +63,26 @@
               saveWideText: true,
               saveTo: 'EXPERIMENT_SERVER',
               /*dataFileName=filename*/});
-        
+
           // setup resource manager:
           psychoJS.resourceManager.set({
                                 win:win, downloadFrom:'EXPERIMENT_SERVER', projectId:undefined,
                                 projectStatus:'PUBLIC', clock:new psychoJS.core.Clock()
                                 });
-        
+
           endExpNow = false; // flag for 'escape' or other condition => quit the exp
-        
+
           // logging:
           psychoJS.logging.console.setLevel(psychoJS.logging.EXP);
           psychoJS.logging.server.set({'level':psychoJS.logging.EXP, 'saveTo':'EXPERIMENT_SERVER', 'experimentInfo': expInfo});
-        
+
           return psychoJS.NEXT;
         }
-        
+
         function updateInfo() {
           expInfo['date'] = psychoJS.data.getDateStr();  // add a simple timestamp
           expInfo['expName'] = expName;
-        
+
           // store frame rate of monitor if we can measure it successfully
           expInfo['frameRate'] = win.getActualFrameRate();
           if (expInfo['frameRate'] != undefined) {
@@ -91,10 +91,10 @@
           else {
               frameDur = 1.0/60.0; // couldn't get a reliable measure so guess
           }
-        
+
           return psychoJS.NEXT;
         }
-        
+
         function setupWin() {
           // Start Code - component code to be run before the window creation
           // Setup the Window
@@ -108,26 +108,26 @@
               });
           return psychoJS.NEXT;
         }
-        
+
         function experimentInit() {
-          
+
           // Initialize components for Routine "trial"
           trialClock = new psychoJS.core.Clock();
           Inst = new psychoJS.visual.TextStim({win : win, name : 'Inst',
               text : 'default text',
               font : u'Arial',
-              pos : [0, 0], height : 0.1, wrapWidth : undefined, ori:0, 
+              pos : [0, 0], height : 0.1, wrapWidth : undefined, ori:0,
               color : u'white', colorSpace:'rgb', opacity : 1,
-              depth : 0.0 
+              depth : 0.0
           });
-          
+
           // Create some handy timers
           globalClock = new psychoJS.core.Clock();  // to track the time since experiment started
           routineTimer = new psychoJS.core.CountdownTimer();  // to track time remaining of each (non-slip) routine
-          
+
           return psychoJS.NEXT;
         }
-        
+
         function trialRoutineBegin() {
           //------Prepare to start Routine 'trial'-------
           t = 0;
@@ -144,10 +144,10 @@
               thisComponent.status = psychoJS.NOT_STARTED;
             }
           }
-          
+
           return psychoJS.NEXT;
         }
-        
+
         function trialRoutineEachFrame() {
           //------Loop for each frame of Routine 'trial'-------
           continueRoutine = true;
@@ -156,7 +156,7 @@
           t = trialClock.getTime();
           frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
           // update/draw components on each frame
-          
+
           // *Inst* updates
           if (t >= 0.0 && Inst.status === psychoJS.NOT_STARTED) {
             // keep track of start time/frame for later
@@ -171,7 +171,7 @@
           if (Inst.status == STARTED){ // only update if being drawn
             Inst.setText(u'Welcome');
           }
-          
+
           // check if the Routine should terminate
           if (!continueRoutine) {  // a component has requested a forced-end of Routine
             return psychoJS.NEXT;
@@ -188,7 +188,7 @@
           if (endExpNow || psychoJS.event.getKeys({keyList:['escape']}).length > 0) {
             psychoJS.core.quit('The <Escape> key was pressed. Goodbye!');
           }
-          
+
           // refresh the screen if continuing
           if (continueRoutine && routineTimer.getTime() > 0) {
             return psychoJS.FLIP_REPEAT;
@@ -197,7 +197,7 @@
             return psychoJS.NEXT;
           }
         }
-        
+
         function trialRoutineEnd() {
           //------Ending Routine 'trial'-------
           for (var i = 0; i < trialComponents.length; ++i) {
@@ -208,49 +208,49 @@
           }
           return psychoJS.NEXT;
         }
-        
+
         function registerResources() {
             psychoJS.resourceManager.scheduleRegistration(resourceScheduler);
-        
+
             return psychoJS.NEXT;
         }
-        
+
         function downloadResources() {
             psychoJS.resourceManager.scheduleDownload(resourceScheduler);
-        
+
             return psychoJS.NEXT;
         }
-        
+
         function run() {
           // init psychoJS and set up OpenGL Canvas
           setupWin();
           psychoJS.init(win);
-          
+
           // main scheduler
           scheduler = new psychoJS.Scheduler();
-          
+
           // Store info about the experiment session
           expName = 'stroop';  // from the Builder filename that created this script
           expInfo = {'participant':'', 'session':'01'};
-          
+
           // set up experiment
           scheduler.add(setupExperiment);
           scheduler.add(psychoJS.setupCallbacks);
-          
+
           // register all available resources and download them
           resourceScheduler = new psychoJS.Scheduler();
           resourceScheduler.add(registerResources);
           resourceScheduler.add(downloadResources);
           // asynchronous approach: the resource scheduler is run in parallel to the main one
           scheduler.add(function() { resourceScheduler.start(win); });
-          
+
           // dialog box
           scheduler.add(psychoJS.gui.DlgFromDict({dictionary:expInfo, title:expName}));
-          
+
           flowScheduler = new psychoJS.Scheduler();
           dialogCancelScheduler = new psychoJS.Scheduler();
           scheduler.addConditionalBranches(function() { return psychoJS.gui.dialogComponent.button === 'OK'; }, flowScheduler, dialogCancelScheduler);
-          
+
           // flowScheduler gets run if the participants presses OK
           flowScheduler.add(updateInfo); // add timeStamp
           flowScheduler.add(experimentInit);
@@ -258,13 +258,13 @@
           flowScheduler.add(trialRoutineEachFrame);
           flowScheduler.add(trialRoutineEnd);
           flowScheduler.add(quitPsychoJS);
-          
+
           // quit if user presses Cancel in dialog box:
           dialogCancelScheduler.add(quitPsychoJS);
-          
+
           scheduler.start(win);
         }
-        
+
         function abbrevNames(thisTrial) {
           return function () {
             // abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
@@ -276,7 +276,7 @@
             return psychoJS.NEXT;
           };
         }
-        
+
         function recordLoopIteration(currentLoop) {
           return function () {
             currentLoop.updateAttributesAtBegin();
@@ -284,7 +284,7 @@
             return psychoJS.NEXT;
           }
         }
-        
+
         function quitPsychoJS() {
             thisExp.save();
             win.close()
