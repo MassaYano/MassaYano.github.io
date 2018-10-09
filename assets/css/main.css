@@ -2931,3 +2931,7 @@
 			}
 
 	}
+	
+.marker_water {
+background: linear-gradient(transparent 60%, #66ccff 60%);
+}
