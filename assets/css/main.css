@@ -2221,7 +2221,7 @@
 		color: rgba(255, 255, 255, 0.55);
 		text-shadow: -1px -1px 0px rgba(0, 0, 0, 0.5);
 		width: 14em;
-		padding: 3em 1.35em 1em 1.15em;
+		padding: 3em 1em 1em 1.15em;
 		background: #364050 url("images/bg01.png");
 		overflow-y: auto;
 		left: 0;
@@ -2580,7 +2580,7 @@
 
 			#content {
 				padding: 3em 5em 8em 5em;
-				margin-left: 21em;
+				margin-left: 16em; /* original 21em */
 			}
 
 	}
@@ -2931,7 +2931,7 @@
 			}
 
 	}
-	
+
 .marker_water {
 background: linear-gradient(transparent 60%, #66ccff 60%);
 }
