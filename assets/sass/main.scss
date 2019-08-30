@@ -196,7 +196,7 @@
 /* Section/Article */
 
 	header {
-		margin: 0 0 10em 0;
+		margin: 0 0 2em 0;
 
 		> p {
 			font-family: 'Open Sans Condensed', sans-serif;
@@ -1075,7 +1075,7 @@
 				}
 				@else {
 					margin-right: _size(sidebar);
-					margin-left: 7em;
+					margin-left: 5em; /* MY 7em */
 				}
 			}
 
