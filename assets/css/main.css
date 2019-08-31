@@ -2166,7 +2166,8 @@
 			display: block;
 			color: #fff;
 			line-height: 44px;
-			font-size: 1.25em;
+			/* (original)font-size: 1.25em; これだとtittle barが短い時undefinedと表示されてしまう*/
+			font-size: 0.0em;
 			font-family: 'Source Sans Pro', sans-serif;
 			font-weight: 700;
 			letter-spacing: 0.1em;
