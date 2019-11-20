@@ -27,12 +27,63 @@
 		<!-- Content -->
 		<div id="content">
 		<p><font size="4" color="black">目次</font></p>
+		<li>2019/11/20	Pythonで音声の開始時に音を追加する方法 [<a href="#Sound">link</a>]</li>
 		<li>2019/07/07	Arduino Unoで音声のオンセットを検出してトリガ出してみた [<a href="#ArduinoUno">link</a>]</li>
 		<li>2018/01/07	100均LEDでレスポンスボックス自作してみた [<a href="#RB">link</a>]</li>
 		<li>2017/12/30	学振PDでアメリカの大学に行ってみた [<a href="#JSPS">link</a>]</li>
 
 		<p></p>
 		<!-- Post -->
+		<h1 id="Sound"><font size="4", color="black">Pythonで音声の開始時に音を追加する方法（2019/11/20）</font></h1>
+		<a href="#ArduinoUno">前回</a>、Arduino Unoを使って、脳波実験のときの音声のディレイを検出する方法を紹介しました。<br>
+		音声のディレイを検出するためには、音声の片方（RかL）にクリック音などを入れてArduino Unoに入力するほうが良いです（言語音の場合、母音など開始が検出しにくい場合があるため）。
+		<p></p>
+
+		スクリプトは以下の通りです。input_folderは入力になるフォルダの名前、Sound_NoClick/*.wavは、そのフォルダ内で読み込みたい拡張子、
+		output_folderは、出力先のフォルダ、clickは追加したい音（Arduinoに検出させる音）です。
+		これらを自分のパソコンのフォルダの場所に合わせて変更してください。
+		Arduino Unoに聞かせる音は、<a href="http://www.fon.hum.uva.nl/praat/">Praat</a>で簡単に作ることができます。
+		Pythonのインストール方法がよくわからないひとは、<a href="https://www.anaconda.com/distribution/">アナコンダ</a>をインストールすると良いと思います。
+
+		<p></p>
+
+		<div style="display:inline-block; padding: 10px; margin-bottom: 10px; border-radius:10px; border: 1px dashed #333333;">
+		<pre><code>
+		#!/usr/bin/env python3
+		# -*- coding: utf-8 -*-
+
+		## Libraries ##
+		import os
+		import glob
+		from pathlib import Path
+		from pydub import AudioSegment
+
+		## Folders & Files ##
+		input_folder = Path("Sound_NoClick/")
+		input_file_name = [os.path.basename(p) for p in glob.glob('Sound_NoClick/*.wav', recursive=True)  if os.path.isfile(p)] <br>
+		# 特定の拡張子を持つファイルだけファイル名取得
+		output_folder = Path("Sound_Click/")
+		click = "1000HzSound.wav"
+		number_files = len(input_file_name)
+
+		## Pan and Add Click ##
+		sound2 = AudioSegment.from_file(click)
+		sound2 = sound2.pan(-1.0)
+		for i in range(0,number_files):
+		    #file_number=str(i)
+		    input_file = input_file_name[i]
+		    output_file = input_file_name[i]
+		    sound1 = AudioSegment.from_file(input_folder/input_file)
+		    sound1 = sound1.pan(+1.0)
+		    combined = sound1.overlay(sound2)
+		    combined.export(output_folder/output_file, format='wav')
+		</code></pre>
+		</div>
+
+
+		<p></p>
+
+
 		<h1 id="ArduinoUno"><font size="4", color="black">Arduino Unoで音声のオンセットを検出してトリガ出してみた（2019/07/07）</font></h1>
 
 		<p>Arduino Unoを使って音声のオンセット（開始時点）を検出して脳波計にトリガを入れる方法を紹介します。<br>
@@ -97,7 +148,7 @@
 		トリガの時間にアクセスできるので、Arduinoが出したトリガのタイミングに、その他（=NIから出ているトリガなど）のタイミングをあわせるようなスクリプトを書くと良いです。</p>
 
 		<h2><font size="3", color="black">余談：困った話</font></h2>
-		<p>　言語音を使う場合、音声の開始が弱い（曖昧母音とか）ことがあって、Arduinoが正確にオンセットを検出できないという懸念があったので、
+		<p>　言語音を使う場合、音声の開始が弱い（母音とか）ことがあって、Arduinoが正確にオンセットを検出できないという懸念があったので、
 		再生する音声の左側にクリック音（オンセットがはっきりしているもの）、右側に実際に参加者に聞いてもらう音声を入れて、
 		Arduinoには左側から出た音声を聞かせ、参加者には右側から出た音声を聞いてもらうようにしました
 		（ステレオ->モノラルアダプタ（cf. <a href="https://www3.jvckenwood.com">JVC</a>）で音声を左右を分け、右側にイヤフォンをさせば参加者は両耳で同じ音声が聞けます）。</p>
