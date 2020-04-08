@@ -1,0 +1,201 @@
+.<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+
+		<title>Mac上でEEG解析Perl環境と整える</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+
+	<body>
+		<!-- Content -->
+			<div id="content">
+		<!-- Post -->
+			<h1><font size="5", color="black">Macで脳波解析を行うためにPerl環境を整える</font></h1><p></p>
+
+			<h2><font>1. XCodeのインストール</font></h2>
+			App Storeで"Xcode"と検索し、ダウンロード・インストールして下さい（ファイルサイズが大きく、時間がかかります） [<a href="https://apps.apple.com/jp/app/xcode/id497799835?mt=12" target="_blank">link</a>]
+			<p></p>
+
+
+			<h2><font>2. homebrewのインストール</font></h2>
+			terminal.appを開き、以下のスクリプトを実行します（<a href="https://brew.sh/index_ja" target="_blank">参考</a>）<p></p>
+
+			<div style="display:inline-block; padding: 10px; border-radius:10px; border: 1px solid #333333; border-color: orange;">
+			<pre style='clear:both;text-align:left'><code id='selectable' onclick="selectText(this)">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;</code></pre>
+			</div>
+
+			<p></p>
+
+			<h2><font>3. XQuartzのインストール</font></h2>
+			以下のページからXQuartzのdmgファイルをダウンロードし、インストールします（<a href="https://macperson.net/mac-x11-xquartz/" target="_blank">参考</a>）<p></p>
+
+			 <a href="https://www.xquartz.org" target="_blank">https://www.xquartz.org</a>
+
+			<p></p>
+
+			<h2><font>4. SciPDLのインストール</font></h2>
+			以下のページからSciPDLのdmgファイルをダウンロードし、Applicationフォルダに入れます。<p></p>
+
+			<a href="https://sourceforge.net/projects/pdl/files/SciPDL/" target="_blank">https://sourceforge.net/projects/pdl/files/SciPDL/</a>
+
+			<p></p>
+
+			<h2><font>5. Pealのインストール状態の確認</font></h2>
+			terminal.appで以下を入力し、バージョン情報が帰ってくるかを確認<p></p>
+
+			<div style="display:inline-block; padding: 10px; border-radius:10px; border: 1px solid #333333; border-color: orange;">
+			<pre style='clear:both;text-align:left'><code id='selectable' onclick="selectText(this)">$ /Applications/PDL/bin/perl5.22.1 -v</code></pre>
+			</div>
+
+			<p></p>
+
+
+			いかのような出力が返って来ればOK。
+
+			<p></p>
+
+			<div style="display:inline-block; padding: 10px; border-radius:10px; border: 1px solid #333333; border-color: orange;">
+			<pre style='clear:both;text-align:left'><code id='selectable' onclick="selectText(this)">出力例：This is perl 5, version 22, subversion 1 (v5.22.1) built for darwin-2level</code></pre>
+			</div>
+
+			<p></p>
+
+			＊「perlは、開発元を検証できないため開けません」と表示された場合、以下の手順で許可を与えます。
+			<div class="box post post-excerpt" style="text-indent: 0em;text-align: justify;">
+			<li>「システム環境設定」を開く</li>
+			<li>「セキュリティとプライバシー」を開く</li>
+			<li>下に表示されえている「変更するにはカギをクリックします」をクリックし、アカウントのパスワードを入力</li>
+			<li>「ダウンロードしたアプリケーションの実行許可」の欄に「"perl5.22.1"は開発元を確認できないため、使用がブロックされました」と表示されているので、その右にある「このまま許可」をクリック</li>
+			</div>
+
+			<p></p>
+
+			<h2><font>6. パス（path）の設定</font></h2>
+			terminal.appで以下を入力します。<p></p>
+
+			<div style="display:inline-block; padding: 10px; border-radius:10px; border: 1px solid #333333; border-color: orange;">
+			<pre style='clear:both;text-align:left'><code id='selectable' onclick="selectText(this)">$env | grep PATH</code></pre>
+			</div>
+			<br>
+			＊ envの次は|です。iでもIでもありません。
+
+			<p></p>
+			以下のようにパス一覧が表示されます。<p></p>
+
+			<div style="display:inline-block; padding: 10px; border-radius:10px; border: 1px solid #333333; border-color: orange;">
+			<pre style='clear:both;text-align:left'><code id='selectable' onclick="selectText(this)">出力例：PATH=/opt/local/bin:/opt/local/sbin:/Users/my/anaconda3/bin .... （省略）</code></pre>
+			</div>
+			<br>
+			＊パスは、コロン（:）で区切られています。<br>
+			＊シンボリックリンクの作成先は、使いやすい・覚えやすいところで良いですが、<u>並びの早い</u>ところに入れたほうが良いです。パスは左に書いてあるほうが優先されるからです
+			（<a href="http://pocketstudio.jp/linux/?%A5%D1%A5%B9%28PATH%29%A4%CE%B3%CE%C7%A7%A4%C8%C0%DF%C4%EA%CA%FD%CB%A1%A4%CF%A1%A9#s86fedca" target="_blank">参考</a>）
+
+			<p></p>
+			出力の中から一つ選び、perlのシンボリックリンク（<a href="https://ja.wikipedia.org/wiki/ソフトリンク" target="_blank">シンボリックリンクとは</a>）を作成します。
+			<p></p>
+
+			<div style="display:inline-block; padding: 10px; border-radius:10px; border: 1px solid #333333; border-color: orange;">
+			<pre style='clear:both;text-align:left'><code id='selectable' onclick="selectText(this)">$sudo ln -s /Applications/PDL/bin/perl5.22.1 行先/perl<br>入力例：$sudo ln -s /Applications/PDL/bin/perl5.22.1 /opt/local/bin/perl</code></pre>
+			</div>
+			<br>
+			<font size="2">矢野メモ: /opt/local/bin/perlに作ったらFile existsという表示。ディレクトリを見てみると「種類：エイリアス」になっているperlが最初から存在しているようである。これを使えばシンボリックリンクの作成は必要ない？</font>
+
+			<p></p>
+
+			<h2><font>7. モジュールのインストール</font></h2>
+			terminal.appで以下を実行<p></p>
+
+			<div style="display:inline-block; padding: 10px; border-radius:10px; border: 1px solid #333333; border-color: orange;">
+			<pre style='clear:both;text-align:left'><code id='selectable' onclick="selectText(this)">$sudo perl -MCPAN -e shell<br>入力例：$sudo ln -s /Applications/PDL/bin/perl5.22.1 /opt/local/bin/perl</code></pre>
+			</div>
+			<br>
+			<font size="2">矢野メモ：以下のメッセージが表示されたのでyesにした。<br>
+			CPAN.pm requires configuration, but most of it can be done automatically. If you answer 'no' below, you will enter an interactive dialog for each configuration option instead. Would you like to configure as much as possible automatically? [yes]
+			</font>
+			<br>
+
+			<p></p>
+
+			ターミナルにcpan[1]>と表示されればOK。1つずつインストールをしていきます。<p></p>
+
+			<div style="display:inline-block; padding: 10px; border-radius:10px; border: 1px solid #333333; border-color: orange;">
+			<pre style='clear:both;text-align:left'><code id='selectable' onclick="selectText(this)">cpan[1] > install Math::FFT<br>cpan[2]>install PDL::DSP::Windows<br>cpan[3]>install PDL::DSP::Fir<br>cpan[4]>install Hash::Merge<br>cpan[5]>install Graphics::GnuplotIF<br>cpan[6]>install Term::ReadPassword<br>cpan[7]>install Array::Uniq<br></code></pre>
+			</div>
+			<br>
+
+			<p></p>
+			Hash::Mergeを入れるときに次のモジュールも入るはずですが、入っていることを確認するために以下を実行して下さい
+			<p></p>
+
+			<div style="display:inline-block; padding: 10px; border-radius:10px; border: 1px solid #333333; border-color: orange;">
+			<pre style='clear:both;text-align:left'><code id='selectable' onclick="selectText(this)">cpan[8]> install Test::Pod</code></pre>
+			</div>
+			<br>
+
+			<p></p>
+			以下のような出力が返ってくればインストールされています。
+			<p></p>
+
+			<div style="display:inline-block; padding: 10px; border-radius:10px; border: 1px solid #333333; border-color: orange;">
+			<pre style='clear:both;text-align:left'><code id='selectable' onclick="selectText(this)">cpan[8]> install Test::Pod<br>　Test::Pod is up to date (1.52).<br></code></pre>
+			</div>
+			<br>
+
+
+
+
+
+		</div>
+		</article>
+		</div>
+
+
+
+		<!-- Sidebar -->
+			<div id="sidebar">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="https://massayano.github.io/index.html">HOME</a></li>
+							<li><a href="./index.html#Articles">　- Articles</a></li>
+							<li><a href="./index.html#OralPresentations">　- Oral Presentations</a></li>
+							<li><a href="./index.html#PosterPresentations">　- Poster Presentations</a></li>
+<!--							<li><a href="#Grant">　- Reserach Grant</a></li>
+							<li><a href="#Review">　- Reviewer</a></li>
+							<li><a href="#Organize">　- Workshop Organizer</a></li>-->
+							<li><a href="https://massayano.github.io/YanoMasaLab.html">研究紹介・研究設備</a></li>
+							<li><a href="https://massayano.github.io/exp.html">実験参加者の募集</a></li>
+							<li><a href="https://massayano.github.io/workshop.html">ワークショップ</a></li>
+							<li><a href="https://massayano.github.io/HowtoUsePresentation.html">NBS Presentationの使い方</a></li>
+							<li><a href="https://massayano.github.io/blog.html">ブログ</a></li>
+							<li><a href="https://massayano.github.io/sakamoto.html">坂本先生のページ</a></li>
+					</ul>
+					</nav>
+
+				<!-- Copyright -->
+					<ul id="copyright">
+						<!--<li>&copy; Untitled.</li>-->
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
