@@ -27,13 +27,63 @@
 		<!-- Content -->
 		<div id="content">
 		<p><font size="4" color="black">目次</font></p>
+		<li>2021/05/23	NBS PresentationでCedrus Response Padを使えるようにする設定の方法 [<a href="#PresenationCedrus">link</a>]</li>
 		<li>2019/11/20	Pythonで音声の開始時に音を追加する方法 [<a href="#Sound">link</a>]</li>
 		<li>2019/07/07	Arduino Unoで音声のオンセットを検出してトリガ出してみた [<a href="#ArduinoUno">link</a>]</li>
 		<li>2018/01/07	100均LEDでレスポンスボックス自作してみた [<a href="#RB">link</a>]</li>
 		<li>2017/12/30	学振PDでアメリカの大学に行ってみた [<a href="#JSPS">link</a>]</li>
 
 		<p></p>
+
 		<!-- Post -->
+
+		<h1 id="PresenationCedrus"><font size="4", color="black">NBS PresentationでCedrus Response Padを使えるようにする設定の方法（2021/05/23）</font></h1>
+
+		Windows 10にインストールしたNBS Presentationで、Cedrus Response Padを登録しようとしたときにエラーが出たのでその解決方法の備忘録です。
+		<p></p>
+		<span style="border: 1px solid;">&nbsp;使用したもの&nbsp;</span><br>
+		OS: Windows 10 (Pro Workstation用)<br>
+		パソコン：Dell Precision 3640 Tower<br>
+		レスポンスパッド：Cedrus RB-740<br>
+		ソフト：NBS Presentation ver 22.1
+		<p></p>
+		<span style="border: 1px solid;">&nbsp;前提&nbsp;</span><br>
+		レスポンスパッドをUSBケーブルで接続したとき、レスポンスパッドが認識されない場合、
+		<a href="https://cedrus.com/support/rb_series/tn1542_install_rbx40_win.htm" target="_blank">USB Driver for Windows</a>
+		をダウンロード・インストールする必要があります（もしリンクが切れていたらCedrusと検索し、Support > RB-x40 > INSTALLING AN RB SERIES PADの中から選んでください）。
+		認識しているかどうかを知りたいときは、デバイスマネージャー（Windowsマークを右クリックで表示できます）を開き、"NBS"が表示されているかどうかを見ます。表示があれば、認識されています。
+
+		<p></p>
+		<span style="border: 1px solid;">&nbsp;問題の所在&nbsp;</span><br>
+		NBS PresentationでCedrus製のResponse Padを使用したい場合、<a href="https://cedrus.com/support/rb_series/tn1543_presentation.htm" target="_blank">
+		Presentation Extension for Cedrus Response Devices</a>をインストールする必要がありますが、
+		Cedrusのサポートページの通りに実行しようとすると、"Register Extension"ボタンをクリックした時点で以下のようなエラーが出てしまうことがあるようです
+		（Windows7や8からアップグレードしたパソコンはもしかするとエラーが起こらないかもしれません）
+		<p></p>
+
+		There was an error registering thi sfile with Windows: <br>
+		The file C:\Program Files (x86)\Cedrus XID Response Extension for Presentation\CedrusXidDriver.dll could not be loaded.<br>
+		Windows returned the following error: <br>
+		The specified module could not be found.<br>
+		Please contact the extension provider for help<br>
+		<p></p>
+
+		"Don't register server with Windows"を選ぶと、"Extension Cedrus XID successfully registered"と表示されるのですが、"Re-enumurate devices"をしたときにエラーが出て進めません。
+
+		<p></p>
+
+		<span style="border: 1px solid;">&nbsp;解決方法&nbsp;</span><br>
+		<a href="https://www.microsoft.com/ja-jp/download/details.aspx?id=26347" target="_blank">Microsoft Visual C++ 2005 Service Pack 1 再頒布可能パッケージ</a>をインストールするとこの問題が解消することがあるようです（何故かはわかりません）。
+		それよりも新しいバージョンも試しましたが、私のパソコンではうまくいきませんでした。
+
+		<p></p>
+		Presentationのforumsには同様の問題が2件報告されていて、<a href="https://www.neurobs.com/menu_support/menu_forums/view_thread?id=11235&expand_all=0&expand=67338" target="_blank">
+		1件目</a>は"MS Visual C++ redistributable package"をインストールしたらうまく行ったようです。バージョンはわかりません。
+		<a href="https://www.neurobs.com/menu_support/menu_forums/view_thread?id=11375" target="_blank">2件目</a>は古いドライバを消して最新版をインストールしたらうまく行ったようです。
+		新しいパソコンだとそもそも古いドライバはないので2件目は関係なさそうですが。
+
+		<p></p>
+
 		<h1 id="Sound"><font size="4", color="black">Pythonで音声の開始時に音を追加する方法（2019/11/20）</font></h1>
 		<a href="#ArduinoUno">前回</a>、Arduino Unoを使って、脳波実験のときの音声のディレイを検出する方法を紹介しました。<br>
 		音声のディレイを検出するためには、音声の片方（RかL）にクリック音などを入れてArduino Unoに入力するほうが良いです（言語音の場合、母音など開始が検出しにくい場合があるため）。
