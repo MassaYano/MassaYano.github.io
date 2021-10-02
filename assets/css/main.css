@@ -2227,9 +2227,6 @@
 		overflow-y: auto;
 		left: 0;
 		box-shadow: inset -0.1em 0em 0.35em 0em rgba(0, 0, 0, 0.15);
-		position: -webkit-sticky;
-　　 position: sticky;
-　　 top: 50px;
 	}
 
 		#sidebar form input, #sidebar form select, #sidebar form textarea {
