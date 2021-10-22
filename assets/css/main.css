@@ -2097,13 +2097,13 @@
 	}
 
 	#nav ul {
-		margin: 0;
+		margin: 1;　/* 左右の余白　*/
 	}
 
 	#nav li {
-		border-top: solid 1px rgba(0, 0, 0, 0.25);
-		box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.075);
-		padding: 0.5em 0 0.5em 0;
+		border-top: solid 1px rgba(0, 0, 0, 0.25);	/* 区切りの線の太さ　*/
+		box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.075); /* 区切りの線の影　*/
+		padding: 0.4em 0 0.4em 0;
 	}
 
 		#nav li:first-child {
@@ -2118,7 +2118,7 @@
 
 		#nav li a {
 			display: block;
-			padding: 0.4em 1em 0.4em 1em;
+			padding: 0.3em 1em 0.3em 1em; /* 上下左右の余白　*/
 			text-decoration: none;
 			border-radius: 0.4em;
 			outline: 0;
@@ -2137,7 +2137,7 @@
 		}
 
 		#nav li:hover a {
-			background-color: rgba(255, 255, 255, 0.1);
+			background-color: rgba(255, 255, 255, 0.1);  /* マウスオーバーしたときの色 */
 			color: #fff;
 		}
 
@@ -2234,8 +2234,8 @@
 		}
 
 		#sidebar section, #sidebar nav {
-			position: relative;
-			margin: 2em 0 0 0;
+			position: fixed; /* original: relative */
+			margin: 0em 0 0 0;
 			font-size: 0.9em;
 		}
 
@@ -2284,6 +2284,7 @@
 
 	#copyright {
 		padding-bottom: 2em;
+		position: ;
 	}
 
 		#copyright p {
@@ -2296,8 +2297,8 @@
 
 		#copyright:before {
 			content: '';
-			border-top: solid 1px;
-			border-bottom: solid 1px;
+			border-top: solid 0px;
+			border-bottom: solid 0px;
 			border-color: #171E29;
 			border-color: rgba(0, 0, 0, 0.25);
 			box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.075), 0px 1px 0px 0px rgba(255, 255, 255, 0.075);
@@ -2458,7 +2459,7 @@
 		/* Copyright */
 
 			#copyright {
-				margin: 2em 0 0 0;
+				margin: 0em 0 0 0;
 				text-align: center;
 			}
 
