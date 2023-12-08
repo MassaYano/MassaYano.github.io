@@ -2944,7 +2944,7 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
 	box-shadow: 0 0 0 6px #ade5fd; /*境界線の外側の指定*/
 	padding:10px;
 	}
-	.box p {
+	.MYbox p {
 	margin:0;
 	padding:0;
 	}
