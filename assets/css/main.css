@@ -2937,3 +2937,14 @@
 .marker_water {
 background: linear-gradient(transparent 60%, #66ccff 60%);
 }
+
+.MYbox {
+	background:#abe1f8; /*背景色の指定*/
+	border:#ffffff 2px dashed; /*境界線の指定*/
+	box-shadow: 0 0 0 6px #ade5fd; /*境界線の外側の指定*/
+	padding:10px;
+	}
+	.box p {
+	margin:0;
+	padding:0;
+	}
