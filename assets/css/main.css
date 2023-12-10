@@ -2939,7 +2939,7 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
 }
 
 .MYbox {
-	background:#c4c6ff7d; /*背景色の指定*/
+	background:#f3fbffb4; /*背景色の指定*/
 	border:#1f4cd280 2px dashed; /*境界線の指定*/
 	box-shadow: 0 0 0 6px #f3fbffb4; /*境界線の外側の指定*/
 	padding:10px;
