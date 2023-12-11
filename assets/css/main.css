@@ -2938,13 +2938,40 @@
 background: linear-gradient(transparent 60%, #66ccff 60%);
 }
 
+
+
+.MYbox{
+    margin:2em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+.MYbox:before, .MYbox:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.MYbox:before {left: 10px;}
+.MYbox:after {right: 10px;}
+.MYbox p {
+    margin: 0; 
+    padding: 0;
+}
+
+/*
 .MYbox {
-	background:#91bbff23; /*背景色の指定*/
-	border:#1744cda4 2px dashed; /*境界線の指定*/
-	box-shadow: 0 0 0 6px #a1b9fd36; /*境界線の外側の指定*/
+	background:#ffffff23; // 背景色の指定
+	border:#cd32176e 2px dashed; // 境界線の指定 
+	box-shadow: 0 0 0 6px #ffffff36; // 境界線の外側の指定 
 	padding:10px;
 	}
 	.MYbox p {
 	margin:0;
 	padding:0;
 	}
+*/
