@@ -1742,6 +1742,7 @@
 
 	.image {
 		display: inline-block;
+		width: 100%; /* MY*/
 	}
 
 		.image img {
