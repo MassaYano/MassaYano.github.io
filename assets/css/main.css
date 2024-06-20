@@ -1745,6 +1745,7 @@
 		width: 100%; /* MY*/
 		padding: 0;/* MY*/
     	margin: 0;/* MY*/
+		box-sizing: border-box;/* MY*/
 	}
 
 		.image img {
