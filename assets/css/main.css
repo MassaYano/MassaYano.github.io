@@ -1748,6 +1748,7 @@
 			display: block;
 			width: 100%;
 			max-width: 100%;/* MY*/
+			height:auto;/* MY*/
 		}
 
 		.image.fit {
