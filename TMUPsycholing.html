@@ -48,6 +48,19 @@
 		<link rel="apple-touch-icon" sizes="192x192" href="./images/favicon/android-chrome-192x192.png" />
 		-->
 
+		<!--　機材の説明のところで使用 -->
+		<style>
+			/* 初期状態でコンテンツを非表示にする */
+			.hidden-content {
+				display: none;
+			}
+			/* 段落のスタイルを設定 */
+			.hidden-content p {
+            text-indent: 0em;
+            margin: 0;
+        	}
+		</style>
+
 	</head>
 	<body>
 		<!--<h1><a href="https://massayano.github.io/" id="logo">Masa Yano</a></h1>-->
@@ -56,7 +69,9 @@
 		<!-- Post -->
 			<!--<p><h1><font size="6", color="black"><ruby><rb>矢野雅</rb><rp>（</rp><rt>やのまさ</rt><rp>）</rp></ruby>ラボ</font></h1></p>-->
 
+			<div class="image">
 			<img src="./images/134.png" width="400" height="100">
+			</div>
 			<!--<
 			<img src="favicon.ico" style="float:left">
 			<span style="line-height:200%;"><h1><font size="6" color="black"> 東京都立大学・心理言語学ラボ</font></h1></span>
@@ -146,23 +161,35 @@
 
 			<p>
 				<div class="box" style="text-indent: -1em;text-align: justify; padding-left: 1em;">
-				<li>脳波計 actiCHamp Plus 64ch System & TriggerBox Plus &#x1f340 <span onclick="obj=document.getElementById('EEG').style; obj.display=(obj.display=='none')?'block':'none';">〈<a style="cursor:pointer;"><u>脳波計測とは？</u></a>〉</span></li>
-							
-						<p style="text-indent:0em; margin: 0 0 0 0;"><span id="EEG" style="display:none;clear:both;">
-						私たちの脳内では神経細胞が絶えず電気信号を発生させ、さまざまな情報の伝達を行っています。頭皮上に電極を取り付けると、この活動をリズムを持った波として記録できます。これを脳波（electroencephalogram: EEG）といいます。					
-						私たちが言葉を話したり、理解する際に特異的に現れる脳波は、それ以外の脳波に比べると非常に小さいのですが、一定の手続きで解析を行うことで、その脳波を取り出すことができます。脳波は電気信号であるため脳内で発生してから電極に到達するまでの間に遅延が発生しないことから、（ほかの実験手法に比べて）時間的に高い精度で脳活動の変化を捉えることができます。また、音や意味の処理に特異的に反応する脳波がこれまでの研究で明らかになっています。そのため、脳波計測は、「私たちが言葉を理解したり話たりするとき、脳内で<u>どのような言語情報</u>が<u>いつ</u>処理されているのか」を調べる上で、非常に有用なツールになります。
+				<li>脳波計 actiCHamp Plus 64ch System & TriggerBox Plus &#x1f340 
+					
+					<span onclick="toggleDisplay('EEG')">〈<a style="cursor:pointer;"><u>脳波計測とは？</u></a>〉</span>
 
-						<!-- 写真 -->
+					<div id="EEG" class="hidden-content" style="display:none;clear:both;">
+					<p>私たちの脳内では神経細胞が絶えず電気信号を発生させ、さまざまな情報の伝達を行っています。頭皮上に電極を取り付けると、この活動をリズムを持った波として記録できます。これを脳波（electroencephalogram: EEG）といいます。	私たちが言葉を話したり、理解する際に特異的に現れる脳波は、それ以外の脳波に比べると非常に小さいのですが、一定の手続きで解析を行うことで、その脳波を取り出すことができます。脳波は電気信号であるため脳内で発生してから電極に到達するまでの間に遅延が発生しないことから、（ほかの実験手法に比べて）時間的に高い精度で脳活動の変化を捉えることができます。また、音や意味の処理に特異的に反応する脳波がこれまでの研究で明らかになっています。そのため、脳波計測は、「私たちが言葉を理解したり話たりするとき、脳内で<u>どのような言語情報</u>が<u>いつ</u>処理されているのか」を調べる上で、非常に有用なツールになります。</p>
+					
+					
+						<div class="image">
+						<img src="./images/BrainAmpDC.jpg" width="820" height="270" align="center">
+						</div>
 						<br>
-						<img src="./images/BrainAmpDC.jpg" width="820" height="270" align="center"> 
-						<br><br>
-
-						〈<b>脳波についてもっと知りたいひと向け</b>〉<br>
+				
+					〈<b>脳波についてもっと知りたいひと向け</b>〉<br>
 						・宮内哲 (2020) 脳波の発見: ハンス・ベルガーの夢。→ 脳波とは何か、ひとの脳波の計測にはじめて成功したベルガーはなぜひとの脳波を計測したかったのか、ベルガーの発見は当初なぜ信用されなかったのか?<br>
 						・九州大学附属図書館 <a href="https://guides.lib.kyushu-u.ac.jp/c.php?g=775027&p=5558980" target="_blank">脳波判読のための基礎</a><br>
 						・酒井弘 (2010) ことばについて脳を調べてわかること・わからないこと－言語認知神経科学への招待ー → 入手しにくいかもしれないです..<br>
-						・矢野雅貴 (2023) <a href="https://www.researchgate.net/publication/369854881" target="_blank">Event-Related Potentials</a> → 言語に関係した脳波の紹介。英語なので大学生向けです。
-						</span>
+						・矢野雅貴 (2023) <a href="https://www.researchgate.net/publication/369854881" target="_blank">Event-Related Potentials</a> → 言語に関係した脳波の紹介。英語なので大学生向けです。<br>
+					
+
+					<script>
+						function toggleDisplay(elementId) {
+							var obj = document.getElementById(elementId).style;
+							obj.display = (obj.display === 'none' || obj.display === '') ? 'block' : 'none';
+						}
+					</script>
+					
+				</li>						
+						
 				<li>脳波計 QuickAmp & TriggerBox &#x1f340</li>
 
 				<li>脳波計 BrainAmp DC 64ch & シールドルーム</li>
