@@ -1742,11 +1742,17 @@
 
 	.image {
 		display: inline-block;
+		width: 100%; /* MY*/
+		padding: 0;/* MY*/
+    	margin: 0;/* MY*/
+		box-sizing: border-box;/* MY*/
 	}
 
 		.image img {
 			display: block;
-			width: 100%;
+			/*width: 100%;*/
+			max-width: 100%;/* MY*/
+			height:auto;/* MY*/
 		}
 
 		.image.fit {
@@ -2987,6 +2993,7 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
 		height: 100%;
 		position: relative;
 		overflow: hidden;
+		/* padding: calc(480 / 854 * 100%) 0 0;*/
 	}
 .iframe-container iframe {
 		position: absolute;
@@ -2994,5 +3001,6 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
 		left: 0;
 		width: 100%;
 		height: 100%;
-		border: 1px #030303;
+		border: 2px #030303;
+		max-width: 100%;
 	}
