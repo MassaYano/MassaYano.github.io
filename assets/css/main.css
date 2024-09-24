@@ -2972,6 +2972,7 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
 .MYbox p {
     margin: 0; 
     padding: 0;
+	text-align: justify;
 }
 
 /*
