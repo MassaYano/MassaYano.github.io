@@ -3005,3 +3005,13 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
 		border: 2px #030303;
 		max-width: 100%;
 	}
+
+/* ワークショップの発表者表示用 */	
+.auth-indent {
+    padding-left: 1em; 
+}
+
+.auth-indent > span {
+    text-indent: 1em;
+    display: inline-block;
+}
