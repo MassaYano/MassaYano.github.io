@@ -3010,7 +3010,6 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
 .auth-indent {
     padding-left: 1em; 
 }
-
 .auth-indent > span {
     text-indent: 1em;
     display: inline-block;
