@@ -2975,7 +2975,7 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
 	text-align: justify;
 }
 
-/*
+
 .MYbox {
 	background:#ffffff23; // 背景色の指定
 	border:#cd32176e 2px dashed; // 境界線の指定 
@@ -2986,7 +2986,6 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
 	margin:0;
 	padding:0;
 	}
-*/
 
 /* MY */
 .iframe-container {
@@ -3013,4 +3012,20 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
 .auth-indent > span {
     text-indent: 1em;
     display: inline-block;
+}
+
+/* 四角で囲む */
+.MYsemibox {
+    border: 2px solid #a3a2a2;
+    border-radius: 5px;
+	line-height: normal;
+    padding: 1px 10px 1px 22px;  /* 上 右 下 左 */
+    margin: 0px 2px 0px 2px;
+    background-color: #e8e8e8;
+    /* box-shadow: 1px 1px 1px #11db65; */
+    display: inline-block;
+    vertical-align: baseline;
+	justify-content: center;
+    display: inline-block;      /* inline-block の代わりに */
+    align-items: center;
 }
