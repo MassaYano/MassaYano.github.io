@@ -3019,8 +3019,8 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
     border: 2px solid #a3a2a2;
     border-radius: 5px;
 	line-height: normal;
-    padding: 1px 10px 1px 22px;  /* 上 右 下 左 */
-    margin: 0px 2px 0px 2px;
+    padding: 0px 1px 0px 16px;  /* 上 右 下 左 */
+    margin: 0px 1px 0px 1px;
     background-color: #e8e8e8;
     /* box-shadow: 1px 1px 1px #11db65; */
     display: inline-block;
@@ -3028,4 +3028,5 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
 	justify-content: center;
     display: inline-block;      /* inline-block の代わりに */
     align-items: center;
+	text-decoration: none;
 }
