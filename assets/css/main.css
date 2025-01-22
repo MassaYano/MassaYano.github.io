@@ -3015,18 +3015,27 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
 }
 
 /* 四角で囲む */
+/*
 .MYsemibox {
     border: 2px solid #a3a2a2;
     border-radius: 5px;
 	line-height: normal;
-    padding: 0px 1px 0px 16px;  /* 上 右 下 左 */
+    padding: 0px 1px 0px 16px;   上 右 下 左 
     margin: 0px 1px 0px 1px;
     background-color: #e8e8e8;
-    /* box-shadow: 1px 1px 1px #11db65; */
+    
     display: inline-block;
     vertical-align: baseline;
 	justify-content: center;
-    display: inline-block;      /* inline-block の代わりに */
+    display: inline-block;       inline-block の代わりに 
     align-items: center;
+	text-decoration: none;
+	}
+*/
+
+.MYsemibox {
+	/* 背景を透明に設定 */
+	background: transparent;
+	/* リンクの下線を削除 */
 	text-decoration: none;
 }
