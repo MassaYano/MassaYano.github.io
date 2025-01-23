@@ -1816,19 +1816,4 @@
 </body>
 
 
-<script>
-	function filterPapers(keyword) {
-		var papers = document.querySelectorAll('li[id^="Yano"], li[id^="Funasaki"]');
-
-		papers.forEach(function (paper) {
-			var text = paper.textContent.toLowerCase();
-			if (text.includes(keyword.toLowerCase())) {
-				paper.style.display = 'list-item';
-			} else {
-				paper.style.display = 'none';
-			}
-		});
-	}
-</script>
-
 </html>
