@@ -2,7 +2,7 @@
 async function loadPublications() {
     try {
         // JSONファイルから論文データを読み込む
-        const response = await fetch('publications.json');
+        const response = await fetch('../../publications.json');
         const data = await response.json();
         
         const publicationsList = document.getElementById('publications-list');
