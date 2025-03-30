@@ -427,16 +427,15 @@
             }
             /* 親要素のスタイルを変更 */
             .logo-container {
-                flex-direction: column; /* 縦並びに変更 */
-                align-items: flex-end; /* 右寄せ */
+                position: relative; /* absoluteの代わりに */
+                top: auto;
+                right: auto;
+                flex-direction: row; /* 横並びにして */
+                justify-content: flex-end; /* 右寄せ */
+                margin-bottom: 2rem; /* コンテンツとの間隔 */
                 gap: 0.5rem; /* 縦の間隔を追加 */
             }
     
-            /* スペースを削除するため、子要素のマージンを調整 */
-            .logo-container > * {
-                margin-left: 0;
-                margin-right: 0;
-            }
             .tmulogo {
                 height: 3rem; /* ロゴサイズを小さく */
             }
