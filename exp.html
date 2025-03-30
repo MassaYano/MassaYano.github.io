@@ -67,101 +67,7 @@
 			.pub-item p, .abstract-content p, .abstract-content {
 				text-indent: 0 !important;
 			}
-			
-			.pdf-toggle {
-				color: #38a169;
-				cursor: pointer;
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				text-indent: 0rem;
-				margin-right: 0.5rem;
-				position: relative;
-				padding: 0.1rem 0.3rem 0.1rem 0.3rem;
-				border-radius: 20px;
-				background-color: #f0fff4;
-				font-size: 0.85rem;
-				transition: all 0.2s ease;
-				border: 1px solid #c6f6d5;
-				user-select: none;
-				text-decoration: none !important;
-				min-width: 60px;
-				
-			}
-			
-			.pdf-toggle:hover {
-				color: white;
-				background-color: #38a169;
-				transform: translateY(-1px);
-				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-				border-color: #38a169;
-			}
-	
-			.rg-toggle {
-				color: #3182ce;
-				cursor: pointer;
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				margin-right: 0.5rem;
-				position: relative;
-				border-radius: 20px; /* 円形から角丸四角形に変更 */
-				background-color: #f0f8ff;
-				transition: all 0.2s ease;
-				border: 1px solid #b3d1ff;
-				user-select: none;
-				text-decoration: none !important;
-				min-width: 60px; /* テキストが入るように最小幅を増加 */
-				height: 28px;
-				/* padding: 0 0.6rem; */ /* 左右の余白を追加 */
-				padding: 0.1rem 0.3rem 0.1rem 0rem;
-				overflow: hidden;
-				font-family: 'Source Sans Pro', 'Noto Sans JP', sans-serif;
-			}
-			
-			.rg-toggle .fab {
-				font-size: 1rem; /* アイコンサイズ調整 */
-				margin-right: 0.2rem; /* アイコンとテキストの間隔 */
-			}
-			
-			/* Research gate 独立したpaddingクラス */
-			.rg-padding {
-				padding: 0.2rem 0.1rem 0.2rem 0.7rem;
-			}
-			
-			.rg-icon {
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				background-color: #222222;
-				color: white;
-				width: 20px;
-				height: 20px;
-				font-size: 10px;
-				font-weight: bold;
-				border-radius: 2px;
-				text-shadow: 0 0 1px rgba(0,0,0,0.3);
-				position: relative;
-			}
-			
-			.rg-icon:after {
-				content: 'RG';
-				font-size: 9px;
-				position: absolute;
-				
-				top: 0px;
-				right: 0px;
-				line-height: 1;
-			}
-			
-			.rg-toggle:hover {
-				color: white;
-				background-color: #2b6cb0;
-				transform: translateY(-1px);
-				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-				border-color: #2b6cb0;
-			}
-			
+						
 			/* カスタムスタイル */
 			:root {
 				--main-bg-color: #e8e8e8;
@@ -312,112 +218,19 @@
 				gap: 0.5rem;
 				margin-top: 0.25rem;
 			}
-			
-			.abstract-toggle {
-				color: #3182ce;
-				cursor: pointer;
-				display: inline-flex;
-				align-items: center;
-				text-indent: 0rem;
-				justify-content: center;
-				margin-right: 0.5rem;
-				position: relative;
-				padding: 0.1rem 0.3rem 0.1rem 0.3rem;
-				border-radius: 20px;
-				background-color: #ebf8ff;
-				font-size: 0.85rem;
-				transition: all 0.2s ease;
-				border: 1px solid #bee3f8;
-				user-select: none;
-				text-decoration: none !important;
-				min-width: 80px;
-			}
-			
-			/* アブストラクトのクリック可能要素のスタイル */
-			[style*="cursor:pointer"], [onclick], span[onclick] {
-				cursor: pointer;
-			}
-			
-			.abstract-toggle:hover {
-				color: white;
-				background-color: #2b6cb0;
-				transform: translateY(-1px);
-				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-				border-color: #2b6cb0;
-			}
-	
-			.abstract-toggle a {
-				text-decoration: none !important;
-				color: inherit;
-			}
-			
-			/* ここでOpen Access 矢野ゼミなどのバッチのサイズを指定 */
-			.badge {
-				padding: 0.2rem 0.5rem;
-				border-radius: 9999px;
-				font-size: 0.75rem;
-				font-weight: 500;
-				text-decoration: none;
-				display: inline-block;
-				white-space: nowrap;
-				box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-				margin-right: 0.5rem;
-				margin-bottom: 0.25rem;
-				padding: 0.2rem 0.5rem 0.2rem 0.5rem;
-				/* min-width: 20px;  */
-	
-			}
-			
+						
 			/* Ensure italic text in links has underline */
 			a em, em a {
 				text-decoration: underline;
 			}
-			
-			.journal-title {
-				font-style: italic;
-			}
-			
-			.badge-green {
-				background-color: #d1fae5;
-				color: #065f46;
-			}
-			
-			/* 矢野ゼミ卒論バッジ */
-			.badge-purple {
-				background-color: #fce7f3;
-				color: #db2777;
-			}
-	
-			/* 矢野ゼミ卒論バッジのホバー効果 */
-			.badge-purple:hover {
-				color: white;
-				background-color: #db2778a4; /* ホバー時は背景色を濃い紫に */
-				transform: translateY(-1px);
-				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-				border-color: #db2777;
-			}
-			
+						
 			.list-item {
 				padding-left: 1rem;
 				text-indent: -1rem;
 				margin-left: 1rem;
 				margin-bottom: 0.5rem;
 			}
-			
-			.abstract-content {
-				margin-top: 0.75rem;
-				padding: 1.25rem 1.75rem;
-				background-color: #f8f9fa;
-				border: 1px solid #e2e8f0;
-				border-radius: 6px;
-				font-size: 0.9rem;
-				line-height: 1.6;
-				color: var(--text-color);
-				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-				text-align: justify;
-				text-indent: 0;
-			}
-			
+						
 			@media (max-width: 1023px) {
 				.mobile-header {
 					background-color: var(--content-bg-color);
