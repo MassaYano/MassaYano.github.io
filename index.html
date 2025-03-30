@@ -410,7 +410,28 @@
             text-indent: 0;
         }
         
-        @media (max-width: 1023px) {
+        /* ベースのスタイル */
+        .header-wrapper {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        /* デスクトップ表示 */
+        @media (min-width: 1024px) {
+            .logo-container {
+                position: absolute;
+                top: 5mm;
+                right: 5mm;
+        }
+        }
+
+        @media (max-width: 1023px) and (min-width: 768px) {
             .mobile-header {
                 background-color: var(--content-bg-color);
                 background-image: url("assets/css/images/bg02.png");
@@ -427,18 +448,25 @@
             }
             /* 親要素のスタイルを変更 */
             .logo-container {
-                position: relative; /* absoluteの代わりに */
-                top: auto;
-                right: auto;
-                flex-direction: row; /* 横並びにして */
-                justify-content: flex-end; /* 右寄せ */
-                margin-bottom: 2rem; /* コンテンツとの間隔 */
-                gap: 0.5rem; /* 縦の間隔を追加 */
+                margin-top: 1.5rem;
             }
     
-            .tmulogo {
-                height: 3rem; /* ロゴサイズを小さく */
+            .logo-container img {
+                height: 4rem;
             }
+        }
+
+        /* モバイル表示 */
+        @media (max-width: 767px) {
+            .logo-container {
+                margin-top: 1rem;
+                flex-direction: row; /* 横並びを維持 */
+                justify-content: center; /* 中央寄せにする選択肢もあり */
+        }
+    
+            .logo-container img {
+                height: 3rem; /* さらに小さく */
+        }
         }
     </style>
 </head>
@@ -510,10 +538,10 @@
             <!-- ロゴエリア -->
             <div class="flex items-center justify-end space-x-4 logo-container">
                 <a href="https://www.tmu.ac.jp/" target="_blank" class="hover:opacity-80 transition-opacity">
-                    <img src="./images/TMUlogo.png" alt="東京都立大学ロゴ" class="h-24 w-auto tmulogo">
+                <img src="./images/TMUlogo.png" alt="東京都立大学ロゴ" class="h-24 w-auto">
                 </a>
                 <a href="https://www.ninjal.ac.jp/" target="_blank" class="hover:opacity-80 transition-opacity">
-                    <img src="./images/NINJALlogo.png" alt="国立国語研究所ロゴ" class="h-24 w-auto tmulogo">
+                <img src="./images/NINJALlogo.png" alt="国立国語研究所ロゴ" class="h-24 w-auto">
                 </a>
             </div>
 
@@ -527,6 +555,7 @@
                     I'm an Associate Professor at the Department of Language Sciences, Tokyo Metropolitan University, Japan. Our research team investigates human language processing mechanisms including both language comprehension and production, and its relationship to linguistic knowledge using a variety of experimental methods, such as eye-tracking, EEG, fNIRS, and tES. We welcome collaboration with researchers and students interested in our research. Please feel free to contact me at yanomasa [@] tmu.ac.jp if you would like to know more about our research.
                 </p>
             </section>
+
 
             <!-- Research Interests -->
             <section class="mb-5">
