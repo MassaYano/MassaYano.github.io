@@ -425,8 +425,11 @@
                 background-color: var(--accent-color);
                 color: white;
             }
-            .h-24 {
-                 height: 4rem; /* ロゴをより小さいサイズに */
+            .tmulogo {
+                height: 8rem; /* ロゴをより小さいサイズに */
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
             }
         }
     </style>
@@ -499,10 +502,10 @@
             <!-- ロゴエリア -->
             <div class="absolute top-6 right-6 flex items-center space-x-4">
                 <a href="https://www.tmu.ac.jp/" target="_blank" class="hover:opacity-80 transition-opacity">
-                    <img src="./images/TMUlogo.png" alt="東京都立大学ロゴ" class="h-24 md:h-24 h-8 w-auto">
+                    <img src="./images/TMUlogo.png" alt="東京都立大学ロゴ" class="h-24 md:h-24 h-8 w-auto tmulogo">
                 </a>
                 <a href="https://www.ninjal.ac.jp/" target="_blank" class="hover:opacity-80 transition-opacity">
-                    <img src="./images/NINJALlogo.png" alt="国立国語研究所ロゴ" class="h-24 md:h-24 h-8 w-auto">
+                    <img src="./images/NINJALlogo.png" alt="国立国語研究所ロゴ" class="h-24 md:h-24 h-8 w-auto tmulogo">
                 </a>
             </div>
             <header class="mb-8">
