@@ -112,7 +112,7 @@
             min-width: 60px; /* テキストが入るように最小幅を増加 */
             height: 28px;
             /* padding: 0 0.6rem; */ /* 左右の余白を追加 */
-            padding: 0.1rem 0.3rem 0.1rem 0rem;
+            padding: 0.1rem 0.8rem 0.1rem 0rem;
             overflow: hidden;
             font-family: 'Source Sans Pro', 'Noto Sans JP', sans-serif;
         }
@@ -127,13 +127,24 @@
             padding: 0.2rem 0.1rem 0.2rem 0.7rem;
         }
         
-        
         .rg-toggle:hover {
             color: white;
             background-color: #2b6cb0;
             transform: translateY(-1px);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-color: #2b6cb0;
+        }
+
+        .award {
+            font-weight: bold; 
+        }
+        .award::before {
+            content: "\f559"; /* fa-medal のユニコード */
+            font-family: "Font Awesome 6 Free", "Font Awesome 5 Free";
+            font-weight: 900; /* solid スタイル用 */
+            margin-right: 0.5rem; /* アイコンとテキストの間隔 */
+            display: inline-block; /* 必要に応じて */
+            margin-left: 0.5em;
         }
         
         /* カスタムスタイル */
@@ -637,7 +648,7 @@
                     <!-- Yano2024 -->
                     <li id="Yano2024" class="pl-1 py-1 pub-item indent-0">
                         <div>Yano, M., Niikuni, K., Shimura, R., Funasaki, N., and Koizumi, M. (2024)
-                            <strong>Producing non-basic word orders in (in)felicitous contexts: Evidence from pupillometry and functional near-infrared spectroscopy (fNIRS).</strong> <span class="journal-title">Language, Cognition and Neuroscience</span>, 40(1), 1-22. [<a href="https://www.researchgate.net/publication/383845845" class="hover:underline">PDF</a>]</div>
+                            <strong>Producing non-basic word orders in (in)felicitous contexts: Evidence from pupillometry and functional near-infrared spectroscopy (fNIRS).</strong> <span class="journal-title">Language, Cognition and Neuroscience</span>, 40(1), 1-22.</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
                             <span onclick="obj=document.getElementById('Yano2024LCN').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
                             <a href="https://www.tandfonline.com/doi/full/10.1080/23273798.2024.2404178" class="pdf-toggle">PDF</a>
@@ -871,7 +882,7 @@
                     </li>
 
                     <li id="YanoSakamoto2016a" class="pl-1 py-1 pub-item indent-0">
-                        <div>Yano, M. and Sakamoto, T.&dagger;(2016) <b>The interaction of morphosyntactic and semantic processing in Japanese sentence comprehension: Evidence from event-related brain potentials.</b> <span class="journal-title">Gengo Kenkyu</span>, 149, 43–59.（日本言語学会論文賞）</div> 
+                        <div>Yano, M. and Sakamoto, T.&dagger;(2016) <b>The interaction of morphosyntactic and semantic processing in Japanese sentence comprehension: Evidence from event-related brain potentials.</b> <span class="journal-title">Gengo Kenkyu</span>, 149, 43–59.<span class="award">日本言語学会論文賞</span></div> 
                         
                         <div class="flex flex-wrap items-center gap-2 mt-2">
                             <span onclick="obj=document.getElementById('Yano2016GengoKenkyu').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
@@ -1012,8 +1023,8 @@
                 <h2 id="Dissertation" class="text-2xl font-bold mb-4 pb-2 section-title">Dissertation</h2>
                 <ul>
                     <li  class="pl-1 py-1 pub-item">
-                        <p class="mb-1">Yano, M. (2016) <strong>Temporal Dynamics of Syntactic and Semantic Prediction.</strong> Kyushu University. 
-                            九州大学大学院人文科学府長賞大賞 <br>
+                        <p class="mb-1">Yano, M. (2016) <strong>Temporal Dynamics of Syntactic and Semantic Prediction.</strong> Kyushu University.  
+                            <span class="award">九州大学大学院人文科学府長賞大賞</span><br>
                             <div class="flex flex-wrap items-center gap-2 mt-2">
                                 <span onclick="obj=document.getElementById('Yano2016PhD').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
                                 <a href="https://www.researchgate.net/publication/309767640" class="pdf-toggle">PDF</a>
@@ -1084,31 +1095,44 @@
                         Yano, M.</u> (2025) <strong>Incremental processing of null subjects in Japanese.</strong> <em>The 5th International Conference on Theoretical East Asian Psycholinguistics (ICTEAP)</em>, Waseda University.
                     </li>
                     <li class="pl-1 py-1 pub-item indent-0" id="Shimura2024">
-                        志村瑠莉・矢野雅貴 (2024) <strong>日本語NPIの錯覚的認可はいつどのように起こるのか？ ―容認性調査と脳波計測を用いて―.</strong> 日本言語学会第168回大会, 国際基督教大学. [<a href="./docs/Shimura_LSJ168.pdf" class="hover:underline">PDF</a>]
+                        志村瑠莉・矢野雅貴 (2024) <strong>日本語NPIの錯覚的認可はいつどのように起こるのか？ ―容認性調査と脳波計測を用いて―.</strong> 日本言語学会第168回大会, 国際基督教大学. 
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
+                            <a href="./docs/Shimura_LSJ168.pdf" class="pdf-toggle">PDF</a>
+                        </div>
                     </li>
                     <li class="pl-1 py-1 pub-item indent-0">
                         Yano, M.</u> (2024) <strong>Processing of null subjects in Japanese.</strong> <em>Kansai Circle of Psycholinguistics (KCP) International Workshop 2024</em>, Konan University.
                     </li>
                     <li class="pl-1 py-1 pub-item indent-0">
-                        Yano, M.</u>, Niikuni, K., Shimura, R., Funasaki, N. and Koizumi, M. (2023) <strong>Why do speakers use syntactically non-basic sentences? Evidence from pupillometry and functional near-infrared spectroscopy.</strong> <em>AMLaP Asia</em>, the Chinese University of Hong Kong. [<a href="./docs/Yano_AMLaPAsia2023.pdf" class="hover:underline">PDF</a>]
+                        Yano, M.</u>, Niikuni, K., Shimura, R., Funasaki, N. and Koizumi, M. (2023) <strong>Why do speakers use syntactically non-basic sentences? Evidence from pupillometry and functional near-infrared spectroscopy.</strong> <em>AMLaP Asia</em>, the Chinese University of Hong Kong.
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
+                            <a href="./docs/Yano_AMLaPAsia2023.pdf" class="pdf-toggle">PDF</a>
+                        </div>
+                        
                     </li>
                     <li class="pl-1 py-1 pub-item indent-0">
                         Yano, M.</u>, Niikuni, K., Shimura, R., Funasaki, N. and Koizumi, M. (2023) <strong>Producing filler-gap dependencies in (in)felicitous contexts: Evidence from pupillometry and functional near-infrared spectroscopy (fNIRS).</strong> <em>Thought and Language</em>, the University of Tokyo.
                     </li>
                     <li class="pl-1 py-1 pub-item indent-0">
-                        矢野雅貴 (2022) <strong>ひとはなぜ高速な言語処理ができるのか―BCCWJ-EyeTrack を用いた予備的調査―.</strong> 日本言語学会第164回大会, オンライン開催. [<a href="./docs/Yano_LSJ164.pdf" class="hover:underline">PDF</a>]
+                        矢野雅貴 (2022) <strong>ひとはなぜ高速な言語処理ができるのか―BCCWJ-EyeTrack を用いた予備的調査―.</strong> 日本言語学会第164回大会, オンライン開催. 
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
+                            <a href="./docs/Yano_LSJ164.pd" class="pdf-toggle">PDF</a>
+                        </div>
                     </li>
                     <li class="pl-1 py-1 pub-item indent-0">
                         Jeong, H., Kim, J., Cui, H., Kiayama, S., Yano, M., and Koizumi, M. (2021) <strong>The effect of information structure on word order processing: An fMRI study.</strong> <em>The Society for the Neurobiology of Language (SNL)</em>.
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Jeong2021SNL').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">📄 Abstract</span>
+                            <span onclick="obj=document.getElementById('Jeong2021SNL').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">   Abstract</span>
                         </div>
                         <div id="Jeong2021SNL" style="display:none;" class="abstract-content">
                             Many languages grammatically allow canonical and non-canonical word orders. Previous neurolinguistic studies have reported greater involvement of the left inferior frontal gyrus (IFG) in the processing of non- canonical word orders (e.g., object-subject-verb [OSV] in Japanese) than its canonical counterparts (e.g., SOV in Japanese) because of its demand for syntactic computation (Kinno et al., 2008). Some behavioral and ERP studies have found that discourse factors, such as information structure, partially attenuate the processing demand of non-canonical word orders (Kaiser & Trueswell, 2004; Yano & Koizumi, 2018). To clarify the precise neural mechanism underlying syntactic computation of non- canonical sentences with relevant contextual effects, we conducted an fMRI study on sentence processing by manipulating word order and information structure. In particular, we intended to identify neural networks sensitive to (i) syntactic structure, (ii) information structure, and (iii) their interaction. The participants were 37 healthy, right-handed, native Japanese speakers (mean age: 20.8±1.7, 16 females). A total of 480 pairs of Japanese sentences were adopted from our previous ERP studies. Each pair consisted of a prior sentence and a target sentence. Half of the target sentences employed a canonical word order (SOV), and the rest used a non-canonical word order (OSV). There were two types of target sentences: one in which the initial noun phrase (NP) refers to discourse-old information (i.e., the entity mentioned in the prior sentence) and the second NP refers to a discourse-new entity (the given-new order) and the other in which the new information comes first (the new-given order). By manipulating the word order (SO vs. OS) and information structure (given-new vs. new-given) of the target sentences, four conditions were created (SgivenOnew, SnewOgive, OgiveSnew, OnewSgive). During the fMRI scanning, the prior sentence was presented in its entirety, and each phrase of the target sentence was presented one by one. To check whether participants understood the sentences, comprehension questions were asked randomly at the end of half of the trials. We tested the main effect of the word order (OS vs. SO), the information-structure (new-given vs. given-new), and the interaction between these two factors. Statistical analyses were performed with SPM12 using a random-effects model (corrected to p<0.05 by cluster size). Three major findings emerged. First, analyses of the main effect of word order ([OnewSgive+OgivenSnew]> [SnewOgiven+SgivenOnew]) revealed significantly greater activation in the left opercular part of the IFG (BA44), left premotor areas (BA6), and left posterior part of the superior temporal gyrus. Second, irrespective of the type of word order, the new-given conditions [OnewSgive+SnewOgiven] elicited greater activation than the given-new conditions [OgivenSnew+SgivenOnew] in the bilateral inferior parietal lobules and left triangular part of the IFG (BA45). Third, although no significant interaction was observed, the OnewSgive condition elicited greater activation in the left opercular part of the IFG (BA44) compared to the other three conditions. Taken together, these findings indicate that the left opercular part of the IFG (BA44) has a vital role in integrating the demands of syntactic computation and information-structural compensation (cf. Van Leeuwen et al., 2014).
                         </div>
                     </li>
                     <li class="pl-1 py-1 pub-item indent-0">
-                        矢野雅貴 (2020) <strong>日本語のかき混ぜ文におけるfiller-gap依存関係の処理―持続的な脳活動は何を反映しているのか―.</strong> 日本言語学会第160回大会, 早稲田大学西早稲田キャンパス. [<a href="./docs/Yano_LSJ160.pdf" class="hover:underline">PDF</a>]
+                        矢野雅貴 (2020) <strong>日本語のかき混ぜ文におけるfiller-gap依存関係の処理―持続的な脳活動は何を反映しているのか―.</strong> 日本言語学会第160回大会, 早稲田大学西早稲田キャンパス. 
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
+                            <a href="./docs/Yano_LSJ160.pdf" class="pdf-toggle">PDF</a>
+                        </div>
                     </li>
                     <li class="pl-1 py-1 pub-item indent-0">
                         Yano, M., Suwazono, S., Arao, H., Yasunaga, D., and Oishi, H. (2019) <strong>The adaptive nature of sentence comprehension: When native Japanese speakers adapt to linguistic violations and when they don't.</strong> <em>The 21st Annual International Conference of the Japanese Society for Language Sciences</em>. Tohoku University.
@@ -1117,7 +1141,10 @@
                         Gallagher, D., Yano, M., and Ohta, S. (2019) <strong>Syntactic and orthographic/phonological violation processing across modalities.</strong> 第4回坂本勉記念神経科学研究会, 金沢大学.
                     </li>
                     <li class="pl-1 py-1 pub-item indent-0">
-                        矢野雅貴・諏訪園秀吾・荒生弘史・安永大地・大石衡聴 (2018) <strong>形態統語的逸脱文に対する適応効果—事象関連電位を指標として—.</strong> 日本言語学会第157回大会, 京都大学. [<a href="./docs/Yano_LSJ157.pdf" class="hover:underline">PDF</a>]
+                        矢野雅貴・諏訪園秀吾・荒生弘史・安永大地・大石衡聴 (2018) <strong>形態統語的逸脱文に対する適応効果—事象関連電位を指標として—.</strong> 日本言語学会第157回大会, 京都大学. 
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
+                            <a href="./docs/Yano_LSJ157.pdf" class="pdf-toggle">PDF</a>
+                        </div>
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0">
@@ -1125,7 +1152,10 @@
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0">
-                        矢野雅貴・新国佳祐・小野創・木山幸子・里麻奈美・Tang Apay Ai-yu・安永大地・小泉政利 (2017) <b>タロコ語文理解実験からみる基本語順と普遍的認知特性について―事象関連電位を指標として―.</b> 日本言語学会第154回大会, 首都大学東京.（日本言語学会　大会発表賞）[<a href="./docs/Yano_LSJ154.pdf" target="_blank">PDF</a>]
+                        矢野雅貴・新国佳祐・小野創・木山幸子・里麻奈美・Tang Apay Ai-yu・安永大地・小泉政利 (2017) <b>タロコ語文理解実験からみる基本語順と普遍的認知特性について―事象関連電位を指標として―.</b> 日本言語学会第154回大会, 首都大学東京. <span class="award">日本言語学会大会発表賞</span>
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
+                            <a href="./docs/Yano_LSJ154.pdf" class="pdf-toggle">PDF</a>
+                        </div>
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0" id="TS2017">
@@ -1133,11 +1163,17 @@
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0" id="LSJ152T">
-                        津村早紀・峰見一輝・矢野雅貴 (2016) <b>日本人英語学習者によるガーデンパス文の処理―自己ペース読文実験による検討―.</b> 第152回日本言語学会, 慶應義塾大学. [<a href="./docs/Tsumura_LSJ152.pdf" target="_blank">PDF</a>]
+                        津村早紀・峰見一輝・矢野雅貴 (2016) <b>日本人英語学習者によるガーデンパス文の処理―自己ペース読文実験による検討―.</b> 第152回日本言語学会, 慶應義塾大学. 
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
+                            <a href="./docs/Tsumura_LSJ152.pdf" class="pdf-toggle">PDF</a>
+                        </div>
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0" id="LSJ152M">
-                        峰見一輝・津村早紀・矢野雅貴 (2016) <b>日本人学習者による英語filler-gap依存関係の処理 ―自己ペース読文実験による検討―.</b> 第152回日本言語学会, 慶應義塾大学.（日本言語学会　大会発表賞） [<a href="./docs/Minemi_LSJ152.pdf" target="_blank">PDF</a>]
+                        峰見一輝・津村早紀・矢野雅貴 (2016) <b>日本人学習者による英語filler-gap依存関係の処理 ―自己ペース読文実験による検討―.</b> 第152回日本言語学会, 慶應義塾大学. <span class="award">日本言語学会 大会発表賞</span>
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
+                            <a href="./docs/Minemi_LSJ152.pdf" class="pdf-toggle">PDF</a>
+                        </div>    
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0">
@@ -1145,7 +1181,10 @@
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0">
-                        矢野雅貴 (2015) <b>Semantic LAN現象からみる日本語の文理解モデル.</b> 第150回日本言語学会, 大東文化大学. [<a href="./docs/Yano_LSJ150.pdf" target="_blank">PDF</a>] 
+                        矢野雅貴 (2015) <b>Semantic LAN現象からみる日本語の文理解モデル.</b> 第150回日本言語学会, 大東文化大学. 
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
+                            <a href="./docs/Yano_LSJ150.pdf" class="pdf-toggle">PDF</a>
+                        </div>
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0">
@@ -1153,7 +1192,10 @@
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0">
-                        矢野雅貴・立山憂・坂本勉 (2014) <b>日本語分裂文のERP研究－使役形を用いた検討－.</b> 第148回日本言語学会, 法政大学. [<a href="./docs/Yano_LSJ148.pdf" target="_blank">PDF</a>]
+                        矢野雅貴・立山憂・坂本勉 (2014) <b>日本語分裂文のERP研究－使役形を用いた検討－.</b> 第148回日本言語学会, 法政大学. 
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
+                            <a href="./docs/Yano_LSJ148.pdf" class="pdf-toggle">PDF</a>
+                        </div>
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0" id="LSJ149">
@@ -1173,15 +1215,24 @@
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0">
-                        矢野雅貴・立山憂・坂本勉 (2013) <b>gap-filler依存関係の処理について－ERPを用いた日本語分裂文の研究－.</b> 第146回日本言語学会. 茨城大学水戸キャンパス. [<a href="./docs/Yano_LSJ146.pdf" target="_blank">PDF</a>]
+                        矢野雅貴・立山憂・坂本勉 (2013) <b>gap-filler依存関係の処理について－ERPを用いた日本語分裂文の研究－.</b> 第146回日本言語学会. 茨城大学水戸キャンパス.
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
+                            <a href="./docs/Yano_LSJ146.pdf" class="pdf-toggle">PDF</a>
+                        </div>
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0">
-                        安永大地・矢野雅貴・小泉政利・八杉佳穂 (2013) <b>カクチケル語の基本語順と選好語順の関係について.</b> 第146回日本言語学会, 茨城大学水戸キャンパス.（日本言語学会　大会発表賞） [<a href="./docs/Yasunaga_LSJ146.pdf" target="_blank">PDF</a>]
+                        安永大地・矢野雅貴・小泉政利・八杉佳穂 (2013) <b>カクチケル語の基本語順と選好語順の関係について.</b> 第146回日本言語学会, 茨城大学水戸キャンパス.<span class="award">日本言語学会大会発表賞</span>
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
+                            <a href="./docs/Yasunaga_LSJ146.pdf" class="pdf-toggle">PDF</a>
+                        </div>
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0">
-                        立山憂・矢野雅貴・坂本勉 (2013) <b>依存関係の構築における予測処理について－ERPを指標とした日本語譲歩文の研究.</b> 第146回日本言語学会, 茨城大学水戸キャンパス. [<a href="./docs/Tateyama_LSJ146.pdf" target="_blank">PDF</a>]
+                        立山憂・矢野雅貴・坂本勉 (2013) <b>依存関係の構築における予測処理について－ERPを指標とした日本語譲歩文の研究.</b> 第146回日本言語学会, 茨城大学水戸キャンパス
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
+                            <a href="./docs/Tateyama_LSJ146.pdf" class="pdf-toggle">PDF</a>
+                        </div>
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0">
@@ -1339,22 +1390,22 @@
             <section class="mb-5">
                 <h2 id="Tutorial" class="text-2xl font-bold mb-4 pb-2 section-title">Tutorial</h2>
                 <ul class="space-y-2">
-                    <li class="pl-4 py-1 pub-item">
+                    <li class="pl-1 py-1 pub-item indent-0">
                         矢野雅貴 (2019) 脳波計測, 津田塾大学, 2019年11月18日.
                     </li>
-                    <li class="pl-4 py-1 pub-item">
+                    <li class="pl-1 py-1 pub-item indent-0">
                         矢野雅貴 (2019) 線形混合モデルと既存データのランダム選出による特性解析. ワークショップ「EEG/ERPデータ処理の最近のトレンド」, 大正大学, 2019年4月20日.
                     </li>
-                    <li class="pl-4 py-1 pub-item">
+                    <li class="pl-1 py-1 pub-item indent-0">
                         矢野雅貴 (2017) 脳波解析及び線形混合モデル入門. 東京大学駒場キャンパス.
                     </li>
-                    <li class="pl-4 py-1 pub-item">
+                    <li class="pl-1 py-1 pub-item indent-0">
                         Yano, M. and Inoue, M, (2017) An Introduction to EEG Data Analysis Using Linear Mixed-Effects Models. 第2回坂本勉記念神経科学研究会, 大正大学.
                     </li>
-                    <li class="pl-4 py-1 pub-item">
+                    <li class="pl-1 py-1 pub-item indent-0">
                         井上雅勝・矢野雅貴 (2017) 統計改革とERP－線形混合モデル分析の適用. 第2回坂本勉記念神経科学研究会, 大正大学.
                     </li>
-                    <li class="pl-4 py-1 pub-item">
+                    <li class="pl-1 py-1 pub-item indent-0">
                         矢野雅貴 (2016) 心理言語学における統計—線形混合モデル分析の適用, 東北大学.
                     </li>
                 </ul>
