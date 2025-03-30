@@ -1,9 +1,4 @@
-.<!DOCTYPE HTML>
-<!--
-	Striped by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE HTML>
 <html lang="ja">
 	<head>
 		<!-- Intense Imagesスクリプトの読み込み-->
@@ -11,21 +6,12 @@
 
 		<style type="text/css">
 		.fullscreen-image {
-   	cursor: url("./plus_cursor.png"), pointer; /* マウスポインタを指定 */
-   	display: inline-block;   /* 横方向に並べる指定 */
-   	margin: 0px 5px 5px 0px; /* 周囲の余白量(右と下に5pxずつ) */
+   		cursor: url("./plus_cursor.png"), pointer; /* マウスポインタを指定 */
+   		display: inline-block;   /* 横方向に並べる指定 */
+   		margin: 0px 5px 5px 0px; /* 周囲の余白量(右と下に5pxずつ) */
 		}
 		</style>
-		<!-- Intense Imagesスクリプトの読み込み ここまで-->
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-53918387-3"></script>
-		<script>
-  	window.dataLayer = window.dataLayer || [];
-  	function gtag(){dataLayer.push(arguments);}
-  	gtag('js', new Date());
-  	gtag('config', 'UA-53918387-3');
-		</script> -->
 
 
 		<!-- Google tag (gtag.js) -->
@@ -44,7 +30,7 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-    <div id="fb-root"></div>
+    	<div id="fb-root"></div>
 										<script>(function(d, s, id) {
   										var js, fjs = d.getElementsByTagName(s)[0];
   										if (d.getElementById(id)) return;
@@ -66,30 +52,461 @@
 		<link rel="apple-touch-icon" sizes="192x192" href="./images/favicon/android-chrome-192x192.png" />
 		-->
 
-	</head>
-	<body>
-		<!--<h1><a href="https://massayano.github.io/" id="logo">Masa Yano</a></h1>-->
-		<!-- Content -->
-			<div id="content">
+    	<!-- Tailwind CSS -->
+    	<script src="https://cdn.tailwindcss.com"></script>
+    
+    	<!-- Font Awesome -->
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    
+    	<!-- Google Fonts -->
+    	<link rel="preconnect" href="https://fonts.googleapis.com">
+    	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-				<!--Facebook
-					<div id="shareBtn" class="btn btn-success clearfix" style="display: inline-block; _display: inline;"><img src="https://massayano.github.io/images/facebook.png" border="0" width="64" height="23"></div>
-					<script>
-					document.getElementById('shareBtn').onclick = function() {
-						FB.ui({
-							method: 'share',
-							hashtag: '#実験参加者募集',
-							display: 'popup',
-							href: 'https://massayano.github.io/exp.html',
-							}, function(response){});
-									}
-					</script>
-			-->
+		<style>
+			.pub-item p, .abstract-content p, .abstract-content {
+				text-indent: 0 !important;
+			}
+			
+			.pdf-toggle {
+				color: #38a169;
+				cursor: pointer;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				text-indent: 0rem;
+				margin-right: 0.5rem;
+				position: relative;
+				padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+				border-radius: 20px;
+				background-color: #f0fff4;
+				font-size: 0.85rem;
+				transition: all 0.2s ease;
+				border: 1px solid #c6f6d5;
+				user-select: none;
+				text-decoration: none !important;
+				min-width: 60px;
+				
+			}
+			
+			.pdf-toggle:hover {
+				color: white;
+				background-color: #38a169;
+				transform: translateY(-1px);
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				border-color: #38a169;
+			}
+	
+			.rg-toggle {
+				color: #3182ce;
+				cursor: pointer;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				margin-right: 0.5rem;
+				position: relative;
+				border-radius: 20px; /* 円形から角丸四角形に変更 */
+				background-color: #f0f8ff;
+				transition: all 0.2s ease;
+				border: 1px solid #b3d1ff;
+				user-select: none;
+				text-decoration: none !important;
+				min-width: 60px; /* テキストが入るように最小幅を増加 */
+				height: 28px;
+				/* padding: 0 0.6rem; */ /* 左右の余白を追加 */
+				padding: 0.1rem 0.3rem 0.1rem 0rem;
+				overflow: hidden;
+				font-family: 'Source Sans Pro', 'Noto Sans JP', sans-serif;
+			}
+			
+			.rg-toggle .fab {
+				font-size: 1rem; /* アイコンサイズ調整 */
+				margin-right: 0.2rem; /* アイコンとテキストの間隔 */
+			}
+			
+			/* Research gate 独立したpaddingクラス */
+			.rg-padding {
+				padding: 0.2rem 0.1rem 0.2rem 0.7rem;
+			}
+			
+			.rg-icon {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				background-color: #222222;
+				color: white;
+				width: 20px;
+				height: 20px;
+				font-size: 10px;
+				font-weight: bold;
+				border-radius: 2px;
+				text-shadow: 0 0 1px rgba(0,0,0,0.3);
+				position: relative;
+			}
+			
+			.rg-icon:after {
+				content: 'RG';
+				font-size: 9px;
+				position: absolute;
+				
+				top: 0px;
+				right: 0px;
+				line-height: 1;
+			}
+			
+			.rg-toggle:hover {
+				color: white;
+				background-color: #2b6cb0;
+				transform: translateY(-1px);
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				border-color: #2b6cb0;
+			}
+			
+			/* カスタムスタイル */
+			:root {
+				--main-bg-color: #e8e8e8;
+				--content-bg-color: #ffffff;
+				--text-color: #232323;
+				--text-color-secondary: #464646;
+				--accent-color: #c94663;
+				--accent-hover-color: #d95673;
+				--border-color: #dddddd;
+				--highlight-color: rgba(201, 70, 99, 0.05);
+				--link-color: #c94663;
+				--sidebar-width: 250px;
+				--content-max-width: 1200px;
+			}
+			
+			body {
+				font-family: 'Source Sans Pro', 'Noto Sans JP', sans-serif;
+				background-color: var(--main-bg-color);
+				background-image: url("assets/css/images/bg02.png");
+				color: var(--text-color);
+				line-height: 1.75;
+			}
+			
+			h1, h2, h3, h4, h5, h6 {
+				color: var(--text-color);
+				font-weight: 700;
+			}
+			
+			a {
+				color: var(--link-color);
+				text-decoration: underline;
+				transition: color 0.2s ease;
+			}
+			
+			a:hover {
+				color: var(--accent-hover-color);
+			}
+			
+			a em {
+				text-decoration: underline;
+			}
+			
+			.content-wrapper {
+				background-color: var(--content-bg-color);
+				background-image: url("assets/css/images/bg02.png");
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				width: 100%;
+				max-width: var(--content-max-width);
+			}
+			
+			.sidebar {
+				background-color: var(--content-bg-color);
+				background-image: url("assets/css/images/bg02.png");
+				border-right: 1px solid var(--border-color);
+				width: var(--sidebar-width);
+			}
+			
+			.nav-link {
+				color: var(--text-color-secondary);
+				position: relative;
+				transition: color 0.3s ease;
+				text-decoration: none;
+			}
+			
+			.nav-link:hover {
+				color: var(--accent-color);
+			}
+			
+			.nav-link::after {
+				content: '';
+				position: absolute;
+				width: 0;
+				height: 2px;
+				bottom: -2px;
+				left: 0;
+				background-color: var(--accent-color);
+				transition: width 0.3s ease;
+			}
+			
+			.nav-link:hover::after {
+				width: 100%;
+			}
+			
+			.info-box {
+				background-color: rgba(255, 255, 255, 0.5);
+				border: 1px solid var(--border-color);
+				border-radius: 8px;
+			}
+			
+			.section-title {
+				border-bottom: 1px solid var(--border-color);
+				position: relative;
+				padding-bottom: 0.5rem;
+			}
+			
+			.section-title::after {
+				content: '';
+				position: absolute;
+				bottom: -1px;
+				left: 0;
+				width: 60px;
+				height: 3px;
+				background-color: var(--accent-color);
+			}
+			
+			.tag-link {
+				background-color: #f0f0f0;
+				border: 1px solid var(--border-color);
+				color: var(--text-color);
+				transition: all 0.2s ease;
+				text-decoration: none;
+				display: inline-flex;
+				align-items: center;
+				box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+			}
+			
+			.tag-link:hover {
+				background-color: var(--accent-color);
+				color: white;
+				border-color: var(--accent-color);
+				transform: translateY(-1px);
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			}
+			
+			.pub-item {
+				border-left: 4px solid transparent;
+				transition: all 0.3s ease;
+				padding-left: 1rem;
+				text-indent: -1rem;
+				margin-left: 1rem;
+				padding-top: 0.75rem;
+				padding-bottom: 0.75rem;
+				border-radius: 0 4px 4px 0;
+			}
+			
+			.pub-item p {
+				margin-bottom: 0.75rem;
+				line-height: 1.6;
+				margin-top: 0;
+				text-indent: 0;
+			}
+			
+			/* Remove brackets style */
+			.pub-meta {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 0.5rem;
+				margin-top: 0.25rem;
+			}
+			
+			.abstract-toggle {
+				color: #3182ce;
+				cursor: pointer;
+				display: inline-flex;
+				align-items: center;
+				text-indent: 0rem;
+				justify-content: center;
+				margin-right: 0.5rem;
+				position: relative;
+				padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+				border-radius: 20px;
+				background-color: #ebf8ff;
+				font-size: 0.85rem;
+				transition: all 0.2s ease;
+				border: 1px solid #bee3f8;
+				user-select: none;
+				text-decoration: none !important;
+				min-width: 80px;
+			}
+			
+			/* アブストラクトのクリック可能要素のスタイル */
+			[style*="cursor:pointer"], [onclick], span[onclick] {
+				cursor: pointer;
+			}
+			
+			.abstract-toggle:hover {
+				color: white;
+				background-color: #2b6cb0;
+				transform: translateY(-1px);
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				border-color: #2b6cb0;
+			}
+	
+			.abstract-toggle a {
+				text-decoration: none !important;
+				color: inherit;
+			}
+			
+			/* ここでOpen Access 矢野ゼミなどのバッチのサイズを指定 */
+			.badge {
+				padding: 0.2rem 0.5rem;
+				border-radius: 9999px;
+				font-size: 0.75rem;
+				font-weight: 500;
+				text-decoration: none;
+				display: inline-block;
+				white-space: nowrap;
+				box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+				margin-right: 0.5rem;
+				margin-bottom: 0.25rem;
+				padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+				/* min-width: 20px;  */
+	
+			}
+			
+			/* Ensure italic text in links has underline */
+			a em, em a {
+				text-decoration: underline;
+			}
+			
+			.journal-title {
+				font-style: italic;
+			}
+			
+			.badge-green {
+				background-color: #d1fae5;
+				color: #065f46;
+			}
+			
+			/* 矢野ゼミ卒論バッジ */
+			.badge-purple {
+				background-color: #fce7f3;
+				color: #db2777;
+			}
+	
+			/* 矢野ゼミ卒論バッジのホバー効果 */
+			.badge-purple:hover {
+				color: white;
+				background-color: #db2778a4; /* ホバー時は背景色を濃い紫に */
+				transform: translateY(-1px);
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				border-color: #db2777;
+			}
+			
+			.list-item {
+				padding-left: 1rem;
+				text-indent: -1rem;
+				margin-left: 1rem;
+				margin-bottom: 0.5rem;
+			}
+			
+			.abstract-content {
+				margin-top: 0.75rem;
+				padding: 1.25rem 1.75rem;
+				background-color: #f8f9fa;
+				border: 1px solid #e2e8f0;
+				border-radius: 6px;
+				font-size: 0.9rem;
+				line-height: 1.6;
+				color: var(--text-color);
+				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+				text-align: justify;
+				text-indent: 0;
+			}
+			
+			@media (max-width: 1023px) {
+				.mobile-header {
+					background-color: var(--content-bg-color);
+					background-image: url("assets/css/images/bg02.png");
+				}
+				
+				.mobile-menu-item {
+					color: var(--text-color-secondary);
+					text-decoration: none;
+				}
+				
+				.mobile-menu-item:hover {
+					background-color: var(--accent-color);
+					color: white;
+				}
+			}
+
+			.icon-black { color: black; }
+
+		</style>
+
+	</head>
+
+	<body class="min-h-screen flex flex-col lg:flex-row">
+    <!-- ヘッダー（モバイル用） -->
+    <header class="lg:hidden mobile-header fixed w-full z-10 p-4 shadow-md">
+        <div class="flex justify-between items-center">
+            <h1 class="text-xl font-bold">Masataka Yano, PhD</h1>
+            <button id="mobile-menu-button">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <nav id="mobile-menu" class="hidden mt-4">
+            <ul class="space-y-2">
+                <li><a href="#" class="mobile-menu-item block p-2 rounded"><i class="fas fa-home mr-2 text-gray-500"></i>HOME</a></li>
+                <li><a href="#Articles" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-file-alt mr-2 text-indigo-500"></i>Articles</a></li>
+                <li><a href="#OralPresentations" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-microphone-alt mr-2 text-indigo-500"></i>Oral Presentations</a></li>
+                <li><a href="#PosterPresentations" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-chalkboard mr-2 text-indigo-500"></i>Poster Presentations</a></li>
+                <li><a href="https://massayano.github.io/TMUPsycholing.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-comments mr-2 text-purple-500"></i>心理言語学ラボ</a></li>
+                <li><a href="https://massayano.github.io/exp.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
+                <li><a href="https://massayano.github.io/workshop.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
+                <li><a href="https://massayano.github.io/blog.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
+                <li><a href="https://massayano.github.io/sakamoto.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-user-tie mr-2 text-red-500"></i>坂本先生のページ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- サイドバー（デスクトップ用） -->
+    <aside class="hidden lg:block sidebar p-6 overflow-y-auto sticky top-0 h-screen">
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Masataka Yano</h2>
+            <span class="block mb-6 text-gray-600">矢野 雅貴</span>
+            <div class="flex justify-start space-x-3 mb-6">
+                <a href="https://scholar.google.com/citations?user=PMN8wPUAAAAJ" title="Google Scholar" class = "icon-black">
+                    <i class="fas fa-graduation-cap text-xl"></i>
+                </a>
+                <a href="https://www.researchgate.net/profile/Masataka_Yano" title="ResearchGate" class = "icon-black">
+                    <i class="fab fa-researchgate text-xl"></i>
+                </a>
+                <a href="http://orcid.org/0000-0003-4465-8456" title="ORCID" class = "icon-black">
+                    <i class="fab fa-orcid text-xl"></i>
+                </a>
+                <a href="mailto:yanomasa@tmu.ac.jp" title="Email" class = "icon-black">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+            </div>
+        </div>
+        
+        <nav>
+            <ul class="space-y-2">
+                <li><a href="#" class="nav-link block p-2"><i class="fas fa-home mr-2 text-gray-500"></i>HOME</a></li>
+                <li><a href="#Books" class="nav-link block p-2 pl-4"><i class="fa-solid fa-book-open mr-2 text-indigo-500"></i> Books</a></li>
+                <li><a href="#Articles" class="nav-link block p-2 pl-4"><i class="fas fa-file-alt mr-2 text-indigo-500"></i> Articles</a></li>
+                <li><a href="#OralPresentations" class="nav-link block p-2 pl-4"><i class="fas fa-microphone-alt mr-2 text-indigo-500"></i> Oral Presentations</a></li>
+                <li><a href="#PosterPresentations" class="nav-link block p-2 pl-4"><i class="fas fa-chalkboard mr-2 text-indigo-500"></i> Poster Presentations</a></li>
+                <li><a href="https://massayano.github.io/TMUPsycholing.html" class="nav-link block p-2"><i class="fas fa-comments mr-2 text-purple-500"></i>心理言語学ラボ</a></li>
+                <li><a href="https://massayano.github.io/exp.html" class="nav-link block p-2"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
+                <li><a href="https://massayano.github.io/workshop.html" class="nav-link block p-2"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
+                <li><a href="https://massayano.github.io/blog.html" class="nav-link block p-2"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
+                <li><a href="https://massayano.github.io/sakamoto.html" class="nav-link block p-2"><i class="fas fa-user-tie mr-2 text-red-500"></i>坂本先生のページ</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- メインコンテンツ -->
+    <main class="flex-1 p-4 lg:p-6 mt-16 lg:mt-0 relative">
+        <div class="max-w-6xl mx-auto content-wrapper rounded-lg p-6 lg:p-8 relative">
 				<!--Twitter-->
 					<a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="実験参加者募集" data-count="none" data-lang="en" data-text=" "></a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-				<!--Line-
-					<div class="line-it-button" data-lang="ja" data-type="share-a" data-url="https://massayano.github.io/exp.html" style="display: none;"></div><script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
-				->
 
 			<!-- Post -->
 			<article class="box post post-excerpt" style="text-align: justify;">
@@ -339,11 +756,8 @@
 -->
 
 
-
-
-					<p></p>
-
-					<h2 id="pool" lang="ja" charset="euc-jp"><font size="4">〈<strong>実験参加者プールについて</strong>〉</font></h2> <font size ="2.5">※ 下記の応募フォームは、実験への参加申込みではなく、<b>メーリングリストの申し込み</b>です。</font><p></p>
+					<h2 id="pool" lang="ja" charset="euc-jp"><font size="4">〈<strong>実験参加者プールについて</strong>〉</h2> 
+					※ 下記の応募フォームは、実験への参加申込みではなく、<b>メーリングリストの申し込み</b>です。<p></p>
 
 					東京都立大学・言語科学教室では、ひとが言葉を理解したり、話したりする仕組みを研究するためにアンケート調査・行動実験・脳機能計測実験を行っています。
 					参加者を募集する際、メールを受け取りたい方は、以下の注意事項をご覧の上、<a href="https://forms.gle/YMrSfNvwi9757wBi6" target="_blank">応募フォーム</a>からお申し込み下さい。ご協力よろしくお願い致します。
@@ -450,18 +864,11 @@
 						</div>
 -->
 
-	 <div style="padding-bottom: 500px"></div>
-
-
 		</div>
-						</article>
-					</div>
+		</main>
 
-
-		<!-- Sidebar -->
+		<!-- Sidebar
 			<div id="sidebar">
-
-				<!-- Nav -->
 					<nav id="nav">
 						<ul>
 							<li><a href="https://massayano.github.io/index.html">HOME</a></li>
@@ -478,21 +885,62 @@
 					</nav>
 
 			</div>
+			-->
 
-			<!-- Scripts -->
+    <!-- JavaScript -->
+    <script>
+        // モバイルメニューの動作
+        document.addEventListener('DOMContentLoaded', function() {
+            // モバイルメニューの動作
+            document.getElementById('mobile-menu-button').addEventListener('click', function() {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+            });
+            
+            // ページ内リンクのスムーススクロール
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        
+                        // モバイルヘッダーの高さを考慮したスクロール位置の調整
+                        const headerHeight = document.querySelector('header') ? document.querySelector('header').offsetHeight : 0;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // モバイルメニューを閉じる
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+	
+			<!-- Scripts 
 				<script src="assets/js/jquery.min.js"></script>
 				<script src="assets/js/skel.min.js"></script>
 				<script src="assets/js/util.js"></script>
-				<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 				<script src="assets/js/main.js"></script>
-
-			<!-- Intense Imagesスクリプトの読み込み-->
+			-->
+			<!-- Intense Imagesスクリプトの読み込み
 			<script type="text/javascript">
 			   var elements = document.querySelectorAll( '.fullscreen-image' );
 			   Intense( elements );
+			   
 			</script>
+			-->
 			<!-- Intense Imagesスクリプトの読み込み ここまで-->
-
 
 	</body>
 </html>
