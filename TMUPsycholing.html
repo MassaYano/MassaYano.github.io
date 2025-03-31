@@ -345,9 +345,9 @@
 					<li><a href="#Lectures" class="nav-link block p-2 pl-4"><i class="fa-solid fa-chalkboard-user mr-2 text-gray-500"></i>講義・演習</a></li>
 					<li><a href="#BAthesis" class="nav-link block p-2 pl-4"><i class="fa-solid fa-user-graduate mr-2 text-gray-500"></i>過去の卒論</a></li>
 					<li><a href="#MAthesis" class="nav-link block p-2 pl-4"><i class="fa-solid fa-user-graduate mr-2 text-gray-500"></i>過去の修論</a></li>
-					<li><a href="#ethics" class="nav-link block p-2 pl-4"><i class="fa-solid fa-heart mr-2 text-gray-500"></i>倫理</a></li>
 					<li><a href="#FAQ" class="nav-link block p-2 pl-4"><i class="fa-regular fa-question mr-2 text-gray-500"></i>FAQ</a></li>
-				<li><a href="https://massayano.github.io/exp.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
+					<li><a href="#ethics" class="nav-link block p-2 pl-4"><i class="fa-solid fa-heart mr-2 text-gray-500"></i>倫理</a></li>
+			<li><a href="https://massayano.github.io/exp.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
                 <li><a href="https://massayano.github.io/workshop.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
                 <li><a href="https://massayano.github.io/blog.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
                 <li><a href="https://massayano.github.io/sakamoto.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-user-tie mr-2 text-red-500"></i>坂本先生のページ</a></li>
@@ -392,8 +392,8 @@
 					<li><a href="#Lectures" class="nav-link block p-2 pl-4"><i class="fa-solid fa-chalkboard-user mr-2 text-gray-500"></i>講義・演習</a></li>
 					<li><a href="#BAthesis" class="nav-link block p-2 pl-4"><i class="fa-solid fa-user-graduate mr-2 text-gray-500"></i>過去の卒論</a></li>
 					<li><a href="#MAthesis" class="nav-link block p-2 pl-4"><i class="fa-solid fa-user-graduate mr-2 text-gray-500"></i>過去の修論</a></li>
-					<li><a href="#ethics" class="nav-link block p-2 pl-4"><i class="fa-solid fa-heart mr-2 text-gray-500"></i>倫理</a></li>
 					<li><a href="#FAQ" class="nav-link block p-2 pl-4"><i class="fa-regular fa-question mr-2 text-gray-500"></i>FAQ</a></li>
+					<li><a href="#ethics" class="nav-link block p-2 pl-4"><i class="fa-solid fa-heart mr-2 text-gray-500"></i>倫理</a></li>
                 <li><a href="https://massayano.github.io/exp.html" class="nav-link block p-2"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
                 <li><a href="https://massayano.github.io/workshop.html" class="nav-link block p-2"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
                 <li><a href="https://massayano.github.io/blog.html" class="nav-link block p-2"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
@@ -403,21 +403,27 @@
     </aside>
 
     <!-- メインコンテンツ -->
-	<main class="flex-1 p-4 lg:p-6 lg:ml-64 mt-16 lg:mt-0 relative">
-		<div class="max-w-6xl mx-auto content-wrapper rounded-lg p-6 lg:p-8 relative">
-			<div class="header-wrapper relative mb-8">
-        
-        <header class="mb-8">
-            <h1 class="text-3xl lg:text-4xl font-bold">心理言語学ラボ</h1>
-			<p class="mt-2 text-gray-600">#Psycholinguistics #Cognitive Neuroscience of Language</p>
-        </header>
+	<div class="max-w-6xl mx-auto content-wrapper rounded-lg p-6 lg:p-8 relative">
+		<div class="header-wrapper relative mb-8">
+			<header class="mb-8">
+				<h1 class="text-3xl lg:text-4xl font-bold">心理言語学ラボ</h1>
+				<p class="mt-2 text-gray-600 flex flex-wrap gap-2">
+					<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+						#Psycholinguistics
+					</span>
+					<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+						#Cognitive Neuroscience of Language
+					</span>
+				</p>
+			</header>
 
 		<!-- ロゴエリア -->
-		<div class="flex items-center justify-end space-x-4 logo-container">
-			<a href="https://www.tmu.ac.jp/" target="_blank" class="hover:opacity-80 transition-opacity">
-			<img src="./images/TMUlogo.png" alt="東京都立大学ロゴ" class="h-24 w-auto">
-			</a>
-		</div>
+		<div class="absolute top-0 right-0 flex items-center justify-end space-x-4 logo-container">
+            <a href="https://www.tmu.ac.jp/" target="_blank" class="hover:opacity-80 transition-opacity">
+                <img src="./images/TMUlogo.png" alt="東京都立大学ロゴ" class="h-24 w-auto">
+            </a>
+        </div>
+    	</div>
 		
 		<section class="mb-10">
 			<h2 id="Research" class="text-2xl font-bold mb-4 pb-2 section-title">研究テーマ</h2>
@@ -449,10 +455,58 @@
 		-->
 		
 		<section class="mb-10">
-			<h2 id="Equipment" class="text-2xl font-bold mb-4 pb-2 section-title">言語科学教室の研究設備</h2>
-		言語科学教室では、さまざまな言語実験を行う環境が整っており、学生は自由に使うことができます。<br>
+			<h2 id="Application" class="text-2xl font-bold mb-4 pb-2 section-title">学生の募集</h2>
+			
+			<div class="mb-5">
+			東京都立大学・心理言語学ラボでは、学部生・大学院生（修士・博士）の募集を行っています。
+			学振ＰＤの受入も可能で、採用実績もあります。
+			入試情報は、東京都立大学のページを参照してください（<a href="https://www.tmu.ac.jp/entrance.html" target="_blank">学部入試</a>・<a href="https://www.tmu.ac.jp/entrance/graduate/outline.html#hum" target="_blank">大学院入試</a>）。
+			</div>
+	
+			<ul class="pl-1 mb-4 indent-0">
+				<li class="list-item"><b>学部生</b>：東京都立大学 人文社会学部 人間社会学科 言語科学教室</li>
+				<li class="list-item"><b>大学院生</b>：東京都立大学 人文科学研究科 人間科学専攻 言語科学分野 言語科学教室</li>
+			</ul>
+	
+			<div class="mb-5">
+				心理言語学ラボがある<a href="https://gengokagaku.fpark.tmu.ac.jp/" target="_blank">言語科学教室</a>は、理論的研究（音韻論・統語論・意味論）と実験的研究（心理言語学・神経言語学・言語発達脳科学・言語精神科学）を専門とする教員が在籍しており、緊密に連携をとりつつ、さまざまな研究を活発に行っています。
+				国内で「<b>理論的アプローチ</b>」と「<b>実験的アプローチ</b>」の両方を学べる大学が極めて少ない現状を考えると、とてもユニークな教育・研究環境だと思います。
+			</div>
+	
+			<div class="mb-5">
+				学部生（大学生）で心理言語学ラボへの所属を希望するひとは、まず東京都立大学の人文社会学部人間社会学科に入学します。1年次の後期に教室希望調査がありますので、そこで「言語科学教室」を希望します。
+				毎年定員が変わりますが、多くて8名以下で、GPA（Grade Point Average：成績評価のこと）順に配属が決まります。
+				3年生の夏休み中に教員に相談し、10月初旬に許可を得て「卒業論文登録申請書」を提出します。
+				受け入れの条件として以下の項目を設定しています（カリキュラム通りに授業を取れば普通に問題ないです）。
+			</div>
+	
+			<ul class="pl-1 mb-4 indent-0">
+				<li class="list-item">心理言語学・実験言語学に関するものであること（<a href="#Research">研究テーマ</a>を参照）</li>
+				<li class="list-item">「心理言語学」「言語情報処理の統計学」「言語科学特殊講義」を履修済みであること（<a href="#Lectures">担当講義・演習</a>を参照）</li>
+				<li class="list-item"> 基礎的な統計・プログラミングのスキルを身に着けていること</li>
+				<li class="list-item">英語の文献が読めること、または読む意欲があること</li>
+			</ul>
+	
+			<div class="mb-5">
+				登録申請書の提出段階で具体的な研究内容を決めるのは難しいと思うので、気軽に相談してください。その際、興味のある大まかなテーマ・キーワードを見つけておくと相談しやすいと思います。
+				卒業論文では「なるべくシンプルな実験で面白い研究をすること（小難しい解析をして何となくすごそうな研究に見せようとしないこと）」を方針にしています。<br>
+			</div>
+			<div class="mb-5">
+				大学院の進学希望者は、「人間科学専攻 言語科学分野」を希望して9月（前期）入試または2月（後期）入試を受験することになります。
+				とくに外部から受験するひとは、入試の1ヶ月前までに研究計画書を添付してメールで連絡をとり、研究計画について相談するようにしてください。
+				受け入れの条件としては、上記の学部生向けのものに加えて、「英語で論文を書く／発表するスキル」が必要になります。
+				さまざまなバックグラウンドを持つ学生を受け入れたいと考えているので、学部で心理言語学を専攻していた学生だけでなく、
+				学部で理論言語学を専攻していて、大学院で心理言語学を始めようと考えている学生などもを受け入れることも可能です。
+			</div>
+	
+			</section>
 
-		<p>
+		<section class="mb-10">
+		<h2 id="Equipment" class="text-2xl font-bold mb-4 pb-2 section-title">言語科学教室の研究設備</h2>
+
+		<div class="mb-5">
+		言語科学教室では、さまざまな言語実験を行う環境が整っており、学生は自由に使うことができます。
+		</div>
 			
 			<ul class="pl-1 mb-4">
 
@@ -500,53 +554,6 @@
 				オフィスアワー以外でも、随時、研究・論文指導を行っています。</li>
 			<li class="list-item">講義・演習ではないですが、毎年２月に研究会（通称、<a href="https://massayano.github.io/workshop.html">脳波祭り</a>）を開催しています。</li>
 		</ul>
-		</section>
-
-		<section class="mb-10">
-		<h2 id="Application" class="text-2xl font-bold mb-4 pb-2 section-title">学生の募集</h2>
-		
-		<div class="mb-5">
-		東京都立大学・心理言語学ラボでは、学部生・大学院生（修士・博士）の募集を行っています。
-		学振ＰＤの受入も可能で、採用実績もあります。
-		入試情報は、東京都立大学のページを参照してください（<a href="https://www.tmu.ac.jp/entrance.html" target="_blank">学部入試</a>・<a href="https://www.tmu.ac.jp/entrance/graduate/outline.html#hum" target="_blank">大学院入試</a>）。
-		</div>
-
-		<ul class="pl-1 mb-4 indent-0">
-			<li class="list-item"><b>学部生</b>：東京都立大学 人文社会学部 人間社会学科 言語科学教室</li>
-			<li class="list-item"><b>大学院生</b>：東京都立大学 人文科学研究科 人間科学専攻 言語科学分野 言語科学教室</li>
-		</ul>
-
-		<div class="mb-5">
-			心理言語学ラボがある<a href="https://gengokagaku.fpark.tmu.ac.jp/" target="_blank">言語科学教室</a>は、理論的研究（音韻論・統語論・意味論）と実験的研究（心理言語学・神経言語学・言語発達脳科学・言語精神科学）を専門とする教員が在籍しており、緊密に連携をとりつつ、さまざまな研究を活発に行っています。
-			国内で「<b>理論的アプローチ</b>」と「<b>実験的アプローチ</b>」の両方を学べる大学が極めて少ない現状を考えると、とてもユニークな教育・研究環境だと思います。
-		</div>
-
-		<div class="mb-5">
-			学部生（大学生）で心理言語学ラボへの所属を希望するひとは、まず東京都立大学の人文社会学部人間社会学科に入学します。1年次の後期に教室希望調査がありますので、そこで「言語科学教室」を希望します。
-			毎年定員が変わりますが、多くて8名以下で、GPA（Grade Point Average：成績評価のこと）順に配属が決まります。
-			3年生の夏休み中に教員に相談し、10月初旬に許可を得て「卒業論文登録申請書」を提出します。
-			受け入れの条件として以下の項目を設定しています（カリキュラム通りに授業を取れば普通に問題ないです）。
-		</div>
-
-		<ul class="pl-1 mb-4 indent-0">
-			<li class="list-item">心理言語学・実験言語学に関するものであること（<a href="#Research">研究テーマ</a>を参照）</li>
-			<li class="list-item">「心理言語学」「言語情報処理の統計学」「言語科学特殊講義」を履修済みであること（<a href="#Lectures">担当講義・演習</a>を参照）</li>
-			<li class="list-item"> 基礎的な統計・プログラミングのスキルを身に着けていること</li>
-			<li class="list-item">英語の文献が読めること、または読む意欲があること</li>
-		</ul>
-
-		<div class="mb-5">
-			登録申請書の提出段階で具体的な研究内容を決めるのは難しいと思うので、気軽に相談してください。その際、興味のある大まかなテーマ・キーワードを見つけておくと相談しやすいと思います。
-			卒業論文では「なるべくシンプルな実験で面白い研究をすること（小難しい解析をして何となくすごそうな研究に見せようとしないこと）」を方針にしています。<br>
-		</div>
-		<div class="mb-5">
-			大学院の進学希望者は、「人間科学専攻 言語科学分野」を希望して9月（前期）入試または2月（後期）入試を受験することになります。
-			とくに外部から受験するひとは、入試の1ヶ月前までに研究計画書を添付してメールで連絡をとり、研究計画について相談するようにしてください。
-			受け入れの条件としては、上記の学部生向けのものに加えて、「英語で論文を書く／発表するスキル」が必要になります。
-			さまざまなバックグラウンドを持つ学生を受け入れたいと考えているので、学部で心理言語学を専攻していた学生だけでなく、
-			学部で理論言語学を専攻していて、大学院で心理言語学を始めようと考えている学生などもを受け入れることも可能です。
-		</div>
-
 		</section>
 
 		<section class="mb-10">
