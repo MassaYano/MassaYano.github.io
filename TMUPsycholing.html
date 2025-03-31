@@ -356,7 +356,7 @@
     </header>
 
     <!-- サイドバー（デスクトップ用） -->
-    <aside class="hidden lg:block sidebar p-6 overflow-y-auto fixed top-0 h-screen">
+    <aside class="hidden lg:block sidebar p-6 overflow-y-auto sticky top-0 h-screen">
         <div class="mb-8">
             <h2 class="text-2xl font-bold mb-4">Masataka Yano</h2>
             <span class="block mb-6 text-gray-600">矢野 雅貴</span>
@@ -403,6 +403,7 @@
     </aside>
 
     <!-- メインコンテンツ -->
+	<main class="flex-1 p-4 lg:p-6 mt-16 lg:mt-0 relative">
 	<div class="max-w-6xl mx-auto content-wrapper rounded-lg p-6 lg:p-8 relative">
 		<div class="header-wrapper relative mb-8">
 			<header class="mb-8">
@@ -565,7 +566,7 @@
 			</li>
 		
 			<li class="pl-1 py-1 pub-item indent-0">
-			<div>舩﨑夏海 (2023) 日本語の焦点はいつどのように特定されるのか―瞳孔径計測実験による検証―.
+			<div>舩﨑夏海 (2023) 日本語の焦点はいつどのように特定されるのか―瞳孔径計測実験による検証―
 				<br><div class="inline-block mr-1">
 					<i>Language, Cognition and Neuroscience</i>に掲載
 					<a href="./index.html#Funasaki2024" class="badge-purple">link</a>
@@ -634,8 +635,7 @@
 				</li>
 
 			<li class="pl-1 py-1 pub-item indent-0">	
-				<a href="https://sites.google.com/view/itsukiminemi/itsuki-minemi">Minemi, Itsuki</a> (2016) Processing
-				of filler-gap dependencies by Japanese learners of English
+				<a href="https://sites.google.com/view/itsukiminemi/itsuki-minemi">Minemi, Itsuki</a> (2016) Processing of filler-gap dependencies by Japanese learners of English
 				<br><div class="inline-block mr-1">
 					言語研究に掲載
 					<a href="./index.html#Minemi2021" class="badge-purple">link</a>
@@ -706,8 +706,6 @@
 				<br><div class="inline-block mr-1">
 					<i>Tohoku Psychologica Folia</i>に掲載
 					<a href="./index.html#Kusaba2017" class="badge-purple">link</a>
-					日本言語学会第152回大会で発表（日本言語学会大会発表賞 受賞
-					<a href="./index.html#LSJ152M" class="badge-purple">link</a>
 					<span onclick="obj=document.getElementById('Kusaba2014').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">要旨</span>
 				</span>
 				<span id="Kusaba2014" style="display:none;" class="abstract-content">
@@ -827,7 +825,7 @@
 					</span>
 				</li>
 
-			<li class="pl-1 py-1 pub-item indent-0">	
+			<li class="pl-1 py-1 pb-5 pub-item indent-0">	
 				見月香織（2012）隠喩文の理解過程についてー意味活性の時間的変化ー
 				<span class="inline-block ml-5 mt-2">
 					<span onclick="obj=document.getElementById('Mitsuki2012').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">要旨</span>
@@ -844,9 +842,9 @@
 				</li>
 			</ul>
 
-			<p></p>
+			<div class="mb-5">
 				＊ 学部生でも希望があれば、学会発表や雑誌論文執筆の指導も行っています。卒業研究で日本言語学会大会発表賞を受賞した学生や、国際雑誌に論文が掲載された学生もいます。
-
+			</div>
 			</section>
 
 			<section class="mb-5">
@@ -979,7 +977,7 @@
 
 
 
-	</div>
+		</div>
 	</main>
 
 	<!-- JavaScript -->

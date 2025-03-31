@@ -2295,7 +2295,7 @@
 
 	#copyright {
 		padding-bottom: 2em;
-		position: ;
+		position: absolute;
 	}
 
 		#copyright p {
@@ -2993,9 +2993,24 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
 		/* height: 100%;*/
 		position: relative;
 		overflow: hidden;
-		padding-top: 56.25%; /* 16:9のアスペクト比の場合 */
+		padding-top: 100%;
+		/*padding-top: 56.25%;*/ /* 16:9のアスペクト比の場合 */
 		/* padding: calc(480 / 854 * 100%) 0 0;*/
 	}
+/* 小さい画面用の調整 */
+@media screen and (max-width: 768px) {
+	.iframe-container {
+	  padding-top: 150%; /* モバイル向けに高さを増やす */
+	}
+  }
+  
+  /* さらに小さい画面用 */
+  @media screen and (max-width: 480px) {
+	.iframe-container {
+	  padding-top: 200%; /* さらに小さい画面向けに高さを増やす */
+	}
+  }
+
 .iframe-container iframe {
 		position: absolute;
 		top: 0;
