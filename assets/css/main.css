@@ -2977,9 +2977,9 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
 
 
 .MYbox {
-	background:#ffffff23; // 背景色の指定
-	border:#cd32176e 2px dashed; // 境界線の指定 
-	box-shadow: 0 0 0 6px #ffffff36; // 境界線の外側の指定 
+	background:#ffffff23; /* 背景色の指定 */
+	border:#cd32176e 2px dashed; /*境界線の指定  */
+	box-shadow: 0 0 0 6px #ffffff36; /* 境界線の外側の指定  */
 	padding:10px;
 	}
 	.MYbox p {
@@ -2990,9 +2990,10 @@ background: linear-gradient(transparent 60%, #66ccff 60%);
 /* MY */
 .iframe-container {
 		width: 100%;
-		height: 100%;
+		/* height: 100%;*/
 		position: relative;
 		overflow: hidden;
+		padding-top: 56.25%; /* 16:9のアスペクト比の場合 */
 		/* padding: calc(480 / 854 * 100%) 0 0;*/
 	}
 .iframe-container iframe {
