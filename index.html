@@ -434,7 +434,7 @@
         }
 
         /* デスクトップ表示 */
-        @media (min-width: 1024px) {
+        @media (min-width: 1240px) {
             .logo-container {
                 position: absolute;
                 top: 5mm;
@@ -442,7 +442,7 @@
         }
         }
 
-        @media (max-width: 1023px) and (min-width: 768px) {
+        @media (max-width: 1239px) and (min-width: 768px) {
             .mobile-header {
                 background-color: var(--content-bg-color);
                 background-image: url("assets/css/images/bg02.png");
@@ -459,11 +459,13 @@
             }
             /* 親要素のスタイルを変更 */
             .logo-container {
-                margin-top: 1.5rem;
+                margin-top: 1rem;
+                flex-direction: row; /* 横並びを維持 */
+                justify-content: center; /* 中央寄せにする選択肢もあり */
             }
     
             .logo-container img {
-                height: 4rem;
+                height: 6rem;
             }
         }
 
@@ -476,7 +478,7 @@
         }
     
             .logo-container img {
-                height: 3rem; /* さらに小さく */
+                height: 4rem; /* さらに小さく */
         }
         }
     </style>
@@ -547,7 +549,7 @@
     <main class="flex-1 p-4 lg:p-6 mt-16 lg:mt-0 relative">
         <div class="max-w-6xl mx-auto content-wrapper rounded-lg p-6 lg:p-8 relative">
             <!-- ロゴエリア -->
-            <div class="flex items-center justify-end space-x-4 logo-container">
+            <div class="flex items-center justify-end space-x-0 logo-container">
                 <a href="https://www.tmu.ac.jp/" target="_blank" class="hover:opacity-80 transition-opacity">
                 <img src="./images/TMUlogo.png" alt="東京都立大学ロゴ" class="h-24 w-auto">
                 </a>
