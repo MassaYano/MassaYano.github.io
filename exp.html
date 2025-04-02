@@ -52,7 +52,7 @@
     	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 		<style>
-			.pub-item p, .abstract-content p, .abstract-content {
+			.exp-item p {
 				text-indent: 0 !important;
 			}
 						
@@ -156,7 +156,7 @@
 				position: absolute;
 				bottom: -1px;
 				left: 0;
-				width: 60px;
+				width: 200px;
 				height: 3px;
 				background-color: var(--accent-color);
 			}
@@ -180,18 +180,19 @@
 				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 			}
 			
-			.pub-item {
-				border-left: 4px solid transparent;
+			.exp-item {
+				border-left: 0px solid transparent;
 				transition: all 0.3s ease;
 				padding-left: 1rem;
 				text-indent: -1rem;
-				margin-left: 1rem;
-				padding-top: 0.75rem;
+				margin-left: 0rem;
+				padding-top: 0rem;
 				padding-bottom: 0.75rem;
 				border-radius: 0 4px 4px 0;
+				text-align: justify;
 			}
 			
-			.pub-item p {
+			.exp-item p {
 				margin-bottom: 0.75rem;
 				line-height: 1.6;
 				margin-top: 0;
@@ -253,15 +254,15 @@
         </div>
         <nav id="mobile-menu" class="hidden mt-4">
             <ul class="space-y-2">
-                <li><a href="#" class="mobile-menu-item block p-2 rounded"><i class="fas fa-home mr-2 text-gray-500"></i>HOME</a></li>
-                <li><a href="#Articles" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-file-alt mr-2 text-indigo-500"></i>Articles</a></li>
-                <li><a href="#OralPresentations" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-microphone-alt mr-2 text-indigo-500"></i>Oral Presentations</a></li>
-                <li><a href="#PosterPresentations" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-chalkboard mr-2 text-indigo-500"></i>Poster Presentations</a></li>
-                <li><a href="https://massayano.github.io/TMUPsycholing.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-comments mr-2 text-purple-500"></i>心理言語学ラボ</a></li>
-                <li><a href="https://massayano.github.io/exp.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
-                <li><a href="https://massayano.github.io/workshop.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
-                <li><a href="https://massayano.github.io/blog.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
-                <li><a href="https://massayano.github.io/sakamoto.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-user-tie mr-2 text-red-500"></i>坂本先生のページ</a></li>
+                <li><a href="./index.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-home mr-2 text-gray-500"></i>HOME</a></li>
+                <li><a href="./index.html#Articles" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-file-alt mr-2 text-indigo-500"></i>Articles</a></li>
+                <li><a href="./index.html#OralPresentations" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-microphone-alt mr-2 text-indigo-500"></i>Oral Presentations</a></li>
+                <li><a href="./index.html#PosterPresentations" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-chalkboard mr-2 text-indigo-500"></i>Poster Presentations</a></li>
+                <li><a href="./TMUPsycholing.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-comments mr-2 text-purple-500"></i>心理言語学ラボ</a></li>
+                <li><a href="./exp.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
+                <li><a href="./workshop.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
+                <li><a href="./blog.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
+                <li><a href="./sakamoto.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-user-tie mr-2 text-red-500"></i>坂本先生のページ</a></li>
             </ul>
         </nav>
     </header>
@@ -289,16 +290,16 @@
         
         <nav>
             <ul class="space-y-2">
-                <li><a href="#" class="nav-link block p-2"><i class="fas fa-home mr-2 text-gray-500"></i>HOME</a></li>
-                <li><a href="#Books" class="nav-link block p-2 pl-4"><i class="fa-solid fa-book-open mr-2 text-indigo-500"></i> Books</a></li>
-                <li><a href="#Articles" class="nav-link block p-2 pl-4"><i class="fas fa-file-alt mr-2 text-indigo-500"></i> Articles</a></li>
-                <li><a href="#OralPresentations" class="nav-link block p-2 pl-4"><i class="fas fa-microphone-alt mr-2 text-indigo-500"></i> Oral Presentations</a></li>
-                <li><a href="#PosterPresentations" class="nav-link block p-2 pl-4"><i class="fas fa-chalkboard mr-2 text-indigo-500"></i> Poster Presentations</a></li>
-                <li><a href="https://massayano.github.io/TMUPsycholing.html" class="nav-link block p-2"><i class="fas fa-comments mr-2 text-purple-500"></i>心理言語学ラボ</a></li>
-                <li><a href="https://massayano.github.io/exp.html" class="nav-link block p-2"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
-                <li><a href="https://massayano.github.io/workshop.html" class="nav-link block p-2"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
-                <li><a href="https://massayano.github.io/blog.html" class="nav-link block p-2"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
-                <li><a href="https://massayano.github.io/sakamoto.html" class="nav-link block p-2"><i class="fas fa-user-tie mr-2 text-red-500"></i>坂本先生のページ</a></li>
+                <li><a href="./index.html" class="nav-link block p-2"><i class="fas fa-home mr-2 text-gray-500"></i>HOME</a></li>
+                <li><a href="./index.html#Books" class="nav-link block p-2 pl-4"><i class="fa-solid fa-book-open mr-2 text-indigo-500"></i> Books</a></li>
+                <li><a href="./index.html#Articles" class="nav-link block p-2 pl-4"><i class="fas fa-file-alt mr-2 text-indigo-500"></i> Articles</a></li>
+                <li><a href="./index.html#OralPresentations" class="nav-link block p-2 pl-4"><i class="fas fa-microphone-alt mr-2 text-indigo-500"></i> Oral Presentations</a></li>
+                <li><a href="./index.html#PosterPresentations" class="nav-link block p-2 pl-4"><i class="fas fa-chalkboard mr-2 text-indigo-500"></i> Poster Presentations</a></li>
+                <li><a href="./TMUPsycholing.html" class="nav-link block p-2"><i class="fas fa-comments mr-2 text-purple-500"></i>心理言語学ラボ</a></li>
+                <li><a href="./exp.html" class="nav-link block p-2"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
+                <li><a href="./workshop.html" class="nav-link block p-2"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
+                <li><a href="./blog.html" class="nav-link block p-2"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
+                <li><a href="./sakamoto.html" class="nav-link block p-2"><i class="fas fa-user-tie mr-2 text-red-500"></i>坂本先生のページ</a></li>
             </ul>
         </nav>
     </aside>
@@ -309,53 +310,63 @@
 				<!--Twitter-->
 					<a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="実験参加者募集" data-count="none" data-lang="en" data-text=" "></a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
 
-			<!-- Post -->
-			<article class="box post post-excerpt" style="text-align: justify;">
-			<div class="box post post-excerpt" style="text-align: justify;">
-			<ul>
+		<header class="mb-8">
+			<h1 class="text-3xl lg:text-4xl font-bold">実験参加者の募集</h1>
+		</header>
 
-			<p><h1><font size="5", color="black">実験参加者の募集</font></h1></p>
+		<!--
+		<section class="mb-5">
+			<h2 id="ACC" class="text-2xl font-bold mb-4 pb-2 section-title">アンケート調査</h2>
+			
+			<div class="mb-2">
+			日本語の音声を聞いていただき、それがどの程度、日本語として自然・容認可能かを回答していただく実験です。
+			</div>
 
-<!--
-			<h2 id="ACC"><font size="5"><strong>アンケート調査</strong></font></h2>
-			<p>日本語の音声を聞いていただき、それがどの程度、日本語として自然・容認可能かを回答していただく実験です。</p>
-
-			<li>【<strong>調査対象者</strong>】以下の条件をすべて満たすひと：</li>
+			
+			【<strong>調査対象者</strong>】以下の条件をすべて満たすひと：
+			<ul class="exp-item">
 			<li>・東京都立大学の大学生・大学院生（18歳から30歳まで）</li>
 			<li>・日本語を母語とするひと</li>
 			<li>・言語障がいや精神障がいの診断歴がないひと</li>
 			<li>・視力が正常値内である （メガネまたはコンタクトレンズ装着による矯正視力を含む）</li>
-			</p>
+			</ul>
 
-			<li>【<strong>調査の内容</strong>】</li>
-			<li>文の自然さ（どれくらい文が自然で容認可能か）を7段階で判断する調査です。<br>
-			お送りするURLにパソコンでアクセスして行います。URLは実験の応募者にのみお送りします。<br>
-			音声はイヤフォンまたはヘッドホンを使って聞いてください。</li></p>
+			【<strong>調査の内容</strong>】<br>
+			
+			文の自然さ（どれくらい文が自然で容認可能か）を7段階で判断する調査です。お送りするURLにパソコンでアクセスして行います。URLは実験の応募者にのみお送りします。
+			音声はイヤフォンまたはヘッドホンを使って聞いてください。</li>
+			
 
-			<li>【<strong>調査時間</strong>】</li>
-			<li>20分程度かかります。好きな時間に行ってください。</li></p>
+			【<strong>調査時間</strong>】
+			<ul class="pl-0 mb-2">
+			<li>20分程度かかります。好きな時間に行ってください。</li>
+			</ul>
 
-			<li>【<strong>応募方法</strong>】</li>
+			【<strong>応募方法</strong>】
+			<ul class="pl-0 mb-2">
 			以下の応募フォームからご応募ください。後日、実験担当者からご連絡を致します。<br>
 			<li><a href="https://forms.gle/W8X99rfZtfP4iddY6" target="_blank">https://forms.gle/W8X99rfZtfP4iddY6</a>
-			</p>
+			</ul>
 
-			<li>【<strong>謝金</strong>】</li>
-			<li>ＱＵＯカードペイ ３５０円分 <br>
+			【<strong>謝金</strong>】
+			<ul class="pl-0 mb-2">
+			<li>ＱＵＯカードペイ ３５０円分 </li>
 			<font size="-1">※<a href="https://www.quocard.com/pay/use/">ＱＵＯカードペイ</a>はスマホで使える電子マネー（ＱＲコード）です。コンビニ・カフェ・書店などで現金の代わりに使用できます。実験終了後の画面に表示される指示に従って手続きを行ってください。なるべく１ヶ月以内にお支払いしますが事務手続きの都合上、遅れることもありますので予めご了承ください）</font>
-			<p></p>
+			</ul>
 
-			<li>【<strong>場所</strong>】</li>
+			【<strong>場所</strong>】
+			<ul class="pl-0 mb-2">
 			<li>ウェブ上</li>
 			<li>※ 必ずPCで行ってください（スマートフォン・タブレット端末では実験を実施できません）</li>
 			<li>※ Internet Explore上では行わないようお願いします。Internet Exploreでは正しく実験が実施できない可能性があります。</li>
-			<p></p>
+			</ul>
 
-			<li>【<strong>謝金支払い手続きについて</strong>】</li>
+			【<strong>謝金支払い手続きについて</strong>】
+			<ul class="pl-0 mb-2">
 			<li>調査終了後、支払い手続きに関する説明がありますので、それに従ってメールを送信してください。</li>
-			</p>
-			<p>
--->
+			</ul>
+		</section>
+		-->
 <!--- SPR -->
 
 <!--
@@ -556,31 +567,29 @@
 							</div>
 -->
 
-
-					<h2 id="pool" lang="ja" charset="euc-jp"><font size="4">〈<strong>実験参加者プールについて</strong>〉</h2> 
-					※ 下記の応募フォームは、実験への参加申込みではなく、<b>メーリングリストの申し込み</b>です。<p></p>
-
+				<h2 id="pool" class="text-2xl font-bold mb-4 pb-2 section-title">実験参加者プールについて</h2>
+					<div class="mb-2">
 					東京都立大学・言語科学教室では、ひとが言葉を理解したり、話したりする仕組みを研究するためにアンケート調査・行動実験・脳機能計測実験を行っています。
 					参加者を募集する際、メールを受け取りたい方は、以下の注意事項をご覧の上、<a href="https://forms.gle/YMrSfNvwi9757wBi6" target="_blank">応募フォーム</a>からお申し込み下さい。ご協力よろしくお願い致します。
-
-					<p></p>
-
-
-					<div style="margin-left: 1em; text-indent: -1em;text-align: justify;">
+					※ この応募フォームは、実験への参加申込みではなく、<b>メーリングリストの申し込み</b>です。<p></p>
+					</div>
+					
+					<div class="mb-2">
+					<ul class="pl-0 mb-2">
 					<li>・「実験参加者プール」に登録しても、実験に参加する義務は生じません。今後配信される案内メールを読み、その都度、参加するかどうかを決めることができます。実験の内容（特に脳波実験）によって応募条件が異なります（年齢・利き手など）。</li>
 					<li>・実験の案内は不定期に行われます。実験担当者およびスケジュールもその都度異なります。</li>
 					<li>・「実験参加者プール」登録の取り消しは、いつでもできます。</li>
 					<li>・登録する個人情報は、実験関連のメールをお送りする目的以外には使用しません。</li>
-					<li>・すべての実験は、倫理委員会の承認を得て行われます。どの実験も非侵襲的で、体に有害な影響は有りません。</li></p>
+					<li>・すべての実験は、倫理委員会の承認を得て行われます。どの実験も非侵襲的で、体に有害な影響は有りません。</li>
+					</ul>
 					</div>
-		</ul>
-
-					<h2 id="pool" lang="ja" charset="euc-jp"><font size="4">〈<strong>同意撤回書について</strong>〉</font></h2>
-
+		
+				<h2 id="consent" class="text-2xl font-bold mb-4 pb-2 section-title">同意撤回書について</h2>
+				<div class="mb-2">
 					本研究室で実施している研究への参加は、自由意思に基づくものであり、強制的なものではありません。研究への参加に同意された後であっても、研究成果が公開されるまでの間は、それを撤回することができます。実験終了後、研究への参加の同意を撤回したい場合は、研究代表者に「実験同意撤回書」を提出して下さい。撤回によって不利益が生じることはありません。
-					<p>
+					<br>
 					<a href="./docs/同意撤回書.pdf">同意撤回書をダウンロード</a>
-					</p>
+				</div>	
 <!--
 						<h2 id="campusmap" lang="ja" charset="euc-jp"><font size="4">【<strong>南大沢キャンパス キャンパスマップ</strong>】</font></h2>
 						赤枠の場所が実験室がある５号館です。<br>
