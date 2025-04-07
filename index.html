@@ -82,11 +82,16 @@
         }
         
         .pdf-toggle::before {
-            content: "📄 ";
+            /* content: "📄 "; */
             font-weight: 400; /* regular スタイル用 */
             margin-right: 0.5rem;
         }
         
+        .pdf-toggle i {
+            font-size: 1rem;
+            margin-right: 0.2rem;
+        }
+
         .pdf-toggle:hover {
             color: white;
             background-color: #38a169;
@@ -105,6 +110,7 @@
             position: relative;
             border-radius: 20px; /* 円形から角丸四角形に変更 */
             background-color: #f0f8ff;
+            font-size: 0.85rem;
             transition: all 0.2s ease;
             border: 1px solid #b3d1ff;
             user-select: none;
@@ -122,7 +128,7 @@
             margin-right: 0.2rem; /* アイコンとテキストの間隔 */
         }
         
-        /* Research gate 独立したpaddingクラス */
+        /* Research gate paddingクラス */
         .rg-padding {
             padding: 0.2rem 0.1rem 0.2rem 0.7rem;
         }
@@ -319,9 +325,14 @@
         }
 
         .abstract-toggle::before {
-            content: "📝 ";
+            /* content: "📝 "; */
             font-weight: 400; /* regular スタイル用 */
             margin-right: 0.5rem;
+        }
+
+        .abstract-toggle i {
+            font-size: 1rem;
+            margin-right: 0.2rem;
         }
         
         /* アブストラクトのクリック可能要素のスタイル */
@@ -346,7 +357,7 @@
         .badge {
             padding: 0.2rem 0.5rem;
             border-radius: 9999px;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             font-weight: 500;
             text-decoration: none;
             display: inline-block;
@@ -368,14 +379,19 @@
             font-style: italic;
         }
         
+        /* Open access バッジ */
         .badge-green {
             background-color: #d1fae5;
             color: #065f46;
         }
 
         .badge-green::before {
-            content: "🍀";
             font-weight: 400; /* regular スタイル用 */
+            margin-right: 0.5rem;
+        }
+
+        .badge-green i {
+            font-size: 0.85rem;
             margin-right: 0.5rem;
         }
         
@@ -385,13 +401,17 @@
             color: #db2777;
             text-decoration: none;
         }
+
         .badge-purple::before {
-            content: "🌸";
             font-weight: 400; /* regular スタイル用 */
             margin-right: 0.5rem;
         }
 
-        /* 矢野ゼミ卒論バッジのホバー効果 */
+        .badge-purple i {
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+        }
+
         .badge-purple:hover {
             color: white;
             background-color: #db2778a4; /* ホバー時は背景色を濃い紫に */
@@ -622,9 +642,9 @@
                         <div>Jeong, H., Kim, J., Yano, M., Cui, H., Kiyama, S., and Koizumi, M. (2025) <strong>The crucial role of the left inferior frontal gyrus (BA44) in synergizing syntactic structure and information structure during sentence comprehension</strong>. <span class="journal-title">Brain and Language</span>.</div>
                         
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Jeong2024BL').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://doi.org/10.1016/j.bandl.2025.105533" class="pdf-toggle">PDF</a>
-                            <span class="badge badge-green">Open Access</span>
+                            <span onclick="obj=document.getElementById('Jeong2024BL').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://doi.org/10.1016/j.bandl.2025.105533" class="pdf-toggle"><i class="fas fa-file-pdf"></i> PDF</a>
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i>Open Access</span>
                         </div>
                         <div id="Jeong2024BL" style="display:none;" class="abstract-content">
                             This study examines the neural mechanisms behind integrating syntactic and information structures during sentence comprehension using functional Magnetic Resonance Imaging. Focusing on Japanese sentences with canonical (SOV) and non-canonical (OSV) word orders, the study revealed distinct neural networks responsible for processing these linguistic structures. The left opercular part of the inferior frontal gyrus, left premotor area, and left posterior superior/middle temporal gyrus were primarily involved in syntactic processing. In contrast, the right inferior frontal sulcus, bilateral intraparietal sulci, and the left triangular part of the inferior frontal gyrus were linked to information structure processing. Importantly, the left opercular part of the inferior frontal gyrus (BA44) played a crucial role in integrating these structures during the later stages of comprehension, particularly when processing the second noun phrase. These findings enhance our understanding of the complex interplay between syntactic and information structures in language comprehension.
@@ -635,11 +655,11 @@
                     <li id="Murakami2024" class="pl-1 py-1 pub-item indent-0">
                         <div>Murakami, R. and Yano, M. (2024) <strong>The role of prosodic phrasing in silent reading.</strong> <span class="journal-title">Glossa Psycholinguistics</span>, 3(1).</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Murakami2024GlossaPsycholinguistics').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://doi.org/10.5070/G601135279" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Murakami2024GlossaPsycholinguistics').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://doi.org/10.5070/G601135279" class="pdf-toggle"><i class="fas fa-file-pdf"></i> PDF</a>
                             <a href="https://www.researchgate.net/publication/385970231" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
-                            <span class="badge badge-green">Open Access</span>
-                            <a href="./TMUPsycholing.html" class="badge badge-purple">矢野ゼミ卒論</a>
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>
+                            <a href="./TMUPsycholing.html" class="badge badge-purple"><i class="fas fa-graduation-cap"></i>矢野ゼミ卒論</a>
                         </div>
                         <div id="Murakami2024GlossaPsycholinguistics" style="display:none;" class="abstract-content">
                             Prosodic phrasing plays a crucial role in sentence comprehension because it helps listeners resolve structural ambiguities. However, explicit prosody is not available in reading. According to the Implicit Prosody Hypothesis, readers are assumed to assign default prosody to sentences, which then guides parsing decisions (Fodor, 2002a, 2002b). This study tested this hypothesis by manipulating the lexical accent of phrases, which affects the prosodic phrasing of sentences in Japanese. The results of a self-paced silent reading experiment showed faster reading times for the structure that matched the prosodic phrasing than the structure that did not. This finding suggests that readers implicitly represent a prosodic structure that plays a functional role in syntactic processing.
@@ -651,10 +671,10 @@
                         <div>Yano, M., Niikuni, K., Shimura, R., Funasaki, N., and Koizumi, M. (2024)
                             <strong>Producing non-basic word orders in (in)felicitous contexts: Evidence from pupillometry and functional near-infrared spectroscopy (fNIRS).</strong> <span class="journal-title">Language, Cognition and Neuroscience</span>, 40(1), 1-22.</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Yano2024LCN').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://www.tandfonline.com/doi/full/10.1080/23273798.2024.2404178" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Yano2024LCN').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://www.tandfonline.com/doi/full/10.1080/23273798.2024.2404178" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             <a href="https://www.researchgate.net/publication/383845845" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
-                            <span class="badge badge-green">Open Access</span>
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>
                         </div>
                         <div id="Yano2024LCN" style="display:none;" class="abstract-content">
                             The present study examined why speakers of languages with flexible word orders (Japanese) are more likely to use syntactically more complex non-basic word orders when they provide discourse-given information earlier in sentences. This may be because they are more efficient for speakers to produce (the Speaker Economy Hypothesis). Alternatively, speakers produce them to help listeners understand sentences more efficiently (the Listener Economy Hypothesis), given that previous studies showed that the processing of non-basic word orders was facilitated when the felicitous context was provided (i.e. a displaced object refers to discourse-given information). The present study addresses this issue by conducting an oral picture-description experiment, in which participants uttered a transitive sentence with syntactically basic Subject-Object-Verb (SOV) or non-basic Object-Subject-Verb (OSV) in felicitous or infelicitous contexts while tracking cognitive load using pupillometry and functional near-infrared spectroscopy (fNIRS). The results showed that the felicitous context facilitated the filler-gap dependency formation of OSVs in production, supporting the Speaker Economy Hypothesis.
@@ -666,11 +686,11 @@
                         <div class="mb-1">Funasaki, N. and Yano, M. (2024) <strong>Role of prosody and word order in identifying focus: Evidence from pupillometry.</strong> <span class="journal-title">Language, Cognition and Neuroscience</span>, 40(1), 23-40. 
                         </div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Funasaki2024LCN').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://www.tandfonline.com/doi/full/10.1080/23273798.2024.2396962" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Funasaki2024LCN').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://www.tandfonline.com/doi/full/10.1080/23273798.2024.2396962" class="pdf-toggle"><i class="fas fa-file-pdf"></i> PDF</a>
                             <a href="https://www.researchgate.net/publication/383123331" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i> RG</a>
-                            <span class="badge badge-green">Open Access</span>
-                            <a href="./TMUPsycholing.html" class="badge badge-purple">矢野ゼミ卒論</a>
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>
+                            <a href="./TMUPsycholing.html" class="badge badge-purple"><i class="fas fa-graduation-cap"></i>矢野ゼミ卒論</a>
                         </div>
                         <div id="Funasaki2024LCN" style="display:none;" class="abstract-content">
                             This study investigated the role of prosody and word order in identifying the focus of sentences in Japanese. Native Japanese speakers listened to sentences with different types of word order (subject–object–verb (SOV) vs. object–subject–verb (OSV)), prosody (whether the first noun phrase is stressed or not) and preceding contexts (object- vs. subject-wh questions), while processing costs were measured using pupillometry. Although syntactically non-basic OSV was more difficult to process than basic SOV, this processing difficulty was considerably reduced when the supportive context (the subject-wh question) required S to be focused. The time–course analysis of pupillometry revealed that the Japanese speakers immediately used prosodic cues to determine the focus of sentences, but the effect of word order cues for focus was delayed until the sentence-final verb was encountered. This study advances our understanding of the temporal dynamics of focus processing and the interplay between syntactic and information structures in sentence comprehension.
@@ -681,10 +701,10 @@
                     <li id="Yano2023"  class="pl-1 py-1 pub-item indent-0">
                         <p class="mb-1">Yano, M. (2023) <strong>The adaptive nature of language comprehension.</strong> In Masatoshi Koizumi (ed.), <span class="journal-title">Issues in Japanese Psycholinguistics from Comparative Perspectives</span>, pp. 115-132, De Gruyter Mouton.</p>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Yano2023IJPCP').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://www.degruyter.com/document/isbn/9783110778939/html" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Yano2023IJPCP').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://www.degruyter.com/document/isbn/9783110778939/html" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             
-                            <span class="badge badge-green">Open Access</span>
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>
                         </div>
                         <div id="Yano2023IJPCP" style="display:none;" class="abstract-content">
                             This study examines the adaptive nature of language comprehension using event-related potentials (ERPs) to investigate how the language processing system handles unexpected linguistic input. Three experiments tested competing accounts of adaptation: expectation-updating and representation-based mechanisms. In Experiment 1, native Japanese speakers showed adaptation to morphosyntactic violations (incorrect case markers), with P600 effects decreasing with repeated exposure in high-probability conditions. Experiment 2 demonstrated that adaptation to aspectual coercion occurred only when prediction errors were stronger, supporting the expectation-updating account that stronger prediction errors trigger expectation updating. Experiment 3 found no evidence for adaptation to semantic violations, suggesting limitations to adaptive behavior. These findings indicate that the language processing system selectively adapts to linguistic environments based on the plausibility of encountering such structures in natural communication. We propose that linguistic adaptation functions as a mechanism for cooperative alignment during communication, allowing comprehenders to adjust to speakers with different linguistic knowledge and preferences while optimizing processing efficiency.
@@ -695,7 +715,7 @@
                     <li id="Yano2022" class="pl-1 py-1 pub-item indent-0">
                         <div>Yano, M. (2022) <b>Event-related potentials.</b> In Miyamoto, Y., Koizumi, M., Ono, H., Sauerland, U. and Yatsushiro, K. (eds.), <span href="http://www.kaitakusha.co.jp/book/book.php?c=2374" class="journal-title"><i>Key Concepts of Experimental Pragmatics</i></span>, pp.52-84, Kaitakusha. 
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Yano2022ERP').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
+                            <span onclick="obj=document.getElementById('Yano2022ERP').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
                             <a href="https://www.researchgate.net/publication/369854881" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>    
                         </div>
                         <div id="Yano2022ERP" style="display:none;" class="abstract-content">
@@ -707,11 +727,11 @@
                     <li id="Minemi2021"  class="pl-1 py-1 pub-item indent-0">
                         <div>Minemi, I. and Yano, M. (2021) <b>The timing of filler-gap dependency formation in second language comprehension.</b> <span class="journal-title">Gengo Kenkyu</span>, 160, 123–153. 
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Minemi2021GengoKenkyu').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://www.jstage.jst.go.jp/article/gengo/160/0/160_123/_pdf/-char/en" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Minemi2021GengoKenkyu').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://www.jstage.jst.go.jp/article/gengo/160/0/160_123/_pdf/-char/en" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             <a href="https://www.researchgate.net/publication/348870440" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
-                            <span class="badge badge-green">Open Access</span>
-                            <a href="./TMUPsycholing.html" class="badge badge-purple">矢野ゼミ卒論</a>
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>
+                            <a href="./TMUPsycholing.html" class="badge badge-purple"><i class="fas fa-graduation-cap"></i>矢野ゼミ卒論</a>
                         <div style="text-indent:1em"><span id="Minemi2021GengoKenkyu" style="display:none;" class="abstract-content">
                             This study investigated at what point in a sentence native Japanese speakers begin to build long-distance dependencies while reading English relative clauses (RCs) by conducting two self-paced reading experiments. Experiment 1 reveals that Japanese learners of English construct long-distance dependency immediately after reading a verb by demonstrating “plausibility mismatch effects” at the verb site. On the contrary, Experiment 2 did not find evidence that they form a long-distance dependency before a verb, that is, no “transitivity mismatch effect.” On the basis of these results, this study proposes that Japanese learners of English initiate long-distance dependency formation immediately after encountering a verb, but it does not precede the appearance of a verb. This extends previous findings that it is difficult to generate predictions in the processing of non-native languages, to a structural processing level.</span>
                         </div>
@@ -721,10 +741,10 @@
                         <div>Yano, M. and Koizumi, M. (2021) <b>The role of discourse in long-distance dependency formation.</b>
                             <span class="journal-title">Language, Cognition and Neuroscience</span>, 36(6), 711-729. 
                             <div class="flex flex-wrap items-center gap-2 mt-2">
-                                <span onclick="obj=document.getElementById('Yano2021LCN').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                                <a href="https://www.tandfonline.com/doi/full/10.1080/23273798.2021.1883694" class="pdf-toggle">PDF</a>
+                                <span onclick="obj=document.getElementById('Yano2021LCN').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                                <a href="https://www.tandfonline.com/doi/full/10.1080/23273798.2021.1883694" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                                 <a href="https://www.researchgate.net/publication/348639363" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
-                                <span class="badge badge-green">Open Access</span>
+                                <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>
                             </div>  
                         </div>
                         <div style="text-indent:1em"><span id="Yano2021LCN" style="display:none;clear:both;">
@@ -735,8 +755,8 @@
                     <li id="Yano2020" class="pl-1 py-1 pub-item indent-0">
                         <div>Yano, M., Suwazono, S., Arao, H., Yasunaga, D., and Oishi, H. (2020) <b>Selective adaptation in sentence comprehension: Evidence from event-related brain potentials.</b> <span class="journal-title">Quarterly Journal of Experimental Psychology</span>, 74(4), 645-668. 
                         <div class="flex flex-wrap items-center gap-2 mt-2">    
-                            <span onclick="obj=document.getElementById('Yano2020QJEP').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://doi.org/10.1177/1747021820984623" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Yano2020QJEP').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://doi.org/10.1177/1747021820984623" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             <a href="https://www.researchgate.net/publication/354115128" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
                             
                         </div>
@@ -749,10 +769,10 @@
                     <div id="Yano2019" class="pl-1 py-1 pub-item indent-0">
                         <div>Yano, M, Niikuni, K., Ono, H., Sato, M., Tang, A. A., and Koizumi, M. (2019) <b>Syntax and processing in Seediq: An event-related potential study.</b> <span class="journal-title">Journal of East Asian Linguistics</span>, 28(4), 395–419. </div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Yano2019JEAL').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://doi.org/10.1007/s10831-019-09200-9" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Yano2019JEAL').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://doi.org/10.1007/s10831-019-09200-9" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             <a href="https://www.researchgate.net/publication/337274998" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
-                            <span class="badge badge-green">Open Access</span>
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>
                         </div>
                         <d id="Yano2019JEAL" style="display:none;" class="abstract-content">
                             In many languages with subject-before-object as a syntactically basic word order, transitive sentences in which the subject precedes the object have been reported to have a processing advantage over those in which the subject follows the object in sentence comprehension. Three sources can be considered to account for this advantage, namely, syntactic complexity (filler-gap dependency), conceptual accessibility (the order of thematic roles), and pragmatic requirement. To examine the effect of these factors on the processing of simple transitive sentences, the present study conducted two event-related potential experiments in Seediq, an Austronesian language spoken in Taiwan, by manipulating word orders (basic VOS vs. non-basic SVO), the order of thematic roles (actor vs. goal voice), and discourse factors (presence/absence of visual context). The results showed that, compared to VOS, SVO incurred a greater processing load (reflected by a P600) when there was no supportive context, irrespective of voice alternation; however, SVO did not incur a greater processing load when there was supportive context and the discourse requirement was satisfied. We interpreted these results as evidence that the processing difficulty of the non-basic word order in Seediq is associated with a discourse-level processing difficulty. 
@@ -762,10 +782,10 @@
                     <li id="Yano2019a" class="pl-1 py-1 pub-item indent-0">
                         <div>Yano, M. (2019) <b>On the nature of the discourse effect on extraction in Japanese.</b> </strong> <span class="journal-title">Glossa: A Journal of General Linguistics</span>, 4(1): 90, 1–17. 
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Yano2019Glossa').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://doi.org/10.5334/gjgl.822" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Yano2019Glossa').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://doi.org/10.5334/gjgl.822" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             <a href="https://www.researchgate.net/publication/333565443" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
-                            <span class="badge badge-green">Open Access</span>
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>
                         </div>
                     
                     <div id="Yano2019Glossa" style="display:none;" class="abstract-content">
@@ -777,8 +797,8 @@
                     <li id="Yano2019b" class="pl-1 py-1 pub-item indent-0">
                         <div>Yano, M., Suwazono, S., Arao, H., Yasunaga, D., and Oishi, H. (2019) <b>Inter-participant variabilities and sample sizes in P300 and P600.</b> <span class="journal-title">International Journal of Psychophysiology</span>, 140, 33-40.</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Yano2019IntJPsychophysiol').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://doi.org/10.1016/j.ijpsycho.2019.03.010" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Yano2019IntJPsychophysiol').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://doi.org/10.1016/j.ijpsycho.2019.03.010" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             <a href="https://www.researchgate.net/publication/331833740" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
                         </div>
 
@@ -790,10 +810,10 @@
                     <li id="Yano2018" class="pl-1 py-1 pub-item indent-0">
                         <div>Yano, M. and Koizumi, M. (2018) <b>Processing of non-canonical word orders in (in)felicitous contexts: Evidence from event-related brain potentials.</b> <span class="journal-title">Language, Cognition and Neuroscience</span>, 33(10), 1340-1354. </div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('YanoKoizumi2018LCN').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://www.tandfonline.com/doi/full/10.1080/23273798.2018.1489066" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('YanoKoizumi2018LCN').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://www.tandfonline.com/doi/full/10.1080/23273798.2018.1489066" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             <a href="https://www.researchgate.net/publication/325652337" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
-                            <span class="badge badge-green">Open Access</span>                            
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>                            
                         </div>    
 
                     <div id="YanoKoizumi2018LCN" style="display:none;" class="abstract-content">
@@ -805,8 +825,8 @@
                         <div>Yano, M. (2018) <b>Predictive processing of syntactic information: Evidence from event-related brain potentials.</b> <span class="journal-title">Language, Cognition and Neuroscience</span>, 33(8), 1017–1031.</div>
                         
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Yano2018LCN').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://www.tandfonline.com/doi/full/10.1080/23273798.2018.1444185" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Yano2018LCN').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://www.tandfonline.com/doi/full/10.1080/23273798.2018.1444185" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             <a href="https://www.researchgate.net/publication/323164401" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
                         </div>
 
@@ -818,11 +838,11 @@
                     <li id="Kusaba2017" class="pl-1 py-1 pub-item indent-0">
                         <div>Kusaba, S. and Yano, M. (2017) <b>Structural ambiguity resolution in the process of reanalysis: Evidence from Japanese sentence comprehension.</b> <span class="journal-title">Tohoku Psychologica Folia</span>, 76, 20−37.</div> 
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Kusaba2017TPF').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://tohoku.repo.nii.ac.jp/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=125234&item_no=1&page_id=33&block_id=38" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Kusaba2017TPF').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://tohoku.repo.nii.ac.jp/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=125234&item_no=1&page_id=33&block_id=38" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             <a href="https://www.researchgate.net/publication/321596704" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
-                            <span class="badge badge-green">Open Access</span>
-                            <a href="./TMUPsycholing.html" class="badge badge-purple">矢野ゼミ卒論</a>
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>
+                            <a href="./TMUPsycholing.html" class="badge badge-purple"><i class="fas fa-graduation-cap"></i>矢野ゼミ卒論</a>
                         </div>
 
                     </li>
@@ -835,8 +855,8 @@
                     <li id="Yano2017" class="pl-1 py-1 pub-item indent-0">
                         <div>Yano, M. (2017) <b>Predictive processing of aspectual information: Evidence from event-related brain potentials.</b> <span class="journal-title">Language, Cognition and Neuroscience</span>, 33(6), 718-733. </div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Yano2017LCN').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="http://www.tandfonline.com/doi/full/10.1080/23273798.2017.1416150" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Yano2017LCN').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="http://www.tandfonline.com/doi/full/10.1080/23273798.2017.1416150" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             <a href="https://www.researchgate.net/publication/321596768" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
                         </div>
 
@@ -850,10 +870,10 @@
                     
                         <div>Yano, M.*, Suzuki, Y.*, and Koizumi, M. (2017) <b>The effect of emotional state on the processing of morphosyntactic and semantic reversal anomalies in Japanese: Evidence from event-related brain potentials.</b> <span class="journal-title">Journal of Psycholinguistic Research</span>, 47(1), 261–277.（*equal contribution）</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Yano2017JOPR').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://link.springer.com/article/10.1007%2Fs10936-017-9528-5" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Yano2017JOPR').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://link.springer.com/article/10.1007%2Fs10936-017-9528-5" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             <a href="https://www.researchgate.net/publication/320942010" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
-                            <a href="./TMUPsycholing.html" class="badge badge-purple">矢野ゼミ卒論</a>
+                            <a href="./TMUPsycholing.html" class="badge badge-purple"><i class="fas fa-graduation-cap"></i>矢野ゼミ卒論</a>
                         </div>
 
                     </li>
@@ -865,8 +885,8 @@
                     <li id="Yano2017" class="pl-1 py-1 pub-item indent-0">
                         <div>Yano, M., Yasunaga, D., and Koizumi, M. (2017) <b>Event-related brain indices of gap-filling processing in Kaqchikel.</b> In Samuel R. Harris (ed.), <span class="journal-title">Event-related Potential (ERP): Methods, Outcomes, Research Insights</span>, NOVA Science Publishers.</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Yano2017NOVA').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://www.amazon.co.jp/dp/1536108057/ref=cm_sw_r_tw_dp_x_1UG6FbJHTW18P" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Yano2017NOVA').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://www.amazon.co.jp/dp/1536108057/ref=cm_sw_r_tw_dp_x_1UG6FbJHTW18P" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             <a href="https://www.researchgate.net/publication/319235021" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
                         </div>
 
@@ -878,7 +898,7 @@
                     <li id="YanoSuzukiKoizumi2017" class="pl-1 py-1 pub-item indent-0">
                         <div>Yano, M., Suzuki, Y., and Koizumi, M. (2017) <b>The effect of emotional state on the processing of morphosyntactic and semantic reversal anomalies: Evidence from a linear mixed-effects modelling analysis of event-related potential.</b> <span class="journal-title">IEICE Technical Report</span>, 116(159), 37–41.
                             <div class="flex flex-wrap items-center gap-2 mt-2">
-                                <a href="https://ci.nii.ac.jp/naid/40021285121" class="pdf-toggle">PDF</a>
+                                <a href="https://ci.nii.ac.jp/naid/40021285121" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             </div>    
                     </li>
 
@@ -886,10 +906,10 @@
                         <div>Yano, M. and Sakamoto, T.&dagger;(2016) <b>The interaction of morphosyntactic and semantic processing in Japanese sentence comprehension: Evidence from event-related brain potentials.</b> <span class="journal-title">Gengo Kenkyu</span>, 149, 43–59.<span class="award">日本言語学会論文賞</span></div> 
                         
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Yano2016GengoKenkyu').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="https://www.jstage.jst.go.jp/article/gengo/149/0/149_43/_pdf/-char/en" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Yano2016GengoKenkyu').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="https://www.jstage.jst.go.jp/article/gengo/149/0/149_43/_pdf/-char/en" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             <a href="https://www.researchgate.net/publication/289290335" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
-                            <span class="badge badge-green">Open Access</span>
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>
                         </div>
                     
                     <div id="Yano2016GengoKenkyu" style="display:none;" class="abstract-content">
@@ -900,9 +920,9 @@
                     <li id="YanoMinemiTsumura2016" class="pl-1 py-1 pub-item indent-0">
                         <div>Yano, M., Minemi, I., and Tsumura, S. (2016) <b>Processing benefits from similarity-based partial reactivation: A case study of subject-predicate dependency in Japanese.</b> <i>Kyushu University Papers in Linguistics</i>, 36, 309–329.</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Yano2016KUPL').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="http://www2.lit.kyushu-u.ac.jp/~linguist/kupl/doc/kupl36-yano.pdf" class="pdf-toggle">PDF</a>
-                            <span class="badge badge-green">Open Access</span>
+                            <span onclick="obj=document.getElementById('Yano2016KUPL').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="http://www2.lit.kyushu-u.ac.jp/~linguist/kupl/doc/kupl36-yano.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>
                         </div>
                         <div id="Yano2016KUPL" style="display:none;" class="abstract-content">
                         本研究では、主節主語の種類と主語−動詞間の距離を操作した読文実験を実施した。その結果、NPだけ-動詞の統合では距離の効果が見られたが、NPだけが-動詞の統合では距離の効果が見られなかった。この結果は、主節主語と埋め込み節主語の類似性が高い場合、埋め込み節主語-動詞の統合の際に、主節主語が一時的にアクセスされ、主節主語の活性度を高めているために距離の効果が見られなくなるという仮説を支持するものである。 
@@ -913,8 +933,8 @@
                     <li id="YanoSakamoto2016b" class="pl-1 py-1 pub-item indent-0"> 
                         <div>Yano, M. and Sakamoto, T.&dagger;(2016) <b>The functional dissociations between semantic repair and revision processes in Japanese.</b> <span class="journal-title">Studies in Language Sciences</span>, 14, 106–125, Tokyo: Kaitakusha.</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Yano2016SLS').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="http://www.kaitakusha.co.jp/book/book.php?c=1704" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Yano2016SLS').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="http://www.kaitakusha.co.jp/book/book.php?c=1704" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
 
                         <div id="Yano2016SLS" style="display:none;" class="abstract-content">
@@ -925,10 +945,10 @@
                     <li id="Yasunaga2015" class="pl-1 py-1 pub-item indent-0">
                         <div>Yasunaga, D., Yano, M., Yasugi, Y. and Koizumi, M. (2015) <b>Is the subject-before-object preference universal? An event-related potential study in the Kaqchikel Mayan language.</b> <span class="journal-title">Language, Cognition and Neuroscience</span>, 30(9), 1209–1229.</div> 
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Yasunaga2015LCN').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href=""http://dx.doi.org/10.1080/23273798.2015.1080372" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Yasunaga2015LCN').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href=""http://dx.doi.org/10.1080/23273798.2015.1080372" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             <a href="https://www.researchgate.net/publication/283175340" class="rg-toggle" title="Research Gate"><i class="fab fa-researchgate rg-padding"></i>RG</a>
-                            <span class="badge badge-green">Open Access</span>
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>
                         
                         </div>
                         <div id="Yasunaga2015LCN" style="display:none;" class="abstract-content">
@@ -939,16 +959,16 @@
                     <li id="Murakami2024" class="pl-1 py-1 pub-item indent-0">
                         <div>Yano, M., Tateyama, Y., and Sakamoto, T.&dagger;(2015) <b>Is subject-gap preference universal? An experimental study of cleft constructions in Japanese.</b> <span class="journal-title">University of Pennsylvania Working Papers in Linguistics</span>, 21(1).</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="http://repository.upenn.edu/pwpl/vol21/iss1/19" class="pdf-toggle">PDF</a>
-                            <span class="badge badge-green">Open Access</span>
+                            <a href="http://repository.upenn.edu/pwpl/vol21/iss1/19" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>
                         </div>
                     </li>
 
                     <li id="Yano2015" class="pl-1 py-1 pub-item indent-0">
                         <div>Yano, M. and Sakamoto, T.&dagger;(2015) <b>An ERP study of causative cleft construction in Japanese: Evidence for the preference of shorter linear distance in sentence comprehension.</b> <span class="journal-title">Journal of Psycholinguistic Research</span>, 45(2), 407–421.</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Yano2015JOPR').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                            <a href="http://link.springer.com/article/10.1007/s10936-015-9359-1" class="pdf-toggle">PDF</a>
+                            <span onclick="obj=document.getElementById('Yano2015JOPR').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                            <a href="http://link.springer.com/article/10.1007/s10936-015-9359-1" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
                     <div id="Yano2015JOPR" style="display:none;" class="abstract-content">   
                     This study examined the processing of two types of Japanese causative cleft constructions (subject-gap vs. object-gap) by conducting an event-related brain potential experiment to clarify the processing mechanism of long-distance dependencies. The results demonstrated that the subject-gap constructions elicited larger P600 effects than the object- gap constructions. Based on these findings, we argue that the linear distance rather than the structural distance between the extracted argument (filler) and its original gap position is a crucial factor for determining processing costs of gap-filler dependency in Japanese causative cleft constructions. This argument indicates that (at least) some types of long-distance depen- dencies are sensitive to linear distance. 
@@ -959,8 +979,8 @@
                     <li id="Kim2015" class="pl-1 py-1 pub-item indent-0">
                         <div>Kim, Y., Yano, M., Tateyama, Y. and Sakamoto, T.&dagger;(2015) <b>Processing of pre-nominal relative clauses in Korean.</b> <span class="journal-title">Kyushu University Papers in Linguistics</span>, 35, 428–437.</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="https://catalog.lib.kyushu-u.ac.jp/opac_detail_md/?reqCode=fromlist&lang=0&amode=MD100000&bibid=1518734&opkey=B153872649831554&start=1&listnum=20&place=&totalnum=21&list_disp=50&list_sort=0&cmode=0&chk_st=0&check=000000000000000000000" class="pdf-toggle">PDF</a>
-                            <span class="badge badge-green">Open Access</span>
+                            <a href="https://catalog.lib.kyushu-u.ac.jp/opac_detail_md/?reqCode=fromlist&lang=0&amode=MD100000&bibid=1518734&opkey=B153872649831554&start=1&listnum=20&place=&totalnum=21&list_disp=50&list_sort=0&cmode=0&chk_st=0&check=000000000000000000000" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>
                         </div>
                     </li>
 
@@ -971,8 +991,8 @@
                     <li id="Yano2014" class="pl-1 py-1 pub-item indent-0">
                         <div>Yano, M., Tateyama, Y., and Sakamoto, T. (2014) <b>Processing of Japanese cleft constructions in context: Evidence from event-related brain potentials.</b> <span class="journal-title">Journal of Psycholinguistic Research</span>, 43(3), 277–286.
                             <div class="flex flex-wrap items-center gap-2 mt-2">
-                                <span onclick="obj=document.getElementById('Yano2014JOPR').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                                <a href="http://link.springer.com/article/10.1007%2Fs10936-014-9294-6" class="pdf-toggle">PDF</a>
+                                <span onclick="obj=document.getElementById('Yano2014JOPR').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                                <a href="http://link.springer.com/article/10.1007%2Fs10936-014-9294-6" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             </div>
                         <div id="Yano2014JOPR" style="display:none;" class="abstract-content">
                         Numerous studies have found “subject gap preference” in relative clauses and cleft constructions in English, French, and other languages. In contrast, previous studies have reported “object gap preference” in cleft constructions in Japanese. However, the effect of integrating a filler and its gap may be influenced by the effect of transitional probabilities, so previous studies confounded these two factors. This study explores processing asymmetries in Japanese cleft constructions by conducting an event-related brain potential experiment by controlling transitional probabilities. The results demonstrate that the subject gap preference in Japanese is well aligned with that observed in other languages, suggesting that subject gap preference is a universal aspect of language comprehension. 
@@ -982,36 +1002,36 @@
                     <li id="Yano2014MA" class="pl-1 py-1 pub-item indent-0">
                         <div>矢野雅貴 (2014) <b>日本語における意味的再分析について－事象関連電位を指標として－.</b> <span class="journal-title">九州大学言語学論集</span>, 第34号, 129–163.</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="http://www2.lit.kyushu-u.ac.jp/~linguist/kupl/no34.html" class="pdf-toggle">PDF</a>
-                            <span class="badge badge-green">Open Access</span>
+                            <a href="http://www2.lit.kyushu-u.ac.jp/~linguist/kupl/no34.html" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
+                            <span class="badge badge-green"><i class="fa-solid fa-unlock-keyhole"></i> Open Access</span>
                         </div>
                     </li>
                     
                     <li id="Ito2012" class="pl-1 py-1 pub-item indent-0">
                         <div>伊藤益代・矢野雅貴・備瀬優・立山憂・坂本勉 (2012) <b>日本語における表層・深層照応文の処理過程について―事象関連電位を用いた研究―.</b> <span class="journal-title">電子情報通信学会技術研究報告</span>, 112(145), 7–12.</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="https://ci.nii.ac.jp/naid/110009626218" class="pdf-toggle">PDF</a>
+                            <a href="https://ci.nii.ac.jp/naid/110009626218" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
                     </li>
                    
                     <li id="Tateyama2012" class="pl-1 py-1 pub-item indent-0">
                         <div>立山憂・備瀬優・矢野雅貴・坂本勉 (2012) <b>「たとえ-ても」文の処理について―事象関連電位を指標として―.</b> <span class="journal-title">電子情報通信学会技術研究報告</span>, 112(145), 25–30.</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="https://ci.nii.ac.jp/naid/110009626221" class="pdf-toggle">PDF</a>
+                            <a href="https://ci.nii.ac.jp/naid/110009626221" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
                     </li>
                     
                     <li id="Murakami2024" class="pl-1 py-1 pub-item indent-0">
                         <div>矢野雅貴・備瀬優・坂本勉 (2011) <b>日本語において語順が文処理装置の文末動詞予測に及ぼす影響.</b> <span class="journal-title">電子情報通信学会技術研究報告</span>, 111(170), 31–35.</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="https://ci.nii.ac.jp/naid/110008801310" class="pdf-toggle">PDF</a>
+                            <a href="https://ci.nii.ac.jp/naid/110008801310" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
                     </li>
                     
                     <li id="Murakami2024" class="pl-1 py-1 pub-item indent-0">
                         <div>矢野雅貴・坂本勉 (2011) <b>日本語文の動詞予測プロセスにおける語順の影響について.</b> <span class="journal-title">人工知能学会 言語・音声理解と対話処理研究会SIG-SLUD</span>, 62, 23–28.</div>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="https://ci.nii.ac.jp/naid/40018923627" class="pdf-toggle">PDF</a>
+                            <a href="https://ci.nii.ac.jp/naid/40018923627" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
                     </li>
 
@@ -1027,8 +1047,8 @@
                         <p class="mb-1">Yano, M. (2016) <strong>Temporal Dynamics of Syntactic and Semantic Prediction.</strong> Kyushu University.  
                             <span class="award">九州大学大学院人文科学府長賞大賞</span><br>
                             <div class="flex flex-wrap items-center gap-2 mt-2">
-                                <span onclick="obj=document.getElementById('Yano2016PhD').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">Abstract</span>
-                                <a href="https://www.researchgate.net/publication/309767640" class="pdf-toggle">PDF</a>
+                                <span onclick="obj=document.getElementById('Yano2016PhD').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</span>
+                                <a href="https://www.researchgate.net/publication/309767640" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                             </div>
                             <!--
                             <a href="https://catalog.lib.kyushu-u.ac.jp/opac_download_md/1654595/lit0206_review.pdf" class="hover:underline">審査結果要旨.</a>  
@@ -1062,9 +1082,9 @@
                     <li class="pl-1 py-1 pub-item indent-0">
                         矢野雅貴 (2022) <strong>SO言語およびOS言語における移動を含む文の処理メカニズム.</strong> 関西言語学会第47回大会 特別ワークショップ「SO言語およびOS言語を対象とした比較心理言語学」, オンライン. 
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="./docs/Yano_KLS47_abstract.pdf" class="abstract-toggle">Abstract</a>
+                            <a href="./docs/Yano_KLS47_abstract.pdf" class="abstract-toggle"><i class="fas fa-file-alt"></i> Abstract</a>
                         
-                            <a href="./docs/Yano_KLS47_slides.pdf" class="pdf-toggle">Slides</a>
+                            <a href="./docs/Yano_KLS47_slides.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  Slides</a>
                         </div>
                     </li>
                     <li class="pl-1 py-1 pub-item indent-0">
@@ -1098,8 +1118,8 @@
                     <li class="pl-1 py-1 pub-item indent-0" id="Shimura2024">
                         志村瑠莉・矢野雅貴 (2024) <strong>日本語NPIの錯覚的認可はいつどのように起こるのか？ ―容認性調査と脳波計測を用いて―.</strong> 日本言語学会第168回大会, 国際基督教大学. 
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="./docs/Shimura_LSJ168.pdf" class="pdf-toggle">PDF</a>
-                            <a href="./TMUPsycholing.html" class="badge badge-purple">矢野ゼミ卒論</a>
+                            <a href="./docs/Shimura_LSJ168.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
+                            <a href="./TMUPsycholing.html" class="badge badge-purple"><i class="fas fa-graduation-cap"></i>矢野ゼミ卒論</a>
                         </div>
                     </li>
                     <li class="pl-1 py-1 pub-item indent-0">
@@ -1108,7 +1128,7 @@
                     <li class="pl-1 py-1 pub-item indent-0">
                         Yano, M.</u>, Niikuni, K., Shimura, R., Funasaki, N. and Koizumi, M. (2023) <strong>Why do speakers use syntactically non-basic sentences? Evidence from pupillometry and functional near-infrared spectroscopy.</strong> <em>AMLaP Asia</em>, the Chinese University of Hong Kong.
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="./docs/Yano_AMLaPAsia2023.pdf" class="pdf-toggle">PDF</a>
+                            <a href="./docs/Yano_AMLaPAsia2023.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
                         
                     </li>
@@ -1118,13 +1138,13 @@
                     <li class="pl-1 py-1 pub-item indent-0">
                         矢野雅貴 (2022) <strong>ひとはなぜ高速な言語処理ができるのか―BCCWJ-EyeTrack を用いた予備的調査―.</strong> 日本言語学会第164回大会, オンライン開催. 
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="./docs/Yano_LSJ164.pd" class="pdf-toggle">PDF</a>
+                            <a href="./docs/Yano_LSJ164.pd" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
                     </li>
                     <li class="pl-1 py-1 pub-item indent-0">
                         Jeong, H., Kim, J., Cui, H., Kiayama, S., Yano, M., and Koizumi, M. (2021) <strong>The effect of information structure on word order processing: An fMRI study.</strong> <em>The Society for the Neurobiology of Language (SNL)</em>.
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <span onclick="obj=document.getElementById('Jeong2021SNL').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle">   Abstract</span>
+                            <span onclick="obj=document.getElementById('Jeong2021SNL').style; obj.display=(obj.display=='none')?'block':'none';" class="abstract-toggle"><i class="fas fa-file-alt"></i>    Abstract</span>
                         </div>
                         <div id="Jeong2021SNL" style="display:none;" class="abstract-content">
                             Many languages grammatically allow canonical and non-canonical word orders. Previous neurolinguistic studies have reported greater involvement of the left inferior frontal gyrus (IFG) in the processing of non- canonical word orders (e.g., object-subject-verb [OSV] in Japanese) than its canonical counterparts (e.g., SOV in Japanese) because of its demand for syntactic computation (Kinno et al., 2008). Some behavioral and ERP studies have found that discourse factors, such as information structure, partially attenuate the processing demand of non-canonical word orders (Kaiser & Trueswell, 2004; Yano & Koizumi, 2018). To clarify the precise neural mechanism underlying syntactic computation of non- canonical sentences with relevant contextual effects, we conducted an fMRI study on sentence processing by manipulating word order and information structure. In particular, we intended to identify neural networks sensitive to (i) syntactic structure, (ii) information structure, and (iii) their interaction. The participants were 37 healthy, right-handed, native Japanese speakers (mean age: 20.8±1.7, 16 females). A total of 480 pairs of Japanese sentences were adopted from our previous ERP studies. Each pair consisted of a prior sentence and a target sentence. Half of the target sentences employed a canonical word order (SOV), and the rest used a non-canonical word order (OSV). There were two types of target sentences: one in which the initial noun phrase (NP) refers to discourse-old information (i.e., the entity mentioned in the prior sentence) and the second NP refers to a discourse-new entity (the given-new order) and the other in which the new information comes first (the new-given order). By manipulating the word order (SO vs. OS) and information structure (given-new vs. new-given) of the target sentences, four conditions were created (SgivenOnew, SnewOgive, OgiveSnew, OnewSgive). During the fMRI scanning, the prior sentence was presented in its entirety, and each phrase of the target sentence was presented one by one. To check whether participants understood the sentences, comprehension questions were asked randomly at the end of half of the trials. We tested the main effect of the word order (OS vs. SO), the information-structure (new-given vs. given-new), and the interaction between these two factors. Statistical analyses were performed with SPM12 using a random-effects model (corrected to p<0.05 by cluster size). Three major findings emerged. First, analyses of the main effect of word order ([OnewSgive+OgivenSnew]> [SnewOgiven+SgivenOnew]) revealed significantly greater activation in the left opercular part of the IFG (BA44), left premotor areas (BA6), and left posterior part of the superior temporal gyrus. Second, irrespective of the type of word order, the new-given conditions [OnewSgive+SnewOgiven] elicited greater activation than the given-new conditions [OgivenSnew+SgivenOnew] in the bilateral inferior parietal lobules and left triangular part of the IFG (BA45). Third, although no significant interaction was observed, the OnewSgive condition elicited greater activation in the left opercular part of the IFG (BA44) compared to the other three conditions. Taken together, these findings indicate that the left opercular part of the IFG (BA44) has a vital role in integrating the demands of syntactic computation and information-structural compensation (cf. Van Leeuwen et al., 2014).
@@ -1133,7 +1153,7 @@
                     <li class="pl-1 py-1 pub-item indent-0">
                         矢野雅貴 (2020) <strong>日本語のかき混ぜ文におけるfiller-gap依存関係の処理―持続的な脳活動は何を反映しているのか―.</strong> 日本言語学会第160回大会, 早稲田大学西早稲田キャンパス. 
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="./docs/Yano_LSJ160.pdf" class="pdf-toggle">PDF</a>
+                            <a href="./docs/Yano_LSJ160.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
                     </li>
                     <li class="pl-1 py-1 pub-item indent-0">
@@ -1145,7 +1165,7 @@
                     <li class="pl-1 py-1 pub-item indent-0">
                         矢野雅貴・諏訪園秀吾・荒生弘史・安永大地・大石衡聴 (2018) <strong>形態統語的逸脱文に対する適応効果—事象関連電位を指標として—.</strong> 日本言語学会第157回大会, 京都大学. 
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="./docs/Yano_LSJ157.pdf" class="pdf-toggle">PDF</a>
+                            <a href="./docs/Yano_LSJ157.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
                     </li>
                     
@@ -1156,7 +1176,7 @@
                     <li class="pl-1 py-1 pub-item indent-0">
                         矢野雅貴・新国佳祐・小野創・木山幸子・里麻奈美・Tang Apay Ai-yu・安永大地・小泉政利 (2017) <b>タロコ語文理解実験からみる基本語順と普遍的認知特性について―事象関連電位を指標として―.</b> 日本言語学会第154回大会, 首都大学東京. <span class="award">日本言語学会大会発表賞</span>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="./docs/Yano_LSJ154.pdf" class="pdf-toggle">PDF</a>
+                            <a href="./docs/Yano_LSJ154.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
                     </li>
                     
@@ -1167,16 +1187,16 @@
                     <li class="pl-1 py-1 pub-item indent-0" id="LSJ152T">
                         津村早紀・峰見一輝・矢野雅貴 (2016) <b>日本人英語学習者によるガーデンパス文の処理―自己ペース読文実験による検討―.</b> 第152回日本言語学会, 慶應義塾大学. 
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="./docs/Tsumura_LSJ152.pdf" class="pdf-toggle">PDF</a>
-                            <a href="./TMUPsycholing.html" class="badge badge-purple">矢野ゼミ卒論</a>
+                            <a href="./docs/Tsumura_LSJ152.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
+                            <a href="./TMUPsycholing.html" class="badge badge-purple"><i class="fas fa-graduation-cap"></i>矢野ゼミ卒論</a>
                         </div>
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0" id="LSJ152M">
                         峰見一輝・津村早紀・矢野雅貴 (2016) <b>日本人学習者による英語filler-gap依存関係の処理 ―自己ペース読文実験による検討―.</b> 第152回日本言語学会, 慶應義塾大学. <span class="award">日本言語学会 大会発表賞</span>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="./docs/Minemi_LSJ152.pdf" class="pdf-toggle">PDF</a>
-                            <a href="./TMUPsycholing.html" class="badge badge-purple">矢野ゼミ卒論</a>
+                            <a href="./docs/Minemi_LSJ152.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
+                            <a href="./TMUPsycholing.html" class="badge badge-purple"><i class="fas fa-graduation-cap"></i>矢野ゼミ卒論</a>
                         </div>    
                     </li>
                     
@@ -1187,7 +1207,7 @@
                     <li class="pl-1 py-1 pub-item indent-0">
                         矢野雅貴 (2015) <b>Semantic LAN現象からみる日本語の文理解モデル.</b> 第150回日本言語学会, 大東文化大学. 
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="./docs/Yano_LSJ150.pdf" class="pdf-toggle">PDF</a>
+                            <a href="./docs/Yano_LSJ150.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
                     </li>
                     
@@ -1198,7 +1218,7 @@
                     <li class="pl-1 py-1 pub-item indent-0">
                         矢野雅貴・立山憂・坂本勉 (2014) <b>日本語分裂文のERP研究－使役形を用いた検討－.</b> 第148回日本言語学会, 法政大学. 
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="./docs/Yano_LSJ148.pdf" class="pdf-toggle">PDF</a>
+                            <a href="./docs/Yano_LSJ148.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
                     </li>
                     
@@ -1221,21 +1241,21 @@
                     <li class="pl-1 py-1 pub-item indent-0">
                         矢野雅貴・立山憂・坂本勉 (2013) <b>gap-filler依存関係の処理について－ERPを用いた日本語分裂文の研究－.</b> 第146回日本言語学会. 茨城大学水戸キャンパス.
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="./docs/Yano_LSJ146.pdf" class="pdf-toggle">PDF</a>
+                            <a href="./docs/Yano_LSJ146.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0">
                         安永大地・矢野雅貴・小泉政利・八杉佳穂 (2013) <b>カクチケル語の基本語順と選好語順の関係について.</b> 第146回日本言語学会, 茨城大学水戸キャンパス.<span class="award">日本言語学会大会発表賞</span>
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="./docs/Yasunaga_LSJ146.pdf" class="pdf-toggle">PDF</a>
+                            <a href="./docs/Yasunaga_LSJ146.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0">
                         立山憂・矢野雅貴・坂本勉 (2013) <b>依存関係の構築における予測処理について－ERPを指標とした日本語譲歩文の研究.</b> 第146回日本言語学会, 茨城大学水戸キャンパス
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="./docs/Tateyama_LSJ146.pdf" class="pdf-toggle">PDF</a>
+                            <a href="./docs/Tateyama_LSJ146.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>
                     </li>
                     
@@ -1370,21 +1390,21 @@
                     <li class="pl-1 py-1 pub-item indent-0">
                         矢野雅貴. (2023) <strong>SO言語およびOS言語における移動を含む文の処理メカニズム.</strong> Selected Papers from the 47th Meeting of the Kansai Linguistic Society (KLS), 5, p. 140.
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="./docs/Yano_KLSSelectedPapers5.pdf" class="pdf-toggle">PDF</a>
+                            <a href="./docs/Yano_KLSSelectedPapers5.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>                        
                     </li>
                     
                     <li class="pl-1 py-1 pub-item indent-0">
                         Yano, M. (2018) <strong>会員からのエッセイ: Toward a symbiotic relationship between theoretical linguistics and psycholinguistics.</strong> 日本言語学会80年の歩み, 4–5, 日本言語学会. 
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="https://www.ls-japan.org/modules/news/news_doc/lsj_80th_2018.pdf" class="pdf-toggle">PDF</a>
+                            <a href="https://www.ls-japan.org/modules/news/news_doc/lsj_80th_2018.pdf" class="pdf-toggle"><i class="fas fa-file-pdf"></i>  PDF</a>
                         </div>  
                     </li>
 
                     <li class="pl-1 py-1 pub-item indent-0">
                         矢野雅貴. (2018) <strong>Temporal Dynamics of Syntactic and Semantic Prediction.</strong> 博士論文紹介コーナー, 25(3), 360, 日本認知科学会.
                         <div class="flex flex-wrap items-center gap-2 mt-2">
-                            <a href="https://www.jstage.jst.go.jp/article/jcss/25/3/25_360/_article" class="pdf-toggle">PDF</a>
+                            <a href="https://www.jstage.jst.go.jp/article/jcss/25/3/25_360/_article" class="pdf-toggle"><i class="fas fa-file-pdf"></i> PDF</a>
                         </div> 
                     </li>
                 </ul>
