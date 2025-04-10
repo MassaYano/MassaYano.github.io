@@ -1,439 +1,487 @@
 <!DOCTYPE HTML>
 <html lang="ja">
-	<head>
-		<!-- Intense Imagesスクリプトの読み込み-->
-		<script type="text/javascript" src="./assets/js/intense.min.js"></script>
 
-		<style type="text/css">
+<head>
+	<!-- Intense Imagesスクリプトの読み込み-->
+	<script type="text/javascript" src="./assets/js/intense.min.js"></script>
+
+	<style type="text/css">
 		.fullscreen-image {
-   		cursor: url("./plus_cursor.png"), pointer; /* マウスポインタを指定 */
-   		display: inline-block;   /* 横方向に並べる指定 */
-   		margin: 0px 5px 5px 0px; /* 周囲の余白量(右と下に5pxずつ) */
+			cursor: url("./plus_cursor.png"), pointer;
+			/* マウスポインタを指定 */
+			display: inline-block;
+			/* 横方向に並べる指定 */
+			margin: 0px 5px 5px 0px;
+			/* 周囲の余白量(右と下に5pxずつ) */
 		}
-		</style>
+	</style>
 
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-FQ5N1JCY8C"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-FQ5N1JCY8C"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-		  gtag('config', 'G-FQ5N1JCY8C');
-		</script>
+		gtag('config', 'G-FQ5N1JCY8C');
+	</script>
 
-		<title>実験参加者の募集</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-    	<div id="fb-root"></div>
-										<script>(function(d, s, id) {
-  										var js, fjs = d.getElementsByTagName(s)[0];
-  										if (d.getElementById(id)) return;
-  										js = d.createElement(s); js.id = id;
-  										js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=1970972459819073';
-  										fjs.parentNode.insertBefore(js, fjs);
-										}(document, 'script', 'facebook-jssdk'));</script>
+	<title>実験参加者の募集</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<div id="fb-root"></div>
+	<script>(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=1970972459819073';
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
 
-		<!--ファビコン パソコン-->
-		<link rel="shortcut icon" href="https://massayano.github.io/favicon.ico" sizes="any"/>
+	<!--ファビコン パソコン-->
+	<link rel="shortcut icon" href="https://massayano.github.io/favicon.ico" sizes="any" />
 
-    	<!-- Tailwind CSS -->
-    	<script src="https://cdn.tailwindcss.com"></script>
-    
-    	<!-- Font Awesome -->
-    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    
-    	<!-- Google Fonts -->
-    	<link rel="preconnect" href="https://fonts.googleapis.com">
-    	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<!-- Tailwind CSS -->
+	<script src="https://cdn.tailwindcss.com"></script>
 
-		<style>
-			.pub-item p, .abstract-content p, .abstract-content {
-				text-indent: 0 !important;
-			}
-						
-			/* カスタムスタイル */
-			:root {
-				--main-bg-color: #e8e8e8;
-				--content-bg-color: #ffffff;
-				--text-color: #232323;
-				--text-color-secondary: #464646;
-				--accent-color: #c94663;
-				--accent-hover-color: #d95673;
-				--border-color: #dddddd;
-				--highlight-color: rgba(201, 70, 99, 0.05);
-				--link-color: #c94663;
-				--sidebar-width: 250px;
-				--content-max-width: 1200px;
-			}
-			
-			body {
-				font-family: 'Source Sans Pro', 'Noto Sans JP', sans-serif;
-				background-color: var(--main-bg-color);
-				background-image: url("assets/css/images/bg02.png");
-				color: var(--text-color);
-				line-height: 1.75;
-			}
-			
-			h1, h2, h3, h4, h5, h6 {
-				color: var(--text-color);
-				font-weight: 700;
-			}
-			
-			a {
-				color: var(--link-color);
-				text-decoration: underline;
-				transition: color 0.2s ease;
-			}
-			
-			a:hover {
-				color: var(--accent-hover-color);
-			}
-			
-			a em {
-				text-decoration: underline;
-			}
-			
-			.content-wrapper {
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+	<style>
+		.exp-item p {
+			text-indent: 0 !important;
+		}
+
+		/* カスタムスタイル */
+		:root {
+			--main-bg-color: #e8e8e8;
+			--content-bg-color: #ffffff;
+			--text-color: #232323;
+			--text-color-secondary: #464646;
+			--accent-color: #c94663;
+			--accent-hover-color: #d95673;
+			--border-color: #dddddd;
+			--highlight-color: rgba(201, 70, 99, 0.05);
+			--link-color: #c94663;
+			--sidebar-width: 250px;
+			--content-max-width: 1200px;
+		}
+
+		body {
+			font-family: 'Source Sans Pro', 'Noto Sans JP', sans-serif;
+			background-color: var(--main-bg-color);
+			background-image: url("assets/css/images/bg02.png");
+			color: var(--text-color);
+			line-height: 1.75;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: var(--text-color);
+			font-weight: 700;
+		}
+
+		a {
+			color: var(--link-color);
+			text-decoration: underline;
+			transition: color 0.2s ease;
+		}
+
+		a:hover {
+			color: var(--accent-hover-color);
+		}
+
+		a em {
+			text-decoration: underline;
+		}
+
+		.content-wrapper {
+			background-color: var(--content-bg-color);
+			background-image: url("assets/css/images/bg02.png");
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			width: 100%;
+			max-width: var(--content-max-width);
+		}
+
+		.sidebar {
+			background-color: var(--content-bg-color);
+			background-image: url("assets/css/images/bg02.png");
+			border-right: 1px solid var(--border-color);
+			width: var(--sidebar-width);
+		}
+
+		.nav-link {
+			color: var(--text-color-secondary);
+			position: relative;
+			transition: color 0.3s ease;
+			text-decoration: none;
+		}
+
+		.nav-link:hover {
+			color: var(--accent-color);
+		}
+
+		.nav-link::after {
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 2px;
+			bottom: -2px;
+			left: 0;
+			background-color: var(--accent-color);
+			transition: width 0.3s ease;
+		}
+
+		.nav-link:hover::after {
+			width: 100%;
+		}
+
+		.info-box {
+			background-color: rgba(255, 255, 255, 0.5);
+			border: 1px solid var(--border-color);
+			border-radius: 8px;
+		}
+
+		.section-title {
+			border-bottom: 1px solid var(--border-color);
+			position: relative;
+			padding-bottom: 0.5rem;
+		}
+
+		.section-title::after {
+			content: '';
+			position: absolute;
+			bottom: -1px;
+			left: 0;
+			width: 100px;
+			height: 3px;
+			background-color: var(--accent-color);
+		}
+
+		.tag-link {
+			background-color: #f0f0f0;
+			border: 1px solid var(--border-color);
+			color: var(--text-color);
+			transition: all 0.2s ease;
+			text-decoration: none;
+			display: inline-flex;
+			align-items: center;
+			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+		}
+
+		.tag-link:hover {
+			background-color: var(--accent-color);
+			color: white;
+			border-color: var(--accent-color);
+			transform: translateY(-1px);
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		.exp-item {
+			border-left: 0px solid transparent;
+			transition: all 0.3s ease;
+			padding-left: 1rem;
+			text-indent: -1rem;
+			margin-left: 0rem;
+			padding-top: 0rem;
+			padding-bottom: 0.75rem;
+			border-radius: 0 4px 4px 0;
+			text-align: justify;
+		}
+
+		.exp-item p {
+			margin-bottom: 0.75rem;
+			line-height: 1.6;
+			margin-top: 0;
+			text-indent: 0;
+		}
+
+		/* Remove brackets style */
+		.pub-meta {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 0.5rem;
+			margin-top: 0.25rem;
+		}
+
+		/* Ensure italic text in links has underline */
+		a em,
+		em a {
+			text-decoration: underline;
+		}
+
+		.list-item {
+			padding-left: 1rem;
+			text-indent: -1rem;
+			margin-left: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		@media (max-width: 1023px) {
+			.mobile-header {
 				background-color: var(--content-bg-color);
 				background-image: url("assets/css/images/bg02.png");
-				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-				width: 100%;
-				max-width: var(--content-max-width);
 			}
-			
-			.sidebar {
-				background-color: var(--content-bg-color);
-				background-image: url("assets/css/images/bg02.png");
-				border-right: 1px solid var(--border-color);
-				width: var(--sidebar-width);
-			}
-			
-			.nav-link {
+
+			.mobile-menu-item {
 				color: var(--text-color-secondary);
-				position: relative;
-				transition: color 0.3s ease;
 				text-decoration: none;
 			}
-			
-			.nav-link:hover {
-				color: var(--accent-color);
-			}
-			
-			.nav-link::after {
-				content: '';
-				position: absolute;
-				width: 0;
-				height: 2px;
-				bottom: -2px;
-				left: 0;
-				background-color: var(--accent-color);
-				transition: width 0.3s ease;
-			}
-			
-			.nav-link:hover::after {
-				width: 100%;
-			}
-			
-			.info-box {
-				background-color: rgba(255, 255, 255, 0.5);
-				border: 1px solid var(--border-color);
-				border-radius: 8px;
-			}
-			
-			.section-title {
-				border-bottom: 1px solid var(--border-color);
-				position: relative;
-				padding-bottom: 0.5rem;
-			}
-			
-			.section-title::after {
-				content: '';
-				position: absolute;
-				bottom: -1px;
-				left: 0;
-				width: 60px;
-				height: 3px;
-				background-color: var(--accent-color);
-			}
-			
-			.tag-link {
-				background-color: #f0f0f0;
-				border: 1px solid var(--border-color);
-				color: var(--text-color);
-				transition: all 0.2s ease;
-				text-decoration: none;
-				display: inline-flex;
-				align-items: center;
-				box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-			}
-			
-			.tag-link:hover {
+
+			.mobile-menu-item:hover {
 				background-color: var(--accent-color);
 				color: white;
-				border-color: var(--accent-color);
-				transform: translateY(-1px);
-				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 			}
+		}
+
+		.icon-black {
+			color: black;
+		}
+	</style>
+
+</head>
+
+<body class="min-h-screen flex flex-col lg:flex-row">
+	<!-- ヘッダー（モバイル用） -->
+	<header class="lg:hidden mobile-header fixed w-full z-10 p-4 shadow-md">
+		<div class="flex justify-between items-center">
+			<h1 class="text-xl font-bold">Masataka Yano, PhD</h1>
+			<button id="mobile-menu-button">
+				<i class="fas fa-bars text-xl"></i>
+			</button>
+		</div>
+		<nav id="mobile-menu" class="hidden mt-4">
+			<ul class="space-y-2">
+				<li><a href="./index.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-home mr-2 text-gray-500"></i>HOME</a></li>
+				<li><a href="./index.html#Articles" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-file-alt mr-2 text-indigo-500"></i>Articles</a></li>
+				<li><a href="./index.html#OralPresentations" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-microphone-alt mr-2 text-indigo-500"></i>Oral Presentations</a></li>
+				<li><a href="./index.html#PosterPresentations" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-chalkboard mr-2 text-indigo-500"></i>Poster Presentations</a></li>
+				<li><a href="./TMUPsycholing.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-comments mr-2 text-purple-500"></i>心理言語学ラボ</a></li>
+				<li><a href="./exp.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
+				<li><a href="./workshop.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
+				<li><a href="./blog.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- サイドバー（デスクトップ用） -->
+	<aside class="hidden lg:block sidebar p-6 overflow-y-auto sticky top-0 h-screen">
+		<div class="mb-8">
+			<h2 class="text-2xl font-bold mb-4">Masataka Yano</h2>
+			<span class="block mb-6 text-gray-600">矢野 雅貴</span>
+			<div class="flex justify-start space-x-3 mb-6">
+				<a href="https://scholar.google.com/citations?user=PMN8wPUAAAAJ" title="Google Scholar" class="icon-black">
+					<i class="fas fa-graduation-cap text-xl"></i>
+				</a>
+				<a href="https://www.researchgate.net/profile/Masataka_Yano" title="ResearchGate" class="icon-black">
+					<i class="fab fa-researchgate text-xl"></i>
+				</a>
+				<a href="http://orcid.org/0000-0003-4465-8456" title="ORCID" class="icon-black">
+					<i class="fab fa-orcid text-xl"></i>
+				</a>
+				<a href="mailto:yanomasa@tmu.ac.jp" title="Email" class="icon-black">
+					<i class="fas fa-envelope text-xl"></i>
+				</a>
+			</div>
+		</div>
+
+		<nav>
+			<ul class="space-y-2">
+				<li><a href="./index.html" class="nav-link block p-2"><i class="fas fa-home mr-2 text-gray-500"></i>HOME</a></li>
+				<li><a href="./index.html#Books" class="nav-link block p-2 pl-4"><i class="fa-solid fa-book-open mr-2 text-indigo-500"></i> Books</a></li>
+				<li><a href="./index.html#Articles" class="nav-link block p-2 pl-4"><i class="fas fa-file-alt mr-2 text-indigo-500"></i> Articles</a></li>
+				<li><a href="./index.html#OralPresentations" class="nav-link block p-2 pl-4"><i class="fas fa-microphone-alt mr-2 text-indigo-500"></i> Oral Presentations</a></li>
+				<li><a href="./index.html#PosterPresentations" class="nav-link block p-2 pl-4"><i class="fas fa-chalkboard mr-2 text-indigo-500"></i> Poster Presentations</a></li>
+				<li><a href="./TMUPsycholing.html" class="nav-link block p-2"><i class="fas fa-comments mr-2 text-purple-500"></i>心理言語学ラボ</a></li>
+				<li><a href="./exp.html" class="nav-link block p-2"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
+				<li><a href="./workshop.html" class="nav-link block p-2"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
+				<li><a href="./blog.html" class="nav-link block p-2"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
+			</ul>
+		</nav>
+	</aside>
+
+	<!-- メインコンテンツ -->
+	<main class="flex-1 p-4 lg:p-6 mt-16 lg:mt-0 relative">
+		<div class="max-w-6xl mx-auto content-wrapper rounded-lg p-6 lg:p-8 relative">
+			<!--Twitter-->
+			<div class="mb-4">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="実験参加者募集" data-count="none" data-lang="en" data-text=" "></a>
+				<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+			</div>
+
+			<header class="mb-8">
+				<h1 class="text-3xl lg:text-4xl font-bold">実験参加者の募集</h1>
+			</header>
+
+			<!-- アンケート調査 -->
+			<!-- 
+		<section class="mb-5">
+			<h2 id="ACC" class="text-2xl font-bold mb-4 pb-2 section-title">アンケート調査</h2>
 			
-			.pub-item {
-				border-left: 4px solid transparent;
-				transition: all 0.3s ease;
-				padding-left: 1rem;
-				text-indent: -1rem;
-				margin-left: 1rem;
-				padding-top: 0.75rem;
-				padding-bottom: 0.75rem;
-				border-radius: 0 4px 4px 0;
-			}
+			<div class="mb-2">
+			日本語の音声を聞いていただき、それがどの程度、日本語として自然・容認可能かを回答していただく実験です。
+			</div>
+
 			
-			.pub-item p {
-				margin-bottom: 0.75rem;
-				line-height: 1.6;
-				margin-top: 0;
-				text-indent: 0;
-			}
-			
-			/* Remove brackets style */
-			.pub-meta {
-				display: flex;
-				flex-wrap: wrap;
-				align-items: center;
-				gap: 0.5rem;
-				margin-top: 0.25rem;
-			}
-						
-			/* Ensure italic text in links has underline */
-			a em, em a {
-				text-decoration: underline;
-			}
-						
-			.list-item {
-				padding-left: 1rem;
-				text-indent: -1rem;
-				margin-left: 1rem;
-				margin-bottom: 0.5rem;
-			}
-						
-			@media (max-width: 1023px) {
-				.mobile-header {
-					background-color: var(--content-bg-color);
-					background-image: url("assets/css/images/bg02.png");
-				}
-				
-				.mobile-menu-item {
-					color: var(--text-color-secondary);
-					text-decoration: none;
-				}
-				
-				.mobile-menu-item:hover {
-					background-color: var(--accent-color);
-					color: white;
-				}
-			}
-
-			.icon-black { color: black; }
-
-		</style>
-
-	</head>
-
-	<body class="min-h-screen flex flex-col lg:flex-row">
-    <!-- ヘッダー（モバイル用） -->
-    <header class="lg:hidden mobile-header fixed w-full z-10 p-4 shadow-md">
-        <div class="flex justify-between items-center">
-            <h1 class="text-xl font-bold">Masataka Yano, PhD</h1>
-            <button id="mobile-menu-button">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
-        </div>
-        <nav id="mobile-menu" class="hidden mt-4">
-            <ul class="space-y-2">
-                <li><a href="#" class="mobile-menu-item block p-2 rounded"><i class="fas fa-home mr-2 text-gray-500"></i>HOME</a></li>
-                <li><a href="#Articles" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-file-alt mr-2 text-indigo-500"></i>Articles</a></li>
-                <li><a href="#OralPresentations" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-microphone-alt mr-2 text-indigo-500"></i>Oral Presentations</a></li>
-                <li><a href="#PosterPresentations" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-chalkboard mr-2 text-indigo-500"></i>Poster Presentations</a></li>
-                <li><a href="https://massayano.github.io/TMUPsycholing.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-comments mr-2 text-purple-500"></i>心理言語学ラボ</a></li>
-                <li><a href="https://massayano.github.io/exp.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
-                <li><a href="https://massayano.github.io/workshop.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
-                <li><a href="https://massayano.github.io/blog.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
-                <li><a href="https://massayano.github.io/sakamoto.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-user-tie mr-2 text-red-500"></i>坂本先生のページ</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- サイドバー（デスクトップ用） -->
-    <aside class="hidden lg:block sidebar p-6 overflow-y-auto sticky top-0 h-screen">
-        <div class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Masataka Yano</h2>
-            <span class="block mb-6 text-gray-600">矢野 雅貴</span>
-            <div class="flex justify-start space-x-3 mb-6">
-                <a href="https://scholar.google.com/citations?user=PMN8wPUAAAAJ" title="Google Scholar" class = "icon-black">
-                    <i class="fas fa-graduation-cap text-xl"></i>
-                </a>
-                <a href="https://www.researchgate.net/profile/Masataka_Yano" title="ResearchGate" class = "icon-black">
-                    <i class="fab fa-researchgate text-xl"></i>
-                </a>
-                <a href="http://orcid.org/0000-0003-4465-8456" title="ORCID" class = "icon-black">
-                    <i class="fab fa-orcid text-xl"></i>
-                </a>
-                <a href="mailto:yanomasa@tmu.ac.jp" title="Email" class = "icon-black">
-                    <i class="fas fa-envelope text-xl"></i>
-                </a>
-            </div>
-        </div>
-        
-        <nav>
-            <ul class="space-y-2">
-                <li><a href="#" class="nav-link block p-2"><i class="fas fa-home mr-2 text-gray-500"></i>HOME</a></li>
-                <li><a href="#Books" class="nav-link block p-2 pl-4"><i class="fa-solid fa-book-open mr-2 text-indigo-500"></i> Books</a></li>
-                <li><a href="#Articles" class="nav-link block p-2 pl-4"><i class="fas fa-file-alt mr-2 text-indigo-500"></i> Articles</a></li>
-                <li><a href="#OralPresentations" class="nav-link block p-2 pl-4"><i class="fas fa-microphone-alt mr-2 text-indigo-500"></i> Oral Presentations</a></li>
-                <li><a href="#PosterPresentations" class="nav-link block p-2 pl-4"><i class="fas fa-chalkboard mr-2 text-indigo-500"></i> Poster Presentations</a></li>
-                <li><a href="https://massayano.github.io/TMUPsycholing.html" class="nav-link block p-2"><i class="fas fa-comments mr-2 text-purple-500"></i>心理言語学ラボ</a></li>
-                <li><a href="https://massayano.github.io/exp.html" class="nav-link block p-2"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
-                <li><a href="https://massayano.github.io/workshop.html" class="nav-link block p-2"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
-                <li><a href="https://massayano.github.io/blog.html" class="nav-link block p-2"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
-                <li><a href="https://massayano.github.io/sakamoto.html" class="nav-link block p-2"><i class="fas fa-user-tie mr-2 text-red-500"></i>坂本先生のページ</a></li>
-            </ul>
-        </nav>
-    </aside>
-
-    <!-- メインコンテンツ -->
-    <main class="flex-1 p-4 lg:p-6 mt-16 lg:mt-0 relative">
-        <div class="max-w-6xl mx-auto content-wrapper rounded-lg p-6 lg:p-8 relative">
-				<!--Twitter-->
-					<a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="実験参加者募集" data-count="none" data-lang="en" data-text=" "></a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-
-			<!-- Post -->
-			<article class="box post post-excerpt" style="text-align: justify;">
-			<div class="box post post-excerpt" style="text-align: justify;">
-			<ul>
-
-			<p><h1><font size="5", color="black">実験参加者の募集</font></h1></p>
-
-<!--
-			<h2 id="ACC"><font size="5"><strong>アンケート調査</strong></font></h2>
-			<p>日本語の音声を聞いていただき、それがどの程度、日本語として自然・容認可能かを回答していただく実験です。</p>
-
-			<li>【<strong>調査対象者</strong>】以下の条件をすべて満たすひと：</li>
+			【<strong>調査対象者</strong>】以下の条件をすべて満たすひと：
+			<ul class="exp-item">
 			<li>・東京都立大学の大学生・大学院生（18歳から30歳まで）</li>
 			<li>・日本語を母語とするひと</li>
 			<li>・言語障がいや精神障がいの診断歴がないひと</li>
 			<li>・視力が正常値内である （メガネまたはコンタクトレンズ装着による矯正視力を含む）</li>
-			</p>
+			</ul>
 
-			<li>【<strong>調査の内容</strong>】</li>
-			<li>文の自然さ（どれくらい文が自然で容認可能か）を7段階で判断する調査です。<br>
-			お送りするURLにパソコンでアクセスして行います。URLは実験の応募者にのみお送りします。<br>
-			音声はイヤフォンまたはヘッドホンを使って聞いてください。</li></p>
+			【<strong>調査の内容</strong>】<br>
+			文の自然さ（どれくらい文が自然で容認可能か）を7段階で判断する調査です。お送りするURLにパソコンでアクセスして行います。URLは実験の応募者にのみお送りします。
+			音声はイヤフォンまたはヘッドホンを使って聞いてください。</li>
+			
 
-			<li>【<strong>調査時間</strong>】</li>
-			<li>20分程度かかります。好きな時間に行ってください。</li></p>
+			【<strong>調査時間</strong>】
+			<ul class="pl-0 mb-2">
+			<li>20分程度かかります。好きな時間に行ってください。</li>
+			</ul>
 
-			<li>【<strong>応募方法</strong>】</li>
+			【<strong>応募方法</strong>】
+			<ul class="pl-0 mb-2">
 			以下の応募フォームからご応募ください。後日、実験担当者からご連絡を致します。<br>
 			<li><a href="https://forms.gle/W8X99rfZtfP4iddY6" target="_blank">https://forms.gle/W8X99rfZtfP4iddY6</a>
-			</p>
+			</ul>
 
-			<li>【<strong>謝金</strong>】</li>
-			<li>ＱＵＯカードペイ ３５０円分 <br>
+			【<strong>謝金</strong>】
+			<ul class="pl-0 mb-2">
+			<li>ＱＵＯカードペイ ３５０円分 </li>
 			<font size="-1">※<a href="https://www.quocard.com/pay/use/">ＱＵＯカードペイ</a>はスマホで使える電子マネー（ＱＲコード）です。コンビニ・カフェ・書店などで現金の代わりに使用できます。実験終了後の画面に表示される指示に従って手続きを行ってください。なるべく１ヶ月以内にお支払いしますが事務手続きの都合上、遅れることもありますので予めご了承ください）</font>
-			<p></p>
+			</ul>
 
-			<li>【<strong>場所</strong>】</li>
+			【<strong>場所</strong>】
+			<ul class="pl-0 mb-2">
 			<li>ウェブ上</li>
 			<li>※ 必ずPCで行ってください（スマートフォン・タブレット端末では実験を実施できません）</li>
 			<li>※ Internet Explore上では行わないようお願いします。Internet Exploreでは正しく実験が実施できない可能性があります。</li>
-			<p></p>
+			</ul>
 
-			<li>【<strong>謝金支払い手続きについて</strong>】</li>
+			【<strong>謝金支払い手続きについて</strong>】
+			<ul class="pl-0 mb-2">
 			<li>調査終了後、支払い手続きに関する説明がありますので、それに従ってメールを送信してください。</li>
-			</p>
-			<p>
+			</ul>
+		</section>
 -->
-<!--- SPR -->
 
-<!--
-			<h2 id="SPR"><font size="5"><strong>読文実験</strong></font></h2>
-			<p>モニターに表示される日本語の文を黙読していただき、その文の内容に対しての質問に回答していただく実験です。	</p>
+			<!--- SPR -->
+			<!---
+		<section class="mb-5">		
+			<h2 id="SPR" class="text-2xl font-bold mb-4 pb-2 section-title">読み実験</h2>
 
-			<li>【<strong>調査対象者</strong>】以下の条件をすべて満たすひと：</li>
+			<div class="mb-2">
+				モニターに表示される日本語の文を黙読していただき、その文の内容に対しての質問に回答していただく実験です。	
+			</div>
+
+			【<strong>調査対象者</strong>】以下の条件をすべて満たすひと：
+			<ul class="exp-item">
 			<li>・東京都立大学の大学生・大学院生（18歳から30歳まで）</li>
-			<li>・一都四県（東京・埼玉・神奈川・山梨・千葉）で育った日本語母語話者</li>
 			<li>・言語障害や精神障害の診断歴がない人</li>
 			<li>・実験に支障のある視覚障害等がない人</li>
-			</p>
+			</ul>
 
-			<li>【<strong>調査の内容</strong>】</li>
-			<li>日本語の文が文節ごとにモニターに表示されます。パソコンのスペースキーを押すことで次の文節が表示されるので，参加者の方にはスペースキーを押して文を読み進めていただきます。文を最後まで読んでいただいた後に，文の内容についての質問に答えていただきます。</li><p></p>
+			【<strong>調査の内容</strong>】
+			<div class="mb-2">
+			日本語の文が文節ごとにモニターに表示されます。パソコンのスペースキーを押すことで次の文節が表示されるので、参加者の方にはスペースキーを押して文を読み進めていただきます。文を最後まで読んでいただいた後に、文の内容についての質問に答えていただきます。
+			</div>
 
-			<li>【<strong>調査時間</strong>】</li>
-			<li>１時間程度</li><p></p>
+			【<strong>調査時間</strong>】
+			<div class="mb-2">
+			１時間程度
+			</div>
 
-			<li>【<strong>場所</strong>】</li>
-			<li>南大沢キャンパス５号館２３５号室</li><p></p>
+			【<strong>場所</strong>】
+			<div class="mb-2">南大沢キャンパス５号館２３５号室</div>
 
-			<li>【<strong>謝金</strong>】</li>
-			<li>ＱＵＯカードペイ １０００円分 <font size="-1">（謝金の支払いは当日ではなく後日になります）</font> <br>
-			<font size="-1">＊<a href="https://www.quocard.com/pay/use/">QUOカードペイ</a>はスマホで使える電子マネー（QRコード）です。コンビニ・カフェ・書店などで現金の代わりに使用できます。</font>
-			<p></p>
+			【<strong>謝金</strong>】
+			<ul class="pl-0 mb-2">
+			<li>ＱＵＯカードペイ ３５０円分 </li>
+			<font size="-1">※<a href="https://www.quocard.com/pay/use/">ＱＵＯカードペイ</a>はスマホで使える電子マネー（ＱＲコード）です。コンビニ・カフェ・書店などで現金の代わりに使用できます。実験終了後の画面に表示される指示に従って手続きを行ってください。なるべく１ヶ月以内にお支払いしますが事務手続きの都合上、遅れることもありますので予めご了承ください）</font>
+			</ul>
 
-			<li>【<strong>応募方法</strong>】</li>
-			<li>以下の応募フォームからご応募ください。後日、実験担当者からご連絡を致します。</li>
-			<a href="https://forms.gle/WitH8Vt8bpR5BMnC6" target="_blank">https://forms.gle/WitH8Vt8bpR5BMnC6</a>
-			<p></p>
-
+			【<strong>応募方法</strong>】
+			<div class="mb-2">
+				以下の応募フォームからご応募ください。後日、実験担当者からご連絡を致します。<br>
+				<a href="https://forms.gle/WitH8Vt8bpR5BMnC6" target="_blank">https://forms.gle/WitH8Vt8bpR5BMnC6</a>
+			</div>
+			
+			<ul class="exp-item">
 			<li id="day">ご希望の日時は、以下の中からお選び下さい（随時更新）：</li>
-			<a href="https://docs.google.com/document/d/1NieK_dt2q0szXC-C_2FInaPSJsbTCz_dH-nnDYtfIX8/edit?usp=sharing" target="_blank">https://docs.google.com/document/d/1NieK_dt2q0szXC-C_2FInaPSJsbTCz_dH-nnDYtfIX8/edit?usp=sharing</a>
-			<p>
+			<li>4/4 10:00-, 14:00-, 16:00-</li>
+			<li>4/4 10:00-, 14:00-, 16:00-</li>
+
+
+			</ul>
+		</section>
 -->
 
-<!--- Eye Tracking -->
-<!--
-				<h2 id="ET"><font size="5"><strong>視線計測実験</strong></font></h2>
+			<!--- Eye Tracking -->
+			<!--
+			<section class="mb-5">	
+				<h2 id="ET" class="text-2xl font-bold mb-4 pb-2 section-title">視線計測実験</h2>
 
-				<li>【<strong>内容</strong>】</li>
-				スピーカーから呈示される日本語の音声を聞いていただき、その際の瞳の大きさ（瞳孔径）を計測する調査です。<p></p>
-				モニターに表示される文章を読み、質問に答えてもらう実験です。その際の視線を計測します。<p></p>
+				【<strong>内容</strong>】
+				<div class="mb-2">
+				スピーカーから呈示される日本語の音声を聞いていただき、その際の目の動きを計測する調査です。
+				モニターに表示される文章を読み、質問に答えてもらう実験です。その際の視線を計測します。
+				</div>
 
-				<li>【<strong>対象者</strong>】以下の条件をすべて満たすひと：
+				【<strong>対象者</strong>】以下の条件をすべて満たすひと：
+				<ul class="exp-item">
 				<li>・東京都立大学の大学生・大学院生（18歳から30歳まで）</font></li>
 				<li>・日本語を母語とするひと</li>
-				<li>・言語障がい<font size="-1">（吃音・ディスレクシア等）</font>、精神障がい<font size="-1">（てんかん・統合失調症など）</font>、視覚<font size="-1">（斜視・乱視・眼振があるなど）</font>及び聴覚<font size="-1">（聴覚情報処理障害など）</font>に関する病歴がない</li>
+				<li>・言語障がい、精神障がい、視覚<font size="-1">（斜視・乱視・眼振があるなど）</font>及び聴覚<font size="-1">（聴覚情報処理障害など）</font>に関する病歴がない</li>
 				<li>・視力／聴力が正常値内である <font size="-1">（メガネ・ソフトレンズのコンタクトは大丈夫です。ただしブルーライトカットのメガネやハードレンズのコンタクトの方は参加できません）</font></li>
-				<p></p>
+				</ul>
 
-				<li>【<strong>所要時間</strong>】</li>
+				【<strong>所要時間</strong>】
+				<div class="mb-2">
 				45分程度（最長1時間）
-				<p></p>
+				</div>
 
-				<li>【<strong>謝礼</strong>】</li>
-				ＱＵＯカードペイ １０００円分<font size="-1">（謝金の支払いは当日ではなく週末になります）</font> <br>
-				<font size="-1">＊<a href="https://www.quocard.com/pay/use/">QUOカードペイ</a>はスマホで使える電子マネー（QRコード）です。コンビニ・カフェ・書店などで現金の代わりに使用できます。</font>
-				<p></p>
+				【<strong>謝礼</strong>】
+				<ul class="pl-0 mb-2">
+				<li>ＱＵＯカードペイ １０００円分 </li>
+				<font size="-1">※<a href="https://www.quocard.com/pay/use/">ＱＵＯカードペイ</a>はスマホで使える電子マネー（ＱＲコード）です。コンビニ・カフェ・書店などで現金の代わりに使用できます。実験終了後の画面に表示される指示に従って手続きを行ってください。なるべく１ヶ月以内にお支払いしますが事務手続きの都合上、遅れることもありますので予めご了承ください）</font>
+				</ul>			
 
-				<li>【<strong>場所</strong>】</li>
+				【<strong>場所</strong>】
+				<div class="mb-2">
 				南大沢キャンパス５号館３階３５８室
-				<p></p>
-
+				</div>
 				
-				<li>【<strong>応募方法</strong>】</li>
+				【<strong>応募方法</strong>】
+				<div class="mb-2">
 				以下の応募フォームからご応募ください。後日、実験担当者からご連絡をいたします。 <br>
 				<a href="https://forms.gle/rUnFrJoE1JayFp4HA" target="_blank">https://forms.gle/rUnFrJoE1JayFp4HA</a>
-				
-				<li>＊参加を希望される方は、応募前に、下記の【<a href="#ethicsET"><strong>実験について</strong></a>】【<a href="#noteET"><strong>参加おける注意点</strong></a>】を必ずご覧下さい。</li></p>
+				</div>
 
-				<li id="day"><b>ご希望の日時は、以下の中からお選び下さい（随時更新）</b>：</li>
-			 	<a href="https://docs.google.com/document/d/1FBHa-jU2RYVYZhe7tSztA7g3DNAEJcknxA3OhX9KgOQ/edit?usp=sharing">https://docs.google.com/document/d/1FBHa-jU2RYVYZhe7tSztA7g3DNAEJcknxA3OhX9KgOQ/edit?usp=sharing</a> 
+				＊参加を希望される方は、応募前に、下記の【<a href="#ethicsET"><strong>実験について</strong></a>】【<a href="#noteET"><strong>参加おける注意点</strong></a>】を必ずご覧下さい。
 
-				<p></p>
-				<div style="text-indent: -1em;text-align: justify;">
-				<li><font size ="4" id="ethicsET">【<strong>実験について</strong>】</font></li>
+				<ul class="exp-item">
+				<li id="day">ご希望の日時は、以下の中からお選び下さい（随時更新）：</li>
+				<li>4/4 10:00-, 14:00-, 16:00-</li>
+				<li>4/4 10:00-, 14:00-, 16:00-</li>	
+				</ul>
+			
+				<font size ="4" id="ethicsET">【<strong>実験について</strong>】</font>
+				<ul class="exp-item">
 				<li>・実験は、東京都立大学の倫理委員会の承認を得て、学術的な目的で行われます。</li>
 				<li>・本実験で用いる計測装置は、<u>非侵襲的<font size="-1">（身体に有害な影響を及ぼさない）</font>であり安全性が確認されています</u>。</li>
 				<li>・実験で得られた成果は学会や論文で発表することがありますが、その際、<u>個人情報を公開することはありません</u>。また、本実験で得た個人情報は、外部に漏洩しないように厳密に管理され、再調査の必要が生じたときの連絡以外の目的には使用されません。</li>
@@ -441,55 +489,70 @@
 				<li>・実験参加者が、<u>実験に対して非協力的なため実験の継続が困難になった場合、実験者が実験を中止することがあります</u>。</li>
 				<li>・<u>実験への参加は、1回の募集につき、1回までです</u>。また、実験は1人ずつ行いますので、複数人で同じ時間帯に応募することはできません。</li>
 				<li>・応募後は、なるべく<u>キャンセルしないようにお願いします</u>。</li><p>
+				</ul>
 
-				<li><font size ="4" id="noteET">【<strong>参加における注意点</strong>】</font></li>
+				<font size ="4" id="noteET">【<strong>参加における注意点</strong>】</font>
+				<ul class="exp-item">
 				<li>・実験当日は、<font color="red"><u>印鑑</u></font>を必ず持ってきて下さい。</li>
 				<li>・実験前日はよく睡眠を取り、<u>睡眠不足にならないように気をつけて下さい</u>。</li>
 				<li>・実験当日は、派手なアイメイクやマスカラは控えてください。</li>
-				</div>
+				</ul>
+
+			</section>
 -->
-<!-- EEG -->
-<!--
-				<h2 id="EEG"><font size="5"><strong>脳波実験</strong></font></h2>
+			<!-- EEG -->
+			<!--
+			<section class="mb-5">
+				<h2 id="EEG" class="text-2xl font-bold mb-4 pb-2 section-title">脳波実験</h2>
 
-				<li>【<strong>内容</strong>】</li>
+				【<strong>内容</strong>】
+				<div class="mb-2">
 				モニターに表示される文を読み、問題に答えてもらう実験です。その際の脳波を計測します。
-				<p></p>
-
-				<li>【<strong>対象者</strong>】 以下の条件をすべて満たすひと：</li>
+				</div>
+	
+				【<strong>対象者</strong>】 以下の条件をすべて満たすひと：
+				<ul class="exp-item">
 				<li>・東京都立大学の学生（18歳から30歳まで）</li>
 				<li>・日本語母語話者</li>
 				<li>・右利き（矯正で右利きのひとは対象外）</li>
 				<li>・言語障がいや精神障がいがない</li>
 				<li>・視力／聴力が正常値内である（メガネ・コンタクト・補聴器を付けていても大丈夫です）</li>
 				<li>・非喫煙者</li>
-				<p></p>
+				</ul>
 
-				<li>【<strong>所要時間</strong>】</li>
+				【<strong>所要時間</strong>】
+				<ul class="pl-0 mb-2">
 				２時間程度
-				<p></p>
+				</ul>
 
-				<li>【<strong>謝礼</strong>】</li>
-				ＱＵＯカードペイ ２０００円分<font size="-1">（謝金の支払いは当日ではなく後日になります）</font> <br>
-				<font size="-1">＊<a href="https://www.quocard.com/pay/use/">QUOカードペイ</a>はスマホで使える電子マネー（QRコード）です。コンビニ・カフェ・書店などで現金の代わりに使用できます。</font>
-				<p></p>
+				【<strong>謝礼</strong>】
+				<ul class="pl-0 mb-2">
+					<li>ＱＵＯカードペイ ２０００円分</li>
+					<font size="-1">※<a href="https://www.quocard.com/pay/use/">ＱＵＯカードペイ</a>はスマホで使える電子マネー（ＱＲコード）です。コンビニ・カフェ・書店などで現金の代わりに使用できます。実験終了後の画面に表示される指示に従って手続きを行ってください。なるべく１ヶ月以内にお支払いしますが事務手続きの都合上、遅れることもありますので予めご了承ください）</font>
+				</ul>
 
-				<li>【<strong>場所</strong>】</li>
-				南大沢キャンパス５号館４階４５５室
-				<p></p>
+				【<strong>場所</strong>
+				<ul class="pl-0 mb-2">
+				南大沢キャンパス５号館４階３５８室
+				</ul>
 
-				<li>【<strong>応募方法</strong>】</li>
-				以下の応募フォームからご応募ください。後日、実験担当者からご連絡をいたします。<br>
+				【<strong>応募方法</strong>】
+				<ul class="pl-0 mb-2">以下の応募フォームからご応募ください。後日、実験担当者からご連絡をいたします。<br>
 				<a href="https://forms.gle/3CogLadqa5yjgXWX7" target="_blank">https://forms.gle/3CogLadqa5yjgXWX7</a>
+				</ul>
 
-				<li>＊参加を希望される方は、応募前に、下記の【<a href="#ethicsEEG"><strong>脳波実験について</strong></a>】【<a href="#noteEEG"><strong>参加おける注意点</strong></a>】を必ずご覧下さい。</p>
+				<div class="mb-2">
+				＊参加を希望される方は、応募前に、下記の【<a href="#ethicsEEG"><strong>脳波実験について</strong></a>】【<a href="#noteEEG"><strong>参加おける注意点</strong></a>】を必ずご覧下さい。
+				</div>
 
-				<li id="day">ご希望の日時は、以下の中からお選び下さい（随時更新）：</li>
-				<a href=https://docs.google.com/document/d/1UxssCZgBrYT0R6fSS1Y6O2_8XC03Stj-n0vOXQp1gCQ/edit?usp=sharing target="_blank">https://docs.google.com/document/d/1UxssCZgBrYT0R6fSS1Y6O2_8XC03Stj-n0vOXQp1gCQ/edit?usp=sharing</a>
-				<p></p>
+				<ul class="exp-item">
+					<li id="day">ご希望の日時は、以下の中からお選び下さい（随時更新）：</li>
+					<li>4/4 10:00-, 14:00-, 16:00-</li>
+					<li>4/4 10:00-, 14:00-, 16:00-</li>	
+				</ul>
 
-				<div style="text-indent: -1em;text-align: justify;">
-				<li><font size ="4" id="ethicsEEG">【<strong>脳波実験について</strong>】</font></li>
+				<font size ="4" id="ethicsEEG">【<strong>脳波実験について</strong>】</font>
+				<ul class="exp-item">
 				<li>・実験は、学術的な目的で行われます。実験中、偶発的に異常な脳波が認められた場合であっても、実験者はいかなる診断も行いません。</li>
 				<li>・本実験で用いる脳波計は、<u>非侵襲的であり安全性が確認されています</u>。脳波計は日常的に生じている微弱な脳波を記録するだけで、<u>脳波計側から刺激を与えることはありません</u>。</li>
 				<li>・実験で得られた成果は学会や論文で発表することがありますが、その際、<u>個人情報を公開することはありません</u>。また、本実験で得た個人情報は、外部に漏洩しないように厳密に管理され、再実験の必要が生じたときの連絡以外の目的には使用されません。</li>
@@ -497,8 +560,10 @@
 				<li>・実験参加者が、実験に対して非協力的なため実験の継続が困難になった場合、実験者が実験を中止することがあります。</li>
 				<li>・<u>脳波実験への参加は、1回の募集につき、1回までです</u>。また、実験は1人ずつ行いますので、複数人で同じ時間帯に応募することはできません。</li>
 				<li>・応募後は、なるべく<u>キャンセルしないようにお願いします</u>。</li><p>
+				</ul>
 
-				<li><font size ="4" id="noteEEG">【<strong>参加における注意点</strong>】</font></li>
+				<font size ="4" id="noteEEG">【<strong>参加における注意点</strong>】</font>
+				<ul class="exp-item">
 				<li>・実験当日は、<font color="red"><u>印鑑</u></font>を必ず持ってきて下さい。</li>
 				<li>・実験前日はよく睡眠を取り、<u>睡眠不足にならないように気をつけて下さい</u>。</li>
 				<li>・実験当日は、<u>汗をかかないように気をつけて下さい</u>。</li>
@@ -507,87 +572,115 @@
 				<li>・整髪料（ワックス・ジェルなど）やピアスは付けないようにお願いします。ピアスは実験室に来てから外して頂いても大丈夫です。</li>
 				<li>・実験の際は、ペーストを使って頭皮上に電極を貼り付けます。実験終了後エタノールできるだけ拭き取りますが、すこし髪がパリパリします。ペーストはシャワーをすればすぐに落ちますが、実験後に大事な予定などがある場合はご注意下さい（シャンプー・リンス・タオルは実験室にあります）</li>
 				<li>・おでことほっぺたに電極をつける際、少し化粧を落とす必要がありますので、気になる方は化粧道具を持ってきて下さい。</li>
+				</ul>
+		</section>
+-->
 
+
+			<!-- fNIRS -->
+			<!--
+		<section class="mb-5">
+			<h2 id="NIRS" class="text-2xl font-bold mb-4 pb-2 section-title">発話実験</h2>
+
+
+				【<strong>内容</strong>】
+				<div class="mb-2">
+				モニターに表示される絵を見て、その絵の状況を口頭で答えてもらう実験です。その際の目の動きと脳活動を計測します。
 				</div>
+
+				【<strong>対象者</strong>】以下の条件をすべて満たす方
+				<ul class="exp-item">
+				<li>・東京都立大学の学生<font size="-1">（１８歳〜３０歳）</font></li>
+				<li>・日本語母語話者</li>
+				<li>・右利き<font size="-1">（矯正で右利きになったひとは参加出来ません）</font></li>
+				<li>・非喫煙者</li>
+				<li>・言語障がい、精神障がい、視覚<font size="-1">（斜視・乱視・眼振があるなど）</font>及び聴覚<font size="-1">（聴覚情報処理障害など）</font>に関する病歴がない</li>
+				<li>・視力／聴力が正常値内である <font size="-1">（メガネ・ソフトレンズのコンタクトは大丈夫です。ただしブルーライトカットのメガネやハードレンズのコンタクトの方は参加出来ません）</font></li>
+				</ul>
+
+				【<strong>所要時間</strong>】
+				<div class="mb-2">
+					２時間
+				</div>
+
+				【<strong>謝礼</strong>】
+				<ul class="pl-0 mb-2">
+					<li>ＱＵＯカードペイ ２０００円分</li>
+					<font size="-1">※<a href="https://www.quocard.com/pay/use/">ＱＵＯカードペイ</a>はスマホで使える電子マネー（ＱＲコード）です。コンビニ・カフェ・書店などで現金の代わりに使用できます。実験終了後の画面に表示される指示に従って手続きを行ってください。なるべく１ヶ月以内にお支払いしますが事務手続きの都合上、遅れることもありますので予めご了承ください）</font>
+				</ul>
+
+				【<strong>場所</strong>】
+				<ul class="pl-0 mb-2">
+				南大沢キャンパス５号館２階２３５室（言語科学脳波計測室）
+				</ul>
+
+				【<strong>応募方法</strong>】
+				<ul class="pl-0 mb-2">以下の応募フォームからご応募ください。後日、実験担当者からご連絡をいたします。<br>
+					<a href="https://forms.gle/3CogLadqa5yjgXWX7" target="_blank">https://forms.gle/3CogLadqa5yjgXWX7</a>
+				</ul>
+	
+		
+				<ul class="exp-item">
+					<li id="day">ご希望の日時は、以下の中からお選び下さい（随時更新）：</li>
+					<li>4/4 10:00-, 14:00-, 16:00-</li>
+					<li>4/4 10:00-, 14:00-, 16:00-</li>	
+				</ul>
+				
+				<div class="mb-2">
+				＊参加を希望される方は、応募前に、下記の【<a href="#ethicsNIRS"><strong>実験について</strong></a>】【<a href="#noteNIRS"><strong>参加おける注意点</strong></a>】を必ずご覧下さい。
+				</div>
+
+				<font size ="4" id="ethicsNIRS">【<strong>実験について</strong>】</font>
+				<ul class="exp-item">
+				<li>・実験は、東京都立大学の倫理委員会の承認を得て、学術的な目的で行われます。</li>
+				<li>・本実験で用いる計測装置は、<u>非侵襲的<font size="-1">（身体に有害な影響を及ぼさない）</font>であり安全性が確認されています</u>。実験終了後、洗髪の必要がない実験です。</li>
+				<li>・実験で得られた成果は学会や論文で発表することがありますが、その際、<u>個人情報を公開することはありません</u>。また、本実験で得た個人情報は、外部に漏洩しないように厳密に管理され、再調査の必要が生じたときの連絡以外の目的には使用されません。</li>
+				<li>・<u>実験への協力は、参加者の意志によって行われます</u>。実験中であっても、中断したい場合や、自分の実験結果を使用されたくないと思った場合は、その意思が尊重されます。その場合、実験参加者に何らかの不利益を被ることはありません。</li>
+				<li>・実験参加者が、<u>実験に対して非協力的なため実験の継続が困難になった場合、実験者が実験を中止することがあります</u>。</li>
+				<li>・<u>実験への参加は、1回の募集につき、1回までです</u>。また、実験は1人ずつ行いますので、複数人で同じ時間帯に応募することはできません。</li>
+				<li>・応募後は、なるべく<u>キャンセルしないようにお願いします</u>。</li><p>
+				</ul>
+
+				<font size ="4" id="noteNIRS">【<strong>参加における注意点</strong>】</font>
+				<ul class="exp-item">
+				<li>・実験当日は、<font color="red"><u>印鑑</u></font>を必ず持ってきて下さい。</li>
+				<li>・実験前日はよく睡眠を取り、<u>睡眠不足にならないように気をつけて下さい</u>。</li>
+				<li>・実験当日は、<u>汗をかかないように気をつけて下さい</u>。</li>
+				<li>・整髪料（ワックス・ジェルなど）やピアスは付けないようにお願いします。ピアスは実験室に来てから外して頂いても大丈夫です。</li></p>
+				</ul>
+		</section>					
 -->
 
+			<h2 id="pool" class="text-2xl font-bold mb-4 pb-2 section-title">実験参加者プールについて</h2>
+			<div class="mb-2">
+				東京都立大学・言語科学教室では、ひとが言葉を理解したり、話したりする仕組みを研究するためにアンケート調査・行動実験・脳機能計測実験を行っています。
+				参加者を募集する際、メールを受け取りたい方は、以下の注意事項をご覧の上、<a href="https://forms.gle/YMrSfNvwi9757wBi6" target="_blank">応募フォーム</a>からお申し込み下さい。ご協力よろしくお願い致します。
+				※ この応募フォームは、実験への参加申込みではなく、<b>メーリングリストの申し込み</b>です。<p></p>
+			</div>
 
-<!-- NIRS
-					<p><h1><font size="5", color="black">実験参加者の募集</font></h1></p>
-
-							<h2 id="NIRS"><font size="5"><strong>発話実験</strong></font></h2>
-
-							<li>【<strong>内容</strong>】モニターに表示される絵を見て、その絵の状況を口頭で答えてもらう実験です。その際の目の動きと脳活動を計測します。</li>
-
-							<li>【<strong>対象者</strong>】以下の条件をすべて満たす方
-							<li>・東京都立大学の学生<font size="-1">（１８歳〜３０歳）</font></li>
-							<li>・日本語母語話者</li>
-							<li>・右利き<font size="-1">（矯正で右利きになったひとは参加出来ません）</font></li>
-							<li>・非喫煙者</li>
-							<li>・言語障がい<font size="-1">（吃音・ディスレクシア等）</font>、精神障がい<font size="-1">（てんかん・統合失調症など）</font>、視覚<font size="-1">（斜視・乱視・眼振があるなど）</font>及び聴覚<font size="-1">（聴覚情報処理障害など）</font>に関する病歴がない</li>
-							<li>・視力／聴力が正常値内である <font size="-1">（メガネ・ソフトレンズのコンタクトは大丈夫です。ただしブルーライトカットのメガネやハードレンズのコンタクトの方は参加出来ません）</font></li>
-
-							<li>【<strong>所要時間</strong>】２時間 </li>
-							<li>【<strong>謝礼</strong>】<a href="https://www.quocard.com/pay/use/">ＱＵＯカードペイ</a>２,５００円分<font size="-1">（謝金の支払いは当日ではなく後日になります）</font></li>
-							<li>【<strong>場所</strong>】南大沢キャンパス５号館２階２３５室（言語科学脳波計測室）</li>
-
-							<li>【<strong>応募方法</strong>】<a href="https://forms.gle/ErJ3BCTVpe2L7rss6/" target="_blank">応募フォーム</a>からご応募下さい。後日、実験担当者から日程のご連絡を致します。</li>
-							<li>＊参加を希望される方は、応募前に、下記の【<a href="#ethics"><strong>実験について</strong></a>】【<a href="#note"><strong>参加おける注意点</strong></a>】を必ずご覧下さい。</li></p>
-
-							<li id="day">ご希望の日時は、以下の中からお選び下さい（随時更新）：</li>
-							<li>2/16（木）13:00~</li>
-
-							<p></p>
-							<div style="text-indent: -1em;text-align: justify;">
-							<li><font size ="4" id="ethics">【<strong>実験について</strong>】</font></li>
-							<li>・実験は、東京都立大学の倫理委員会の承認を得て、学術的な目的で行われます。</li>
-							<li>・本実験で用いる計測装置は、<u>非侵襲的<font size="-1">（身体に有害な影響を及ぼさない）</font>であり安全性が確認されています</u>。実験終了後、洗髪の必要がない実験です。</li>
-							<li>・実験で得られた成果は学会や論文で発表することがありますが、その際、<u>個人情報を公開することはありません</u>。また、本実験で得た個人情報は、外部に漏洩しないように厳密に管理され、再調査の必要が生じたときの連絡以外の目的には使用されません。</li>
-							<li>・<u>実験への協力は、参加者の意志によって行われます</u>。実験中であっても、中断したい場合や、自分の実験結果を使用されたくないと思った場合は、その意思が尊重されます。その場合、実験参加者に何らかの不利益を被ることはありません。</li>
-							<li>・実験参加者が、<u>実験に対して非協力的なため実験の継続が困難になった場合、実験者が実験を中止することがあります</u>。</li>
-							<li>・<u>実験への参加は、1回の募集につき、1回までです</u>。また、実験は1人ずつ行いますので、複数人で同じ時間帯に応募することはできません。</li>
-							<li>・応募後は、なるべく<u>キャンセルしないようにお願いします</u>。</li><p>
-
-							<li><font size ="4" id="note">【<strong>参加における注意点</strong>】</font></li>
-							<li>・実験当日は、<font color="red"><u>印鑑</u></font>を必ず持ってきて下さい。</li>
-							<li>・実験前日はよく睡眠を取り、<u>睡眠不足にならないように気をつけて下さい</u>。</li>
-							<li>・実験当日は、<u>汗をかかないように気をつけて下さい</u>。</li>
-							<li>・整髪料（ワックス・ジェルなど）やピアスは付けないようにお願いします。ピアスは実験室に来てから外して頂いても大丈夫です。</li></p>
-							</div>
--->
-
-
-					<h2 id="pool" lang="ja" charset="euc-jp"><font size="4">〈<strong>実験参加者プールについて</strong>〉</h2> 
-					※ 下記の応募フォームは、実験への参加申込みではなく、<b>メーリングリストの申し込み</b>です。<p></p>
-
-					東京都立大学・言語科学教室では、ひとが言葉を理解したり、話したりする仕組みを研究するためにアンケート調査・行動実験・脳機能計測実験を行っています。
-					参加者を募集する際、メールを受け取りたい方は、以下の注意事項をご覧の上、<a href="https://forms.gle/YMrSfNvwi9757wBi6" target="_blank">応募フォーム</a>からお申し込み下さい。ご協力よろしくお願い致します。
-
-					<p></p>
-
-
-					<div style="margin-left: 1em; text-indent: -1em;text-align: justify;">
+			<div class="mb-2">
+				<ul class="pl-0 mb-2">
 					<li>・「実験参加者プール」に登録しても、実験に参加する義務は生じません。今後配信される案内メールを読み、その都度、参加するかどうかを決めることができます。実験の内容（特に脳波実験）によって応募条件が異なります（年齢・利き手など）。</li>
 					<li>・実験の案内は不定期に行われます。実験担当者およびスケジュールもその都度異なります。</li>
 					<li>・「実験参加者プール」登録の取り消しは、いつでもできます。</li>
 					<li>・登録する個人情報は、実験関連のメールをお送りする目的以外には使用しません。</li>
-					<li>・すべての実験は、倫理委員会の承認を得て行われます。どの実験も非侵襲的で、体に有害な影響は有りません。</li></p>
-					</div>
-		</ul>
+					<li>・すべての実験は、倫理委員会の承認を得て行われます。どの実験も非侵襲的で、体に有害な影響は有りません。</li>
+				</ul>
+			</div>
 
-					<h2 id="pool" lang="ja" charset="euc-jp"><font size="4">〈<strong>同意撤回書について</strong>〉</font></h2>
-
-					本研究室で実施している研究への参加は、自由意思に基づくものであり、強制的なものではありません。研究への参加に同意された後であっても、研究成果が公開されるまでの間は、それを撤回することができます。実験終了後、研究への参加の同意を撤回したい場合は、研究代表者に「実験同意撤回書」を提出して下さい。撤回によって不利益が生じることはありません。
-					<p>
-					<a href="./docs/同意撤回書.pdf">同意撤回書をダウンロード</a>
-					</p>
-<!--
-						<h2 id="campusmap" lang="ja" charset="euc-jp"><font size="4">【<strong>南大沢キャンパス キャンパスマップ</strong>】</font></h2>
-						赤枠の場所が実験室がある５号館です。<br>
-						<img src="./images/CampusMap.jpg" border="0" width="800" height="500" align="center">
+			<h2 id="consent" class="text-2xl font-bold mb-4 pb-2 section-title">同意撤回書について</h2>
+			<div class="mb-2">
+				本研究室で実施している研究への参加は、自由意思に基づくものであり、強制的なものではありません。研究への参加に同意された後であっても、研究成果が公開されるまでの間は、それを撤回することができます。実験終了後、研究への参加の同意を撤回したい場合は、研究代表者に「実験同意撤回書」を提出して下さい。撤回によって不利益が生じることはありません。
+				<br>
+				<a href="./docs/同意撤回書.pdf">同意撤回書をダウンロード</a>
+			</div>
+			<!--
+				<h2 id="campusmap" lang="ja" charset="euc-jp"><font size="4">【<strong>南大沢キャンパス キャンパスマップ</strong>】</font></h2>
+				赤枠の場所が実験室がある５号館です。<br>
+				<img src="./images/CampusMap.jpg" border="0" width="800" height="500" align="center">
 -->
 
-<!--
+			<!--
 							<h2 id="ENG"><font size="5"><strong>アンケート調査（英語）</strong></font></h2>
 
 							<li>【<strong>実験対象者</strong>】以下の条件を全て満たすひと：</li>
@@ -639,7 +732,7 @@
 							<li>ご希望の日時は、以下の中からお選び下さい：</li></p>
 -->
 
-<!-- 口座登録
+			<!-- 口座登録
 							<li><b>口座登録の方法</b>：</li>
 							脳波実験室の前にある「口座振込同意書」を記入し、イースト棟1号館2階経理第一係（E-C-204-1）に提出して下さい<br>
 							学生証は、スキャンしたPDFファイル（できればA４サイズ・カラー）したものを矢野にメールで送ってください。<br>
@@ -655,7 +748,7 @@
 							＊４枚目は本人控えなので自分で保管して下さい（学籍番号が有効な限り大学から謝金・給与の支払いを受けるときに使えます）<br>
 -->
 
-<!--
+			<!--
 						<h2 id="map" lang="ja" charset="euc-jp" id="map"><font size="4">脳波実験室の場所：伊都キャンパス イースト棟1号館E-B-632号室</font></h2>
 						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d750.0647018779225!2d130.22619464402675!3d33.59929630607576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541e96aa6a3c7f3%3A0x169ee2449689a35b!2z6ISz5rOi5a6f6aiT5a6k!5e0!3m2!1sja!2sjp!4v1537877918309" width="400" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
 						<p>
@@ -665,10 +758,9 @@
 						</div>
 -->
 
-		</div>
-		</main>
+	</main>
 
-		<!-- Sidebar
+	<!-- Sidebar
 			<div id="sidebar">
 					<nav id="nav">
 						<ul>
@@ -688,60 +780,61 @@
 			</div>
 			-->
 
-    <!-- JavaScript -->
-    <script>
-        // モバイルメニューの動作
-        document.addEventListener('DOMContentLoaded', function() {
-            // モバイルメニューの動作
-            document.getElementById('mobile-menu-button').addEventListener('click', function() {
-                const menu = document.getElementById('mobile-menu');
-                menu.classList.toggle('hidden');
-            });
-            
-            // ページ内リンクのスムーススクロール
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        e.preventDefault();
-                        
-                        // モバイルヘッダーの高さを考慮したスクロール位置の調整
-                        const headerHeight = document.querySelector('header') ? document.querySelector('header').offsetHeight : 0;
-                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-                        
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                        
-                        // モバイルメニューを閉じる
-                        const mobileMenu = document.getElementById('mobile-menu');
-                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden');
-                        }
-                    }
-                });
-            });
-        });
-    </script>
-	
-			<!-- Scripts 
+	<!-- JavaScript -->
+	<script>
+		// モバイルメニューの動作
+		document.addEventListener('DOMContentLoaded', function () {
+			// モバイルメニューの動作
+			document.getElementById('mobile-menu-button').addEventListener('click', function () {
+				const menu = document.getElementById('mobile-menu');
+				menu.classList.toggle('hidden');
+			});
+
+			// ページ内リンクのスムーススクロール
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					const targetId = this.getAttribute('href');
+					if (targetId === '#') return;
+
+					const targetElement = document.querySelector(targetId);
+					if (targetElement) {
+						e.preventDefault();
+
+						// モバイルヘッダーの高さを考慮したスクロール位置の調整
+						const headerHeight = document.querySelector('header') ? document.querySelector('header').offsetHeight : 0;
+						const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+
+						window.scrollTo({
+							top: targetPosition,
+							behavior: 'smooth'
+						});
+
+						// モバイルメニューを閉じる
+						const mobileMenu = document.getElementById('mobile-menu');
+						if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+							mobileMenu.classList.add('hidden');
+						}
+					}
+				});
+			});
+		});
+	</script>
+
+	<!-- Scripts 
 				<script src="assets/js/jquery.min.js"></script>
 				<script src="assets/js/skel.min.js"></script>
 				<script src="assets/js/util.js"></script>
 				<script src="assets/js/main.js"></script>
 			-->
-			<!-- Intense Imagesスクリプトの読み込み
+	<!-- Intense Imagesスクリプトの読み込み
 			<script type="text/javascript">
 			   var elements = document.querySelectorAll( '.fullscreen-image' );
 			   Intense( elements );
 			   
 			</script>
 			-->
-			<!-- Intense Imagesスクリプトの読み込み ここまで-->
+	<!-- Intense Imagesスクリプトの読み込み ここまで-->
 
-	</body>
+</body>
+
 </html>
