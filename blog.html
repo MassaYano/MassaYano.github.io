@@ -2,451 +2,453 @@
 <html lang="ja">
 
 <head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-FQ5N1JCY8C"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQ5N1JCY8C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-		gtag('config', 'G-FQ5N1JCY8C');
-	</script>
+    gtag('config', 'G-FQ5N1JCY8C');
+  </script>
 
-	<title>研究メモ</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="assets/css/main.css" />
+  <title>研究メモ</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
 
-	<!--ファビコン パソコン-->
-	<link rel="shortcut icon" href="https://massayano.github.io/favicon.ico" sizes="any" />
-	<!--IE、Edgeでは絶対パスでないとfaviconが表示されない -->
-	<!-- Tailwind CSS -->
-	<script src="https://cdn.tailwindcss.com"></script>
+  <!--ファビコン パソコン-->
+  <link rel="shortcut icon" href="https://massayano.github.io/favicon.ico" sizes="any" />
+  <!--IE、Edgeでは絶対パスでないとfaviconが表示されない -->
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-	<!-- Google Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-	<style>
-		/* カスタムスタイル */
-		:root {
-			--main-bg-color: #e8e8e8;
-			--content-bg-color: #ffffff;
-			--text-color: #232323;
-			--text-color-secondary: #464646;
-			--accent-color: #c94663;
-			--accent-hover-color: #d95673;
-			--border-color: #dddddd;
-			--highlight-color: rgba(201, 70, 99, 0.05);
-			--link-color: #c94663;
-			--sidebar-width: 250px;
-			--content-max-width: 1200px;
-		}
+  <style>
+    /* カスタムスタイル */
+    :root {
+      --main-bg-color: #e8e8e8;
+      --content-bg-color: #ffffff;
+      --text-color: #232323;
+      --text-color-secondary: #464646;
+      --accent-color: #c94663;
+      --accent-hover-color: #d95673;
+      --border-color: #dddddd;
+      --highlight-color: rgba(201, 70, 99, 0.05);
+      --link-color: #c94663;
+      --sidebar-width: 250px;
+      --content-max-width: 1200px;
+    }
 
-		body {
-			font-family: 'Source Sans Pro', 'Noto Sans JP', sans-serif;
-			background-color: var(--main-bg-color);
-			background-image: url("assets/css/images/bg02.png");
-			color: var(--text-color);
-			line-height: 1.75;
-		}
+    body {
+      font-family: 'Source Sans Pro', 'Noto Sans JP', sans-serif;
+      background-color: var(--main-bg-color);
+      background-image: url("assets/css/images/bg02.png");
+      color: var(--text-color);
+      line-height: 1.75;
+    }
 
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			color: var(--text-color);
-			font-weight: 700;
-		}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--text-color);
+      font-weight: 700;
+    }
 
-		a {
-			color: var(--link-color);
-			text-decoration: underline;
-			transition: color 0.2s ease;
-		}
+    a {
+      color: var(--link-color);
+      text-decoration: underline;
+      transition: color 0.2s ease;
+    }
 
-		a:hover {
-			color: var(--accent-hover-color);
-		}
+    a:hover {
+      color: var(--accent-hover-color);
+    }
 
-		a em {
-			text-decoration: underline;
-		}
+    a em {
+      text-decoration: underline;
+    }
 
-		.content-wrapper {
-			background-color: var(--content-bg-color);
-			background-image: url("assets/css/images/bg02.png");
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-			width: 100%;
-			max-width: var(--content-max-width);
-		}
+    .content-wrapper {
+      background-color: var(--content-bg-color);
+      background-image: url("assets/css/images/bg02.png");
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: var(--content-max-width);
+    }
 
-		.sidebar {
-			background-color: var(--content-bg-color);
-			background-image: url("assets/css/images/bg02.png");
-			border-right: 1px solid var(--border-color);
-			width: var(--sidebar-width);
-		}
+    .sidebar {
+      background-color: var(--content-bg-color);
+      background-image: url("assets/css/images/bg02.png");
+      border-right: 1px solid var(--border-color);
+      width: var(--sidebar-width);
+    }
 
-		.nav-link {
-			color: var(--text-color-secondary);
-			position: relative;
-			transition: color 0.3s ease;
-			text-decoration: none;
-		}
+    .nav-link {
+      color: var(--text-color-secondary);
+      position: relative;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
 
-		.nav-link:hover {
-			color: var(--accent-color);
-		}
+    .nav-link:hover {
+      color: var(--accent-color);
+    }
 
-		.nav-link::after {
-			content: '';
-			position: absolute;
-			width: 0;
-			height: 2px;
-			bottom: -2px;
-			left: 0;
-			background-color: var(--accent-color);
-			transition: width 0.3s ease;
-		}
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease;
+    }
 
-		.nav-link:hover::after {
-			width: 100%;
-		}
+    .nav-link:hover::after {
+      width: 100%;
+    }
 
-		.info-box {
-			background-color: rgba(255, 255, 255, 0.5);
-			border: 1px solid var(--border-color);
-			border-radius: 8px;
-		}
+    .info-box {
+      background-color: rgba(255, 255, 255, 0.5);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+    }
 
-		.section-title {
-			border-bottom: 1px solid var(--border-color);
-			position: relative;
-			padding-bottom: 0.5rem;
-		}
+    .section-title {
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
 
-		.section-title::after {
-			content: '';
-			position: absolute;
-			bottom: -1px;
-			left: 0;
-			width: 60px;
-			height: 3px;
-			background-color: var(--accent-color);
-		}
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
 
-		.tag-link {
-			background-color: #f0f0f0;
-			border: 1px solid var(--border-color);
-			color: var(--text-color);
-			transition: all 0.2s ease;
-			text-decoration: none;
-			display: inline-flex;
-			align-items: center;
-			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-		}
+    .tag-link {
+      background-color: #f0f0f0;
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
 
-		.tag-link:hover {
-			background-color: var(--accent-color);
-			color: white;
-			border-color: var(--accent-color);
-			transform: translateY(-1px);
-			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-		}
+    .tag-link:hover {
+      background-color: var(--accent-color);
+      color: white;
+      border-color: var(--accent-color);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-		.pub-item {
-			border-left: 4px solid transparent;
-			transition: all 0.3s ease;
-			padding-left: 1rem;
-			text-indent: -1rem;
-			margin-left: 1rem;
-			padding-top: 0.75rem;
-			padding-bottom: 0.75rem;
-			border-radius: 0 4px 4px 0;
-		}
+    .pub-item {
+      border-left: 4px solid transparent;
+      transition: all 0.3s ease;
+      padding-left: 1rem;
+      text-indent: -1rem;
+      margin-left: 1rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-radius: 0 4px 4px 0;
+    }
 
-		.pub-item p {
-			margin-bottom: 0.75rem;
-			line-height: 1.6;
-			margin-top: 0;
-			text-indent: 0;
-		}
+    .pub-item p {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+      margin-top: 0;
+      text-indent: 0;
+    }
 
-		/* コードブロック用スタイル */
-		.code-container {
-			width: 100%;
-			overflow-x: auto;
-			margin: 1rem 0;
-		}
+    /* コードブロック用スタイル */
+    .code-container {
+      width: 100%;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
 
-		pre {
-			background-color: #f5f5f5;
-			border: 1px solid var(--border-color);
-			border-radius: 4px;
-			padding: 1rem;
-			width: 100%;
-			white-space: pre;
-			overflow-x: auto;
-			word-wrap: normal;
-			margin: 0;
-		}
+    pre {
+      background-color: #f5f5f5;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 1rem;
+      width: 100%;
+      white-space: pre;
+      overflow-x: auto;
+      word-wrap: normal;
+      margin: 0;
+    }
 
-		code {
-			font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-			color: var(--text-color);
-			font-size: 0.9rem;
-			line-height: 1.5;
-		}
+    code {
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+      color: var(--text-color);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
 
 
-		/* Ensure italic text in links has underline */
-		a em,
-		em a {
-			text-decoration: underline;
-		}
+    /* Ensure italic text in links has underline */
+    a em,
+    em a {
+      text-decoration: underline;
+    }
 
-		.list-item {
-			padding-left: 1rem;
-			text-indent: -1rem;
-			margin-left: 1rem;
-			margin-bottom: 0.5rem;
-		}
+    .list-item {
+      padding-left: 1rem;
+      text-indent: -1rem;
+      margin-left: 1rem;
+      margin-bottom: 0.5rem;
+    }
 
-		/* ベースのスタイル */
-		.header-wrapper {
-			position: relative;
-			margin-bottom: 2rem;
-		}
+    /* ベースのスタイル */
+    .header-wrapper {
+      position: relative;
+      margin-bottom: 2rem;
+    }
 
-		.logo-container {
-			display: flex;
-			justify-content: flex-end;
-			gap: 1rem;
-		}
+    .logo-container {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
 
-		/* デスクトップ表示 */
-		@media (min-width: 1240px) {
-			.logo-container {
-				position: absolute;
-				top: 5mm;
-				right: 5mm;
-			}
-		}
+    /* デスクトップ表示 */
+    @media (min-width: 1240px) {
+      .logo-container {
+        position: absolute;
+        top: 5mm;
+        right: 5mm;
+      }
+    }
 
-		@media (max-width: 1239px) and (min-width: 768px) {
-			.mobile-header {
-				background-color: var(--content-bg-color);
-				background-image: url("assets/css/images/bg02.png");
-			}
+    @media (max-width: 1239px) and (min-width: 768px) {
+      .mobile-header {
+        background-color: var(--content-bg-color);
+        background-image: url("assets/css/images/bg02.png");
+      }
 
-			.mobile-menu-item {
-				color: var(--text-color-secondary);
-				text-decoration: none;
-			}
+      .mobile-menu-item {
+        color: var(--text-color-secondary);
+        text-decoration: none;
+      }
 
-			.mobile-menu-item:hover {
-				background-color: var(--accent-color);
-				color: white;
-			}
+      .mobile-menu-item:hover {
+        background-color: var(--accent-color);
+        color: white;
+      }
 
-			/* 親要素のスタイルを変更 */
-			.logo-container {
-				margin-top: 1rem;
-				flex-direction: row;
-				/* 横並びを維持 */
-				justify-content: center;
-				/* 中央寄せにする選択肢もあり */
-			}
+      /* 親要素のスタイルを変更 */
+      .logo-container {
+        margin-top: 1rem;
+        flex-direction: row;
+        /* 横並びを維持 */
+        justify-content: center;
+        /* 中央寄せにする選択肢もあり */
+      }
 
-			.logo-container img {
-				height: 6rem;
-			}
-		}
+      .logo-container img {
+        height: 6rem;
+      }
+    }
 
-		/* モバイル表示 */
-		@media (max-width: 767px) {
-			.logo-container {
-				margin-top: 1rem;
-				flex-direction: row;
-				/* 横並びを維持 */
-				justify-content: center;
-				/* 中央寄せにする選択肢もあり */
-			}
+    /* モバイル表示 */
+    @media (max-width: 767px) {
+      .logo-container {
+        margin-top: 1rem;
+        flex-direction: row;
+        /* 横並びを維持 */
+        justify-content: center;
+        /* 中央寄せにする選択肢もあり */
+      }
 
-			.logo-container img {
-				height: 4rem;
-				/* さらに小さく */
-			}
-		}
-	</style>
+      .logo-container img {
+        height: 4rem;
+        /* さらに小さく */
+      }
+    }
+  </style>
 </head>
 
 <body class="min-h-screen flex flex-col lg:flex-row">
-	<!-- ヘッダー（モバイル用） -->
-	<header class="lg:hidden mobile-header fixed w-full z-10 p-4 shadow-md">
-		<div class="flex justify-between items-center">
-			<h1 class="text-xl font-bold">Masataka Yano, PhD</h1>
-			<button id="mobile-menu-button">
-				<i class="fas fa-bars text-xl"></i>
-			</button>
-		</div>
-		<nav id="mobile-menu" class="hidden mt-4">
-			<ul class="space-y-2">
-				<li><a href="./index.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-home mr-2 text-gray-500"></i>HOME</a></li>
-				<li><a href="#Articles" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-file-alt mr-2 text-indigo-500"></i>Articles</a></li>
-				<li><a href="#OralPresentations" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-microphone-alt mr-2 text-indigo-500"></i>Oral Presentations</a></li>
-				<li><a href="#PosterPresentations" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-chalkboard mr-2 text-indigo-500"></i>Poster Presentations</a></li>
-				<li><a href="https://massayano.github.io/TMUPsycholing.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-comments mr-2 text-purple-500"></i>心理言語学ラボ</a></li>
-				<li><a href="https://massayano.github.io/exp.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
-				<li><a href="https://massayano.github.io/workshop.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
-				<li><a href="https://massayano.github.io/blog.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
-			</ul>
-		</nav>
-	</header>
+  <!-- ヘッダー（モバイル用） -->
+  <header class="lg:hidden mobile-header fixed w-full z-10 p-4 shadow-md">
+      <div class="flex justify-between items-center">
+          <h1 class="text-xl font-bold">Masataka Yano, PhD</h1>
+          <button id="mobile-menu-button">
+              <i class="fas fa-bars text-xl"></i>
+          </button>
+      </div>
+      <nav id="mobile-menu" class="hidden mt-4">
+          <ul class="space-y-2">
+              <li><a href="./index.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-home mr-2 text-gray-500"></i>HOME</a></li>
+              <li><a href="#Articles" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-file-alt mr-2 text-indigo-500"></i>Articles</a></li>
+              <li><a href="#OralPresentations" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-microphone-alt mr-2 text-indigo-500"></i>Oral Presentations</a></li>
+              <li><a href="#PosterPresentations" class="mobile-menu-item block p-2 rounded pl-4"><i class="fas fa-chalkboard mr-2 text-indigo-500"></i>Poster Presentations</a></li>
+              <li><a href="./TMUPsycholing.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-comments mr-2 text-purple-500"></i>心理言語学ラボ</a></li>
+              <li><a href="./exp.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
+              <li><a href="./workshop.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
+              <li><a href="./blog.html" class="mobile-menu-item block p-2 rounded"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
+          </ul>
+      </nav>
+  </header>
 
-	<!-- サイドバー（デスクトップ用） -->
-	<aside class="hidden lg:block sidebar p-6 overflow-y-auto sticky top-0 h-screen">
-		<div class="mb-8">
-			<h2 class="text-2xl font-bold mb-4">Masataka Yano</h2>
-			<span class="block mb-6 text-gray-600">矢野 雅貴</span>
-			<div class="flex justify-start space-x-3 mb-6">
-				<a href="https://scholar.google.com/citations?user=PMN8wPUAAAAJ" title="Google Scholar">
-					<i class="fas fa-graduation-cap text-xl"></i>
-				</a>
-				<a href="https://www.researchgate.net/profile/Masataka_Yano" title="ResearchGate">
-					<i class="fab fa-researchgate text-xl"></i>
-				</a>
-				<a href="http://orcid.org/0000-0003-4465-8456" title="ORCID">
-					<i class="fab fa-orcid text-xl"></i>
-				</a>
-				<a href="mailto:yanomasa@tmu.ac.jp" title="Email">
-					<i class="fas fa-envelope text-xl"></i>
-				</a>
-			</div>
-		</div>
-
-		<nav>
-			<ul class="space-y-2">
-				<li><a href="https://massayano.github.io/index.html" class="nav-link block p-2"><i class="fas fa-home mr-2 text-gray-500"></i>HOME</a></li>
-				<li><a href="#Books" class="nav-link block p-2 pl-4"><i class="fa-solid fa-book-open mr-2 text-indigo-500"></i> Books</a></li>
-				<li><a href="#Articles" class="nav-link block p-2 pl-4"><i class="fas fa-file-alt mr-2 text-indigo-500"></i> Articles</a></li>
-				<li><a href="#OralPresentations" class="nav-link block p-2 pl-4"><i class="fas fa-microphone-alt mr-2 text-indigo-500"></i> Oral Presentations</a></li>
-				<li><a href="#PosterPresentations" class="nav-link block p-2 pl-4"><i class="fas fa-chalkboard mr-2 text-indigo-500"></i> Poster Presentations</a></li>
-				<li><a href="https://massayano.github.io/TMUPsycholing.html" class="nav-link block p-2"><i class="fas fa-comments mr-2 text-purple-500"></i>心理言語学ラボ</a></li>
-				<li><a href="https://massayano.github.io/exp.html" class="nav-link block p-2"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
-				<li><a href="https://massayano.github.io/workshop.html" class="nav-link block p-2"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
-				<li><a href="https://massayano.github.io/blog.html" class="nav-link block p-2"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
-			</ul>
-		</nav>
-	</aside>
-
-
-  <div class="max-w-6xl mx-auto content-wrapper rounded-lg p-6 lg:p-8 relative">
-    <header class="mb-8">
-      <h1 class="text-3xl lg:text-4xl font-bold">目次</h1>
-    </header>
-
-    <ul class="mb-5 space-y-1">
-      <li class="flex items-center">2021/05/23 NBS PresentationでCedrus Response Padを使えるようにする設定の方法 <span class="ml-2"><a href="#PresenationCedrus" class="text-accent-color hover:text-accent-hover-color inline-flex items-center"><i class="fa-solid fa-link"></i></a></span></li>
-      <li class="flex items-center">2019/11/20 Pythonで音声の開始時に音を追加する方法 <span class="ml-2"><a href="#Sound" class="text-accent-color hover:text-accent-hover-color inline-flex items-center"><i class="fa-solid fa-link"></i></a></span></li>
-      <li class="flex items-center">2019/07/07 Arduino Unoで音声のオンセットを検出してトリガ出してみた <span class="ml-2"><a href="#ArduinoUno" class="text-accent-color hover:text-accent-hover-color inline-flex items-center"><i class="fa-solid fa-link"></i></a></span></li>
-      <li class="flex items-center">2018/01/07 100均LEDでレスポンスボックス自作してみた <span class="ml-2"><a href="#RB" class="text-accent-color hover:text-accent-hover-color inline-flex items-center"><i class="fa-solid fa-link"></i></a></span></li>
-      <li class="flex items-center">2017/12/30 学振PDでアメリカの大学に行ってみた <span class="ml-2"><a href="#JSPS" class="text-accent-color hover:text-accent-hover-color inline-flex items-center"><i class="fa-solid fa-link"></i></a></span></li>
-    </ul>
-
-    <section class="mb-10 space-y-4">
-      <h2 id="PresenationCedrus" class="text-2xl font-bold mb-4 pb-2 section-title">NBS PresentationでCedrus Response Padを使えるようにする設定の方法</h2>
-
-      <div class="mb-4">
-        Windows 10にインストールしたNBS Presentationで、Cedrus Response Padを登録しようとしたときにエラーが出たのでその解決方法の備忘録です。
+  <!-- サイドバー（デスクトップ用） -->
+  <aside class="hidden lg:block sidebar p-6 overflow-y-auto sticky top-0 h-screen">
+      <div class="mb-8">
+          <h2 class="text-2xl font-bold mb-4">Masataka Yano</h2>
+          <span class="block mb-6 text-gray-600">矢野 雅貴</span>
+          <div class="flex justify-start space-x-3 mb-6">
+              <a href="https://scholar.google.com/citations?user=PMN8wPUAAAAJ" title="Google Scholar">
+                  <i class="fas fa-graduation-cap text-xl"></i>
+              </a>
+              <a href="https://www.researchgate.net/profile/Masataka_Yano" title="ResearchGate">
+                  <i class="fab fa-researchgate text-xl"></i>
+              </a>
+              <a href="http://orcid.org/0000-0003-4465-8456" title="ORCID">
+                  <i class="fab fa-orcid text-xl"></i>
+              </a>
+              <a href="mailto:yanomasa@tmu.ac.jp" title="Email">
+                  <i class="fas fa-envelope text-xl"></i>
+              </a>
+          </div>
       </div>
       
-      <div class="mb-4">
-        <span class="border border-solid px-2">&nbsp;使用したもの&nbsp;</span>
-        <div class="mt-2">
-          OS: Windows 10 (Pro Workstation用)<br>
-          パソコン：Dell Precision 3640 Tower<br>
-          レスポンスパッド：Cedrus RB-740<br>
-          ソフト：NBS Presentation ver 22.1
+      <nav>
+          <ul class="space-y-2">
+              <li><a href="./index.html" class="nav-link block p-2"><i class="fas fa-home mr-2 text-gray-500"></i>HOME</a></li>
+              <li><a href="#Books" class="nav-link block p-2 pl-4"><i class="fa-solid fa-book-open mr-2 text-indigo-500"></i> Books</a></li>
+              <li><a href="#Articles" class="nav-link block p-2 pl-4"><i class="fas fa-file-alt mr-2 text-indigo-500"></i> Articles</a></li>
+              <li><a href="#OralPresentations" class="nav-link block p-2 pl-4"><i class="fas fa-microphone-alt mr-2 text-indigo-500"></i> Oral Presentations</a></li>
+              <li><a href="#PosterPresentations" class="nav-link block p-2 pl-4"><i class="fas fa-chalkboard mr-2 text-indigo-500"></i> Poster Presentations</a></li>
+              <li><a href="./TMUPsycholing.html" class="nav-link block p-2"><i class="fas fa-comments mr-2 text-purple-500"></i>心理言語学ラボ</a></li>
+              <li><a href="./exp.html" class="nav-link block p-2"><i class="fas fa-users mr-2 text-blue-500"></i>実験参加者の募集</a></li>
+              <li><a href="./workshop.html" class="nav-link block p-2"><i class="fas fa-chalkboard-teacher mr-2 text-green-600"></i>研究会</a></li>
+              <li><a href="./blog.html" class="nav-link block p-2"><i class="fas fa-pen-fancy mr-2 text-yellow-600"></i>研究メモ</a></li>
+          </ul>
+      </nav>
+  </aside>
+
+
+  <!-- メインコンテンツ -->
+  <main class="flex-1 p-4 lg:p-6 mt-16 lg:mt-0 relative">
+    <div class="max-w-6xl mx-auto content-wrapper rounded-lg p-6 lg:p-8 relative">
+      <header class="mb-8">
+        <h1 class="text-3xl lg:text-4xl font-bold">目次</h1>
+      </header>
+
+      <ul class="mb-5 space-y-1">
+        <li class="flex items-center">2021/05/23 NBS PresentationでCedrus Response Padを使えるようにする設定の方法 <span class="ml-2"><a href="#PresenationCedrus" class="text-accent-color hover:text-accent-hover-color inline-flex items-center"><i class="fa-solid fa-link"></i></a></span></li>
+        <li class="flex items-center">2019/11/20 Pythonで音声の開始時に音を追加する方法 <span class="ml-2"><a href="#Sound" class="text-accent-color hover:text-accent-hover-color inline-flex items-center"><i class="fa-solid fa-link"></i></a></span></li>
+        <li class="flex items-center">2019/07/07 Arduino Unoで音声のオンセットを検出してトリガ出してみた <span class="ml-2"><a href="#ArduinoUno" class="text-accent-color hover:text-accent-hover-color inline-flex items-center"><i class="fa-solid fa-link"></i></a></span></li>
+        <li class="flex items-center">2018/01/07 100均LEDでレスポンスボックス自作してみた <span class="ml-2"><a href="#RB" class="text-accent-color hover:text-accent-hover-color inline-flex items-center"><i class="fa-solid fa-link"></i></a></span></li>
+        <li class="flex items-center">2017/12/30 学振PDでアメリカの大学に行ってみた <span class="ml-2"><a href="#JSPS" class="text-accent-color hover:text-accent-hover-color inline-flex items-center"><i class="fa-solid fa-link"></i></a></span></li>
+      </ul>
+
+      <section class="mb-10 space-y-4">
+        <h2 id="PresenationCedrus" class="text-2xl font-bold mb-4 pb-2 section-title">NBS PresentationでCedrus Response Padを使えるようにする設定の方法</h2>
+
+        <div class="mb-4">
+          Windows 10にインストールしたNBS Presentationで、Cedrus Response Padを登録しようとしたときにエラーが出たのでその解決方法の備忘録です。
         </div>
-      </div>
-      
-      <div class="mb-4">
-        <span class="border border-solid px-2">&nbsp;前提&nbsp;</span>
-        <div class="mt-2">
-          レスポンスパッドをUSBケーブルで接続したとき、レスポンスパッドが認識されない場合、
-          <a href="https://cedrus.com/support/rb_series/tn1542_install_rbx40_win.htm" target="_blank" class="text-accent-color hover:text-accent-hover-color">USB Driver for Windows</a>
-          をダウンロード・インストールする必要があります（もしリンクが切れていたらCedrusと検索し、Support > RB-x40 > INSTALLING AN RB SERIES PADの中から選んでください）。
-          認識しているかどうかを知りたいときは、デバイスマネージャー（Windowsマークを右クリックで表示できます）を開き、"NBS"が表示されているかどうかを見ます。表示があれば、認識されています。
+
+        <div class="mb-4">
+          <span class="border border-solid px-2">&nbsp;使用したもの&nbsp;</span>
+          <div class="mt-2">
+            OS: Windows 10 (Pro Workstation用)<br>
+            パソコン：Dell Precision 3640 Tower<br>
+            レスポンスパッド：Cedrus RB-740<br>
+            ソフト：NBS Presentation ver 22.1
+          </div>
         </div>
-      </div>
 
-      <div class="mb-4">
-        <span class="border border-solid px-2">&nbsp;エラーの内容&nbsp;</span>
-        <div class="mt-2">
-          NBS PresentationでCedrus Response Padを使用したい場合、<a href="https://cedrus.com/support/rb_series/tn1543_presentation.htm" target="_blank" class="text-accent-color hover:text-accent-hover-color">
-            Presentation Extension for Cedrus Response Devices</a>をインストールする必要がありますが、
-          Cedrusのサポートページの指示通りに実行すると、"Register Extension"ボタンをクリックした時点で以下のようなエラーが出てしまうことがあるようです。
+        <div class="mb-4">
+          <span class="border border-solid px-2">&nbsp;前提&nbsp;</span>
+          <div class="mt-2">
+            レスポンスパッドをUSBケーブルで接続したとき、レスポンスパッドが認識されない場合、
+            <a href="https://cedrus.com/support/rb_series/tn1542_install_rbx40_win.htm" target="_blank" class="text-accent-color hover:text-accent-hover-color">USB Driver for Windows</a>
+            をダウンロード・インストールする必要があります（もしリンクが切れていたらCedrusと検索し、Support > RB-x40 > INSTALLING AN RB SERIES PADの中から選んでください）。
+            認識しているかどうかを知りたいときは、デバイスマネージャー（Windowsマークを右クリックで表示できます）を開き、"NBS"が表示されているかどうかを見ます。表示があれば、認識されています。
+          </div>
         </div>
-      </div>
 
-      <div class="bg-gray-100 p-4 rounded mb-4">
-        There was an error registering thi sfile with Windows: <br>
-        The file C:\Program Files (x86)\Cedrus XID Response Extension for Presentation\CedrusXidDriver.dll could not be loaded.<br>
-        Windows returned the following error: <br>
-        The specified module could not be found.<br>
-        Please contact the extension provider for help
-      </div>
-
-      <div class="mb-4">
-        "Don't register server with Windows"を選ぶと、"Extension Cedrus XID successfully registered"と表示されるのですが、"Re-enumurate devices"をしたときにエラーが出て進めません。
-      </div>
-
-      <div class="mb-4">
-        <span class="border border-solid px-2">&nbsp;解決方法&nbsp;</span>
-        <div class="mt-2">
-          <a href="https://www.microsoft.com/ja-jp/download/details.aspx?id=26347" target="_blank" class="text-accent-color hover:text-accent-hover-color">Microsoft Visual C++ 2005 Service Pack 1 再頒布可能パッケージ</a>をインストールするとこの問題が解消することがあるようです（何故かはわかりません）。
-          それよりも新しいバージョンも試しましたが、私のパソコンではうまくいきませんでした。
+        <div class="mb-4">
+          <span class="border border-solid px-2">&nbsp;エラーの内容&nbsp;</span>
+          <div class="mt-2">
+            NBS PresentationでCedrus Response Padを使用したい場合、<a href="https://cedrus.com/support/rb_series/tn1543_presentation.htm" target="_blank" class="text-accent-color hover:text-accent-hover-color">
+              Presentation Extension for Cedrus Response Devices</a>をインストールする必要がありますが、
+            Cedrusのサポートページの指示通りに実行すると、"Register Extension"ボタンをクリックした時点で以下のようなエラーが出てしまうことがあるようです。
+          </div>
         </div>
-      </div>
 
-      <div class="mb-4">
-        Presentationのforumsには同様の問題が2件報告されていて、<a href="https://www.neurobs.com/menu_support/menu_forums/view_thread?id=11235&expand_all=0&expand=67338" target="_blank" class="text-accent-color hover:text-accent-hover-color">
-          1件目</a>は"MS Visual C++ redistributable package"をインストールしたらうまく行ったようです。バージョンはわかりません。
-        <a href="https://www.neurobs.com/menu_support/menu_forums/view_thread?id=11375" target="_blank" class="text-accent-color hover:text-accent-hover-color">2件目</a>は古いドライバを消して最新版をインストールしたらうまく行ったようです。
-        新しいパソコンだとそもそも古いドライバはないのでこっちは関係なさそうです。
-      </div>
+        <div class="bg-gray-100 p-4 rounded mb-4">
+          There was an error registering thi sfile with Windows: <br>
+          The file C:\Program Files (x86)\Cedrus XID Response Extension for Presentation\CedrusXidDriver.dll could not be loaded.<br>
+          Windows returned the following error: <br>
+          The specified module could not be found.<br>
+          Please contact the extension provider for help
+        </div>
 
-      <div class="mt-4 italic">
-        [追記] 別のパソコンで試したときはVisual Studio 2012（x86, x64）をインストールしたらうまくいきました。[<a href="https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist" target="_blank" class="text-accent-color hover:text-accent-hover-color">link</a>]
-      </div>
-    </section>
+        <div class="mb-4">
+          "Don't register server with Windows"を選ぶと、"Extension Cedrus XID successfully registered"と表示されるのですが、"Re-enumurate devices"をしたときにエラーが出て進めません。
+        </div>
 
-    <section class="mb-10 space-y-4">
-      <h2 id="Sound" class="text-2xl font-bold mb-4 pb-2 section-title">Pythonで音声の開始時に音を追加する方法</h2>
+        <div class="mb-4">
+          <span class="border border-solid px-2">&nbsp;解決方法&nbsp;</span>
+          <div class="mt-2">
+            <a href="https://www.microsoft.com/ja-jp/download/details.aspx?id=26347" target="_blank" class="text-accent-color hover:text-accent-hover-color">Microsoft Visual C++ 2005 Service Pack 1 再頒布可能パッケージ</a>をインストールするとこの問題が解消することがあるようです（何故かはわかりません）。
+            それよりも新しいバージョンも試しましたが、私のパソコンではうまくいきませんでした。
+          </div>
+        </div>
 
-      <div class="mb-4">
-        <a href="#ArduinoUno" class="text-accent-color hover:text-accent-hover-color">前回</a>、Arduino Unoを使って、脳波実験のときの音声のディレイを検出する方法を紹介しました。<br>
-        音声のディレイを検出するためには、音声の片方（RかL）にクリック音などを入れてArduino Unoに入力するほうが良いです（言語音の場合、母音など開始が検出しにくい場合があるため）。
-      </div>
+        <div class="mb-4">
+          Presentationのforumsには同様の問題が2件報告されていて、<a href="https://www.neurobs.com/menu_support/menu_forums/view_thread?id=11235&expand_all=0&expand=67338" target="_blank" class="text-accent-color hover:text-accent-hover-color">
+            1件目</a>は"MS Visual C++ redistributable package"をインストールしたらうまく行ったようです。バージョンはわかりません。
+          <a href="https://www.neurobs.com/menu_support/menu_forums/view_thread?id=11375" target="_blank" class="text-accent-color hover:text-accent-hover-color">2件目</a>は古いドライバを消して最新版をインストールしたらうまく行ったようです。
+          新しいパソコンだとそもそも古いドライバはないのでこっちは関係なさそうです。
+        </div>
 
-      <div class="mb-4">
-        スクリプトは以下の通りです。input_folderは入力になるフォルダの名前、Sound_NoClick/*.wavは、そのフォルダ内で読み込みたい拡張子、
-        output_folderは、出力先のフォルダ、clickは追加したい音（Arduinoに検出させる音）です。
-        これらを自分のパソコンのフォルダの場所に合わせて変更してください。
-        Arduino Unoに聞かせる音は、<a href="http://www.fon.hum.uva.nl/praat/" class="text-accent-color hover:text-accent-hover-color">Praat</a>で簡単に作ることができます。
-        Pythonのインストール方法がよくわからないひとは、<a href="https://www.anaconda.com/distribution/" class="text-accent-color hover:text-accent-hover-color">アナコンダ</a>をインストールすると良いと思います。
-      </div>
+        <div class="mt-4 italic">
+          [追記] 別のパソコンで試したときはVisual Studio 2012（x86, x64）をインストールしたらうまくいきました。[<a href="https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist" target="_blank" class="text-accent-color hover:text-accent-hover-color">link</a>]
+        </div>
+      </section>
 
-      <div class="code-container mb-4">
-        <pre><code>#!/usr/bin/env python3
+      <section class="mb-10 space-y-4">
+        <h2 id="Sound" class="text-2xl font-bold mb-4 pb-2 section-title">Pythonで音声の開始時に音を追加する方法</h2>
+
+        <div class="mb-4">
+          <a href="#ArduinoUno" class="text-accent-color hover:text-accent-hover-color">前回</a>、Arduino Unoを使って、脳波実験のときの音声のディレイを検出する方法を紹介しました。<br>
+          音声のディレイを検出するためには、音声の片方（RかL）にクリック音などを入れてArduino Unoに入力するほうが良いです（言語音の場合、母音など開始が検出しにくい場合があるため）。
+        </div>
+
+        <div class="mb-4">
+          スクリプトは以下の通りです。input_folderは入力になるフォルダの名前、Sound_NoClick/*.wavは、そのフォルダ内で読み込みたい拡張子、
+          output_folderは、出力先のフォルダ、clickは追加したい音（Arduinoに検出させる音）です。
+          これらを自分のパソコンのフォルダの場所に合わせて変更してください。
+          Arduino Unoに聞かせる音は、<a href="http://www.fon.hum.uva.nl/praat/" class="text-accent-color hover:text-accent-hover-color">Praat</a>で簡単に作ることができます。
+          Pythonのインストール方法がよくわからないひとは、<a href="https://www.anaconda.com/distribution/" class="text-accent-color hover:text-accent-hover-color">アナコンダ</a>をインストールすると良いと思います。
+        </div>
+
+        <div class="code-container mb-4">
+          <pre><code>#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 ## Libraries ##
@@ -475,202 +477,203 @@ for i in range(0,number_files):
     combined = sound1.overlay(sound2)
     combined.export(output_folder/output_file, format='wav')
 </code></pre>
-      </div>
-    </section>
-
-    <section class="mb-10 space-y-4">
-      <h2 id="ArduinoUno" class="text-2xl font-bold mb-4 pb-2 section-title">Arduino Unoで音声のオンセットを検出してトリガ出してみた</h2>
-
-      <div class="mb-4">
-        Arduino Unoを使って音声のオンセット（開始時点）を検出して脳波計にトリガを入れる方法を紹介します。<br>
-        この情報がたくさんのひとの役に立つことはないと思いますが、そういう情報こそなかなかネットで見つけにくかったりすると思うので...
-      </div>
-
-      <h3 class="text-lg font-semibold mb-2">なんで音声のオンセットを検出したいのか？</h3>
-      <div class="mb-4">
-        普段、脳波実験で音（文・単語など）を呈示するときNBS Presentationを使っているのですが、
-        Presenationが音を再生するタイミングが、
-        トリガ（National Instruments USB6501経由）を出力するタイミングから少し遅れてしまいます。
-        たぶん他のソフトウェアでもある程度同じようなことが起きると思います。
-        九大の設備だと３０数ミリ秒くらい。脳波実験は、処理のタイミングに関心があることもあるのでこのズレは結構でかいです。
-        なので、音が実際に再生された音を拾ってそのタイミングに（ダミーの）トリガを出しておき、
-        解析時にPresentation側から出ているトリガをそのタイミングに移動させてしまおうということです
-        （トリガのタイミングを変えるのはEEGLABで簡単にできます）。
-        Arudinoを使うのは単に安いということと、使わなくなったときに別の用途で使える汎用性があるからです。
-      </div>
-
-      <div class="my-6 text-center">
-        九大の機器の接続は以下のような感じです
-        <div class="mt-2">
-          <img src="/images/arduino1.jpg" alt="Arduino接続図" class="inline-block w-96 h-auto">
         </div>
-      </div>
+      </section>
 
-      <div class="pl-4 mb-6">
-        <div class="font-bold mb-2">用意するもの：</div>
-        <ul class="space-y-1 list-disc ml-4">
-          <li><a href="https://www.switch-science.com/catalog/789/" class="text-accent-color hover:text-accent-hover-color">Arduino Uno</a>（アマゾンで買えます。たぶん生協とかでも）</li>
-          <li>マイク・音センサー（矢野が買ったのは<a href="https://www.elekit.co.jp/product/SU-1203" class="text-accent-color hover:text-accent-hover-color">これ</a>）</li>
-          <li>パソコン（MacでもWindowsでもOK）</li>
-          <li>はんだ</li>
-          <li>半田ごて</li>
-          <li>ケーブル（<a href="https://www.amazon.co.jp/dp/B06Y48V9DL/ref=cm_sw_r_tw_dp_U_x_UC1iDbX4HX1VW" class="text-accent-color hover:text-accent-hover-color">こんな</a>もの）</li>
-        </ul>
-      </div>
+      <section class="mb-10 space-y-4">
+        <h2 id="ArduinoUno" class="text-2xl font-bold mb-4 pb-2 section-title">Arduino Unoで音声のオンセットを検出してトリガ出してみた</h2>
 
-      <div class="mb-4">
-        さっそく作業に取り掛かります。
-      </div>
+        <div class="mb-4">
+          Arduino Unoを使って音声のオンセット（開始時点）を検出して脳波計にトリガを入れる方法を紹介します。<br>
+          この情報がたくさんのひとの役に立つことはないと思いますが、そういう情報こそなかなかネットで見つけにくかったりすると思うので...
+        </div>
 
-      <div class="mb-4">
-        パソコンにArduinoの<a href="https://www.arduino.cc/en/Main/Software" class="text-accent-color hover:text-accent-hover-color">ソフト</a>をインストールします
-        下のDownload the Arduino IDEのところ。使用しているパソコンのOSにあったものをダウンロードします。
-        寄付したいひとは寄付できますが、Just Downloadでも問題ないです。
-      </div>
+        <h3 class="text-lg font-semibold mb-2">なんで音声のオンセットを検出したいのか？</h3>
+        <div class="mb-4">
+          普段、脳波実験で音（文・単語など）を呈示するときNBS Presentationを使っているのですが、
+          Presenationが音を再生するタイミングが、
+          トリガ（National Instruments USB6501経由）を出力するタイミングから少し遅れてしまいます。
+          たぶん他のソフトウェアでもある程度同じようなことが起きると思います。
+          九大の設備だと３０数ミリ秒くらい。脳波実験は、処理のタイミングに関心があることもあるのでこのズレは結構でかいです。
+          なので、音が実際に再生された音を拾ってそのタイミングに（ダミーの）トリガを出しておき、
+          解析時にPresentation側から出ているトリガをそのタイミングに移動させてしまおうということです
+          （トリガのタイミングを変えるのはEEGLABで簡単にできます）。
+          Arudinoを使うのは単に安いということと、使わなくなったときに別の用途で使える汎用性があるからです。
+        </div>
 
-      <div class="mb-4">
-        USBケーブル（Arduinoキットを買うと付いてくる）でArduinoとパソコンをつなぎます。
-        <a href="https://massayano.github.io/DetectSound.zip" class="text-accent-color hover:text-accent-hover-color">ファイル</a>をダウンロードし、Arduino Appで開きます（ファイル > 開く > ファイルを選択）。
-        「マイコンボードに書き込む（→）」をクリックし、Arduinoにスクリプトを書き込みます。
-        この時点でうまくいかない場合、Arduinoが認識されていない可能性があるので、
-        ツール > シリアルポートでArduinoがささっているUSBポートが正しく選択されているか確認してください。
-      </div>
+        <div class="my-6 text-center">
+          九大の機器の接続は以下のような感じです
+          <div class="mt-2">
+            <img src="/images/arduino1.jpg" alt="Arduino接続図" class="inline-block w-96 h-auto">
+          </div>
+        </div>
 
-      <div class="mb-4">
-        Arduinoとマイクを接続します（載せるだけ）
-      </div>
+        <div class="pl-4 mb-6">
+          <div class="font-bold mb-2">用意するもの：</div>
+          <ul class="space-y-1 list-disc ml-4">
+            <li><a href="https://www.switch-science.com/catalog/789/" class="text-accent-color hover:text-accent-hover-color">Arduino Uno</a>（アマゾンで買えます。たぶん生協とかでも）</li>
+            <li>マイク・音センサー（矢野が買ったのは<a href="https://www.elekit.co.jp/product/SU-1203" class="text-accent-color hover:text-accent-hover-color">これ</a>）</li>
+            <li>パソコン（MacでもWindowsでもOK）</li>
+            <li>はんだ</li>
+            <li>半田ごて</li>
+            <li>ケーブル（<a href="https://www.amazon.co.jp/dp/B06Y48V9DL/ref=cm_sw_r_tw_dp_U_x_UC1iDbX4HX1VW" class="text-accent-color hover:text-accent-hover-color">こんな</a>もの）</li>
+          </ul>
+        </div>
 
-      <div class="my-4 text-center">
-        <img src="/images/arduino2.png" alt="Arduino接続図2" class="inline-block w-64 h-auto">
-      </div>
+        <div class="mb-4">
+          さっそく作業に取り掛かります。
+        </div>
 
-      <div class="mb-4">
-        ArduinoのA4とGNDにケーブル（オス側）を指します。
-        ケーブルのもう一方は、脳波計のトリガ入力のピンにはんだ付けします。
-        九大の脳波計だとD-sub25ピンの内、８ピンまで使っているので（National Instrumentsから来るトリガ）、９ピン目を使用しました。
-        ＊何番まで使えるかは脳波計に依存します。所有してる脳波計のピン配置を確認してください（取扱説明書にも書いてありますが、わからなければメーカーか販売代理業者などに問い合わせすると教えてくれます）
-      </div>
+        <div class="mb-4">
+          パソコンにArduinoの<a href="https://www.arduino.cc/en/Main/Software" class="text-accent-color hover:text-accent-hover-color">ソフト</a>をインストールします
+          下のDownload the Arduino IDEのところ。使用しているパソコンのOSにあったものをダウンロードします。
+          寄付したいひとは寄付できますが、Just Downloadでも問題ないです。
+        </div>
 
-      <div class="mb-4">
-        音声を流してみて、トリガが出ているか確認すれば作業は終了です。
-        Arduinoの音センサーに直接イヤフォンなどをテープなどで止めると検出しやすいです。
-      </div>
+        <div class="mb-4">
+          USBケーブル（Arduinoキットを買うと付いてくる）でArduinoとパソコンをつなぎます。
+          <a href="https://massayano.github.io/DetectSound.zip" class="text-accent-color hover:text-accent-hover-color">ファイル</a>をダウンロードし、Arduino Appで開きます（ファイル > 開く > ファイルを選択）。
+          「マイコンボードに書き込む（→）」をクリックし、Arduinoにスクリプトを書き込みます。
+          この時点でうまくいかない場合、Arduinoが認識されていない可能性があるので、
+          ツール > シリアルポートでArduinoがささっているUSBポートが正しく選択されているか確認してください。
+        </div>
 
-      <div class="mb-4">
-        EEGLABで脳波解析をしている場合、データを読み込んだあとにMATLABのCommand WindowにEEG.event(1).latencyと入力することで、
-        トリガの時間にアクセスできるので、Arduinoが出したトリガのタイミングに、その他（=NIから出ているトリガなど）のタイミングをあわせるようなスクリプトを書くと良いです。
-      </div>
+        <div class="mb-4">
+          Arduinoとマイクを接続します（載せるだけ）
+        </div>
 
-      <h3 class="text-lg font-semibold mb-2">余談：困った話</h3>
-      <div class="mb-4">
-        言語音を使う場合、音声の開始が弱い（母音とか）ことがあって、Arduinoが正確にオンセットを検出できないという懸念があったので、
-        再生する音声の左側にクリック音（オンセットがはっきりしているもの）、右側に実際に参加者に聞いてもらう音声を入れて、
-        Arduinoには左側から出た音声を聞かせ、参加者には右側から出た音声を聞いてもらうようにしました
-        （ステレオ->モノラルアダプタ（cf. <a href="https://www3.jvckenwood.com" class="text-accent-color hover:text-accent-hover-color">JVC</a>）で音声を左右を分け、右側にイヤフォンをさせば参加者は両耳で同じ音声が聞けます）。
-      </div>
+        <div class="my-4 text-center">
+          <img src="/images/arduino2.png" alt="Arduino接続図2" class="inline-block w-64 h-auto">
+        </div>
 
-      <div class="mb-4">
-        しかし、実験用パソコン（HP EliteDesk 800 G4 TW/CT）でそれを再生してみると、左側でも音声が聞こえ、右側でもクリック音が聞こえるという問題が起こりました
-        （一応、HPサポートセンターに聞いてみましたが、"想定した用途を超えるもの"でそれがソフトウェアの問題なのかハードウェアの問題なのかわからないとのことでした）。
-        どうやら左と右の音声が混線？しているようで、色々とネットで検索してみるとハードウェアの問題ではなくHPもしくはWindows 10で動いているソフトの問題みたいです（「立体音響」など色々設定をいじってもだめだった..）
-      </div>
+        <div class="mb-4">
+          ArduinoのA4とGNDにケーブル（オス側）を指します。
+          ケーブルのもう一方は、脳波計のトリガ入力のピンにはんだ付けします。
+          九大の脳波計だとD-sub25ピンの内、８ピンまで使っているので（National Instrumentsから来るトリガ）、９ピン目を使用しました。
+          ＊何番まで使えるかは脳波計に依存します。所有してる脳波計のピン配置を確認してください（取扱説明書にも書いてありますが、わからなければメーカーか販売代理業者などに問い合わせすると教えてくれます）
+        </div>
 
-      <div class="mb-4">
-        しかし、この問題は<a href="https://www.gigafree.net/media/se/EqualizerAPO.html" class="text-accent-color hover:text-accent-hover-color">Equalizer APO</a>を使えば解決するみたいです。ソフトを開いて、Selected channelsのところでALLを選択します。
-        これで、左右別々に音声が再生されるようになりました :)
-      </div>
-    </section>
+        <div class="mb-4">
+          音声を流してみて、トリガが出ているか確認すれば作業は終了です。
+          Arduinoの音センサーに直接イヤフォンなどをテープなどで止めると検出しやすいです。
+        </div>
 
-    <section class="mb-10 space-y-4">
-      <h2 id="RB" class="text-2xl font-bold mb-4 pb-2 section-title">100均LEDでレスポンスボックス自作してみた</h2>
+        <div class="mb-4">
+          EEGLABで脳波解析をしている場合、データを読み込んだあとにMATLABのCommand WindowにEEG.event(1).latencyと入力することで、
+          トリガの時間にアクセスできるので、Arduinoが出したトリガのタイミングに、その他（=NIから出ているトリガなど）のタイミングをあわせるようなスクリプトを書くと良いです。
+        </div>
 
-      <div class="mb-4">
-        脳波・行動実験などで使用できるレスポンスボックスの自作方法を紹介します。
-      </div>
+        <h3 class="text-lg font-semibold mb-2">余談：困った話</h3>
+        <div class="mb-4">
+          言語音を使う場合、音声の開始が弱い（母音とか）ことがあって、Arduinoが正確にオンセットを検出できないという懸念があったので、
+          再生する音声の左側にクリック音（オンセットがはっきりしているもの）、右側に実際に参加者に聞いてもらう音声を入れて、
+          Arduinoには左側から出た音声を聞かせ、参加者には右側から出た音声を聞いてもらうようにしました
+          （ステレオ->モノラルアダプタ（cf. <a href="https://www3.jvckenwood.com" class="text-accent-color hover:text-accent-hover-color">JVC</a>）で音声を左右を分け、右側にイヤフォンをさせば参加者は両耳で同じ音声が聞けます）。
+        </div>
 
-      <div class="font-bold mb-2">なぜ自作するのか？</div>
-      <div class="mb-4">
-        脳波実験などでは、実験者が操作する刺激呈示用パソコンからVGAケーブル等で別室にあるモニターにつなぎその映像を実験参加者に呈示することが多いと思います。
-        このようなケースでは、実験参加者は、実験刺激を呈示するパソコンのキーボードから離れた位置におり、キーボードを押せないので、<a href="https://cedrus.com/rb_series/" class="text-accent-color hover:text-accent-hover-color">Cedrus製Response Box</a>などを購入してレスポンスを記録することになります。
-        しかし、Cedrus製のレスポンスは高く（RB0740は2017年7月時点で8万円程度 [<a href="http://www.unipos.net/find/product_item.php?id=33" class="text-accent-color hover:text-accent-hover-color">ユニポス</a>]）、若手研究者（特に研究費がない院生）には手が出しにくいです。また、高齢者や子どもなどを対象とする実験では、
-        Cedrus製のレスポンスボックスだとボタンがやや小さく押しにくかったり、タスクに関係ないボタンがあるために参加者が混乱したりするという意見がありました。そこで、実験参加者フレンドリーなレスポンスボックスを安く作る方法を考えました。
-      </div>
+        <div class="mb-4">
+          しかし、実験用パソコン（HP EliteDesk 800 G4 TW/CT）でそれを再生してみると、左側でも音声が聞こえ、右側でもクリック音が聞こえるという問題が起こりました
+          （一応、HPサポートセンターに聞いてみましたが、"想定した用途を超えるもの"でそれがソフトウェアの問題なのかハードウェアの問題なのかわからないとのことでした）。
+          どうやら左と右の音声が混線？しているようで、色々とネットで検索してみるとハードウェアの問題ではなくHPもしくはWindows 10で動いているソフトの問題みたいです（「立体音響」など色々設定をいじってもだめだった..）
+        </div>
 
-      <div class="mb-4">
-        以下で紹介する方法は、ゲームコントローラーに接続さえできればボタンの大きさ・個数は自由に決められます。
-      </div>
+        <div class="mb-4">
+          しかし、この問題は<a href="https://www.gigafree.net/media/se/EqualizerAPO.html" class="text-accent-color hover:text-accent-hover-color">Equalizer APO</a>を使えば解決するみたいです。ソフトを開いて、Selected channelsのところでALLを選択します。
+          これで、左右別々に音声が再生されるようになりました :)
+        </div>
+      </section>
 
-      <div class="pl-4 mb-6">
-        <div class="font-bold mb-2">用意するもの：</div>
-        <ul class="space-y-1 list-disc ml-4">
-          <li>USBコネクタでパソコンに接続できるゲームコントローラー（<a href="https://www.amazon.co.jp/gp/product/B000FO600A/ref=oh_aui_detailpage_o04_s00?ie=UTF8&amp;psc=1" class="text-accent-color hover:text-accent-hover-color">エレコムゲームパッド</a>だと1000円前後、たまに700円くらいになる...）</li>
-          <li>ダイソーLEDライトまたはボタンとして使用したいもの（参考：<a href="https://www.marutsu.co.jp/RatedList.jsp?goodsClassCode1=15&amp;goodsClassCode2=0012&amp;goodsClassCode3=0024" class="text-accent-color hover:text-accent-hover-color">マルツオンライン</a>）</li>
-          <li>はんだ</li>
-          <li>半田ごて</li>
-          <li>プラスドライバー</li>
-          <li>コード</li>
-          <li>ハサミ</li>
-        </ul>
-      </div>
+      <section class="mb-10 space-y-4">
+        <h2 id="RB" class="text-2xl font-bold mb-4 pb-2 section-title">100均LEDでレスポンスボックス自作してみた</h2>
 
-      <div class="mb-4">
-        さっそく作業に取り掛かります。まず、ゲームコントローラーを開いて、以下のような状態にします。
-      </div>
+        <div class="mb-4">
+          脳波・行動実験などで使用できるレスポンスボックスの自作方法を紹介します。
+        </div>
 
-      <div class="flex flex-wrap justify-center gap-4 mb-4">
-        <img src="/images/RB1.jpg" alt="レスポンスボックス1" class="w-80 h-auto">
-        <img src="/images/RB2.jpg" alt="レスポンスボックス2" class="w-80 h-auto">
-      </div>
+        <div class="font-bold mb-2">なぜ自作するのか？</div>
+        <div class="mb-4">
+          脳波実験などでは、実験者が操作する刺激呈示用パソコンからVGAケーブル等で別室にあるモニターにつなぎその映像を実験参加者に呈示することが多いと思います。
+          このようなケースでは、実験参加者は、実験刺激を呈示するパソコンのキーボードから離れた位置におり、キーボードを押せないので、<a href="https://cedrus.com/rb_series/" class="text-accent-color hover:text-accent-hover-color">Cedrus製Response Box</a>などを購入してレスポンスを記録することになります。
+          しかし、Cedrus製のレスポンスは高く（RB0740は2017年7月時点で8万円程度 [<a href="http://www.unipos.net/find/product_item.php?id=33" class="text-accent-color hover:text-accent-hover-color">ユニポス</a>]）、若手研究者（特に研究費がない院生）には手が出しにくいです。また、高齢者や子どもなどを対象とする実験では、
+          Cedrus製のレスポンスボックスだとボタンがやや小さく押しにくかったり、タスクに関係ないボタンがあるために参加者が混乱したりするという意見がありました。そこで、実験参加者フレンドリーなレスポンスボックスを安く作る方法を考えました。
+        </div>
 
-      <div class="mb-4">
-        このゲームコントローラーでは数字がついているところが使える場所です。右４つに１、２、３、４、真ん中に９、１０と小さく書いてあります。それ以外の番号は上側についている４つのボタンです。今回は右４つと１０番を使用しました。
-      </div>
+        <div class="mb-4">
+          以下で紹介する方法は、ゲームコントローラーに接続さえできればボタンの大きさ・個数は自由に決められます。
+        </div>
 
-      <div class="mb-4">
-        コードを２本準備し、丸い部分の片側に一本ずつはんだ付けします。この時、はんだが、反対側までつかないように気をつけて下さい。
-      </div>
+        <div class="pl-4 mb-6">
+          <div class="font-bold mb-2">用意するもの：</div>
+          <ul class="space-y-1 list-disc ml-4">
+            <li>USBコネクタでパソコンに接続できるゲームコントローラー（<a href="https://www.amazon.co.jp/gp/product/B000FO600A/ref=oh_aui_detailpage_o04_s00?ie=UTF8&amp;psc=1" class="text-accent-color hover:text-accent-hover-color">エレコムゲームパッド</a>だと1000円前後、たまに700円くらいになる...）</li>
+            <li>ダイソーLEDライトまたはボタンとして使用したいもの（参考：<a href="https://www.marutsu.co.jp/RatedList.jsp?goodsClassCode1=15&amp;goodsClassCode2=0012&amp;goodsClassCode3=0024" class="text-accent-color hover:text-accent-hover-color">マルツオンライン</a>）</li>
+            <li>はんだ</li>
+            <li>半田ごて</li>
+            <li>プラスドライバー</li>
+            <li>コード</li>
+            <li>ハサミ</li>
+          </ul>
+        </div>
 
-      <div class="flex justify-center mb-4">
-        <img src="/images/RB3.jpg" alt="レスポンスボックス3" class="w-64 h-auto">
-      </div>
+        <div class="mb-4">
+          さっそく作業に取り掛かります。まず、ゲームコントローラーを開いて、以下のような状態にします。
+        </div>
 
-      <div class="mb-4">
-        これでコントロラー側の準備は終わりです。
-      </div>
+        <div class="flex flex-wrap justify-center gap-4 mb-4">
+          <img src="/images/RB1.jpg" alt="レスポンスボックス1" class="w-80 h-auto">
+          <img src="/images/RB2.jpg" alt="レスポンスボックス2" class="w-80 h-auto">
+        </div>
 
-      <div class="mb-4">
-        先ほどはんだ付けをしたコードの反対側をボタンにつけていきます。今回は、ボタンとしてダイソーで購入したLEDライトを使います（高齢者・子どもの実験用に使用するので大きめのものを使用）。LEDライトのカバーをプラスドライバーで外し、スイッチの部分についているコードを切ります。
-      </div>
+        <div class="mb-4">
+          このゲームコントローラーでは数字がついているところが使える場所です。右４つに１、２、３、４、真ん中に９、１０と小さく書いてあります。それ以外の番号は上側についている４つのボタンです。今回は右４つと１０番を使用しました。
+        </div>
 
-      <div class="flex flex-wrap justify-center gap-4 mb-4">
-        <img src="/images/RB4.jpg" alt="レスポンスボックス4" class="w-64 h-auto">
-        <img src="/images/RB5.jpg" alt="レスポンスボックス5" class="w-64 h-auto">
-      </div>
+        <div class="mb-4">
+          コードを２本準備し、丸い部分の片側に一本ずつはんだ付けします。この時、はんだが、反対側までつかないように気をつけて下さい。
+        </div>
 
-      <div class="mb-4">
-        スイッチ部分を取り出します。このスイッチは、押すとオンの状態のままになってしまうので、ボタンとして使用するために留め金を外します。取り外すのは、バネの反対側にある「コ」のような形をしたものです。撮影のために完全に上のカバー部分を外していますが、カバーを外すとバネが取れやすくなるので、カバーを半開きの状態にしてマイナスドライバーでうまく取り出す良いです。
-      </div>
+        <div class="flex justify-center mb-4">
+          <img src="/images/RB3.jpg" alt="レスポンスボックス3" class="w-64 h-auto">
+        </div>
 
-      <div class="flex flex-wrap justify-center gap-4 mb-4">
-        <img src="/images/RB6.jpg" alt="レスポンスボックス6" class="w-64 h-auto">
-        <img src="/images/RB7.jpg" alt="レスポンスボックス7" class="w-96 h-auto">
-      </div>
+        <div class="mb-4">
+          これでコントロラー側の準備は終わりです。
+        </div>
 
-      <div class="mb-4">
-        先ほど片側をコントロラーに付けたコードの反対側をはんだでスイッチに付け、スイッチをLEDライトに戻しカバーを付けます。カバーを付ける際に、コードがじゃまになるので、カバーの下の方に隙間を空けてそこから出すと良いです（これは好み）
-      </div>
+        <div class="mb-4">
+          先ほどはんだ付けをしたコードの反対側をボタンにつけていきます。今回は、ボタンとしてダイソーで購入したLEDライトを使います（高齢者・子どもの実験用に使用するので大きめのものを使用）。LEDライトのカバーをプラスドライバーで外し、スイッチの部分についているコードを切ります。
+        </div>
 
-      <div class="flex justify-center mb-4">
-        <img src="/images/RB8.jpg" alt="レスポンスボックス8" class="w-64 h-auto">
-      </div>
+        <div class="flex flex-wrap justify-center gap-4 mb-4">
+          <img src="/images/RB4.jpg" alt="レスポンスボックス4" class="w-64 h-auto">
+          <img src="/images/RB5.jpg" alt="レスポンスボックス5" class="w-64 h-auto">
+        </div>
 
-      <div class="mb-4">
-        これで完成です。
-      
+        <div class="mb-4">
+          スイッチ部分を取り出します。このスイッチは、押すとオンの状態のままになってしまうので、ボタンとして使用するために留め金を外します。取り外すのは、バネの反対側にある「コ」のような形をしたものです。撮影のために完全に上のカバー部分を外していますが、カバーを外すとバネが取れやすくなるので、カバーを半開きの状態にしてマイナスドライバーでうまく取り出す良いです。
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4 mb-4">
+          <img src="/images/RB6.jpg" alt="レスポンスボックス6" class="w-64 h-auto">
+          <img src="/images/RB7.jpg" alt="レスポンスボックス7" class="w-96 h-auto">
+        </div>
+
+        <div class="mb-4">
+          先ほど片側をコントロラーに付けたコードの反対側をはんだでスイッチに付け、スイッチをLEDライトに戻しカバーを付けます。カバーを付ける際に、コードがじゃまになるので、カバーの下の方に隙間を空けてそこから出すと良いです（これは好み）
+        </div>
+
+        <div class="flex justify-center mb-4">
+          <img src="/images/RB8.jpg" alt="レスポンスボックス8" class="w-64 h-auto">
+        </div>
+
+        <div class="mb-4">
+          これで完成です。
+        </div>
+
         <div class="flex justify-center mb-4">
           <img src="/images/RB9.jpg" alt="レスポンスボックス完成図" class="w-96 h-auto">
         </div>
-  
+
         <div class="mb-4">
           脳波実験などで使用している<a href="https://www.neurobs.com" class="text-accent-color hover:text-accent-hover-color">Presentation（Neurobehavioral Systems）</a>であれば、コントロラーのUSBをパソコンに接続しSettings > Response > Game Pad（たしか笑）> Buttonsで使用するボタンを選択しUse > Testで動作確認ができます。
           動作確認のとき、ボタンのリリースではなく、ボタン押しが反応として記録されていることを確認しておいた方が良いです。
@@ -678,14 +681,14 @@ for i in range(0,number_files):
           あんまりちゃんと確認してないですが（文処理の脳波実験は通常ミリ秒単位での反応時間の正確さは必要ないので）、<a href="https://en.wikipedia.org/wiki/Eriksen_flanker_task" class="text-accent-color hover:text-accent-hover-color">Flanker Task</a>を<a href="http://www.psychopy.org/#" class="text-accent-color hover:text-accent-hover-color">PsychoPy</a>で作成し自分でやってみた限りでは、キーボード vs. Cedrusのレスポンスボックス vs. 自作レスポンスボックス（JoyToKey使用）で、反応時間・反応の記録ミス率に差はありませんでした。
         </div>
       </section>
-  
+
       <section class="mb-10 space-y-4">
         <h2 id="JSPS" class="text-2xl font-bold mb-4 pb-2 section-title">学振PDでアメリカの大学に行ってみた</h2>
-  
+
         <div class="mb-4 text-gray-600 italic">
           受入研究機関・時期などによって異なる部分もありますので参考程度に.
         </div>
-  
+
         <div class="mb-6">
           <div class="font-bold mb-2">学振研究員とは？：</div>
           <div class="mb-4">
@@ -694,7 +697,7 @@ for i in range(0,number_files):
             私が採用されているのは、「国内学振PD」と呼ばれるものです（それとは別に「海外学振」というのもあります）。
           </div>
         </div>
-  
+
         <div class="mb-6">
           <div class="font-bold mb-2">制度の詳細：</div>
           <ul class="space-y-1 list-disc ml-6">
@@ -703,7 +706,7 @@ for i in range(0,number_files):
             <li><a href="https://www.jsps.go.jp/j-ab/ab_sin.html" class="text-accent-color hover:text-accent-hover-color">日本学術振興会海外特別研究員</a></li>
           </ul>
         </div>
-  
+
         <div class="mb-6">
           <div class="font-bold mb-2">アメリカに行くためにしたこと・必要なこと：</div>
           <ul class="space-y-6 pl-6">
@@ -725,7 +728,7 @@ for i in range(0,number_files):
                     学振PDでいくひとはJ1 VISAになるらしく、博士号の取得証明書（英語）（と成績証明書？）が必要みたいです。メリーランド大の規定には「J1 VISAを取るためには少なくとも学部卒以上」と書いてあったので、てっきり博士号の証明書だけを出せば良いと思っていたら、学部卒の証明書も必要でした（大学から郵送してもらうと1〜2週間かかる）
                   </div>
                 </li>
-                
+
                 <li class="relative pl-4">
                   <span class="font-semibold">所得証明書</span>
                   <div class="mt-1">
@@ -818,7 +821,7 @@ for i in range(0,number_files):
             </li>
           </ul>
         </div>
-  
+
         <div class="mt-8 space-y-6">
           <div class="font-bold text-lg">おまけ</div>
           <div class="pl-6">
@@ -833,14 +836,14 @@ for i in range(0,number_files):
               参考：<a href="https://internationalcenter.umich.edu/scholars/j1-scholars/12-and-24-bars" class="text-accent-color hover:text-accent-hover-color">https://internationalcenter.umich.edu/scholars/j1-scholars/12-and-24-bars</a>
             </div>
           </div>
-  
+
           <div class="pl-6">
             <div class="font-semibold">学振DCの場合</div>
             <div class="mt-1">
               私が知る限り、「学振DC」や「学位取得による学振PDへの資格変更（研究奨励金はDCと同じ）」だと、少なくともメリーランド大学では、要求される最低給与額を下回ります。この問題を解消する方法としては、「若手研究者海外挑戦プログラム」に応募する方法があるかと思います。また、聞いた話では、海外での滞在を出張扱いにして科研費から日当を出すことができ、給与+日当の合計額で最低給与額をクリアできる可能性もあるそうです。学振DCでも海外渡航しているひとはいますので、各大学の事務に早めに、受入れ条件を問合せておくことをオススメします。
             </div>
           </div>
-  
+
           <div class="pl-6">
             <div class="font-semibold">渡航時期について</div>
             <div class="mt-1">
@@ -850,6 +853,48 @@ for i in range(0,number_files):
           </div>
         </div>
       </section>
-    </div>
   </main>
-  
+
+      <!-- JavaScript -->
+      <script>
+        // モバイルメニューの動作
+        document.addEventListener('DOMContentLoaded', function() {
+            // モバイルメニューの動作
+            document.getElementById('mobile-menu-button').addEventListener('click', function() {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+            });
+            
+            // ページ内リンクのスムーススクロール
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        
+                        // モバイルヘッダーの高さを考慮したスクロール位置の調整
+                        const headerHeight = document.querySelector('header') ? document.querySelector('header').offsetHeight : 0;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // モバイルメニューを閉じる
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
