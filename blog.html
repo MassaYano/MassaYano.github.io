@@ -456,9 +456,15 @@
             新しいパソコンだとそもそも古いドライバはないのでこっちは関係なさそうです。
           </div>
 
-          <div class="mt-4 italic">
-            [追記] 別のパソコンで試したときはVisual Studio 2012（x86, x64）をインストールしたらうまくいきました。[<a href="https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist" target="_blank" class="text-accent-color hover:text-accent-hover-color">link</a>]
+          <div class="mt-4">
+            【追記1】 別のパソコンで試したときはVisual Studio 2012（x86, x64）をインストールしたらうまくいきました。[<a href="https://learn.microsoft.com/ja-jp/cpp/windows/latest-supported-vc-redist" target="_blank" class="text-accent-color hover:text-accent-hover-color">link</a>]
           </div>
+
+          <div class="mt-4">
+            【追記2】Dependency Walker [<a href="https://www.dependencywalker.com/" target="_blank" class="text-accent-color hover:text-accent-hover-color">link</a>]をインストール → CedrusXID.DLLを読み込む → エラーが出ているDLL（例えばMSVCP100.DLLとMSVCR100.DLL）を見つける → 生成AIに投げるのが早いみたいです。API-MS-WIN-CORE-*.DLLのエラーは関係ないみたいです。
+          </div>
+
+
         </section>
 
         <section class="mb-10 space-y-4">
