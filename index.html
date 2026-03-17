@@ -516,6 +516,41 @@
                 height: 4rem; /* さらに小さく */
         }
         }
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 50;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            font-size: 1.2rem;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        #back-to-top:hover {
+            background-color: var(--accent-hover-color);
+            transform: translateY(-2px);
+        }
+        .book-cover-link {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: inline-block;
+            border-radius: 3px;
+        }
+        .book-cover-link:hover {
+            transform: scale(1.07);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .book-cover-link img {
+            display: block;
+        }
     </style>
 </head>
 
@@ -596,7 +631,7 @@
                 <p class="mt-2 text-gray-600">Associate Professor, Department of Language Sciences, Tokyo Metropolitan University</p>
             </header>
 
-            <section class="mb-5 p-5 rounded-lg info-box">
+            <section class="mb-8 p-5 rounded-lg info-box">
                 <p class="leading-relaxed">
                     I'm an Associate Professor at the Department of Language Sciences, Tokyo Metropolitan University, Japan. Our research team investigates human language processing mechanisms including both language comprehension and production, and its relationship to linguistic knowledge using a variety of experimental methods, such as eye-tracking, EEG, fNIRS, and tES. We welcome collaboration with researchers and students interested in our research. Please feel free to contact me at yanomasa [@] tmu.ac.jp if you would like to know more about our research.
                 </p>
@@ -604,7 +639,7 @@
 
 
             <!-- Research Interests -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="research" class="text-2xl font-bold mb-4 pb-2 section-title">Research Interests</h2>
                 <ul class="pl-1 mb-4">
                     <li class="list-item">Psycholinguistics, Syntax, Semantics, Pragmatics</li>
@@ -626,7 +661,7 @@
             </section>
 
             <!-- Email -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="email" class="text-2xl font-bold mb-4 pb-2 section-title">E-mail</h2>
                 <ul class="pl-1 mb-4">
                 <li class="list-item">yanomasa[@]tmu.ac.jp</li>
@@ -634,12 +669,12 @@
             </section>
 
             <!-- Books -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="Books" class="text-2xl font-bold mb-2 pb-2 section-title">Books</h2>
                 <ul class="space-y-1">
                     <li class="pl-1 py-1 pub-item">
                         <div class="mb-1 indent-0 flex items-start gap-3">
-                            <a href="https://www.9640.jp/book_view/?1029" class="flex-shrink-0 hidden sm:block">
+                            <a href="https://www.9640.jp/book_view/?1029" class="flex-shrink-0 hidden sm:block book-cover-link">
                                 <img src="images/ひとが言葉を理解・産出する仕組み.jpg" alt="ひとが言葉を理解・産出する仕組み 表紙" style="width:60px; height:auto; border-radius:3px; box-shadow:0 1px 4px rgba(0,0,0,0.2);">
                             </a>
                             <div>矢野雅貴（編）・伊藤愛音・大石衡聴・大関洋平・小野創・小泉政利・峰見一輝・門馬将太（著） (2026)<strong>『<a href="https://www.9640.jp/book_view/?1029">ひとが言葉を理解・産出する仕組みー心理言語学 入門</a></strong>』,
@@ -648,7 +683,7 @@
                     </li>
                     <li class="pl-1 py-1 pub-item">
                         <div class="mb-1 indent-0 flex items-start gap-3">
-                            <a href="https://www.9640.jp/book_view/?961" class="flex-shrink-0 hidden sm:block">
+                            <a href="https://www.9640.jp/book_view/?961" class="flex-shrink-0 hidden sm:block book-cover-link">
                                 <img src="images/第二言語研究の思考法.jpg" alt="第二言語研究の思考法 表紙" style="width:60px; height:auto; border-radius:3px; box-shadow:0 1px 4px rgba(0,0,0,0.2);">
                             </a>
                             <div>福田純也・矢野雅貴・田村祐（編著）・木村崇是・峰見一輝（著） (2023) <strong>『<a href="https://www.9640.jp/book_view/?961">第二言語研究の思考法ー認知システムの研究には何が必要か</a>』</strong>,
@@ -659,7 +694,7 @@
             </section>
 
             <!-- Articles + Book Chapters -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="Articles" class="text-2xl font-bold mb-4 pb-2 section-title">Articles + Book Chapters</h2>
                 <ul class="space-y-4">
                     <!-- Jeong2024 -->
@@ -1065,7 +1100,7 @@
             </section>
 
             <!-- Dissertation -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="Dissertation" class="text-2xl font-bold mb-4 pb-2 section-title">Dissertation</h2>
                 <ul>
                     <li  class="pl-1 py-1 pub-item">
@@ -1095,7 +1130,7 @@
             </section>
 
             <!-- Invited Talks -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="InvitedTalks" class="text-2xl font-bold mb-4 pb-2 section-title">Invited Talks</h2>
                 <ul class="space-y-3">
                     <li class="pl-1 py-1 pub-item indent-0">
@@ -1138,7 +1173,7 @@
             </section>
 
             <!-- Oral Presentations -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="OralPresentations" class="text-2xl font-bold mb-4 pb-2 section-title">Oral Presentations</h2>
                 <ul class="space-y-3">
                     <li class="pl-1 py-1 pub-item indent-0">
@@ -1336,7 +1371,7 @@
             </section>
 
             <!-- Poster Presentations -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="PosterPresentations" class="text-2xl font-bold mb-4 pb-2 section-title">Poster Presentations</h2>
                 <ul class="space-y-2">
                     <li class="pl-1 py-1 pub-item indent-0">
@@ -1413,7 +1448,7 @@
             </section>
 
             <!-- Misc -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="Misc" class="text-2xl font-bold mb-4 pb-2 section-title">Misc.</h2>
                 <ul class="space-y-3">
                     <li class="pl-1 py-1 pub-item indent-0">
@@ -1451,7 +1486,7 @@
             </section>
 
             <!-- Tutorial -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="Tutorial" class="text-2xl font-bold mb-4 pb-2 section-title">Tutorial</h2>
                 <ul class="space-y-2">
                     <li class="pl-1 py-1 pub-item indent-0">
@@ -1476,7 +1511,7 @@
             </section>
 
             <!-- Fieldwork -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="Fieldwork" class="text-2xl font-bold mb-4 pb-2 section-title">Fieldwork</h2>
                 <ul class="space-y-2">
                     <li class="pl-4 py-1 pub-item">
@@ -1495,7 +1530,7 @@
             </section>
 
             <!-- Grant -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="Grant" class="text-2xl font-bold mb-4 pb-2 section-title">Grants (PI & Co-I)</h2>
                 <ul class="space-y-3">
                     <li class="pl-1 py-1 pub-item indent-0">
@@ -1574,7 +1609,7 @@
                  </section>
 
                 <!-- Grants (Collaborator) -->
-                <section class="mb-5">
+                <section class="mb-8">
                 <h2 id="GrantsCollaborator" class="text-2xl font-bold mb-4 pb-2 section-title">Grants (Collaborator)</h2>
                 <ul class="space-y-3">
 
@@ -1614,7 +1649,7 @@
             </section>
 
             <!-- Awards -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="Awards" class="text-2xl font-bold mb-4 pb-2 section-title">Awards</h2>
                 <ul class="space-y-3">
                     <li class="pl-1 py-1 pub-item indent-0">
@@ -1644,7 +1679,7 @@
             </section>
 
             <!-- Review -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="Review" class="text-2xl font-bold mb-4 pb-2 section-title">Ad hoc Reviewer</h2>
                 <ul class="space-y-3">
                     <li class="list-item">Language, Cognition, and Neuroscience</li>
@@ -1662,7 +1697,7 @@
             </section>
 
             <!-- Technical Skills -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="TechnicalSkills" class="text-2xl font-bold mb-4 pb-2 section-title">Technical Skills</h2>
                 <ul class="space-y-3">
                     <li class="list-item">MATLAB, R, Python, Excel VBA</li>
@@ -1672,7 +1707,7 @@
             </section>
 
             <!-- Qualifications -->
-            <section class="mb-5">
+            <section class="mb-8">
                 <h2 id="Qualifications" class="text-2xl font-bold mb-4 pb-2 section-title">Qualifications</h2>
                 <ul class="space-y-3">
                     <li class="list-item">高等学校教諭専修免許状 外国語（英語）</li>
@@ -1686,10 +1721,12 @@
 
             <footer class="mt-16 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
                 <p>© 2025 Masataka Yano. All rights reserved.</p>
-                
+
             </footer>
         </div>
     </main>
+
+    <button id="back-to-top" title="トップへ戻る">↑</button>
 
     <!-- JavaScript -->
     <script>
@@ -1728,6 +1765,16 @@
                     }
                 });
             });
+        });
+
+        // Back to top ボタン
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                backToTopBtn.style.display = 'flex';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
         });
     </script>
 </body>
