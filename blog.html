@@ -315,6 +315,29 @@
         /* さらに小さく */
       }
     }
+    #back-to-top {
+      display: none;
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 50;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      font-size: 1.2rem;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+    #back-to-top:hover {
+      background-color: var(--accent-hover-color);
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 
@@ -893,6 +916,8 @@ for i in range(0,number_files):
     </main>
   </div>
 
+  <button id="back-to-top" title="トップへ戻る">↑</button>
+
   <!-- JavaScript -->
   <script>
     // モバイルメニューの動作
@@ -930,6 +955,19 @@ for i in range(0,number_files):
           }
         });
       });
+    });
+
+    // Back to top ボタン
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 400) {
+        backToTopBtn.style.display = 'flex';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+    backToTopBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
