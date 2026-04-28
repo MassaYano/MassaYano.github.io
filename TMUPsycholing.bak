@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>移転しました｜東京都立大学 心理言語学ラボ</title>
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url=https://tmupsycholinguistics.fpark.tmu.ac.jp/">
+  <link rel="canonical" href="https://tmupsycholinguistics.fpark.tmu.ac.jp/">
+  <script>
+    location.replace("https://tmupsycholinguistics.fpark.tmu.ac.jp/");
+  </script>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 4rem auto; padding: 0 1.5rem; line-height: 1.8; color: #2D2D2D; }
+    a { color: #4366B0; }
+  </style>
+</head>
+<body>
+  <h1>サイトが移転しました</h1>
+  <p>東京都立大学 心理言語学ラボのウェブサイトは、以下のURLに移転しました。自動的に転送されない場合は、リンクをクリックしてください。</p>
+  <p><a href="https://tmupsycholinguistics.fpark.tmu.ac.jp/">https://tmupsycholinguistics.fpark.tmu.ac.jp/</a></p>
+</body>
+</html>
