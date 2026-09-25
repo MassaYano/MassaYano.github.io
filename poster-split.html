@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ポスター分割印刷 — 大判PDFをA4/A3で刷る</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F5F2; --panel:#FFFFFF; --ink:#1F2B29; --muted:#5B6964; --line:#D3D9D4;
+  --mat:#2F5E4E; --mat-line:rgba(214,228,120,.28); --mat-line-strong:rgba(214,228,120,.55);
+  --cut:#D6336C; --focus:#2F7FD6;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#161C1B; --panel:#1E2624; --ink:#E6ECE9; --muted:#9AA9A3; --line:#33403C;
+    --mat:#24493D; --cut:#F06292; --focus:#6AAEF5;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#161C1B; --panel:#1E2624; --ink:#E6ECE9; --muted:#9AA9A3; --line:#33403C;
+  --mat:#24493D; --cut:#F06292; --focus:#6AAEF5;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"BIZ UDPGothic","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+  font-size:15px; line-height:1.65;
+}
+header{max-width:1180px; margin:0 auto; padding:28px 20px 8px}
+h1{font-size:1.6rem; line-height:1.3; margin:0 0 6px; font-weight:700; letter-spacing:.01em}
+header p{margin:0; color:var(--muted); max-width:60ch}
+main{
+  max-width:1180px; margin:0 auto; padding:16px 20px 40px;
+  display:grid; grid-template-columns:minmax(300px,380px) 1fr; gap:24px; align-items:start;
+}
+@media (max-width:820px){ main{grid-template-columns:1fr} }
+.panel{background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:18px}
+fieldset{border:0; margin:0 0 18px; padding:0}
+legend{font-weight:700; margin-bottom:8px; padding:0}
+.drop{
+  display:block; border:2px dashed var(--line); border-radius:6px; padding:18px 14px; text-align:center;
+  cursor:pointer; color:var(--muted);
+}
+.drop.has{border-style:solid; color:var(--ink)}
+.drop.over{border-color:var(--cut)}
+.drop input{position:absolute; opacity:0; width:1px; height:1px}
+.drop:focus-within{outline:2px solid var(--focus); outline-offset:2px}
+.seg{display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line); border-radius:6px; overflow:hidden}
+.seg label{display:block; text-align:center; padding:9px 6px; cursor:pointer; font-size:.93rem}
+.seg input{position:absolute; opacity:0}
+.seg label:has(input:checked){background:var(--ink); color:var(--panel)}
+.seg label:has(input:focus-visible){outline:2px solid var(--focus); outline-offset:-3px}
+.row{display:grid; grid-template-columns:1fr 1fr; gap:10px 12px}
+.field label{display:block; font-size:.85rem; color:var(--muted); margin-bottom:3px}
+input[type=number],select{
+  width:100%; font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--line); border-radius:4px; padding:6px 8px;
+}
+input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid var(--focus); outline-offset:1px}
+.check{display:flex; gap:8px; align-items:center; margin:4px 0}
+.hint{font-size:.83rem; color:var(--muted); margin:6px 0 0}
+.hidden{display:none !important}
+button.go{
+  width:100%; font:inherit; font-weight:700; font-size:1rem; padding:12px; border:0; border-radius:6px;
+  background:var(--cut); color:#fff; cursor:pointer;
+}
+button.go:disabled{opacity:.45; cursor:not-allowed}
+.err{color:var(--cut); font-weight:700; margin:8px 0 0}
+
+.mat{
+  background-color:var(--mat);
+  background-image:
+    linear-gradient(var(--mat-line-strong) 1px, transparent 1px),
+    linear-gradient(90deg, var(--mat-line-strong) 1px, transparent 1px),
+    linear-gradient(var(--mat-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--mat-line) 1px, transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px;
+  border-radius:6px; padding:28px; min-height:420px;
+  display:flex; align-items:center; justify-content:center;
+}
+.stage{position:relative; max-width:100%}
+.stage canvas{display:block; background:#fff; box-shadow:0 2px 0 rgba(0,0,0,.25)}
+.stage svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible}
+.empty{color:#E8EFD0; text-align:center}
+.stats{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden; margin-top:14px}
+@media (max-width:520px){ .stats{grid-template-columns:repeat(2,minmax(0,1fr))} }
+.stats div{background:var(--panel); padding:10px 12px}
+.stats dt{font-size:.8rem; color:var(--muted)}
+.stats dd{margin:0; font-size:1.25rem; font-weight:700; font-variant-numeric:tabular-nums}
+.note{font-size:.88rem; color:var(--muted); margin:12px 2px 0; max-width:70ch}
+footer{max-width:1180px; margin:0 auto; padding:0 20px 32px; color:var(--muted); font-size:.83rem}
+</style>
+</head>
+<body>
+<header>
+  <h1>大判ポスターを、コンビニの用紙で刷る</h1>
+  <p>A0 などのポスター PDF を A4／A3／B4 のタイルに分けて 1 つの PDF に保存します。処理はこのブラウザの中だけで行われ、ファイルはどこにも送信されません。</p>
+</header>
+
+<main>
+<form class="panel" id="form" onsubmit="return false">
+  <fieldset>
+    <legend>ポスター PDF</legend>
+    <label class="drop" id="drop">
+      <input type="file" id="file" accept="application/pdf,.pdf">
+      <span id="dropText">クリックして選択、またはここにドロップ</span>
+    </label>
+    <div class="field hidden" id="pageField" style="margin-top:10px">
+      <label for="page">使うページ</label>
+      <input type="number" id="page" min="1" value="1">
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>分け方</legend>
+    <div class="seg" role="radiogroup">
+      <label><input type="radio" name="mode" value="overlap" checked>のりしろを重ねる</label>
+      <label><input type="radio" name="mode" value="shrink">縮小して収める</label>
+    </div>
+    <p class="hint" id="modeHint"></p>
+  </fieldset>
+
+  <fieldset>
+    <legend>用紙</legend>
+    <div class="row">
+      <div class="field"><label for="paper">サイズ</label>
+        <select id="paper"><option>A4</option><option>A3</option><option>B4</option></select></div>
+      <div class="field"><label for="orient">向き</label>
+        <select id="orient"><option value="auto">自動</option><option value="portrait">縦</option><option value="landscape">横</option></select></div>
+      <div class="field"><label for="margin">プリンタ余白（mm）</label>
+        <input type="number" id="margin" min="0" max="30" step="0.5" value="5"></div>
+    </div>
+  </fieldset>
+
+  <fieldset id="overlapSet">
+    <legend>重ね方</legend>
+    <div class="row">
+      <div class="field"><label for="overlap">のりしろ幅（mm）</label>
+        <input type="number" id="overlap" min="0" max="60" step="1" value="10"></div>
+      <div class="field"><label for="scale">倍率（%）</label>
+        <input type="number" id="scale" min="10" max="400" step="1" value="100"></div>
+    </div>
+  </fieldset>
+
+  <fieldset id="shrinkSet" class="hidden">
+    <legend>枚数</legend>
+    <label class="check"><input type="checkbox" id="autoGrid" checked>用紙サイズから自動で決める</label>
+    <div class="row">
+      <div class="field"><label for="cols">横の枚数</label><input type="number" id="cols" min="1" max="20" value="4" disabled></div>
+      <div class="field"><label for="rows">縦の枚数</label><input type="number" id="rows" min="1" max="20" value="4" disabled></div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>貼り合わせの目印</legend>
+    <label class="check"><input type="checkbox" id="marks" checked>四隅にトンボを付ける</label>
+    <label class="check"><input type="checkbox" id="labels" checked>余白にタイル番号を入れる</label>
+    <label class="check"><input type="checkbox" id="overview" checked>1 ページ目に配置図を付ける</label>
+  </fieldset>
+
+  <button class="go" id="go" type="button" disabled>PDF を作成して保存</button>
+  <p class="err" id="err" role="alert"></p>
+</form>
+
+<section aria-label="プレビュー">
+  <div class="mat">
+    <div class="stage" id="stage">
+      <p class="empty" id="empty">PDF を選ぶと、ここに切り分け位置が表示されます。<br>下の数値は A0 縦（841×1189 mm）の場合です。</p>
+    </div>
+  </div>
+  <dl class="stats">
+    <div><dt>用紙枚数</dt><dd id="sCount">–</dd></div>
+    <div><dt>分割</dt><dd id="sGrid">–</dd></div>
+    <div><dt>倍率</dt><dd id="sScale">–</dd></div>
+    <div><dt>仕上がり</dt><dd id="sSize">–</dd></div>
+  </dl>
+  <p class="note">コンビニで印刷するときは、倍率を「等倍（100%）」にし、「用紙に合わせる」などの自動拡大縮小を切ってください。自動で縮められると、タイル同士の寸法が合わなくなります。余白の値は機種によって違うので、はみ出す場合は少し大きくしてください。</p>
+</section>
+</main>
+
+<footer>pdf-lib と PDF.js を使っています。</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+/* ===== core (no DOM) ===== */
+const MM = 72 / 25.4;
+const PAPERS = { A4: [210, 297], A3: [297, 420], B4: [257, 364] };
+
+function computeLayout(src, o) {
+  const m = o.margin * MM;
+  const [a, b] = PAPERS[o.paper].map(v => v * MM);
+  const make = orient => {
+    const pw = orient === 'portrait' ? a : b, ph = orient === 'portrait' ? b : a;
+    const W = pw - 2 * m, H = ph - 2 * m;
+    if (W <= 0 || H <= 0) return { error: '余白が用紙より大きくなっています。' };
+    let cols, rows, s, stepX, stepY;
+    if (o.mode === 'shrink') {
+      cols = o.autoGrid ? Math.max(1, Math.round(src.w / pw)) : o.cols;
+      rows = o.autoGrid ? Math.max(1, Math.round(src.h / ph)) : o.rows;
+      s = Math.min(cols * W / src.w, rows * H / src.h);
+      stepX = W; stepY = H;
+    } else {
+      s = o.scale / 100;
+      const ov = o.overlap * MM;
+      if (ov >= Math.min(W, H)) return { error: 'のりしろ幅が印刷できる範囲より大きくなっています。' };
+      stepX = W - ov; stepY = H - ov;
+      const iw = src.w * s, ih = src.h * s;
+      cols = iw <= W + 1e-6 ? 1 : Math.ceil((iw - W) / stepX - 1e-9) + 1;
+      rows = ih <= H + 1e-6 ? 1 : Math.ceil((ih - H) / stepY - 1e-9) + 1;
+    }
+    const extX = (cols - 1) * stepX + W, extY = (rows - 1) * stepY + H;
+    return { orient, pw, ph, m, W, H, cols, rows, s, stepX, stepY,
+             ox: (extX - src.w * s) / 2, oy: (extY - src.h * s) / 2,
+             extX, extY, count: cols * rows };
+  };
+  if (o.orient !== 'auto') return make(o.orient);
+  const natural = src.w > src.h ? 'landscape' : 'portrait';
+  if (o.mode === 'shrink') return make(natural);
+  const p = make('portrait'), l = make('landscape');
+  if (p.error) return l;
+  if (l.error) return p;
+  if (p.count !== l.count) return p.count < l.count ? p : l;
+  return natural === 'portrait' ? p : l;
+}
+
+function tileName(r, c, rows) {
+  const row = rows <= 26 ? String.fromCharCode(65 + r) : 'R' + (r + 1);
+  return row + (c + 1);
+}
+
+async function buildPdf(PDFLib, bytes, pageIndex, o, L) {
+  const { PDFDocument, StandardFonts, rgb,
+          pushGraphicsState, popGraphicsState, rectangle, clip, endPath } = PDFLib;
+  const srcDoc = await PDFDocument.load(bytes, { ignoreEncryption: true });
+  const out = await PDFDocument.create();
+  const [emb] = await out.embedPdf(srcDoc, [pageIndex]);
+  const font = await out.embedFont(StandardFonts.Helvetica);
+  const srcW = emb.width, srcH = emb.height;
+  const { pw, ph, m, W, H, cols, rows, s, stepX, stepY, ox, oy } = L;
+  const ink = rgb(0, 0, 0), cut = rgb(0.84, 0.2, 0.42), grey = rgb(0.45, 0.45, 0.45);
+  const ov = o.mode === 'overlap' ? o.overlap * MM : 0;
+
+  if (o.overview) {
+    const page = out.addPage([pw, ph]);
+    const pad = 12 * MM, head = 10 * MM;
+    const areaW = pw - 2 * pad, areaH = ph - 2 * pad - head;
+    const k = Math.min(areaW / (L.extX / s), areaH / (L.extY / s));
+    const x0 = pad + (areaW - L.extX / s * k) / 2;
+    const yTop = ph - pad - head;
+    page.drawText(`Layout: ${cols} x ${rows} = ${cols * rows} sheets   scale ${(s * 100).toFixed(1)}%   ` +
+      `finished size ${(srcW * s / MM).toFixed(0)} x ${(srcH * s / MM).toFixed(0)} mm`,
+      { x: pad, y: ph - pad - 4 * MM, size: 9, font, color: ink });
+    page.drawPage(emb, { x: x0 + ox / s * k, y: yTop - (oy / s + srcH) * k, width: srcW * k, height: srcH * k });
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+      const x = x0 + c * stepX / s * k, top = yTop - r * stepY / s * k;
+      const w = W / s * k, h = H / s * k;
+      page.drawRectangle({ x, y: top - h, width: w, height: h, borderColor: cut, borderWidth: 0.8 });
+      const t = tileName(r, c, rows), size = Math.max(6, Math.min(14, w / 5));
+      const tw = font.widthOfTextAtSize(t, size);
+      page.drawRectangle({ x: x + w / 2 - tw / 2 - 2, y: top - h / 2 - size / 2 - 1.5, width: tw + 4, height: size + 3,
+                           color: rgb(1, 1, 1), opacity: 0.85 });
+      page.drawText(t, { x: x + w / 2 - tw / 2, y: top - h / 2 - size * 0.35, size, font, color: cut });
+    }
+  }
+
+  for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+    const page = out.addPage([pw, ph]);
+    page.pushOperators(pushGraphicsState(), rectangle(m, m, W, H), clip(), endPath());
+    page.drawPage(emb, {
+      x: m - c * stepX + ox,
+      y: ph - m - srcH * s + r * stepY - oy,
+      width: srcW * s, height: srcH * s
+    });
+    page.pushOperators(popGraphicsState());
+
+    if (o.marks && m >= 2 * MM) {
+      const gap = 1 * MM, len = Math.min(m - 1.5 * MM, 6 * MM), t = 0.4;
+      const corners = [[m, m], [m + W, m], [m, m + H], [m + W, m + H]];
+      for (const [x, y] of corners) {
+        const dx = x === m ? -1 : 1, dy = y === m ? -1 : 1;
+        page.drawLine({ start: { x: x + dx * gap, y }, end: { x: x + dx * (gap + len), y }, thickness: t, color: ink });
+        page.drawLine({ start: { x, y: y + dy * gap }, end: { x, y: y + dy * (gap + len) }, thickness: t, color: ink });
+      }
+      if (ov > 0) {
+        const tick = Math.min(m - 1.5 * MM, 4 * MM);
+        const vx = [];
+        if (c > 0) vx.push(m + ov);
+        if (c < cols - 1) vx.push(m + W - ov);
+        for (const x of vx) {
+          page.drawLine({ start: { x, y: m - gap }, end: { x, y: m - gap - tick }, thickness: t, color: cut });
+          page.drawLine({ start: { x, y: m + H + gap }, end: { x, y: m + H + gap + tick }, thickness: t, color: cut });
+        }
+        const hy = [];
+        if (r > 0) hy.push(m + H - ov);
+        if (r < rows - 1) hy.push(m + ov);
+        for (const y of hy) {
+          page.drawLine({ start: { x: m - gap, y }, end: { x: m - gap - tick, y }, thickness: t, color: cut });
+          page.drawLine({ start: { x: m + W + gap, y }, end: { x: m + W + gap + tick, y }, thickness: t, color: cut });
+        }
+      }
+    }
+    if (o.labels && m >= 3.5 * MM) {
+      const size = Math.min(7, m * 0.45);
+      const n = r * cols + c + 1;
+      const label = `${tileName(r, c, rows)}   (${n}/${cols * rows})   row ${r + 1}, col ${c + 1}`;
+      page.drawText(label, { x: m + 8 * MM, y: (m - size) / 2 + 0.5, size, font, color: grey });
+    }
+  }
+  return out.save();
+}
+
+/* ===== UI ===== */
+if (typeof window !== 'undefined' && window.document) (function () {
+  const $ = id => document.getElementById(id);
+  const A0 = { w: 841 * MM, h: 1189 * MM };
+  let state = { bytes: null, name: 'poster', pdfjsDoc: null, pages: 0, src: A0, pageIndex: 0 };
+  let renderToken = 0;
+
+  if (window.pdfjsLib) {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  }
+
+  function opts() {
+    const mode = document.querySelector('input[name=mode]:checked').value;
+    const num = (id, d) => { const v = parseFloat($(id).value); return isFinite(v) ? v : d; };
+    return {
+      mode, paper: $('paper').value, orient: $('orient').value,
+      margin: Math.max(0, num('margin', 5)),
+      overlap: Math.max(0, num('overlap', 10)),
+      scale: Math.max(1, num('scale', 100)),
+      autoGrid: $('autoGrid').checked,
+      cols: Math.max(1, Math.round(num('cols', 1))), rows: Math.max(1, Math.round(num('rows', 1))),
+      marks: $('marks').checked, labels: $('labels').checked, overview: $('overview').checked
+    };
+  }
+
+  function syncModeUI(o) {
+    $('overlapSet').classList.toggle('hidden', o.mode !== 'overlap');
+    $('shrinkSet').classList.toggle('hidden', o.mode !== 'shrink');
+    $('cols').disabled = $('rows').disabled = o.autoGrid;
+    $('modeHint').textContent = o.mode === 'overlap'
+      ? '原寸のまま、隣のタイルと重なる部分を作ります。枚数は重なりの分だけ増えることがあります。'
+      : '全体を少し縮めて、余白を除いた範囲にぴったり並べます。枚数は変わりません。';
+  }
+
+  function update() {
+    const o = opts();
+    syncModeUI(o);
+    const L = computeLayout(state.src, o);
+    $('err').textContent = L.error || '';
+    $('go').disabled = !!L.error || !state.bytes;
+    if (L.error) { ['sCount','sGrid','sScale','sSize'].forEach(k => $(k).textContent = '–'); drawOverlay(null); return; }
+    if (o.autoGrid) { $('cols').value = L.cols; $('rows').value = L.rows; }
+    $('sCount').textContent = L.count + ' 枚';
+    $('sGrid').textContent = `${L.cols}×${L.rows}（${L.orient === 'portrait' ? '縦' : '横'}）`;
+    $('sScale').textContent = (L.s * 100).toFixed(1) + '%';
+    $('sSize').textContent = `${Math.round(state.src.w * L.s / MM)}×${Math.round(state.src.h * L.s / MM)}`;
+    drawOverlay(L);
+  }
+
+  function drawOverlay(L) {
+    const stage = $('stage');
+    const old = stage.querySelector('svg'); if (old) old.remove();
+    const canvas = stage.querySelector('canvas');
+    if (!canvas || !L) return;
+    const { w, h } = state.src, s = L.s;
+    const NS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    svg.setAttribute('preserveAspectRatio', 'none');
+    const cut = getComputedStyle(document.documentElement).getPropertyValue('--cut').trim() || '#D6336C';
+    const sw = Math.max(w, h) / 400;
+    for (let r = 0; r < L.rows; r++) for (let c = 0; c < L.cols; c++) {
+      const x = (c * L.stepX - L.ox) / s, y = (r * L.stepY - L.oy) / s;
+      const rw = L.W / s, rh = L.H / s;
+      const rect = document.createElementNS(NS, 'rect');
+      Object.entries({ x, y, width: rw, height: rh, fill: cut, 'fill-opacity': (r + c) % 2 ? 0.10 : 0.04,
+        stroke: cut, 'stroke-width': sw }).forEach(([k, v]) => rect.setAttribute(k, v));
+      svg.appendChild(rect);
+      const t = document.createElementNS(NS, 'text');
+      const fs = Math.min(rw, rh) / 5;
+      Object.entries({ x: x + rw / 2, y: y + rh / 2 + fs * 0.35, 'text-anchor': 'middle', 'font-size': fs,
+        'font-weight': 700, fill: cut, 'paint-order': 'stroke', stroke: '#fff', 'stroke-width': fs / 8,
+        'font-family': 'BIZ UDPGothic, sans-serif' }).forEach(([k, v]) => t.setAttribute(k, v));
+      t.textContent = tileName(r, c, L.rows);
+      svg.appendChild(t);
+    }
+    stage.appendChild(svg);
+  }
+
+  async function renderPreview() {
+    const token = ++renderToken;
+    const stage = $('stage');
+    stage.querySelectorAll('canvas,svg').forEach(e => e.remove());
+    if (!state.pdfjsDoc) { $('empty').classList.remove('hidden'); update(); return; }
+    $('empty').classList.add('hidden');
+    try {
+      const page = await state.pdfjsDoc.getPage(state.pageIndex + 1);
+      const vp1 = page.getViewport({ scale: 1 });
+      const mat = stage.parentElement;
+      const maxW = Math.max(200, mat.clientWidth - 56), maxH = Math.max(300, Math.min(window.innerHeight * 0.72, 900));
+      const disp = Math.min(maxW / vp1.width, maxH / vp1.height);
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const vp = page.getViewport({ scale: disp * dpr });
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.round(vp.width); canvas.height = Math.round(vp.height);
+      canvas.style.width = Math.round(vp1.width * disp) + 'px';
+      canvas.style.height = Math.round(vp1.height * disp) + 'px';
+      await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+      if (token !== renderToken) return;
+      stage.appendChild(canvas);
+    } catch (e) {
+      console.warn(e);
+    }
+    update();
+  }
+
+  async function loadFile(file) {
+    if (!file) return;
+    $('err').textContent = '';
+    try {
+      const buf = new Uint8Array(await file.arrayBuffer());
+      const doc = await PDFLib.PDFDocument.load(buf, { ignoreEncryption: true });
+      state.bytes = buf;
+      state.name = file.name.replace(/\.pdf$/i, '');
+      state.pages = doc.getPageCount();
+      state.libDoc = doc;
+      state.pageIndex = 0;
+      $('page').value = 1; $('page').max = state.pages;
+      $('pageField').classList.toggle('hidden', state.pages <= 1);
+      setPageSize();
+      $('dropText').textContent = `${file.name}（${state.pages} ページ）`;
+      $('drop').classList.add('has');
+      state.pdfjsDoc = null;
+      if (window.pdfjsLib) {
+        try { state.pdfjsDoc = await pdfjsLib.getDocument({ data: buf.slice() }).promise; } catch (e) { console.warn(e); }
+      }
+      renderPreview();
+    } catch (e) {
+      console.error(e);
+      $('err').textContent = 'この PDF を読み込めませんでした。パスワード付きや破損したファイルでないか確認してください。';
+    }
+  }
+
+  function setPageSize() {
+    const p = state.libDoc.getPage(state.pageIndex);
+    const mb = p.getMediaBox();
+    state.src = { w: mb.width, h: mb.height };
+  }
+
+  $('file').addEventListener('change', e => loadFile(e.target.files[0]));
+  const drop = $('drop');
+  ['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+  ['dragleave', 'drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
+  drop.addEventListener('drop', e => loadFile(e.dataTransfer.files[0]));
+  $('page').addEventListener('change', () => {
+    if (!state.libDoc) return;
+    const n = Math.min(state.pages, Math.max(1, parseInt($('page').value, 10) || 1));
+    $('page').value = n; state.pageIndex = n - 1; setPageSize(); renderPreview();
+  });
+  $('form').addEventListener('input', e => { if (e.target.id !== 'page' && e.target.id !== 'file') update(); });
+  let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(renderPreview, 200); });
+
+  $('go').addEventListener('click', async () => {
+    const o = opts(), L = computeLayout(state.src, o);
+    if (L.error || !state.bytes) return;
+    const btn = $('go'); btn.disabled = true; const label = btn.textContent; btn.textContent = '作成中…';
+    try {
+      const pdf = await buildPdf(PDFLib, state.bytes, state.pageIndex, o, L);
+      const blob = new Blob([pdf], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${state.name}_${o.paper}_${L.cols}x${L.rows}.pdf`;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 60000);
+    } catch (e) {
+      console.error(e);
+      $('err').textContent = 'PDF の作成に失敗しました：' + e.message;
+    } finally {
+      btn.textContent = label; btn.disabled = false;
+    }
+  });
+
+  update();
+})();
+</script>
+</body>
+</html>
