@@ -86,13 +86,23 @@ button.go:disabled{opacity:.45; cursor:not-allowed}
 }
 .stage{position:relative; max-width:100%}
 .stage canvas{display:block; background:#fff; box-shadow:0 2px 0 rgba(0,0,0,.25)}
-.stage svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible}
+.stage svg{position:absolute; inset:0; width:100%; height:100%; pointer-events:none}
+.mat{overflow:hidden}
 .empty{color:#E8EFD0; text-align:center}
 .stats{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden; margin-top:14px}
 @media (max-width:520px){ .stats{grid-template-columns:repeat(2,minmax(0,1fr))} }
 .stats div{background:var(--panel); padding:10px 12px}
 .stats dt{font-size:.8rem; color:var(--muted)}
 .stats dd{margin:0; font-size:1.25rem; font-weight:700; font-variant-numeric:tabular-nums}
+.store{margin-top:18px}
+.store h2{font-size:1.05rem; margin:0 0 6px}
+.store p{margin:0 0 10px; color:var(--muted); font-size:.9rem}
+.store .btns{display:flex; flex-wrap:wrap; gap:8px}
+.store button,.store a.svc{font:inherit; font-size:.9rem; padding:8px 12px; border:1px solid var(--line); border-radius:6px;
+  background:var(--bg); color:var(--ink); cursor:pointer; text-decoration:none}
+.store button:hover,.store a.svc:hover{border-color:var(--cut)}
+.store li a{color:var(--focus)}
+.store ul{margin:10px 0 0; padding-left:1.2em; font-size:.9rem}
 .note{font-size:.88rem; color:var(--muted); margin:12px 2px 0; max-width:70ch}
 footer{max-width:1180px; margin:0 auto; padding:0 20px 32px; color:var(--muted); font-size:.83rem}
 </style>
@@ -100,7 +110,7 @@ footer{max-width:1180px; margin:0 auto; padding:0 20px 32px; color:var(--muted);
 <body>
 <header>
   <h1>大判ポスターを、コンビニの用紙で刷る</h1>
-  <p>A0 などのポスター PDF を A4／A3／B4 のタイルに分けて 1 つの PDF に保存します。処理はこのブラウザの中だけで行われ、ファイルはどこにも送信されません。</p>
+  <p>A0 ポスターの PDF を A4 または A3 のタイルに分けて 1 つの PDF に保存します。処理はこのブラウザの中だけで行われ、ファイルはどこにも送信されません。</p>
 </header>
 
 <main>
@@ -115,6 +125,7 @@ footer{max-width:1180px; margin:0 auto; padding:0 20px 32px; color:var(--muted);
       <label for="page">使うページ</label>
       <input type="number" id="page" min="1" value="1">
     </div>
+    <p class="hint" id="srcInfo">PDF のページサイズにかかわらず、A0（841×1189 mm）に合わせて分割します。</p>
   </fieldset>
 
   <fieldset>
@@ -130,7 +141,7 @@ footer{max-width:1180px; margin:0 auto; padding:0 20px 32px; color:var(--muted);
     <legend>用紙</legend>
     <div class="row">
       <div class="field"><label for="paper">サイズ</label>
-        <select id="paper"><option>A4</option><option>A3</option><option>B4</option></select></div>
+        <select id="paper"><option>A4</option><option>A3</option></select></div>
       <div class="field"><label for="orient">向き</label>
         <select id="orient"><option value="auto">自動</option><option value="portrait">縦</option><option value="landscape">横</option></select></div>
       <div class="field"><label for="margin">プリンタ余白（mm）</label>
@@ -143,8 +154,6 @@ footer{max-width:1180px; margin:0 auto; padding:0 20px 32px; color:var(--muted);
     <div class="row">
       <div class="field"><label for="overlap">のりしろ幅（mm）</label>
         <input type="number" id="overlap" min="0" max="60" step="1" value="10"></div>
-      <div class="field"><label for="scale">倍率（%）</label>
-        <input type="number" id="scale" min="10" max="400" step="1" value="100"></div>
     </div>
   </fieldset>
 
@@ -181,6 +190,22 @@ footer{max-width:1180px; margin:0 auto; padding:0 20px 32px; color:var(--muted);
     <div><dt>仕上がり</dt><dd id="sSize">–</dd></div>
   </dl>
   <p class="note">コンビニで印刷するときは、倍率を「等倍（100%）」にし、「用紙に合わせる」などの自動拡大縮小を切ってください。自動で縮められると、タイル同士の寸法が合わなくなります。余白の値は機種によって違うので、はみ出す場合は少し大きくしてください。</p>
+
+  <section class="panel store" aria-labelledby="storeH">
+    <h2 id="storeH">印刷できる近くのコンビニを探す</h2>
+    <p>ボタンを押すと、現在地の周辺を Google マップで検索します（位置情報を許可しない場合は地名なしで検索します）。</p>
+    <div class="btns">
+      <button type="button" data-q="コンビニ">コンビニ全般</button>
+      <button type="button" data-q="セブン-イレブン">セブン‐イレブン</button>
+      <button type="button" data-q="ファミリーマート">ファミリーマート</button>
+      <button type="button" data-q="ローソン">ローソン</button>
+    </div>
+    <ul>
+      <li>セブン‐イレブン：<a href="https://www.sej.co.jp/services/multicopy/print.html" target="_blank" rel="noopener">ネットプリントの使い方（セブン‐イレブン）</a></li>
+      <li>ファミリーマート：<a href="https://www.family.co.jp/services/print/print.html" target="_blank" rel="noopener">ファミマネットワークプリントの使い方（ファミリーマート）</a></li>
+      <li>ローソン：<a href="https://www.lawson.co.jp/sp/service/others/multicopy/network-print.html" target="_blank" rel="noopener">ネットワークプリントの使い方（ローソン）</a></li>
+    </ul>
+  </section>
 </section>
 </main>
 
@@ -191,7 +216,16 @@ footer{max-width:1180px; margin:0 auto; padding:0 20px 32px; color:var(--muted);
 <script>
 /* ===== core (no DOM) ===== */
 const MM = 72 / 25.4;
-const PAPERS = { A4: [210, 297], A3: [297, 420], B4: [257, 364] };
+const PAPERS = { A4: [210, 297], A3: [297, 420] };
+const TARGETS = { A0: [841, 1189] };
+
+/* scale that makes the PDF page fill the chosen finished size (1 = as is) */
+function targetFit(src, target) {
+  const T = TARGETS[target];
+  if (!T) return 1;
+  const [tw, th] = src.w > src.h ? [T[1], T[0]] : T;
+  return Math.min(tw * MM / src.w, th * MM / src.h);
+}
 
 function computeLayout(src, o) {
   const m = o.margin * MM;
@@ -201,13 +235,14 @@ function computeLayout(src, o) {
     const W = pw - 2 * m, H = ph - 2 * m;
     if (W <= 0 || H <= 0) return { error: '余白が用紙より大きくなっています。' };
     let cols, rows, s, stepX, stepY;
+    const fit = targetFit(src, o.target);
     if (o.mode === 'shrink') {
-      cols = o.autoGrid ? Math.max(1, Math.round(src.w / pw)) : o.cols;
-      rows = o.autoGrid ? Math.max(1, Math.round(src.h / ph)) : o.rows;
-      s = Math.min(cols * W / src.w, rows * H / src.h);
+      cols = o.autoGrid ? Math.max(1, Math.round(src.w * fit / pw)) : o.cols;
+      rows = o.autoGrid ? Math.max(1, Math.round(src.h * fit / ph)) : o.rows;
+      s = Math.min(cols * W / src.w, rows * H / src.h, fit);  // never larger than A0
       stepX = W; stepY = H;
     } else {
-      s = o.scale / 100;
+      s = fit;
       const ov = o.overlap * MM;
       if (ov >= Math.min(W, H)) return { error: 'のりしろ幅が印刷できる範囲より大きくなっています。' };
       stepX = W - ov; stepY = H - ov;
@@ -331,10 +366,9 @@ if (typeof window !== 'undefined' && window.document) (function () {
     const mode = document.querySelector('input[name=mode]:checked').value;
     const num = (id, d) => { const v = parseFloat($(id).value); return isFinite(v) ? v : d; };
     return {
-      mode, paper: $('paper').value, orient: $('orient').value,
+      mode, target: 'A0', paper: $('paper').value, orient: $('orient').value,
       margin: Math.max(0, num('margin', 5)),
       overlap: Math.max(0, num('overlap', 10)),
-      scale: Math.max(1, num('scale', 100)),
       autoGrid: $('autoGrid').checked,
       cols: Math.max(1, Math.round(num('cols', 1))), rows: Math.max(1, Math.round(num('rows', 1))),
       marks: $('marks').checked, labels: $('labels').checked, overview: $('overview').checked
@@ -346,8 +380,8 @@ if (typeof window !== 'undefined' && window.document) (function () {
     $('shrinkSet').classList.toggle('hidden', o.mode !== 'shrink');
     $('cols').disabled = $('rows').disabled = o.autoGrid;
     $('modeHint').textContent = o.mode === 'overlap'
-      ? '原寸のまま、隣のタイルと重なる部分を作ります。枚数は重なりの分だけ増えることがあります。'
-      : '全体を少し縮めて、余白を除いた範囲にぴったり並べます。枚数は変わりません。';
+      ? 'A0 原寸のまま分けます。隣のタイルと端を重ねて貼るので、つなぎ目がずれません。重なる分だけ枚数が増えます。'
+      : '全体を少し縮めて、重なりなしで並べます。白いフチを切り落とし、端どうしを突き合わせて貼ります。';
   }
 
   function update() {
@@ -358,6 +392,8 @@ if (typeof window !== 'undefined' && window.document) (function () {
     $('go').disabled = !!L.error || !state.bytes;
     if (L.error) { ['sCount','sGrid','sScale','sSize'].forEach(k => $(k).textContent = '–'); drawOverlay(null); return; }
     if (o.autoGrid) { $('cols').value = L.cols; $('rows').value = L.rows; }
+    showSrcInfo(o, L);
+    modeHint(o, L);
     $('sCount').textContent = L.count + ' 枚';
     $('sGrid').textContent = `${L.cols}×${L.rows}（${L.orient === 'portrait' ? '縦' : '横'}）`;
     $('sScale').textContent = (L.s * 100).toFixed(1) + '%';
@@ -365,15 +401,62 @@ if (typeof window !== 'undefined' && window.document) (function () {
     drawOverlay(L);
   }
 
+  function modeHint(o, L) {
+    const n = L.count;
+    if (o.mode === 'overlap') {
+      $('modeHint').textContent = o.overlap > 0
+        ? `A0 原寸のまま分けます。隣のタイルと端を ${o.overlap} mm ずつ重ねて貼るので、つなぎ目がずれません。重なる分、枚数が増えることがあります（いまの設定で ${n} 枚）。`
+        : `A0 原寸のまま、重なりなしで分けます（いまの設定で ${n} 枚）。白いフチを切り落として突き合わせて貼ります。`;
+      return;
+    }
+    const pct = L.s / targetFit(state.src, o.target) * 100;
+    const w = Math.round(state.src.w * L.s / MM), h = Math.round(state.src.h * L.s / MM);
+    $('modeHint').textContent = pct >= 99.5
+      ? `A0 原寸のまま、重なりなしで ${n} 枚に収まります。白いフチを切り落とし、端どうしを突き合わせて貼ります。`
+      : `全体を約 ${Math.round(pct)}% に縮めて（${w}×${h} mm）、重なりなしで ${n} 枚に収めます。白いフチを切り落とし、端どうしを突き合わせて貼ります。`;
+  }
+
+  function sizeName(wmm, hmm) {
+    const a = Math.min(wmm, hmm), b = Math.max(wmm, hmm);
+    const all = Object.assign({}, TARGETS, PAPERS, { A1: [594, 841], A2: [420, 594] });
+    for (const [k, [x, y]] of Object.entries(all)) if (Math.abs(a - x) < 3 && Math.abs(b - y) < 3) return k;
+    return '';
+  }
+
+  function showSrcInfo(o, L) {
+    if (!state.bytes) { $('srcInfo').textContent = ''; return; }
+    const wmm = state.src.w / MM, hmm = state.src.h / MM, nm = sizeName(wmm, hmm);
+    let t = `この PDF のページは ${Math.round(wmm)}×${Math.round(hmm)} mm${nm ? `（${nm} 相当）` : ''}です。`;
+    {
+      const fit = targetFit(state.src, o.target);
+      if (Math.abs(fit - 1) > 0.01) t += `${o.target} にするため ${(fit * 100).toFixed(1)}% に${fit > 1 ? '拡大' : '縮小'}して分割します。`;
+    }
+    $('srcInfo').textContent = t;
+  }
+
   function drawOverlay(L) {
     const stage = $('stage');
     const old = stage.querySelector('svg'); if (old) old.remove();
     const canvas = stage.querySelector('canvas');
-    if (!canvas || !L) return;
+    if (!canvas) return;
+    if (!L) {
+      stage.style.width = stage.style.height = '';
+      Object.assign(canvas.style, { position: '', left: '', top: '', width: canvas.dataset.w, height: canvas.dataset.h });
+      return;
+    }
     const { w, h } = state.src, s = L.s;
+    const tx0 = -L.ox / s, ty0 = -L.oy / s;
+    const minX = Math.min(0, tx0), minY = Math.min(0, ty0);
+    const bw = Math.max(w, tx0 + L.extX / s) - minX, bh = Math.max(h, ty0 + L.extY / s) - minY;
+    const mat = stage.parentElement;
+    const availW = Math.max(200, mat.clientWidth - 56), availH = Math.max(300, Math.min(window.innerHeight * 0.72, 900));
+    const k = Math.min(availW / bw, availH / bh);
+    stage.style.width = bw * k + 'px'; stage.style.height = bh * k + 'px';
+    Object.assign(canvas.style, { position: 'absolute', left: -minX * k + 'px', top: -minY * k + 'px',
+                                  width: w * k + 'px', height: h * k + 'px' });
     const NS = 'http://www.w3.org/2000/svg';
     const svg = document.createElementNS(NS, 'svg');
-    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    svg.setAttribute('viewBox', `${minX} ${minY} ${bw} ${bh}`);
     svg.setAttribute('preserveAspectRatio', 'none');
     const cut = getComputedStyle(document.documentElement).getPropertyValue('--cut').trim() || '#D6336C';
     const sw = Math.max(w, h) / 400;
@@ -413,6 +496,7 @@ if (typeof window !== 'undefined' && window.document) (function () {
       canvas.width = Math.round(vp.width); canvas.height = Math.round(vp.height);
       canvas.style.width = Math.round(vp1.width * disp) + 'px';
       canvas.style.height = Math.round(vp1.height * disp) + 'px';
+      canvas.dataset.w = canvas.style.width; canvas.dataset.h = canvas.style.height;
       await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
       if (token !== renderToken) return;
       stage.appendChild(canvas);
@@ -478,7 +562,7 @@ if (typeof window !== 'undefined' && window.document) (function () {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `${state.name}_${o.paper}_${L.cols}x${L.rows}.pdf`;
+      a.download = `${state.name}_A0_${o.paper}_${L.cols}x${L.rows}.pdf`;
       document.body.appendChild(a); a.click(); a.remove();
       setTimeout(() => URL.revokeObjectURL(url), 60000);
     } catch (e) {
@@ -488,6 +572,17 @@ if (typeof window !== 'undefined' && window.document) (function () {
       btn.textContent = label; btn.disabled = false;
     }
   });
+
+  document.querySelectorAll('.store button[data-q]').forEach(btn => btn.addEventListener('click', () => {
+    const q = encodeURIComponent(btn.dataset.q);
+    const w = window.open('about:blank', '_blank');
+    const go = url => { if (w) w.location.href = url; else location.href = url; };
+    const plain = () => go(`https://www.google.com/maps/search/?api=1&query=${q}`);
+    if (!navigator.geolocation) return plain();
+    navigator.geolocation.getCurrentPosition(
+      p => go(`https://www.google.com/maps/search/${q}/@${p.coords.latitude},${p.coords.longitude},16z`),
+      plain, { timeout: 8000, maximumAge: 300000 });
+  }));
 
   update();
 })();
